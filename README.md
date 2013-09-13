@@ -13,5 +13,5 @@ HELLO HETIC
 
 #### TRIM 3
 
-	html
-		<div>test</div>
+```html
+	<div>test</div>
