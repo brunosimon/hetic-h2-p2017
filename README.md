@@ -1,7 +1,7 @@
 HETIC
 ========
 
-GitHub pour de la promotion P2017 à Hetic
+GitHub de la promotion P2017
 
 # PROGRAMME
 
@@ -22,7 +22,7 @@ Sujets pouvant potentiellement être abordés durant l'année
  - Storage
  - Websocket
 
-### Trimestre 2
+### Trimestre 2 : PHP / MySQL
  
  - PHP
   - Basics (Fundamentals / Variables / Host)
@@ -37,7 +37,7 @@ Sujets pouvant potentiellement être abordés durant l'année
   - SQL (Select,Update,Delete)(Where,Or,And,Order,Limit)
   - Joins (Left,Right)
 
-### Trimestre 3
+### Trimestre 3 : PHP / MySQL / APIs / MVC
  
  - API Facebook
  - API Twitter
@@ -51,7 +51,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
 ### HTML 5 / CSS 3
 
-  - [html5rocks](http://www.html5rocks.com/)
+  - [Html5rocks](http://www.html5rocks.com/)
   - [HTML5 Boilerplate](http://html5boilerplate.com/) - Pour débuter un projet
   - [HTML5shiv](https://github.com/aFarkas/html5shiv) - Compatibilité semantique
   - [Can I Use](http://caniuse.com/)
@@ -81,9 +81,9 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
 ### Générateurs de contenus
 
-  - [Placekitten](http://placekitten.com/) - Miaou
-  - [Batman Ipsum](http://batman-ipsum.com/) - Why so serious ?
   - [Samuel L. Ipsum](http://slipsum.com/) - Répliques de Samuel L. Jackson
+  - [Batman Ipsum](http://batman-ipsum.com/) - Why so serious ?
+  - [Placekitten](http://placekitten.com/) - Miaou
 
 ### Tuto
 
@@ -101,7 +101,6 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
   - [Snipt](https://snipt.net/public/)
   - [Clearfix](http://www.webtoolkit.info/css-clearfix.html)
-  - [Clearfix](http://www.webtoolkit.info/css-clearfix.html)
   - [Bombermine](bombermine.com) - Pour le fun
   - [Reveal.js](https://github.com/hakimel/reveal.js) - Présentation
 
@@ -116,7 +115,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   }
 
   if(reste_a_faire())
-    return 'rien est fait';
+    return 'rien n\'est fait';
 
 </script>
 ```
