@@ -1,9 +1,7 @@
 HETIC
 ========
 
- - Cours
- - Exemples
- - Corrections
+GitHub pour de la promotion P2017 à Hetic
 
 # PROGRAMME
 
@@ -11,7 +9,7 @@ Sujets pouvant potentiellement être abordés durant l'année
 
 #### Trimestre 1 : HTML 5 / CSS 3
 
- - Semantics
+ - Semantique
  - Audio / Video
  - Animations / Transitions / Transforms
  - Filters / Text shadows / Box shadows
@@ -51,35 +49,33 @@ Sujets pouvant potentiellement être abordés durant l'année
 
 Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
-###Présentation
-  - [Reveal.js](https://github.com/hakimel/reveal.js)
-###HTML 5 / CSS 3
+### HTML 5 / CSS 3
   - [html5rocks](http://www.html5rocks.com/)
   - [HTML5 Boilerplate](http://html5boilerplate.com/) - Pour débuter un projet
   - [HTML5shiv](https://github.com/aFarkas/html5shiv) - Compatibilité semantique
   - [Can I Use](http://caniuse.com/)
-###Javascript
+### Javascript
   - [Héritage en JS](http://ejohn.org/blog/simple-javascript-inheritance/)
   - [Modernizr.js](http://modernizr.com/) - Connaitre les compatibilité du visiteur
   - [Backbone.js](http://backbonejs.org/)
   - [Underscore.js](http://underscorejs.org/) - Librairie pleine d'outils utiles
   - [Mustache.js](https://github.com/janl/mustache.js) - Templating JS
   - [Haml.js](https://github.com/creationix/haml-js) - Templating JS
-###WebGL
+### WebGL
   - [Three.js](http://threejs.org/)
   - [Three.js (git)](https://github.com/mrdoob/three.js)
   - [WebGL.com](http://www.webgl.com/)
   - [Chrome Experiments](http://www.chromeexperiments.com/webgl/)
-###PHP
+### PHP
   - [Documentation(fr)](http://php.net/manual/fr/)
   - [Zend (framework)](http://framework.zend.com/)
   - [Synfony (framework)](http://symfony.com/)
   - [CakePHP (framework)](http://cakephp.org/) - Plus abordable que Zend
-###Générateurs de contenus
+### Générateurs de contenus
   - [Placekitten](http://placekitten.com/) - Miaou
   - [Batman Ipsum](http://batman-ipsum.com/) - Why so serious ?
   - [Samuel L. Ipsum](http://slipsum.com/) - Répliques de Samuel L. Jackson
-###Tuto
+### Tuto
   - [Mobile tuts](http://mobile.tutsplus.com/) - gratuit
   - [Net tuts](http://net.tutsplus.com/) - gratuit
   - [Tuto.com](http://tuto.com) - gratuit / payant
@@ -89,11 +85,12 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Site du Zéro](http://www.siteduzero.com/) - Sans rigoler
   - [Learning Three.js](http://learningthreejs.com/) - Gratuit
   - [Aerotwist](http://www.aerotwist.com/tutorials/) - Gratuit - Léger mais propre et utile
-###De tout
+### De tout
   - [Snipt](https://snipt.net/public/)
   - [Clearfix](http://www.webtoolkit.info/css-clearfix.html)
   - [Clearfix](http://www.webtoolkit.info/css-clearfix.html)
   - [Bombermine](bombermine.com) - Pour le fun
+  - [Reveal.js](https://github.com/hakimel/reveal.js) - Présentation
 
 # CITATION
 
