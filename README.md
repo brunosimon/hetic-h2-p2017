@@ -9,18 +9,19 @@ Sujets pouvant potentiellement être abordés durant l'année
 
 ### Trimestre 1 : HTML 5 / CSS 3
 
- - Semantique
+ - Sémantique
  - Audio / Video
- - Animations / Transitions / Transforms
+ - Animations / Transitions / Transform
  - Filters / Text shadows / Box shadows
  - Media queries
  - Geolocation
  - Speech
  - Fullscreen
  - Offline
+ - History
  - WebGL
- - Storage
  - Websocket
+ - Storage
 
 ### Trimestre 2 : PHP / MySQL
  
@@ -33,7 +34,7 @@ Sujets pouvant potentiellement être abordés durant l'année
   - Classes
   - cURL
  - MySQL
-  - Basics (Fundamentals / PHPMyAdmin)
+  - Basics (Fundamentals / PHPMyAdmin / Database / Tables / Rows / Variables types)
   - SQL (Select,Update,Delete)(Where,Or,And,Order,Limit)
   - Joins (Left,Right)
 
@@ -43,6 +44,7 @@ Sujets pouvant potentiellement être abordés durant l'année
  - API Twitter
  - API Foursquare
  - API Instagram
+ - Création d'un micro framework MVC
  - Surprise
 
 # LIENS
@@ -58,12 +60,12 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
 ### Javascript
 
-  - [Héritage en JS](http://ejohn.org/blog/simple-javascript-inheritance/)
   - [Modernizr.js](http://modernizr.com/) - Connaitre les compatibilité du visiteur
   - [Backbone.js](http://backbonejs.org/)
   - [Underscore.js](http://underscorejs.org/) - Librairie pleine d'outils utiles
   - [Mustache.js](https://github.com/janl/mustache.js) - Templating JS
   - [Haml.js](https://github.com/creationix/haml-js) - Templating JS
+  - [Héritage en JS](http://ejohn.org/blog/simple-javascript-inheritance/)
 
 ### WebGL
 
@@ -74,7 +76,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
 ### PHP
 
-  - [Documentation(fr)](http://php.net/manual/fr/)
+  - [Documentation (fr)](http://php.net/manual/fr/)
   - [Zend (framework)](http://framework.zend.com/)
   - [Synfony (framework)](http://symfony.com/)
   - [CakePHP (framework)](http://cakephp.org/) - Plus abordable que Zend
@@ -96,6 +98,24 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Site du Zéro](http://www.siteduzero.com/) - Sans rigoler
   - [Learning Three.js](http://learningthreejs.com/) - Gratuit
   - [Aerotwist](http://www.aerotwist.com/tutorials/) - Gratuit - Léger mais propre et utile
+
+### Sublime Text 2
+
+  - [Package controle](https://sublime.wbond.net) - Installation / Suppression rapide de plugins sublimes
+  - [Alignment](https://sublime.wbond.net/packages/Alignment) - Aligner les "=" et tout autre caractère désiré
+  - [Bracket​Highlighter](https://sublime.wbond.net/packages/BracketHighlighter) - Surbrillance des parenthèses/accolades/balises/etc. courrantes
+  - [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Affiche les erreurs (css,JS,etc...)
+  - [Emmet](https://sublime.wbond.net/packages/Emmet) - Zen coding amélioré
+  - [Less](https://sublime.wbond.net/packages/LESS) - Support de LESS
+  - [Zen Tabs](https://sublime.wbond.net/packages/Zen%20Tabs) - Plus de fonctionnalités et meilleure apparence des tabs
+  - [HTML Snippet](https://sublime.wbond.net/packages/HTML%20Snippets) - Snippets html
+  - [WordHighlight](https://sublime.wbond.net/packages/WordHighlight) - Surbrillance des mots sélectionnés
+  - [SFTP](https://sublime.wbond.net/packages/SFTP) - Remote control sur un FTP (modifier en live)
+  - [jQuery Snippets pack](https://sublime.wbond.net/packages/jQuery%20Snippets%20pack) - Snippets jQuery
+  - [JsFormat](https://sublime.wbond.net/packages/JsFormat) - Format le code Javascript (Bien penser à paramétrer selon vos habitudes syntaxiques)
+  - [ColorPicker](https://sublime.wbond.net/packages/ColorPicker) - Affiche un color picker
+  - [LiveReload](https://sublime.wbond.net/packages/LiveReload) - Reload le navigateur (softly) après chaque sauvegarde dans le projet (nécessite plugin)
+  - [Soda](https://sublime.wbond.net/packages/Theme%20-%20Soda) - Thème sublime comprenant les tabs, la sidebar et la coloration syntaxique Monokai
 
 ### De tout
 
