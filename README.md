@@ -135,7 +135,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   }
 
   if(reste_a_faire())
-    return 'rien n\'est fait';
+    console.log('rien n\'est fait');
 
 </script>
 ```
