@@ -123,7 +123,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 
   - [Snipt](https://snipt.net/public/)
   - [Clearfix](http://www.webtoolkit.info/css-clearfix.html)
-  - [Bombermine](bombermine.com) - Pour le fun
+  - [Bombermine](http://bombermine.com) - Pour le fun
   - [Reveal.js](https://github.com/hakimel/reveal.js) - Présentation
 
 # CITATION
