@@ -95,9 +95,11 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Elephorm](http://www.elephorm.com/) - payant (mais plutôt efficace)
   - [Video2Brain](https://www.video2brain.com/) - payant (mais plutôt efficace)
   - [Grafikart](http://www.grafikart.fr/) - gratuit
-  - [Site du Zéro](http://www.siteduzero.com/) - Sans rigoler
-  - [Learning Three.js](http://learningthreejs.com/) - Gratuit
-  - [Aerotwist](http://www.aerotwist.com/tutorials/) - Gratuit - Léger mais propre et utile
+  - [Site du Zéro](http://www.siteduzero.com/) - gratuit
+  - [Learning Three.js](http://learningthreejs.com/) - gratuit
+  - [Aerotwist](http://www.aerotwist.com/tutorials/) - gratuit - Léger mais propre et utile
+  - [Code School](http://www.codeschool.com/) - gratuit / payant
+  - [Codeacademy](http://www.codecademy.com/) - gratuit / payant
 
 ### Sublime Text 2
 
