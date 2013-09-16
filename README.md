@@ -45,7 +45,6 @@ Sujets pouvant potentiellement être abordés durant l'année
  - API Foursquare
  - API Instagram
  - Création d'un micro framework MVC
- - Surprise
 
 # LIENS
 
