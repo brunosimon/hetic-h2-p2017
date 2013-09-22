@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>TRIM 1 - Cours 1 - Media Queries</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css">
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/monokai.css"> -->
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/github.css"> -->
+		<script>
+			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h3>H2 - P2017</h3>
+					<h1>Développement web</h1>
+					<h3>Cours 1 - 2013-09-23</h3>
+					<p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+					<p><a mailto="bruno.simon.hetic@gmail.com">bruno.simon.hetic@gmail.com</a></p>
+				</section>
+
+				<section>
+					<h3>html5 / CSS3</h3>
+					<h1>Media Queries</h1>
+				</section>
+
+				<section>
+					<p>Technique permettant d'adapter la feuille de style en fonction des périphériques et de ses différents critères.</p>
+					<p>Permet de faire du responsive design facilement.</p>
+				</section>
+
+				<section>
+					<h2>3 façons de l'appliquer</h2>
+					<p>En HTML</p>
+					<pre><code data-trim contenteditable>
+<link rel="stylesheet" media="condition" href="smallscreen.css" type="text/css" />
+					</code></pre>
+					
+					<p>En CSS</p>
+					<pre><code data-trim contenteditable>
+@media condition
+{
+	/* Mon CSS */
+}
+					</code></pre>
+					<p>En Javascript</p>
+					<pre><code data-trim contenteditable>
+<script>
+  if (window.matchMedia(/* condition */).matches)
+  {
+	/* Mon JS */
+  }
+</script>
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Quelques anciens critères (CSS2)</h2>
+					<ul>
+						<li>print</li>
+						<li>screen</li>
+						<li>tv</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Les principaux nouveaux critères</h2>
+					<ul>
+						<li>aspect-ratio</li>
+						<li>width</li>
+						<li>height</li>
+						<li>orientation</li>
+						<li>pixel-ratio</li>
+						<li>device-*</li>
+						<li>min-*</li>
+						<li>max-*</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Compatibilité</h2>
+					<p>
+						<a target="_blank" href="http://caniuse.com/#search=media">http://goo.gl/3s8cbk</a> : Can I Use
+					</p>
+					<p>
+						<a target="_blank" href="http://www.johan.me/responsive-design-pour-tous">http://goo.gl/6hFZVj</a> : Fallback
+					</p>
+				</section>
+
+				<section>
+					<h2>Exemples</h2>
+					<p><a target="_blank" href="http://teamtreehouse.com/">http://goo.gl/gSY67z</a> : Treehouse</p>
+					<p><a target="_blank" href="http://www.elysee.fr/">http://goo.gl/EPqDI4</a> : Elysée</p>
+				</section>
+
+				<section>
+					<h2>Significations</h2>
+					<pre><code data-trim contenteditable class="css">@media (max-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media (device-min-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media (min-device-pixel-ratio: 1.5)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media print</code></pre>
+					<pre><code data-trim contenteditable class="css">@media not screen and (max-width: 750px)</code></pre>
+				</section>
+
+				<section>
+					<h2>Significations</h2>
+					<pre><code data-trim contenteditable class="css">@media screen and (min-width: 650px) and (max-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media tv and (orientation:portrait)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media screen and (device-aspect-ratio: 16/9)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media screen and (device-aspect-ratio: 16/9)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media screen and (orientation: portrait),
+@media screen and (orientation: landscape) and (device-max-width:1000px)</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="tools/reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls     : false,
+				progress     : true,
+				history      : true,
+				center       : true,
+				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				dependencies : [
+					{ src: 'tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>TRIM 1 - Cours 1 - Animations / Transitions</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css">
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/monokai.css"> -->
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/github.css"> -->
+		<script>
+			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<style>
+			li{margin-bottom:0.5em !important;}
+			.transition-container{
+				height:100px;
+				cursor:pointer;
+			}
+			.transition-container span{
+				display:block;
+				position:relative;
+				top:0;
+				left:0;
+				width:100px;
+				height:100px;
+				background:#FF8F00;
+			}
+			.example-1 .transition-container:hover span{
+				left:100%;
+			}
+			.example-2 .transition-container:hover span{
+				left:100%;
+				width:200px;
+				background:red;
+			}
+			.example-3 .transition-container:hover span{
+				left:100%;
+			}
+			.example-4 .transition-container:hover span{
+				left:100%;
+			}
+			.example-1 .transition-container span{
+			    transition:left 1s ease 0s;
+			}
+			.example-2 .transition-container span{
+			    transition:all 2s ease-out 1s;
+			}
+			.example-3 .transition-container span{
+			    transition:left 1s cubic-bezier(0.2,1.2,0.8,-0.2);
+			}
+			.example-4 .transition-container span{
+			    transition:left 1s cubic-bezier(1,0,0,1);
+			}
+		</style>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h3>H2 - P2017</h3>
+					<h1>Développement web</h1>
+					<h3>Cours 1 - 2013-09-23</h3>
+					<p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+					<p><a mailto="bruno.simon.hetic@gmail.com">bruno.simon.hetic@gmail.com</a></p>
+				</section>
+
+				<section>
+					<h3>html5 / CSS3</h3>
+					<h1>Animations et transitions</h1>
+				</section>
+
+				<section>
+					<p>Les animations de ces slides sont faites avec via des transitions CSS3</p>
+				</section>
+
+				<section>
+					<p>Awesome...</p>
+				</section>
+
+				<section>
+					<h2>Différence entre transition et animation</h2>
+					<p>La transition se fait entre deux points</p>
+					<p>L'animation se fait le long d'une timeline</p>
+				</section>
+
+				<section>
+					<h2>Transitions</h2>
+				</section>
+
+				<section>
+					<small>Transitions</small>
+					<h2>Comment l'utiliser</h2>
+					<ul>
+						<li><a href="#">transition-property</a> (obligatoire)
+							<br />Propriétés CSS qui vont subir les transitions</li>
+						<li><a href="#">transition-duration</a> (obligatoire)
+							<br />Durée de la transition (s/ms)</li>
+						<li><a href="#">transition-timing-function</a>
+							<br />Type de transition (ease,linear,ease-in,ease-out,ease-in-out)</li>
+						<li><a href="#">transition-delay</a>
+							<br />Retard avant le départ (s/ms)
+					</ul></li>
+				</section>
+
+				<section class="example-1">
+					<small>Transitions</small>
+					<h2>Exemple CSS3</h2>
+					<pre><code data-trim contenteditable class="css">
+.transition{
+    transition-property:left;
+    transition-duration:1s;
+    transition-timing-function:ease;
+    transition-delay:0s;
+}
+					</code></pre>
+					<pre><code data-trim contenteditable class="css">
+.transition{
+    transition:left 1s ease 0s;
+}
+					</code></pre>
+					<p class="transition-container"><span></span></p>
+				</section>
+
+				<section class="example-2">
+					<small>Transitions</small>
+					<h2>Exemple CSS3</h2>
+					<pre><code data-trim contenteditable class="css">
+.transition{
+    transition-property:all;
+    transition-duration:2s;
+    transition-timing-function:ease-out;
+    transition-delay:1s;
+}
+					</code></pre>
+					<pre><code data-trim contenteditable class="css">
+.transition{
+    transition:left 1s ease 1s;
+}
+					</code></pre>
+					<p class="transition-container"><span></span></p>
+				</section>
+
+				<section>
+					<small>Transitions</small>
+					<h2>Qu'est-ce qu'on peut modifier</h2>
+					<p>À peu près tout ce qui est quantifiable</p>
+					<ul>
+						<li>width,height</li>
+						<li>color</li>
+						<li>top,right,bottom,left</li>
+						<li>transformations (css3)</li>
+						<li>gradients (css3)</li>
+						<li>...</li>
+						<li><a target="_blank" href="http://www.w3.org/TR/css3-transitions/#properties-from-css-">http://goo.gl/aAFuvy</a> : Liste complète officielle</li>
+					</ul>
+				</section>
+
+				<section>
+					<small>Transitions</small>
+					<h2>Courbes de bézier</h2>
+					<p>Créez vos propres easing</p>
+					<p><a target="_blank" href="http://fr.wikipedia.org/wiki/Courbe_de_B%C3%A9zier">http://goo.gl/F1wlfi</a> : Wikipedia - Courbe de Bézier</p>
+					<p><a target="_blank" href="http://matthewlein.com/ceaser/">http://goo.gl/Z5fmL5</a> : Générateur</p>
+				</section>
+
+				<section>
+					<small>Transitions</small>
+					<h2>Exemple CSS3</h2>
+					<div class="example-3">
+						<pre><code data-trim contenteditable class="css">
+.transition{transition:left 1s cubic-bezier(0.2,1.2,0.8,-0.2);}
+						</code></pre>
+						<p class="transition-container"><span></span></p>
+					</div>
+					<div class="example-4">
+						<pre><code data-trim contenteditable class="css">
+.transition{transition:left 1s cubic-bezier(1,0,0,1);}
+						</code></pre>
+						<p class="transition-container"><span></span></p>
+					</div>
+				</section>
+
+				<section>
+					<small>Transitions</small>
+					<h2>Compatibilité</h2>
+					<p><a target="_blank" href="http://caniuse.com/css-transitions">http://goo.gl/lvXfJI</a> : Can I Use</p>
+					<pre><code data-trim contenteditable class="css">
+.transition{
+	-webkit-transition:left 1s; /* Chrome / Safari */
+	   -moz-transition:left 1s; /* Firefox */
+	     -o-transition:left 1s; /* Opera */
+	        transition:left 1s; /* General */
+}
+					</code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="tools/reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls     : false,
+				progress     : true,
+				history      : true,
+				center       : true,
+				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				dependencies : [
+					{ src: 'tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
