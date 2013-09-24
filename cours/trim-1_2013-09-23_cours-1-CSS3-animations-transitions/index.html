@@ -8,14 +8,15 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
-		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css"> -->
-		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/monokai.css"> -->
-		<link rel="stylesheet" href="tools/reveal.js/lib/css/github.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css">
 		<script>
-			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
+		<!--[if lt IE 9]>
+			<script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
 		<style>
 			li{margin-bottom:0.5em !important;}
 			.transition-container{
@@ -59,7 +60,7 @@
 			}
 		</style>
 		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
+			<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -71,7 +72,7 @@
 					<h1>Développement web</h1>
 					<h3>Cours 1 - 2013-09-23</h3>
 					<p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
-					<p><a mailto="bruno.simon.hetic@gmail.com">bruno.simon.hetic@gmail.com</a></p>
+					<p><a mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a></p>
 				</section>
 
 				<section>
@@ -144,7 +145,7 @@
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .transition{
-    transition:left 2s ease-out 1s;
+    transition:all 2s ease-out 1s;
 }
 					</code></pre>
 					<p class="transition-container"><span></span></p>

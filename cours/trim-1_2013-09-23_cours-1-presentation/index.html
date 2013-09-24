@@ -8,14 +8,14 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
-		<link rel="stylesheet" href="tools/reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css">
 		<script>
-			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
+			<script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -30,7 +30,7 @@
 				<section>
 					<h1>BRUNO SIMON</h1>
 					<p>
-						<small><a mailto="bruno.simon.hetic@gmail.com">bruno.simon.hetic@gmail.com</a></small>
+						<small><a mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a></small>
 					</p>
 					<h3>Développeur</h3>
 					<ul>
@@ -134,8 +134,8 @@
 			</div>
 		</div>
 
-		<script src="tools/reveal.js/lib/js/head.min.js"></script>
-		<script src="tools/reveal.js/js/reveal.js"></script>
+		<script src="../tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="../tools/reveal.js/js/reveal.js"></script>
 		<script>
 			Reveal.initialize({
 				controls     : false,
@@ -145,12 +145,12 @@
 				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 				dependencies : [
-					{ src: 'tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 		</script>
