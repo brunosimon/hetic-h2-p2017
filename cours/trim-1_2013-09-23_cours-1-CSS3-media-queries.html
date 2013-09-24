@@ -10,9 +10,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
 		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
-		<link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css">
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css"> -->
 		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/monokai.css"> -->
-		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/github.css"> -->
+		<link rel="stylesheet" href="tools/reveal.js/lib/css/github.css">
 		<script>
 			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
@@ -38,14 +38,14 @@
 				</section>
 
 				<section>
-					<p>Technique permettant d'adapter la feuille de style en fonction des périphériques et de ses différents critères.</p>
-					<p>Permet de faire du responsive design facilement.</p>
+					<p>Technique permettant d'adapter la feuille de style en fonction du périphérique et de ses différents critères.</p>
+					<p>Utile au responsive design.</p>
 				</section>
 
 				<section>
 					<h2>3 façons de l'appliquer</h2>
 					<p>En HTML</p>
-					<pre><code data-trim contenteditable>
+					<pre><code contenteditable>
 <link rel="stylesheet" media="condition" href="smallscreen.css" type="text/css" />
 					</code></pre>
 					
@@ -68,7 +68,7 @@
 				</section>
 
 				<section>
-					<h2>Quelques anciens critères (CSS2)</h2>
+					<h2>Anciens critères (CSS2)</h2>
 					<ul>
 						<li>print</li>
 						<li>screen</li>
@@ -78,7 +78,7 @@
 				</section>
 
 				<section>
-					<h2>Les principaux nouveaux critères</h2>
+					<h2>Nouveaux critères</h2>
 					<ul>
 						<li>aspect-ratio</li>
 						<li>width</li>
@@ -110,18 +110,17 @@
 
 				<section>
 					<h2>Significations</h2>
-					<pre><code data-trim contenteditable class="css">@media (max-width: 750px)</code></pre>
-					<pre><code data-trim contenteditable class="css">@media (device-min-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media (max-width: 700px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media (device-min-width: 700px)</code></pre>
 					<pre><code data-trim contenteditable class="css">@media (min-device-pixel-ratio: 1.5)</code></pre>
 					<pre><code data-trim contenteditable class="css">@media print</code></pre>
-					<pre><code data-trim contenteditable class="css">@media not screen and (max-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media not screen and (max-width: 700px)</code></pre>
 				</section>
 
 				<section>
 					<h2>Significations</h2>
-					<pre><code data-trim contenteditable class="css">@media screen and (min-width: 650px) and (max-width: 750px)</code></pre>
+					<pre><code data-trim contenteditable class="css">@media screen and (min-width: 600px) and (max-width: 700px)</code></pre>
 					<pre><code data-trim contenteditable class="css">@media tv and (orientation:portrait)</code></pre>
-					<pre><code data-trim contenteditable class="css">@media screen and (device-aspect-ratio: 16/9)</code></pre>
 					<pre><code data-trim contenteditable class="css">@media screen and (device-aspect-ratio: 16/9)</code></pre>
 					<pre><code data-trim contenteditable class="css">@media screen and (orientation: portrait),
 @media screen and (orientation: landscape) and (device-max-width:1000px)</code></pre>

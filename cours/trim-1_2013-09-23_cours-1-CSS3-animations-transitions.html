@@ -10,9 +10,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="tools/reveal.js/css/reveal.css">
 		<link rel="stylesheet" href="tools/reveal.js/css/theme/default-orange.css" id="theme">
-		<link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css">
+		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/tomorrow-night-bright.css"> -->
 		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/monokai.css"> -->
-		<!-- <link rel="stylesheet" href="tools/reveal.js/lib/css/github.css"> -->
+		<link rel="stylesheet" href="tools/reveal.js/lib/css/github.css">
 		<script>
 			document.write( '<link rel="stylesheet" href="tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
@@ -89,7 +89,7 @@
 
 				<section>
 					<h2>Différence entre transition et animation</h2>
-					<p>La transition se fait entre deux points</p>
+					<p>La transition se fait entre un état A et un état B</p>
 					<p>L'animation se fait le long d'une timeline</p>
 				</section>
 
@@ -117,10 +117,10 @@
 					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
 .transition{
-    transition-property:left;
-    transition-duration:1s;
-    transition-timing-function:ease;
-    transition-delay:0s;
+    transition-property        : left;
+    transition-duration        : 1s;
+    transition-timing-function : ease;
+    transition-delay           : 0s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
@@ -136,15 +136,15 @@
 					<h2>Exemple CSS3</h2>
 					<pre><code data-trim contenteditable class="css">
 .transition{
-    transition-property:all;
-    transition-duration:2s;
-    transition-timing-function:ease-out;
-    transition-delay:1s;
+	transition-property        : all;
+	transition-duration        : 2s;
+	transition-timing-function : ease-out;
+	transition-delay           : 1s;
 }
 					</code></pre>
 					<pre><code data-trim contenteditable class="css">
 .transition{
-    transition:left 1s ease 1s;
+    transition:left 2s ease-out 1s;
 }
 					</code></pre>
 					<p class="transition-container"><span></span></p>
@@ -155,9 +155,9 @@
 					<h2>Qu'est-ce qu'on peut modifier</h2>
 					<p>À peu près tout ce qui est quantifiable</p>
 					<ul>
-						<li>width,height</li>
+						<li>width, height</li>
 						<li>color</li>
-						<li>top,right,bottom,left</li>
+						<li>top, right, bottom, left</li>
 						<li>transformations (css3)</li>
 						<li>gradients (css3)</li>
 						<li>...</li>
@@ -196,10 +196,10 @@
 					<p><a target="_blank" href="http://caniuse.com/css-transitions">http://goo.gl/lvXfJI</a> : Can I Use</p>
 					<pre><code data-trim contenteditable class="css">
 .transition{
-	-webkit-transition:left 1s; /* Chrome / Safari */
-	   -moz-transition:left 1s; /* Firefox */
-	     -o-transition:left 1s; /* Opera */
-	        transition:left 1s; /* General */
+     -webkit-transition:left 1s; /* Chrome / Safari */
+        -moz-transition:left 1s; /* Firefox */
+          -o-transition:left 1s; /* Opera */
+             transition:left 1s; /* General */
 }
 					</code></pre>
 				</section>
