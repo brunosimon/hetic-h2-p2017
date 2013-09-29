@@ -10,7 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
 		<link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
-		<link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css">
+		<!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+		<link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
 		<script>
 			document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
@@ -37,7 +38,7 @@
 
 				<section>
 					<p>Technique permettant d'adapter la feuille de style en fonction du périphérique et de ses différents critères.</p>
-					<p>Utile au responsive design.</p>
+					<p>Utile au <a href="http://roxik.com/cat/">responsive</a> design.</p>
 				</section>
 
 				<section>
@@ -126,8 +127,8 @@
 			</div>
 		</div>
 
-		<script src="tools/reveal.js/lib/js/head.min.js"></script>
-		<script src="tools/reveal.js/js/reveal.js"></script>
+		<script src="../tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="../tools/reveal.js/js/reveal.js"></script>
 		<script>
 			Reveal.initialize({
 				controls     : false,
@@ -137,13 +138,18 @@
 				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 				dependencies : [
-					{ src: 'tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+			});
+
+			Reveal.addEventListener('slidechanged',function(e)
+			{
+			    console.log(e.indexh);
 			});
 		</script>
 	</body>

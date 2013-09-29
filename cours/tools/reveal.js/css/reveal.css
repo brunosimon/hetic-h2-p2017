@@ -1646,4 +1646,20 @@ body {
 	visibility: hidden;
 }
 
+/*********************************************
+ * PAGINATION
+ *********************************************/
+
+.reveal #pagination {
+	color:#FF8F00;
+	position:absolute;
+	bottom:10px;
+	left:0;
+	width:100%;
+	text-align:center;
+	font-size:0.4em;
+}
+
+
+
 
