@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>TRIM 1 - Cours 5 - Newsletter</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+		<link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+		<script>
+			document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<!--[if lt IE 9]>
+			<script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+            li{margin-bottom:0.5em !important;}
+            ul.checked-list li {list-style-type:none;}
+			.default{text-transform:none !important;}
+            label{cursor:pointer;}
+            input[type=checkbox]{position:relative;top:-0.5em;width:22px;height:22px;margin-right:14px;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div id="pagination"></div>
+			<div class="slides">
+				<section>
+					<h3>H2 - P2017</h3>
+					<h1>Développement web</h1>
+					<h3>Cours 6 - 2013-09-07</h3>
+					<p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+					<p><a mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a></p>
+				</section>
+
+                <section>
+                    <h1>Newsletter</h1>
+                    <p class="fragment">:(</p>
+                </section>
+
+                <section>
+                    <p>Vous allez en manger</p>
+                    <p class="fragment">Tous</p>
+                </section>
+
+                <section>
+                    <h2>Bonnes pratiques</h2>
+                    <h4>Pour les créas</h4>
+                    <ul class="checked-list">
+                        <li><label><input type="checkbox">Uniquement des polices web répandues (Arial, Times, Verdana, ...)</label></li>
+                        <li><label><input type="checkbox">Largeur maximum de 600px</label></li>
+                        <li><label><input type="checkbox">Pas de fond derrière les textes</label></li>
+                        <li><label><input type="checkbox">Possibilité de faire des animations gif</label></li>
+                        <li><label><input type="checkbox">Préférer des fonds de couleur unique</label></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Bonnes pratiques</h2>
+                    <h4>Pour les devs</h4>
+                    <!-- GLOBAL -->
+                    <ul class="checked-list">
+                        <li><label><input type="checkbox">N'utiliser que des &lt;table&gt;</label></li>
+                        <li><label><input type="checkbox">Valider <a target="_blank" href="http://validator.w3.org/#validate_by_input">W3C</a></label></li>
+                        <li><label><input type="checkbox">Pas de HTML5/CSS3</label></li>
+                        <li><label><input type="checkbox">Aucun appel de fichier externe</label></li>
+                        <li><label><input type="checkbox">Toutes les images en gif</label></li>
+                        <li><label><input type="checkbox">Toujours proposer une version web</label></li>
+                        <li><label><input type="checkbox">Toujours proposer une désinscription</label></li>
+                        <li><label><input type="checkbox">Les images doivent être hébergées sur un serveur</label></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Bonnes pratiques</h2>
+                    <h4>Pour les devs</h4>
+                    <!-- HTML -->
+                    <ul class="checked-list">
+                        <li><label><input type="checkbox">Le &lt;table&gt; principal doit avoir width="98%"</label></li>
+                        <li><label><input type="checkbox">Pas plus de 5 &lt;table&gt; imbriqués</label></li>
+                        <li><label><input type="checkbox">Rajouter les balises "alt" quand c'est utile</label></li>
+                        <li><label><input type="checkbox">Tous les liens en target="_blank"</label></li>
+                        <li><label><input type="checkbox">Éviter les balises de type block (p, div, ...)</label></li>
+                        <li><label><input type="checkbox">Éviter les colspan</label></li>
+                        <li><label><input type="checkbox">Appliquer le style sur chaque &lt;td&gt;</label></li>
+                        <li><label><input type="checkbox">Utiliser valign="center" (center, top, bottom) pour aligner verticalement</label></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Bonnes pratiques</h2>
+                    <h4>Pour les devs</h4>
+                    <!-- CSS -->
+                    <ul class="checked-list">
+                        <li><label><input type="checkbox">Les styles doivent être appliqué à chaque élément</label></li>
+                        <li><label><input type="checkbox">Mettre un &lt;span&gt; dans chaque &lt;a&gt; avec le même style</label></li>
+                        <li><label><input type="checkbox">Éviter les raccourcis CSS ("font:10px Arial;")</label></li>
+                        <li><label><input type="checkbox">Éviter les padding et margin</label></li>
+                        <li><label><input type="checkbox">Rajouter "display:block;" sur toutes les &lt;img&gt;</label></li>
+                        <li><label><input type="checkbox">Indiquer les tailles en pixels</label></li>
+                        <li><label><input type="checkbox">Ne pas utiliser background-image</label></li>
+                        <li><label><input type="checkbox">Pour mettre une couleur de fond, utiliser l'attribut "bgcolor" ET le style "background-color"</label></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Template</h2>
+                    <pre><code data-trim contenteditable class="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;Newsletter title&lt;/title&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;/head&gt;
+&lt;body style="margin:0;padding:0;background-color:#ececec;" bgcolor="#ececec"&gt;
+    &lt;table width="98%%" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color:#ececec;"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;table width="600" cellpadding="0" cellspacing="0" align="center"&gt;
+                    &lt;tr&gt;
+                        &lt;td width="600" height="200" style="background-color:#00707B;font-family:Arial;font-size:12px;text-align:center;color:#ffffff;"&gt;
+                            Contenu
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Compatibilité CSS</h2>
+                    <p><a target="_blank" href="http://www.campaignmonitor.com/css/">Campaign Monitor</a></p>
+                </section>
+
+                <section>
+                    <h2>Popularité des clients mail</h2>
+                    <p><a target="_blank" href="http://www.campaignmonitor.com/resources/will-it-work/email-clients/">Campaign Monitor</a></p>
+                </section>
+
+                <section>
+                    <h2>Tester sur multi-supports</h2>
+                    <p><a target="_blank" href="http://litmus.com/">Litmus</a></p>
+                    <p>Payant (version gratuite assez utile), large gamme de devices, screenshots.</p>
+                </section>
+
+                <section>
+                    <h2>Envoyer des newsletters</h2>
+                    <p><a target="_blank" href="http://mailchimp.com/">Mail Chimp</a></p>
+                    <p>Pas trop couteux, efficace, intuitif, templates de base, organisation de campagnes, outils de test, tracking, etc.</p>
+                </section>
+
+                <section>
+                    <h2>La méthode Fireworks</h2>
+                    <img style="margin:0;border:none;box-shadow:none;background:none;" src="fireworks.png" alt="Fireworks" />
+                </section>
+
+                <section>
+                    <h2>Envoyer ses propres mails</h2>
+                    <p class="fragment">Avec PHP</p>
+                </section>
+
+			</div>
+		</div>
+
+		<script src="../tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="../tools/reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls     : false,
+				progress     : true,
+				history      : true,
+				center       : true,
+				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				dependencies : [
+					{ src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener('slidechanged',function(e)
+			{
+			    document.getElementById('pagination').innerHTML = e.indexh + 1;
+			});
+		</script>
+	</body>
+</html>

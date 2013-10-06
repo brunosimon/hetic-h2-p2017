@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>TRIM 1 - Cours 5 - Audio / Video</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+		<!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+		<link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+		<script>
+			document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<!--[if lt IE 9]>
+			<script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			li{margin-bottom:0.5em !important;}
+			.default{text-transform:none !important;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div id="pagination"></div>
+			<div class="slides">
+				<section>
+					<h3>H2 - P2017</h3>
+					<h1>Développement web</h1>
+					<h3>Cours 5 - 2013-09-07</h3>
+					<p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+					<p><a mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a></p>
+				</section>
+
+				<section>
+					<h3>html5 / CSS3</h3>
+					<h1>Audio / Video</h1>
+				</section>
+
+                <!-- AUDIO -->
+                <section>
+                    <h2>L'API &lt;audio&gt;</h2>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Exemple</h2>
+                    <pre><code data-trim contenteditable class="html">
+<audio src="audio.mp3"></audio>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Exemple</h2>
+                    <pre><code data-trim contenteditable class="html">
+<audio src="audio.mp3" autoplay="autoplay" loop="loop" controls="controls">
+    Your browser doesn't support audio API
+</audio>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Comment l'utiliser</h2>
+                    <ul>
+                        <li><a href="#">autoplay</a> - pas de valeur
+                            <br />Lance la lecture dès que le fichier est chargé</li>
+                        <li><a href="#">loop</a> - pas de valeur
+                            <br />Recommence la lecture à la fin</li>
+                        <li><a href="#">preload</a> - none / auto / metadata
+                            <br />Choix du buffering</li>
+                        <li><a href="#">controls</a> - pas de valeur
+                            <br />Affiche un controlleur (propre au navigateur)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Controllers</h2>
+                    <p><small>Chrome</small><br /><img src="audio-controls-chrome.png" alt="Controls Chrome"></p>
+                    <p><small>Firefox</small><br /><img src="audio-controls-firefox.png" alt="Controls Chrome"></p>
+                    <p><small>Safari</small><br /><img src="audio-controls-safari.png" alt="Controls Chrome"></p>
+                    <p><small>Opera</small><br /><img src="audio-controls-opera.png" alt="Controls Chrome"></p>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Formats</h2>
+                    <ul>
+                        <li>MP3 : Tous les navigateurs</li>
+                        <li>OGG : Firefox</li>
+                    </ul>
+                    <pre><code data-trim contenteditable class="html">
+<audio autoplay="autoplay" loop="loop" controls="controls">
+    <source src="audio.mp3" type="audio/mp3" />
+    <source src="audio.ogg" type="audio/ogg" />
+    Your browser doesn't support audio API
+</audio>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Audio</small>
+                    <h2>Compatibilité</h2>
+                    <p><a target="_blank" href="http://caniuse.com/#feat=audio">http://goo.gl/P1F5E8</a> : Can I Use</p>
+                </section>
+
+                <!-- VIDEO -->
+                <section>
+                    <h2>L'API &lt;video&gt;</h2>
+                    <p class="fragment">C'est comme l'API audio mais on remplace par "video"...</p>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Exemple</h2>
+                    <pre><code data-trim contenteditable class="html">
+<video src="video.mp3"></video>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Exemple</h2>
+                    <pre><code data-trim contenteditable class="html">
+<video 
+    src="video.mp4" 
+    poster="image.jpg"
+    autoplay="autoplay" 
+    loop="loop" 
+    controls="controls" 
+    width="800"
+    height="600"
+>
+    Your browser doesn't support video API
+</video>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Comment l'utiliser</h2>
+                    <ul>
+                        <li><a href="#">autoplay</a> - pas de valeur
+                            <br />Lance la lecture dès que le fichier est chargé</li>
+                        <li><a href="#">loop</a> - pas de valeur
+                            <br />Recommence la lecture à la fin</li>
+                        <li><a href="#">preload</a> - none / auto / metadata
+                            <br />Choix du buffering</li>
+                        <li><a href="#">controls</a> - pas de valeur
+                            <br />Affiche un controlleur (propre au navigateur)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Comment l'utiliser</h2>
+                    <ul>
+                        <li><a href="#">width</a>
+                            <br />Largeur du player</li>
+                        <li><a href="#">height</a>
+                            <br />Hauteur du player</li>
+                        <li><a href="#">poster</a>
+                            <br />Lien de l'image de presentation de la vidéo</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Formats</h2>
+                    <ul>
+                        <li><a target="blank" href="http://fr.wikipedia.org/wiki/Theora">OGG</a> (ogv) : Libre et gratuit (Firefox)</li>
+                        <li><a target="_blank" href="http://fr.wikipedia.org/wiki/WebM" >WEBM</a> : Libre et gratuit (Chrome)</li>
+                        <li><a target="_blank" href="http://fr.wikipedia.org/wiki/H.264">MP4</a> : Non-libre et payant (tous les autres)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Formats</h2>
+                    <img src="video-formats-compatibility.png" alt="Video formats compatibility">
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Formats</h2>
+                    <pre><code data-trim contenteditable class="html">
+<video autoplay="autoplay" loop="loop" controls="controls" width="800">
+    <source src="video.mp4"  type="video/mp4"  />
+    <source src="video.webm" type="video/webm" />
+    <source src="video.ogv"  type="video/ogg"  />
+    Your browser doesn't support video API
+</video>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Convertir ses vidéos</h2>
+                    <p><a target="_blank" href="http://www.mirovideoconverter.com/">Miro Video Converter</a> - Mac et windows</p>   
+                </section>
+
+                <section>
+                    <small>Video</small>
+                    <h2>Compatibilité</h2>
+                    <p><a target="_blank" href="http://caniuse.com/#feat=video">http://goo.gl/nQglMc</a> : Can I Use</p>
+                </section>
+
+                <!-- CONTROLS JS -->
+                <section>
+                    <h2>Manipuler en Javascript</h2>
+                </section>
+
+                <section>
+                    <h2>Méthodes</h2>
+                    <p><small>Fonctions que l'on peut appliquer</small></p>
+                    <ul>
+                        <li>play()</li>
+                        <li>pause()</li>
+                        <li>load()</li>
+                    </ul>
+                    <pre><code data-trim contenteditable class="javascript">
+var video = document.getElementById('video');
+video.play();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Propriétés</h2>
+                    <p><small>Informations que l'on peut obtenir et modifier</small></p>
+                    <ul>
+                        <li>volume</li>
+                        <li>currentTime</li>
+                        <li>duration</li>
+                        <li>muted</li>
+                    </ul>
+                    <pre><code data-trim contenteditable class="javascript">
+var video = document.getElementById('video');
+console.log(video.volume);
+video.volume += 0.1;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Événements</h2>
+                    <p><small>Évenements que l'on peut écouter</small></p>
+                    <div style="width:60%;margin:0 auto;">
+                        <ul style="float:left;">
+                            <li>play</li>
+                            <li>pause</li>
+                            <li>playing</li>
+                            <li>seeking</li>
+                        </ul>
+                        <ul style="float:right;">
+                            <li>canplay</li>
+                            <li>canplaythrough</li>
+                            <li>loadstart</li>
+                            <li>progress</li>
+                        </ul>
+                    </div>
+                    <pre style="clear:both;"><code data-trim contenteditable class="javascript">
+var video = document.getElementById('video');
+video.addEventListener('play',function(e)
+{
+    console.log('playing');
+});
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Méthodes / Propriétés / Événements</h2>
+                    <p><a target="_blank" href="http://www.w3schools.com/tags/ref_av_dom.asp">http://goo.gl/Owu3dx</a> - Liste complète</p>
+                </section>
+			</div>
+		</div>
+
+		<script src="../tools/reveal.js/lib/js/head.min.js"></script>
+		<script src="../tools/reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls     : false,
+				progress     : true,
+				history      : true,
+				center       : true,
+				theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				dependencies : [
+					{ src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener('slidechanged',function(e)
+			{
+			    document.getElementById('pagination').innerHTML = e.indexh + 1;
+			});
+		</script>
+	</body>
+</html>
