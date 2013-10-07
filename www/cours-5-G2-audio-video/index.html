@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours 5 - P2017 - G2 - Audio / Video</title>
+    <script src="script.js"></script>
+    <style>
+        #bar{width:400px;height:20px;background:yellow;}
+        #cursor{width:50%;height:20px;background:blue;}
+    </style>
+</head>
+<body>
+    <h2>audio</h2>
+    <audio loop="loop" controls="controls">
+        <source src="../cours-5-audio-video/plug-play_ready-for-rapture.mp3" type="audio/mp3">
+        <source src="../cours-5-audio-video/plug-play_ready-for-rapture.ogg" type="audio/ogg">
+        Your browser doesn't support audio API
+    </audio>
+
+    <h2>video</h2>
+    <video id="video" loop="loop" controls="controls" width="400">
+        <source src="../cours-5-audio-video/video-copilote-spin.mp4"  type="video/mp4">
+        <source src="../cours-5-audio-video/video-copilote-spin.webm" type="video/webm">
+        <source src="../cours-5-audio-video/video-copilote-spin.ogv"  type="video/ogg">
+        Your browser doesn't support video API
+    </video>
+    <div class="controls">
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="volume-up">+</button>
+        <button id="volume-down">-</button>
+        <button id="seek">seek</button>
+        <input  id="seek-value" type="text" value="7" />
+        <div id="bar">
+            <div id="cursor"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

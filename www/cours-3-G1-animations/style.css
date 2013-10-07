@@ -1,0 +1,26 @@
+body{
+    margin:0;
+}
+
+.container{
+    position:relative;
+    background:yellow;
+}
+
+.container .object {
+    position:relative;
+    left:0;
+    top:0;
+    width:200px;
+    height:200px;
+    background:orange;
+    -webkit-animation:monanimation 2s ease 0s infinite;
+}
+
+
+@-webkit-keyframes monanimation {
+    0%   {left:0px;}
+    50%  {left:800px;background:red;width:400px;}
+    70%  {left:250px;background:green;}
+    100% {left:500px;background:pink;}
+}

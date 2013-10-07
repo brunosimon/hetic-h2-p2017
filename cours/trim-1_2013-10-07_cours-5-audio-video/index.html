@@ -119,7 +119,7 @@
                     <small>Video</small>
                     <h2>Exemple</h2>
                     <pre><code data-trim contenteditable class="html">
-<video src="video.mp3"></video>
+<video src="video.mp4"></video>
                     </code></pre>
                 </section>
 
@@ -274,6 +274,79 @@ video.addEventListener('play',function(e)
                 <section>
                     <h2>Méthodes / Propriétés / Événements</h2>
                     <p><a target="_blank" href="http://www.w3schools.com/tags/ref_av_dom.asp">http://goo.gl/Owu3dx</a> - Liste complète</p>
+                </section>
+
+                <section>
+                    <h2>Exemples</h2>
+                    <p><small>Écouter l'événement "click" sur un bouton pour augmenter le volume sans dépasser la limite<br />(le html de la vidéo n'est pas présent dans ce code)</small></p>
+                    <pre style="clear:both;"><code data-trim contenteditable class="html">
+<button id="volume-up">+</button>
+
+<script>
+    //Retrieving elements with their IDs
+    var video     = document.getElementById('video');
+    var volume_up = document.getElementById('volume-up');
+
+    //Listen to click
+    volume_up.onclick = function()
+    {
+        if(video.volume + 0.1 <= 1)
+            video.volume += 0.1;
+        else
+            video.volume = 1;
+    };
+</script>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Exemples</h2>
+                    <p><small>Écouter l'événement "click" sur une div pour changer la position de la lecture<br />(le html de la vidéo n'est pas présent dans ce code. La div n'a pas de style ici; il faut lui mettre une largeur, une hauteur et une couleur)</small></p>
+                    <pre style="clear:both;"><code data-trim contenteditable class="html">
+<div id="bar">
+    <div id="cursor"></div>
+</div>
+
+<script>
+    //Retrieving elements with their IDs
+    var video     = document.getElementById('video');
+    var bar       = document.getElementById('bar');
+
+    //Listen to click
+    bar.onclick = function(e)
+    {
+        //Get seeked second with click position, bar width and video duration
+        var ratio         = e.offsetX / bar.offsetWidth;
+        var current       = video.duration * ratio;
+        video.currentTime = current;
+    };
+</script>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Exemples</h2>
+                    <p><small>Mettre à jour le curseur d'une barre en fonction de l'avancement dans la vidéo<br />(le html de la vidéo n'est pas présent dans ce code. Le curseur et son conteneur n'ont pas de style ici)</small></p>
+                    <pre style="clear:both;"><code data-trim contenteditable class="html">
+<div id="bar">
+    <div id="cursor"></div>
+</div>
+
+<script>
+    //Retrieving elements with their IDs
+    var video     = document.getElementById('video');
+    var bar       = document.getElementById('bar');
+    var cursor    = document.getElementById('cursor');
+
+    //Call the function every 50 ms
+    window.setInterval(function()
+    {
+        //Update the cursor width (in percents) width video current time and video duration 
+        var percent = (video.currentTime / video.duration) * 100;
+        cursor.style.width = percent + '%';
+    },50);
+</script>
+                    </code></pre>
                 </section>
 			</div>
 		</div>
