@@ -1,0 +1,17 @@
+body {font-family:helvetica;}
+.container {width:100%;height:800px;-webkit-perspective:800px;}
+#cube {-webkit-transform:translate(50%,50%);-webkit-transform-style:preserve-3d;color:#fff;line-height:200px;text-align:center;}
+#inner {width:200px;height:200px;-webkit-transform-style:preserve-3d;}
+#cube .face   {position:absolute;width:200px;height:200px;opacity:0.5;-webkit-backface-visibility:visible;}
+#cube .top    {background:blue;  -webkit-transform:rotateX(90deg) translateX(0px) translateZ(100px);}
+#cube .bottom {background:green; -webkit-transform:rotateX(90deg) translateX(0px) translateZ(-100px);}
+#cube .front  {background:red;   -webkit-transform:               translateX(0px) translateZ(100px);}
+#cube .back   {background:yellow;-webkit-transform:               translateX(0px) translateZ(-100px);}
+#cube .left   {background:orange;-webkit-transform:rotateY(90deg)                    translateZ(-100px);}
+#cube .right  {background:gray;  -webkit-transform:rotateY(90deg)                    translateZ(100px);}
+.animate {-webkit-animation:animation-cube 3s ease 0s infinite;}
+@-webkit-keyframes animation-cube{
+    0%   {-webkit-transform:translate(30%,100px);}
+    50%  {-webkit-transform:translate(70%,100px);}
+    100% {-webkit-transform:translate(30%,100px);}
+}
