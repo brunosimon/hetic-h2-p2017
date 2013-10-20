@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 1 - Cours 8 - CSS3 - propriétés en vrac</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+        <!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            li{margin-bottom:0.5em !important;}
+            ul.checked-list li{list-style-type:none;}
+            .default{text-transform:none !important;}
+            div.container{position:relative;width:100%;}
+            div.exemple{width:200px;height:200px;margin:0 auto;background:orange;}
+            div.border-radius-1{border-radius:80px;}
+            div.border-radius-2{border-radius:80px 60px 40px 20px;}
+            div.border-radius-3{border-radius:80px 60px 40px 20px / 40px 40px 40px 40px;}
+            div.color-1{position:absolute;left:50%;top:20px;margin:0 0 0 -200px;background:rgba(255,0,0,1);width:400px;height:100px;}
+            div.color-2{position:absolute;left:50%;top:0;margin:0 0 0 -100px;background:rgba(195,255,0,0.5);}
+            div.color-3{background:hsla(320,100%,50%,1);}
+            div.gradient-1{background:linear-gradient(to right,#f400ab 0%,#f17432 50%,#ea5507 69%,#fb955e 100%);}
+            div.gradient-2{background:radial-gradient(circle at top left, #f400ab 0%,#f17432 50%,#ea5507 69%,#fb955e 100%);}
+            div.opacity{opacity:0.3;}
+            div.box-sizing{box-sizing:border-box;-moz-box-sizing:border-box;border:30px solid red;padding:20px;}
+            div.font-face-1{font-family:'bubbler_oneregular';}
+            div.font-face-2{font-family:'Devonshire',cursive;}
+            div.text-shadow .color-1 {text-shadow:1px 5px 5px hsl(0  ,50%,50%);}
+            div.text-shadow .color-2 {text-shadow:1px 5px 5px hsl(24 ,50%,50%);}
+            div.text-shadow .color-3 {text-shadow:1px 5px 5px hsl(48 ,50%,50%);}
+            div.text-shadow .color-4 {text-shadow:1px 5px 5px hsl(72 ,50%,50%);}
+            div.text-shadow .color-5 {text-shadow:1px 5px 5px hsl(96 ,50%,50%);}
+            div.text-shadow .color-6 {text-shadow:1px 5px 5px hsl(120,50%,50%);}
+            div.text-shadow .color-7 {text-shadow:1px 5px 5px hsl(144,50%,50%);}
+            div.text-shadow .color-8 {text-shadow:1px 5px 5px hsl(168,50%,50%);}
+            div.text-shadow .color-9 {text-shadow:1px 5px 5px hsl(192,50%,50%);}
+            div.text-shadow .color-10{text-shadow:1px 5px 5px hsl(216,50%,50%);}
+            div.text-shadow .color-11{text-shadow:1px 5px 5px hsl(240,50%,50%);}
+            div.text-shadow .color-12{text-shadow:1px 5px 5px hsl(264,50%,50%);}
+            div.text-shadow .color-13{text-shadow:1px 5px 5px hsl(288,50%,50%);}
+            div.text-shadow .color-14{text-shadow:1px 5px 5px hsl(312,50%,50%);}
+            div.text-shadow .color-15{text-shadow:1px 5px 5px hsl(336,50%,50%);}
+            div.box-shadow{box-shadow:20px 10px 10px hsl(144,50%,50%);}
+            div.multiple-backgrounds{background:url('images/sheep.png') bottom center no-repeat,url('images/grass.png') bottom left repeat-x;}
+            div.columns{-webkit-column-count:3;-webkit-column-width:200px;-webkit-column-gap:100px;-moz-column-count:3;-moz-column-width:200px;-moz-column-gap:100px;font-size:0.7em;}
+            div.filters{-webkit-filter:blur(5px) brightness(0.9) contrast(2.6) drop-shadow(21px 21px 20px black) grayscale(0.6) hue-rotate(120deg) opacity(0.8) saturate(0) sepia(0.2);}
+
+            @font-face {
+                font-family: 'bubbler_oneregular';
+                src: url('fonts/bubblerone-regular-webfont.eot');
+                src: url('fonts/bubblerone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                     url('fonts/bubblerone-regular-webfont.woff') format('woff'),
+                     url('fonts/bubblerone-regular-webfont.ttf') format('truetype'),
+                     url('fonts/bubblerone-regular-webfont.svg#bubbler_oneregular') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2017</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 8 - 2013-10-21</h3>
+                    <p><a href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+                    <p><a mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a></p>
+                </section>
+
+                <section>
+                    <h3>HTML5 / CSS3</h3>
+                    <h1>Propriétés en vrac</h1>
+                </section>
+
+                <section>
+                    <h2>Jusqu'à maintenant</h2>
+                    <ul>
+                        <li>Media-queries</li>
+                        <li>Transition</li>
+                        <li>Animations</li>
+                        <li>Transformations</li>
+                    </ul>
+                </section>
+                
+                <!-- BORDER RADIUS -->
+                <section>
+                    <h2>Border-radius</h2>
+                    <p>Permet d'arrondir les angles en indiquant une distance.</p>
+                    <p><a target="_blank" href="http://caniuse.com/border-radius">Compatibilité</a></p>
+                    <pre><code  data-trim contenteditable class="css">
+.exemple {border-radius:80px;}
+/* equivalent */
+.exemple{
+    border-top-left-radius:80px;
+    border-top-right-radius:80px;
+    border-bottom-rightradius:80px;
+    border-bottom-left-radius:80px;
+}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple border-radius-1"></div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Border-radius</h2>
+                    <p>Il est possible de cibler chaque angle</p>
+                    <pre><code  data-trim contenteditable class="css">
+.exemple {border-radius:80px 60px 40px 20px;}
+/* equivalent */
+.exemple{
+    border-top-left-radius:80px;
+    border-top-right-radius:60px;
+    border-bottom-rightradius:40px;
+    border-bottom-left-radius:20px;
+}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple border-radius-2"></div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Border-radius</h2>
+                    <p>Et de faire varier les valeurs X et Y de l'angle séparément</p>
+                    <pre><code  data-trim contenteditable class="css">
+.exemple {border-radius:80px 60px 40px 20px / 40px 40px 40px 40px;}
+/* equivalent */
+.exemple{
+    border-top-left-radius:80px / 40px;
+    border-top-right-radius:60px / 40px;
+    border-bottom-rightradius:40px / 40px;
+    border-bottom-left-radius:20px / 40px;
+}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple border-radius-3"></div>
+                    </div>
+                </section>
+                
+                <!-- COLORS -->
+                <section>
+                    <h2>Colors</h2>
+                    <p>De nouvelles façons d'exprimer une couleur</p>
+                    <p><a target="_blank" href="http://caniuse.com/css3-colors">Compatibilité</a></p>
+                    <pre><code  data-trim contenteditable class="css">
+/* R = red, G = green, B = blue, A = alpha */
+.exemple {background:rgba(195,255,0,0.5);}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple color-1"></div>
+                        <div class="exemple color-2"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Colors</h2>
+                    <pre><code  data-trim contenteditable class="css">
+/* H = hue, S = saturation, L = lightness, A = alpha */
+.exemple {background:hsl(320,100%,50%,1);}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple color-3"></div>
+                    </div>
+                </section>
+                
+                <!-- GRADIENTS -->
+                <section>
+                    <h2>Gradients</h2>
+                    <p>Des dégradés sans image</p>
+                    <p><a target="_blank" href="http://caniuse.com/css-gradients">Compatibilité</a></p>
+                    <p><a target="_blank" href="http://www.colorzilla.com/gradient-editor/">Générateur</a></p>
+                    <pre><code  data-trim contenteditable class="css">
+/* direction en degres ou "to top", "to right", "to bottom", "to left" */
+/* suivi des couleurs et de leurs position */
+.exemple{background:linear-gradient(to right,#f400ab 0%,#f17432 50%,#ea5507 69%,#fb955e 100%);}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple gradient-1"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Gradients</h2>
+                    <p>Version radiale</p>
+                    <pre><code  data-trim contenteditable class="css">
+/* forme et position du centre du dégradé "ellipse at top left" ou "circle at 50% 100%", ... */
+/* suivi des couleurs et de leurs position */
+.exemple{background:radial-gradient(circle at top left, #f400ab 0%,#f17432 51%,#EA5509 69%,#fb955e 100%);}
+                    </code></pre>
+                    <div class="container">
+                        <div class="exemple gradient-2"></div>
+                    </div>
+                </section>
+                
+                <!-- OPACITY -->
+                <section>
+                    <h2>Opacity</h2>
+                    <p>Régler l'opacité de tout l'élément</p>
+                    <p><a target="_blank" href="http://caniuse.com/css-opacity">Compatibilité</a></p>
+                    <pre><code contenteditable class="css">
+.exemple{opacity:0.3;}
+
+</code></pre>
+                    <div class="container">
+                        <div class="exemple color-1"></div>
+                        <div class="exemple opacity"></div>
+                    </div>
+                </section>
+                
+                <!-- BOX-SIZING -->
+                <section>
+                    <h2>Box-sizing</h2>
+                    <p>Empêche les propriétés comme le padding ou le border d'incrémenter les dimensions de l'élément</p>
+                    <p><a target="_blank" href="http://caniuse.com/css3-boxsizing">Compatibilité</a></p>
+                    <p><a target="_blank" href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">Où l'utiliser</a> - Paul Irish</p>
+                    <pre><code  contenteditable class="css">
+.exemple{box-sizing:border-box;border:50px solid red;padding:20px;}
+
+</code></pre>
+                    <div class="container">
+                        <div class="exemple box-sizing">text</div>
+                    </div>
+                </section>
+                
+                <!-- FONT-FACE -->
+                <section>
+                    <h2>Font-face</h2>
+                    <p>Permet de charger des polices pour les utiliser en CSS</p>
+                    <p><a target="_blank" href="http://caniuse.com/fontface">Compatibilité</a></p>
+                    <p><a target="_blank" href="http://www.fontsquirrel.com/tools/webfont-generator">Generateur</a></p>
+                    <pre><code  data-trim contenteditable class="css">
+@font-face {
+    font-family: 'bubbler_oneregular';
+    src: url('fonts/bubblerone-regular-webfont.eot');
+    src: url('fonts/bubblerone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bubblerone-regular-webfont.woff') format('woff'),
+         url('fonts/bubblerone-regular-webfont.ttf') format('truetype'),
+         url('fonts/bubblerone-regular-webfont.svg#bubbler_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.exemple{font-family:'bubbler_oneregular';}
+                    </code></pre>
+                    <div class="container font-face-1">
+                        Ceci est mon texte
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Font-face</h2>
+                    <p>La méthode <a target="_blank" href="http://www.google.com/fonts">google font</a></p>
+                    <pre><code  data-trim contenteditable class="html">
+<link href='http://fonts.googleapis.com/css?family=Devonshire' rel='stylesheet' type='text/css'>
+<style>
+    .exemple{font-family:'Devonshire',cursive;}
+</style>
+                    </code></pre>
+                    <div class="container font-face-2">
+                        Ceci est mon texte
+                    </div>
+                </section>
+                
+                <!-- TEXT-SHADOW -->
+                <section>
+                    <h2>Text-shadow</h2>
+                    <p>Rajoute une ombre au texte</p>
+                    <p><a target="_blank" href="http://caniuse.com/css-textshadow">Compatibilité</a></p>
+                    <pre><code  data-trim contenteditable class="css">
+.exemple .color-1 {text-shadow:1px 5px 5px hsl(0  ,50%,50%);}
+.exemple .color-2 {text-shadow:1px 5px 5px hsl(24 ,50%,50%);}
+.exemple .color-3 {text-shadow:1px 5px 5px hsl(48 ,50%,50%);}
+.exemple .color-4 {text-shadow:1px 5px 5px hsl(72 ,50%,50%);}
+.exemple .color-5 {text-shadow:1px 5px 5px hsl(96 ,50%,50%);}
+.exemple .color-6 {text-shadow:1px 5px 5px hsl(120,50%,50%);}
+.exemple .color-7 {text-shadow:1px 5px 5px hsl(144,50%,50%);}
+.exemple .color-8 {text-shadow:1px 5px 5px hsl(168,50%,50%);}
+.exemple .color-9 {text-shadow:1px 5px 5px hsl(192,50%,50%);}
+.exemple .color-10{text-shadow:1px 5px 5px hsl(216,50%,50%);}
+.exemple .color-11{text-shadow:1px 5px 5px hsl(240,50%,50%);}
+.exemple .color-12{text-shadow:1px 5px 5px hsl(264,50%,50%);}
+.exemple .color-13{text-shadow:1px 5px 5px hsl(288,50%,50%);}
+.exemple .color-14{text-shadow:1px 5px 5px hsl(312,50%,50%);}
+.exemple .color-15{text-shadow:1px 5px 5px hsl(336,50%,50%);}
+                    </code></pre>
+                    <div class="container text-shadow">
+                        <span class="color-1">C</span><span class="color-2">e</span><span class="color-3">c</span><span class="color-4">i</span>
+                        <span class="color-5">e</span><span class="color-6">s</span><span class="color-7">t</span>
+                        <span class="color-8">m</span><span class="color-9">o</span><span class="color-10">n</span>
+                        <span class="color-11">t</span><span class="color-12">e</span><span class="color-13">x</span><span class="color-14">t</span><span class="color-15">e</span>
+                    </div>
+                </section>
+                
+                <!-- BOX-SHADOW -->
+                <section>
+                    <h2>Box-shadow</h2>
+                    <p>Rajoute une ombre au bloc</p>
+                    <p><a target="_blank" href="http://caniuse.com/css-boxshadow">Compatibilité</a></p>
+                    <pre><code  contenteditable class="css">
+.exemple{box-shadow:20px 10px 10px hsl(144,50%,50%);}
+
+</code></pre>
+                    <div class="container">
+                        <div class="exemple box-shadow"></div>
+                    </div>
+                </section>
+                
+                <!-- MULTIPLE BACKGROUND -->
+                <section>
+                    <h2>Multiple backgrounds</h2>
+                    <p>Rajouter plusieurs background à un même bloc</p>
+                    <p><a target="_blank" href="http://caniuse.com/multibackgrounds">Compatibilité</a></p>
+                    <pre><code  contenteditable class="css">
+.exemple{background:url('images/sheep.png') bottom center no-repeat,
+                    url('images/grass.png') bottom left repeat-x;}
+
+</code></pre>
+                    <div class="container">
+                        <div class="exemple multiple-backgrounds"></div>
+                    </div>
+                </section>
+                
+                <!-- COLUMNS -->
+                <section>
+                    <h2>Columns</h2>
+                    <p>Colonnes de texte dans un même bloc</p>
+                    <p><a target="_blank" href="http://caniuse.com/multicolumn">Compatibilité</a></p>
+                    <pre><code data-trim contenteditable class="css">
+.exemple{
+    -webkit-column-count:3;
+    -webkit-column-width:200px;
+    -webkit-column-gap:100px;
+    /* ... */
+}
+</code></pre>
+                    <div class="container columns">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, tempora, porro, labore, illum aspernatur doloribus aliquid non rerum corporis animi dolorum nam earum perspiciatis itaque necessitatibus odit maiores omnis voluptatibus.
+                    </div>
+                </section>
+                
+                <!-- FILTERS -->
+                <section>
+                    <h2>Filters</h2>
+                    <p>Multitude de filtres compatible avec webkit uniquement</p>
+                    <p><a target="_blank" href="http://caniuse.com/css-filters">Compatibilité</a></p>
+                    <pre><code data-trim contenteditable class="css">
+.exemple{
+    -webkit-filter:blur(1px)
+                   brightness(0.9)
+                   contrast(1.6)
+                   drop-shadow(21px 21px 20px black)
+                   grayscale(0.6)
+                   hue-rotate(120deg)
+                   opacity(0.8)
+                   saturate(0.9)
+                   sepia(0.4);
+}
+</code></pre>
+                    <div class="container filters">
+                        <img src="http://placekitten.com/300/300" alt="Chat !" />
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script src="../tools/reveal.js/lib/js/head.min.js"></script>
+        <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls     : false,
+                progress     : true,
+                history      : true,
+                center       : true,
+                theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                dependencies : [
+                    { src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged',function(e)
+            {
+                document.getElementById('pagination').innerHTML = e.indexh + 1;
+            });
+        </script>
+    </body>
+</html>

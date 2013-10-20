@@ -19,6 +19,7 @@ Sujets pouvant potentiellement être abordés durant l'année
  - Fullscreen
  - Offline
  - History
+ - Canvas
  - WebGL
  - Websocket
  - Storage
@@ -104,6 +105,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
 ### Sublime Text 2
 
   - [Package controle](https://sublime.wbond.net) - Installation / Suppression rapide de plugins sublimes
+  - [Prefixr](https://sublime.wbond.net/packages/Prefixr) - Rajoute les bons préfixes au CSS
   - [Alignment](https://sublime.wbond.net/packages/Alignment) - Aligner les "=" et tout autre caractère désiré
   - [Bracket​Highlighter](https://sublime.wbond.net/packages/BracketHighlighter) - Surbrillance des parenthèses/accolades/balises/etc. courrantes
   - [SublimeLinter](https://sublime.wbond.net/packages/SublimeLinter) - Affiche les erreurs (css,JS,etc...)

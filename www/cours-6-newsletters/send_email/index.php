@@ -1,11 +1,11 @@
 <?php
 
 /* CONFIG */
-$to             = '';                //Target
-$gmail_username = '';                //Your gmail login
-$gmail_password = '';                //Your gmail password
+$to             = 'bruno.simon@hetic.net';                //Target
+$gmail_username = 'bruno.simon@hetic.net';                //Your gmail login
+$gmail_password = 'Turève';                //Your gmail password
 $subject        = 'Subject';         //Mail subject
-$newsletter     = 'newsletter.html'; //Path to newsletter template
+$newsletter     = 'export-3/newsletter.html'; //Path to newsletter template
 
 /* SCRIPT */
 require_once 'phpmailer/class.phpmailer.php';
