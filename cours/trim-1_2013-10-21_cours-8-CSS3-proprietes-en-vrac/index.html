@@ -52,6 +52,7 @@
             div.text-shadow .color-14{text-shadow:1px 5px 5px hsl(312,50%,50%);}
             div.text-shadow .color-15{text-shadow:1px 5px 5px hsl(336,50%,50%);}
             div.box-shadow{box-shadow:20px 10px 10px hsl(144,50%,50%);}
+            div.box-shadow-inset{box-shadow:inset 10px 10px 30px black;}
             div.multiple-backgrounds{background:url('images/sheep.png') bottom center no-repeat,url('images/grass.png') bottom left repeat-x;}
             div.columns{-webkit-column-count:3;-webkit-column-width:200px;-webkit-column-gap:100px;-moz-column-count:3;-moz-column-width:200px;-moz-column-gap:100px;font-size:0.7em;}
             div.filters{-webkit-filter:blur(5px) brightness(0.9) contrast(2.6) drop-shadow(21px 21px 20px black) grayscale(0.6) hue-rotate(120deg) opacity(0.8) saturate(0) sepia(0.2);}
@@ -106,7 +107,7 @@
 .exemple{
     border-top-left-radius:80px;
     border-top-right-radius:80px;
-    border-bottom-rightradius:80px;
+    border-bottom-right-radius:80px;
     border-bottom-left-radius:80px;
 }
                     </code></pre>
@@ -170,7 +171,7 @@
                     <h2>Colors</h2>
                     <pre><code  data-trim contenteditable class="css">
 /* H = hue, S = saturation, L = lightness, A = alpha */
-.exemple {background:hsl(320,100%,50%,1);}
+.exemple {background:hsla(320,100%,50%,1);}
                     </code></pre>
                     <div class="container">
                         <div class="exemple color-3"></div>
@@ -315,6 +316,18 @@
 </code></pre>
                     <div class="container">
                         <div class="exemple box-shadow"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Box-shadow</h2>
+                    <p>Ombre intérieur avec "inset"</p>
+                    <pre><code  contenteditable class="css">
+.exemple{box-shadow:inset 20px 10px 10px hsl(144,50%,50%);}
+
+</code></pre>
+                    <div class="container">
+                        <div class="exemple box-shadow-inset"></div>
                     </div>
                 </section>
                 
