@@ -1,0 +1,11 @@
+.exemple {width:200px;height:200px;margin:20px;background:orange;}
+.border-radius {border-radius:100px 80px 60px 40px;}
+.rgba {background:rgba(255,0,0,0.5);}
+.hsla {background:hsla(120,50%,50%,0.5);}
+.gradient-linear {background:linear-gradient(180deg,#ffffff 0%,#fb955e 100%);}
+.gradient-radial {background:radial-gradient(circle at top left,#ffffff 0%,#fb955e 100%);}
+.opacity {opacity:0.3;}
+.box-sizing {padding:20px;border:20px solid red;box-sizing:border-box;}
+.text-shadow {background:none;font-size:40px;text-shadow:4px 40px 10px rgb(255,0,0);}
+.box-shadow {box-shadow:4px 10px 10px rgb(255,0,0);}
+.multi-backgrounds {background:url('sheep.png') bottom center no-repeat,url('grass.png') bottom center repeat-x;}

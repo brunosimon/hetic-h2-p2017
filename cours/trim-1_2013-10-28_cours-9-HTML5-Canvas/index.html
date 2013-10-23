@@ -19,6 +19,10 @@
             <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
         <![endif]-->
         <style>
+            li,p{margin-bottom:0.5em !important;}
+            ul.checked-list li{list-style-type:none;}
+            .default{text-transform:none !important;}
+            canvas{background:#fff;}
         </style>
     </head>
     <body>
@@ -50,16 +54,16 @@
                 <section>
                     <p>Démonstrations</p>
                     <ul>
-                        <li><a href="http://codepen.io/stuffit/pen/KrAwx">http://goo.gl/1Zk5M</a></li>
-                        <li><a href="http://codepen.io/pixelgrid/pen/ECrKd">http://goo.gl/LLd6LN</a></li>
-                        <li><a href="http://codepen.io/ara_node/pen/nuJCG">http://goo.gl/lXpKYI</a></li>
-                        <li><a href="http://codepen.io/ara_node/pen/EwfpL">http://goo.gl/546Eb4</a></li>
-                        <li><a href="http://wxs.ca/iso/">http://goo.gl/nCF0UE</a></li>
-                        <li><a href="http://sheepeuh.com/rain/">http://goo.gl/LSRvz4</a></li>
-                        <li><a href="http://paperjs.org/examples/">http://goo.gl/9sYfrQ</a></li>
-                        <li><a href="http://soulwire.github.io/Muscular-Hydrostats/">http://goo.gl/kIgFqS</a></li>
-                        <li><a href="http://soulwire.github.io/sketch.js/examples/particles.html">http://goo.gl/0E7T4w</a></li>
-                        <li><a href="http://codepen.io/jackrugile/full/qLCuE">http://goo.gl/blnkBE</a></li>
+                        <li><a target="_blank" href="http://codepen.io/stuffit/pen/KrAwx">http://goo.gl/1Zk5M</a></li>
+                        <li><a target="_blank" href="http://codepen.io/pixelgrid/pen/ECrKd">http://goo.gl/LLd6LN</a></li>
+                        <li><a target="_blank" href="http://codepen.io/ara_node/pen/nuJCG">http://goo.gl/lXpKYI</a></li>
+                        <li><a target="_blank" href="http://codepen.io/ara_node/pen/EwfpL">http://goo.gl/546Eb4</a></li>
+                        <li><a target="_blank" href="http://wxs.ca/iso/">http://goo.gl/nCF0UE</a></li>
+                        <li><a target="_blank" href="http://sheepeuh.com/rain/">http://goo.gl/LSRvz4</a></li>
+                        <li><a target="_blank" href="http://paperjs.org/examples/">http://goo.gl/9sYfrQ</a></li>
+                        <li><a target="_blank" href="http://soulwire.github.io/Muscular-Hydrostats/">http://goo.gl/kIgFqS</a></li>
+                        <li><a target="_blank" href="http://soulwire.github.io/sketch.js/examples/particles.html">http://goo.gl/0E7T4w</a></li>
+                        <li><a target="_blank" href="http://codepen.io/jackrugile/full/qLCuE">http://goo.gl/blnkBE</a></li>
                     </ul>
                     <p class="fragment">Et encore... ce n'est que de la 2D</p>
                 </section>
@@ -92,6 +96,11 @@ context.stroke();         // Faire apparaitre les lignes tracées
                 </section>
 
                 <section>
+                    <p>Déssiner des lignes</p>
+                    <canvas id="canvas-1" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>Déssiner des remplissage</p>
                     <pre><code  data-trim contenteditable class="javascript">
 context.beginPath();      // Commencer un tracé
@@ -100,6 +109,11 @@ context.lineTo(200,200);  // Tracer une ligne (théorique)
 context.lineTo(50,200);   // Tracer autre une ligne (théorique)
 context.fill();           // Faire apparaitre la forme dessinée
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Déssiner des remplissage</p>
+                    <canvas id="canvas-2" width="600" height="400"></canvas>
                 </section>
 
                 <section>
@@ -118,6 +132,11 @@ context.stroke();
                 </section>
 
                 <section>
+                    <p>Modifier le style de la ligne</p>
+                    <canvas id="canvas-3" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>Modifier le style de remplissage</p>
                     <pre><code  data-trim contenteditable class="javascript">
 context.beginPath();
@@ -127,6 +146,11 @@ context.lineTo(50,200);
 context.fillStyle = 'rgba(255,0,0,0.5)'; //Couleur du remplissage
 context.fill();
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Modifier le style de remplissage</p>
+                    <canvas id="canvas-4" width="600" height="400"></canvas>
                 </section>
 
                 <section>
@@ -146,47 +170,73 @@ context.fill();
                 </section>
 
                 <section>
+                    <p>Ombres</p>
+                    <canvas id="canvas-5" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>Remplissage par forme</p>
                     <pre><code  data-trim contenteditable class="javascript">
 context.beginPath();
 context.fillStyle = 'orange';
-context.fillRect(50,50,300,160);         //Tracer un rectangle (sans appel de la fonction fill)
-context.clearRect(50,50,100,80);         //Effacer un rectangle (sans appel de la fonction fill)
+context.fillRect(50,50,300,160);           //Tracer un rectangle (sans appel de la fonction fill)
+context.clearRect(50,50,100,80);           //Effacer un rectangle (sans appel de la fonction fill)
 context.fillStyle = 'red';
-context.arc(300,240,50,Math.PI*2,false); //Tracer un arc de cercle (theorique)
-context.arc(100,240,50,Math.PI*2,false); //Tracer un autre arc de cercle (theorique)
-context.fill();                          //Faire apparaitre les formes tracées
-context.beginPath();                     //Recommencer un tracé
+/* L'objet Math est un objet javascript comprenant une multitude de propriétés et de méthodes mathématiques bien pratiques */
+/* Un arc de cercle est définie par 6 paramètres  */
+/* x et y pour la position du centre de l'arc */
+/* r pour le rayon de l'arc */
+/* rad1 et rad2 pour la portion de l'arc (en radian) */
+/* s pour le sens (true ou false) */
+context.arc(280,210,50,0,Math.PI,false);   //Tracer un arc de cercle (theorique) x,y,r,rad1,rad2,s
+context.arc(120,210,50,0,Math.PI,false);   //Tracer un autre arc de cercle (theorique)
+context.fill();                            //Faire apparaitre les formes tracées
+context.beginPath();                       //Recommencer un tracé
 context.fillStyle = 'skyblue';
 context.rect(160,60,20,70);
-context.fill();                          //Faire apparaitre les formes tracées
+context.fill();                            //Faire apparaitre les formes tracées
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Remplissage par forme</p>
+                    <canvas id="canvas-6" width="600" height="400"></canvas>
                 </section>
 
                 <section>
                     <p>Écrire du texte</p>
                     <pre><code  data-trim contenteditable class="javascript">
 var text = 'Lorem ipsum dolor sit amet';
-console.log(context.measureText(text).width); //Affiche la largeur du texte dans la console (sans le dessiner)
 context.font         = '40px Arial';          //Font
 context.textAlign    = 'center';              //Alignement horizontal (left | center | right)
 context.textBaseline = 'top';                 //Alignement vertical (top | bottom | middle | alphabetic | hanging)
+console.log(context.measureText(text).width); //Affiche la largeur du texte dans la console (sans le dessiner)
 context.fillText(text,400,100);               //Faire apparaitre le texte
 context.strokeText(text,400,160);             //Faire apparaitre le contour du texte
                     </code></pre>
                 </section>
 
                 <section>
+                    <p>Écrire du texte</p>
+                    <canvas id="canvas-7" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>Images</p>
                     <pre><code  data-trim contenteditable class="javascript">
-// Il faut créer l'image et attendre qu'elle soit chargée
+/* L'image doit être créée en javascript il faut écouter l'événement load avant de l'utiliser */
 var image = new Image();
 image.onload = function()
 {
-    context.drawImage(image,0,0,300,200);
+    context.drawImage(image,0,0,image.width / 6,image.height / 6);
 };
 image.src = 'image-1.jpg';
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Images</p>
+                    <canvas id="canvas-8" width="600" height="400"></canvas>
                 </section>
 
                 <section>
@@ -202,6 +252,11 @@ context.fillRect(0,0,400,400);                 // Faire apparaître
                 </section>
 
                 <section>
+                    <p>Dégradé linéaire</p>
+                    <canvas id="canvas-9" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>Dégradé Radial</p>
                     <pre><code  data-trim contenteditable class="javascript">
 var gradient = context.createRadialGradient(0,0,50,0,250,350); // cx1, cy1, cr1, cx2, cy2, cr2
@@ -214,31 +269,174 @@ context.fillRect(0,0,400,400);                 // Faire apparaître
                 </section>
 
                 <section>
+                    <p>Dégradé Radial</p>
+                    <canvas id="canvas-10" width="600" height="400"></canvas>
+                </section>
+
+                <section>
                     <p>save() / restore()</p>
                     <pre><code  data-trim contenteditable class="javascript">
+/* La fonction save() sauvegarde l'état actuel des propriétés du canvas (strokeStyle, lineWidth, fillStyle, ...). */
+/* La fonction restore() restaure ces propriétés par rapport à la dernière sauvegarde. */
+context.beginPath();
+context.moveTo(50,50);
+context.lineTo(300,50);
+context.save();              // Sauvegarde les propriétés du context
+context.lineWidth = 20;      // Changement d'une des propriétés
+context.stroke();            // Dessin du trait
 
+context.beginPath();
+context.moveTo(50,100);
+context.lineTo(300,100);
+context.save();              // Nouvelle sauvegarde des propriétés du context
+context.strokeStyle = 'red'; // Changement d'une autre propriété
+context.stroke();            // Dessin du trait
+
+context.beginPath();
+context.moveTo(50,150);
+context.lineTo(300,150);
+context.restore();           // Restauration des propriétés à la derniène sauvegarde
+context.restore();           // Restauration des propriétés à la sauvegarde encore avant
+context.stroke();            // Dessin du trait
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>Courbes</p>
-                    <pre><code  data-trim contenteditable class="javascript">
+                    <p>save() / restore()</p>
+                    <canvas id="canvas-11" width="600" height="400"></canvas>
+                </section>
 
+                <section>
+                    <p>Courbe de bézier</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+/* Nécessite 6 paramètres correspondant à 3 points */
+/* x1 et y1 pour définir le premier point de tension de la courbe */
+/* x2 et y2 pour définir le deuxième point de tension de la courbe */
+/* x3 et y3 pour définir le point de destination */
+context.beginPath();
+context.moveTo(50,50);
+context.bezierCurveTo(300,100,100,300,300,300); /* x1,y1,x2,y2,x3,y3 */
+context.stroke();
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>globalAlpha / globalCompositeOperation</p>
-                    <pre><code  data-trim contenteditable class="javascript">
+                    <p>Courbe de bézier</p>
+                    <canvas id="canvas-12" width="600" height="400"></canvas>
+                </section>
 
+                <section>
+                    <p>Courbe de quadratique (de bézier)</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+/* Plus simple mais plus limité */
+/* Nécessite 4 paramètres correspondant à 2 points */
+/* x1 et y1 pour définir le point de tension de la courbe */
+/* x2 et y2 pour définir le point de destination */
+context.beginPath();
+context.moveTo(50,50);
+context.quadraticCurveTo(300,100,300,300); /* x1,y1,x2,y2 */
+context.stroke();
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Courbe de quadratique (de bézier)</p>
+                    <canvas id="canvas-13" width="600" height="400"></canvas>
+                </section>
+
+                <section>
+                    <p>globalAlpha</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+context.globalAlpha = 0.2; /* Réduction de l'opacité */
+context.fillStyle = 'red';
+context.fillRect(50,50,200,200);
+context.fillStyle = 'orange';
+context.fillRect(100,100,200,200);
+context.fillStyle = 'green';
+context.fillRect(150,150,200,200);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>globalAlpha</p>
+                    <canvas id="canvas-14" width="600" height="400"></canvas>
+                </section>
+
+                <section>
+                    <p>globalCompositeOperation</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+/* Permet de spécifier comment doivent se coporter les pixels à venir par rapport aux pixels de destination */
+/* Équivalent au pathfinder d'illustrator (par exemple) */
+context.fillStyle = 'red';
+context.fillRect(200,200,200,200);
+context.globalCompositeOperation = 'destination-out'; /* source-over | source-in | source-out | source-atop | destination-over | destination-in | destination-out | desination-atop | lighter | copy | xor */
+context.beginPath();
+context.fillStyle = 'blue';
+context.arc(200,250,100,0,Math.PI,false);
+context.fill();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>globalCompositeOperation</p>
+                    <canvas id="canvas-15" width="600" height="400"></canvas>
+                </section>
+
+                <section>
+                    <p>globalCompositeOperation</p>
+                    <p><img src="global-composite-operation.png" alt="" /></p>
+                </section>
+
+                <section>
+                    <p>getImageData / putImageData</p>
+                    <p>getImageData permet de récupérer les pixels d'une zone du canvas</p>
+                    <p>Ces pixels sont stockés dans la propriétés data</p>
+                    <p>Les valeurs de chaque pixels sont les unes à la suite des autres et comprennent R, G, B et A</p>
+                    <p>Il faut donc parcourir ce tableau 4 par 4</p>
+                    <p><img width="300" src="jackie-chan-meme.jpg" alt="" /></p>
                 </section>
 
                 <section>
                     <p>getImageData / putImageData</p>
                     <pre><code  data-trim contenteditable class="javascript">
+/* Si vous utilisez une image dans le canvas, lancez MAMP/WAMP pour éviter les proplème de cross-domain */
+var image = new Image();
+image.onload = function()
+{
+    /* Dessiner l'image chargée dans le canvas */
+    context.drawImage(image,0,0,image.width / 6,image.height / 6);
 
+    /* Récupérer les pixels dans image_data */
+    var image_data = context.getImageData(0,0,image.width / 6,image.height / 6);
+
+    /* parcourir les pixels 4 par 4 */
+    for(var i = 0; i < image_data.data.length; i += 4)
+    {
+        /* Traiter ces pixels couleur par couleur */
+        /* Ici on rend l'image noir et blanc */
+        var b = 0.4 * image_data.data[i] + 0.4 * image_data.data[i + 1] + 0.4 * image_data.data[i + 2];
+        image_data.data[i]     = b;
+        image_data.data[i + 1] = b;
+        image_data.data[i + 2] = b;
+        // image_data.data[i + 3] = 1; /* On ne touche pas à l'apha */
+    }
+
+    /* Dessiner la nouvelle image par dessus */
+    context.putImageData(image_data,0,0);
+};
+image.src = 'image-1.jpg';
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>getImageData / putImageData</p>
+                    <p>Ne fonctionne pas en local !</p>
+                    <canvas id="canvas-16" width="600" height="400"></canvas>
+                </section>
+
+                <section>
+                    <p><a target="_blank" href="http://blog.nihilogic.dk/2009/02/html5-canvas-cheat-sheet.html">Cheat sheet canvas</a></p>
+                    <p>(Mario jouable en canvas dans le fond)</p>
                 </section>
 
             </div>
@@ -246,6 +444,7 @@ context.fillRect(0,0,400,400);                 // Faire apparaître
 
         <script src="../tools/reveal.js/lib/js/head.min.js"></script>
         <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script src="canvas.js"></script>
         <script>
             Reveal.initialize({
                 controls     : false,
