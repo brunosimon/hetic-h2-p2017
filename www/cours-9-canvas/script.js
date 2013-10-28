@@ -175,4 +175,36 @@ window.onload = function()
     //     context.putImageData(image_data,0,0);
     // };
     // image.src = 'image-1.jpg';
+
+    /* Animer */
+    // var coords = {x:0,y:200};
+    // function loop()
+    // {
+    //     requestAnimFrame(loop); //Avant d'effectuer d'autre action
+        
+    //     //Mettre à jour la position
+    //     coords.x += 4;
+    //     if(coords.x > canvas.width + 50)
+    //         coords.x = -50;
+        
+    //     //Redessiner le canvas
+    //     context.clearRect(0,0,canvas.width,canvas.height);
+    //     context.beginPath();
+    //     context.arc(coords.x,coords.y,50,0,Math.PI*2);
+    //     context.fillStyle = 'orange';
+    //     context.fill();
+    // }
+    // loop();
 };
+
+/* Paul Irish Request Animation Frame */
+window.requestAnimFrame = (function()
+{
+    return  window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            function(callback)
+            {
+                window.setTimeout(callback, 1000 / 60);
+            };
+})();

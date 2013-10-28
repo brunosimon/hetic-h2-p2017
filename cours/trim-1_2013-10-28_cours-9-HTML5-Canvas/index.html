@@ -439,6 +439,93 @@ image.src = 'image-1.jpg';
                     <p>(Mario jouable en canvas dans le fond)</p>
                 </section>
 
+                <section>
+                    <h2>Animer un canvas</h2>
+                </section>
+
+                <section>
+                    <p>Request Animation Frame</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+/* La fonction loop sera appelée dès que possible */
+/* Plus l'ordinateur est performant, plus la fréquence sera rapide */
+/* La fonction ne sera pas appelée tant que l'ordinateur n'est pas prêt */
+/* Bonne alternative au setInterval */
+function loop()
+{
+    window.requestAnimationFrame(loop);
+    /* Do something */
+}
+window.requestAnimationFrame(loop);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>La version de <a target="_blank" href="http://www.paulirish.com/">Paul Irish</a></p>
+                    <pre><code  data-trim contenteditable class="javascript">
+/* Compatible avec tous les navigateurs */
+window.requestAnimFrame = (function()
+{
+    return  window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            function(callback)
+            {
+                window.setTimeout(callback, 1000 / 60);
+            };
+})();
+
+function loop()
+{
+    requestAnimFrame(loop);
+    /* Do something */
+}
+
+requestAnimFrame(loop);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Exemple d'animation</p>
+                    <pre><code  data-trim contenteditable class="javascript">
+var coords = {x:0,y:200};
+
+function loop()
+{
+    requestAnimFrame(loop); //Avant d'effectuer d'autre action
+    
+    //Mettre à jour la position
+    coords.x += 4;
+    if(coords.x > canvas.width + 50)
+        coords.x = -50;
+    
+    //Redessiner le canvas
+    context.clearRect(0,0,canvas.width,canvas.height);
+    context.beginPath();
+    context.arc(coords.x,coords.y,50,0,Math.PI*2);
+    context.fillStyle = 'orange';
+    context.fill();
+}
+loop();
+
+/* Paul Irish Request Animation Frame */
+window.requestAnimFrame = (function()
+{
+    return  window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            function(callback)
+            {
+                window.setTimeout(callback, 1000 / 60);
+            };
+})();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Exemple d'animation</p>
+                    <canvas id="canvas-17" width="600" height="400"></canvas>
+                </section>
+
             </div>
         </div>
 

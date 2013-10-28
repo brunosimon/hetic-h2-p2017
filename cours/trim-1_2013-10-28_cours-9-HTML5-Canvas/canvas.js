@@ -4,7 +4,7 @@ window.onload = function()
         context  = null,
         contexts = Array();
 
-    for(var i = 1; i < 17; i++)
+    for(var i = 1; i < 19; i++)
     {
         canvas = document.getElementById('canvas-'+i);
         if(canvas)
@@ -184,4 +184,37 @@ window.onload = function()
         contexts[15].putImageData(image_data,0,0);
     };
     image.src = 'image-1.jpg';
+
+    /* Exemple d'animation */
+    var coords = {x:0,y:200};
+    function loop()
+    {
+        requestAnimFrame(loop); //Avant d'effectuer d'autre action
+        
+        //Mettre à jour la position
+        coords.x += 4;
+        if(coords.x > 650)
+            coords.x = -50;
+        
+        //Redessiner le canvas
+        contexts[16].clearRect(0,0,600,400);
+        contexts[16].beginPath();
+        contexts[16].arc(coords.x,coords.y,50,0,Math.PI*2);
+        contexts[16].fillStyle = 'orange';
+        contexts[16].fill();
+    }
+    loop();
 };
+
+/* Paul Irish Request Animation Frame */
+window.requestAnimFrame = (function()
+{
+    return  window.requestAnimationFrame       ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            function(callback)
+            {
+                window.setTimeout(callback, 1000 / 60);
+            };
+})();
+
