@@ -16,8 +16,8 @@ window.onload = function()
     window.onmousemove = function(e)
     {
         coords  = {
-            x : e.offsetX,
-            y : e.offsetY
+            x : e.clientX,
+            y : e.clientY
         };
     };
 

@@ -24,8 +24,8 @@ function init()
 
     canvas.onmousemove = function(e)
     {
-        mouse.x = e.offsetX;
-        mouse.y = e.offsetY;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     };
 
     loop();

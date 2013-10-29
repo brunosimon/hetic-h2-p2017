@@ -15,8 +15,9 @@ window.onload = function()
 
     window.onmousemove = function(e)
     {
-        coords.x = e.offsetX;
-        coords.y = e.offsetY;
+        console.log(e);
+        coords.x = e.clientX;
+        coords.y = e.clientY;
     };
 
     requestAnimFrame(loop);
