@@ -15,7 +15,6 @@ window.onload = function()
 
     window.onmousemove = function(e)
     {
-        console.log(e);
         coords.x = e.clientX;
         coords.y = e.clientY;
     };

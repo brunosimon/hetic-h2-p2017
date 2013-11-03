@@ -1,0 +1,5 @@
+@media screen and (max-width:800px){
+    aside .description {display:none;}
+    aside {bottom:auto;}
+    .content {left:0;}
+}
