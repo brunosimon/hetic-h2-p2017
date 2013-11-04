@@ -1,5 +1,5 @@
 body,input {font-family:'Open Sans Condensed',sans-serif;}
-aside {position:fixed;top:0;left:0;bottom:0;width:200px;background:#333;color:#fff;}
+aside {position:fixed;top:0;left:0;bottom:0;width:200px;background:#333;color:#fff;z-index:1;}
 aside header {height:100px;background:rgb(10,127,163);text-align:center;line-height:100px;text-transform:uppercase;text-shadow:0 0 8px #fff;font-size:22px;}                
 aside p {padding:20px;}
 
@@ -26,7 +26,20 @@ aside p {padding:20px;}
 .content .left    {background:orange;-webkit-transform:rotateY(90deg)  translateZ(200px);}
 .content .right   {background:gray;  -webkit-transform:rotateY(-90deg) translateZ(200px);}
 
+.content .inner-x {-webkit-animation:rotate-x 8s 0s infinite linear;-webkit-transform-style:preserve-3d;}
+.content .inner-y {-webkit-animation:rotate-y 20s 0s infinite linear;-webkit-transform-style:preserve-3d;}
 
+@-webkit-keyframes rotate-x
+{
+    0%   {-webkit-transform:rotateX(0deg);}
+    100% {-webkit-transform:rotateX(360deg);}
+}
+
+@-webkit-keyframes rotate-y
+{
+    0%   {-webkit-transform:rotateY(0deg);}
+    100% {-webkit-transform:rotateY(360deg);}
+}
 
 
 
