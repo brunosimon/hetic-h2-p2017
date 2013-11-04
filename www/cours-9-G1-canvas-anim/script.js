@@ -1,7 +1,8 @@
 var canvas     = null,
     context    = null,
     coords     = null,
-    particules = null;
+    particules = null,
+    count      = 5;
 
 window.onload = function()
 {
@@ -22,6 +23,9 @@ window.onload = function()
     };
 
     requestAnimFrame(loop);
+
+    var gui = new dat.GUI();
+    gui.add(window,'count',1,10).step(1);
 };
 
 function loop()
@@ -53,7 +57,7 @@ function create()
 {
     if(particules.length < 10000)
     {
-        for(var i = 0; i < 10; i ++)
+        for(var i = 0; i < count; i ++)
         {
             var particule = {
                 x       : coords.x,
