@@ -1,0 +1,11 @@
+body,input {color:#fff;text-transform:uppercase;font-family:'Open Sans Condensed',sans-serif;}
+
+aside {position:fixed;top:0;bottom:0;left:0;width:200px;background:#333;}
+aside header {width:200px;height:100px;background:rgb(10,127,163);}
+aside header {text-align:center;line-height:100px;text-shadow:0 0 8px #fff;font-size:22px;}
+
+.search {}
+.search fieldset {position:relative;background:#222;}
+.search input {background:none;border:none;outline:none;width:200px;height:60px;}
+.search input {font-size:22px;padding:20px;}
+.search .erase {position:absolute;top:18px;right:18px;width:24px;height:24px;background:red;}
