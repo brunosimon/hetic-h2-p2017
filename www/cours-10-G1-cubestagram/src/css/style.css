@@ -16,7 +16,7 @@ aside p {padding:20px;}
 .content          {position:fixed;top:0;right:0;bottom:0;left:200px;overflow:hidden;}
 .content          {-webkit-perspective:800px;}
 .content .cube    {position:absolute;top:50%;left:50%;-webkit-transform-style:preserve-3d;}
-.content .inner-x {position:relative;top:-200px;left:-200px;}
+.content .inner-x {position:relative;top:-200px;left:-200px;width:400px;height:400px;}
 .content .face    {position:absolute;top:0;left:0;width:400px;height:400px;transform-origin:50% 50%;}
 .content .face    {backface-visibility:visible;opacity:0.5;-webkit-transform-style:preserve-3d;}
 .content .top     {background:yellow;-webkit-transform:rotateX(90deg)  translateZ(200px);}
