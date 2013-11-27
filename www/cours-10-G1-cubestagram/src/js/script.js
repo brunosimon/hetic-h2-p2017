@@ -5,7 +5,9 @@ $(function()
     var form      = $('aside form'),
         erase     = form.find('.erase'),
         input     = form.find('input'),
+        loader    = $('aside .loader'),
         val       = '#tokyo',
+        old_val   = '',
         client_id = '5f889f33af784253a5225251213b4efe';
     
     search();
@@ -44,39 +46,58 @@ $(function()
     {
         clean_val();
 
-        $.ajax({
-            url      : 'https://api.instagram.com/v1/tags/'+val+'/media/recent?client_id='+client_id,
-            dataType : 'jsonp',
-            success  : handle_success,
-            error    : handle_error
-        });
+        if(val !== old_val)
+        {
+            loader.fadeIn(100);
+
+            $.ajax({
+                url      : 'https://api.instagram.com/v1/tags/'+val+'/media/recent?client_id='+client_id,
+                dataType : 'jsonp',
+                success  : handle_success,
+                error    : handle_error
+            });
+
+            old_val = val;
+        }
     }
 
     // Handle success
     function handle_success(result)
     {
-        for(var i = 0; i < 6; i++)
+        if(typeof result.data !== 'undefined' && result.data.length >= 6)
         {
-            (function(){
-                var image = new Image(),
-                    url   = result.data[i].images.standard_resolution.url,
-                    face  = $('.cube .face').eq(i);
+            var loaded = 0;
 
-                
+            for(var i = 0; i < 6; i++)
+            {
+                (function(){
+                    var image = new Image(),
+                        url   = result.data[i].images.standard_resolution.url,
+                        face  = $('.cube .face').eq(i);
 
-                image.onload = function()
-                {
-                    face.fadeOut(400,function()
+                    image.onload = function()
                     {
-                        face.empty();
-                        face.append(image);
-                        face.fadeIn(400);
-                    });
-                };
+                        loaded++;
+                        if(loaded === 6)
+                            loader.fadeOut(200);
 
-                image.src = url;
-            })();
+                        face.fadeOut(400,function()
+                        {
+                            face.empty();
+                            face.append(image);
+                            face.fadeIn(400);
+                        });
+                    };
+
+                    image.src = url;
+                })();
+            }
         }
+        else
+        {
+            handle_error();
+        }
+
     }
 
     // Handle error
