@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 1 - Cours 11 - Local Storage</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+        <!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            p {margin-bottom:0.6em !important;}
+            li{margin-bottom:0.6em !important;}
+            ul.checked-list li {list-style-type:none;}
+            .default{text-transform:none !important;}
+        </style>
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2017</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 12 - 2013-12-16</h3>
+                    <p>github : <a target="_blank" href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+                    <p>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2017/">http://bruno-simon.com/hetic/p2017/</a></p>
+                    <p>contact : <a target="_blank" mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a> - <a target="_blank" href="https://twitter.com/bruno_simon">@bruno_simon</a></p>
+                </section>
+
+                <section>
+                    <h3>HTML5 / JS</h3>
+                    <h1>Local Storage</h1>
+                </section>
+
+                <section>
+                    <h2>Qu'est-ce que c'est</h2>
+                    <p>Local Storage (ou web storage) est une API HTML5 permettant de stocker des données en locale chez l'utilisateur</p>
+                    <p>Elle fait partie des APIs HTML5 Offline</p>
+                </section>
+
+                <section>
+                    <h2>Qu'est-ce que c'est</h2>
+                    <p>Ces données peuvent persister même si l'utisateur quitte le navigateur ou redémarre l'ordinateur.</p>
+                    <p>Contrairement aux cookies, ces données ne sont pas envoyées dans chaque requête.</p>
+                </section>
+
+                <section>
+                    <h2>Qu'est-ce que c'est</h2>
+                    <p>Le format stocké est une chaine de caractères (string)</p>
+                    <p>Il faudra donc faire attention aux données envoyées et comment les récupérer</p>
+                    <p>Vous pouvez stocker jusqu'à 5 Mo de données (bonne chance)</p>
+                </section>
+
+                <section>
+                    <h2>Compatibilité</h2>
+                    <p><a href="http://caniuse.com/namevalue-storage" target="_blank">Can I Use</a></p>
+                </section>
+
+                <section>
+                    <h2>Exemple</h2>
+                    <pre><code  data-trim contenteditable class="js">
+//Ajouter et récupérer
+localStorage.setItem('var_1','value_1'); //Set
+console.log(localStorage.getItem('var_1')); //Get
+
+//Équivaut à
+localStorage.var_2 = 'value_2';
+console.log(localStorage.var_2);
+
+//Équivaut à
+localStorage['var_3'] = 'value_3';
+console.log(localStorage['var_3']);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Exemple</h2>
+                    <pre><code  data-trim contenteditable class="js">
+//Supprimer une donnée
+localStorage.removeItem('var_1');
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Exemple</h2>
+                    <pre><code  data-trim contenteditable class="js">
+//Vider le local storage
+localStorage.clear();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Exemple</h2>
+                    <pre><code  data-trim contenteditable class="js">
+//Exemple complet pour un objet avec JSON
+var mon_objet = {
+    couleur : 'red',
+    speed   : 2
+};
+
+//Set
+localStorage.save = JSON.stringify(mon_objet);
+
+//Get
+var objet_sauvegarde = JSON.parse(localStorage.save);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Débugger facilement</h2>
+                    <p>Sur les navigateurs récents tels que Chrome, il est possible d'inspecter le contenu de local storage.</p>
+                    <p>Pour cela, ouvrez l'inspecteur, allez dans l'onglet "Ressources" et allez dans la partie "Local Storage"</p>
+                    <p>Vous y trouverez toutes les clés/valeurs</p>
+                </section>
+
+                <section>
+                    <h2>Débugger facilement</h2>
+                    <p><img src="src/images/screen-inspecteur.png" alt=""></p>
+                </section>
+            </div>
+        </div>
+
+        <script src="../tools/reveal.js/lib/js/head.min.js"></script>
+        <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls     : false,
+                progress     : true,
+                history      : true,
+                center       : true,
+                theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                dependencies : [
+                    { src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged',function(e)
+            {
+                document.getElementById('pagination').innerHTML = e.indexh + 1;
+            });
+        </script>
+    </body>
+</html>

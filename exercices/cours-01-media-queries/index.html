@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Cours 1 - P2017 - Media Queries</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .flexible{
+            width:600px;
+            margin:20px auto;
+            background:red;
+        }
+        .flexible p{
+            padding:20px;
+        }
+
+        @media screen and (max-width:500px){
+
+            .flexible{
+                background:blue;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" media="screen and (max-width: 700px)" href="style-media-queries.css" type="text/css"> -->
+    <script type="text/javascript">
+        if(window.matchMedia('screen and (max-width:500px)').matches)
+        {
+            alert('oui');
+        }
+        else
+        {
+            alert('non');
+        }
+    </script>
+</head>
+<body>
+    <div class="flexible">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, voluptatum, natus, distinctio qui quidem ipsa libero repellendus iure quod recusandae quasi corporis minus ipsam asperiores ducimus! Tempore tenetur cupiditate necessitatibus.</p>
+    </div>
+</body>
+</html>
