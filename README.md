@@ -102,6 +102,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Code School](http://www.codeschool.com/) - gratuit / payant
   - [Codeacademy](http://www.codecademy.com/) - gratuit / payant
   - [The Dark Side Of The Web](http://www.thedarksideofthewebblog.com/) - gratuit
+  - [Dive Into HTML 5](http://diveintohtml5.info/) - gratuit
 
 ### Sublime Text 2
 
