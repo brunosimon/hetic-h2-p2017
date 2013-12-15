@@ -1,6 +1,6 @@
-var Burno = function(){};
+var Pet = function(){};
 
-Burno.prototype =
+Pet.prototype =
 {
     /**
      * INITIALISE
@@ -91,5 +91,5 @@ Burno.prototype =
     }
 };
 
-var mon_burno = new Burno();
-mon_burno.init();
+var my_pet = new Pet();
+my_pet.init();
