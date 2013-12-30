@@ -88,7 +88,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Batman Ipsum](http://batman-ipsum.com/) - Why so serious ?
   - [Placekitten](http://placekitten.com/) - Miaou
 
-### Tuto
+### Sources de tuto
 
   - [Mobile tuts](http://mobile.tutsplus.com/) - gratuit
   - [Net tuts](http://net.tutsplus.com/) - gratuit
@@ -103,6 +103,9 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Codeacademy](http://www.codecademy.com/) - gratuit / payant
   - [The Dark Side Of The Web](http://www.thedarksideofthewebblog.com/) - gratuit
   - [Dive Into HTML 5](http://diveintohtml5.info/) - gratuit
+ 
+### Tuto particuliers
+  - [medium.com](https://medium.com/design-ux/bea05243fe3) - Explication sur le easing
 
 ### Sublime Text 2
 
