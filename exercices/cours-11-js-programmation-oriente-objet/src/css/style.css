@@ -1,0 +1,9 @@
+.game {position:relative;width:500px;height:500px;background:#fff4dd;}
+.game .buttons {position:absolute;top:0;right:0;}
+.game .buttons .feed {position:absolute;top:0;right:0;width:60px;height:60px;background:#59554b;}
+.game .buttons .play {position:absolute;top:61px;right:0;width:60px;height:60px;background:#59554b;}
+
+.game .pet {position:absolute;top:240px;left:150px;width:200px;height:200px;background:#ffaa00;border-radius:20px;}
+.game .pet .eye-left {position:absolute;top:50px;left:50px;background:#fff;width:12px;height:28px;border-radius:6px;}
+.game .pet .eye-right {position:absolute;top:50px;right:50px;background:#fff;width:12px;height:28px;border-radius:6px;}
+.game .pet .mouth {position:absolute;top:120px;left:89px;width:22px;height:22px;border-radius:6px;background:#000;}

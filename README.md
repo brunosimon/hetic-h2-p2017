@@ -27,17 +27,25 @@ Sujets pouvant potentiellement être abordés durant l'année
 ### Trimestre 2 : PHP / MySQL
  
  - PHP
-  - Basics (Fundamentals / Variables / Host)
-  - Loops / Functions
+  - Basics (Fundamentals / Alternatives / Hello World)
+  - Variables
+  - If / Loops
+  - Functions
   - Debbug
-  - $_GET / $_POST / Formulaires
+  - $_COOKIES / $_SESSION
+  - $_GET / $_POST / Forms
   - Includes
-  - Classes
+  - POO
   - cURL
+
  - MySQL
   - Basics (Fundamentals / PHPMyAdmin / Database / Tables / Rows / Variables types)
   - SQL (Select,Update,Delete)(Where,Or,And,Order,Limit)
   - Joins (Left,Right)
+
+ - Frameworks
+
+ - Security
 
 ### Trimestre 3 : PHP / MySQL / APIs / MVC
  
