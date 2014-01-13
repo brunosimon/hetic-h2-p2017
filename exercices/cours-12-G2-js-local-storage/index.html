@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours 12 - G2 - LocalStorage</title>
+    <style>
+        .button {
+            width:100px;
+            height:100px;
+            margin-bottom:10px;
+            text-align:center;
+            line-height:100px;
+            background:#eee;
+            cursor:pointer;
+            text-transform:uppercase;
+            font-family:Helvetica,Arial;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button" id="feed">feed</div>
+    <div class="button" id="slap">slap</div>
+    <div class="button" id="sleep">sleep</div>
+    <div class="button" id="hug">hug</div>
+
+    <script src="src/js/game.class.js"></script>
+    <script src="src/js/pet.class.js"></script>
+    <script>
+        var game = new Game();
+        game.init();
+    </script>
+</body>
+</html>
