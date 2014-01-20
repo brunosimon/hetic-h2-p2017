@@ -1,5 +1,15 @@
 <?php 
 
+    /**
+     * TODO
+     *  - Reminder
+     *  - Validate
+     *  - Highlight errors
+     *  - Show errors messages
+     *  - Add inputs
+     *  - Save to database
+     */
+
     if(!empty($_POST))
     {
         echo '<pre>';
