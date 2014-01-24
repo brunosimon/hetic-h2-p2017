@@ -75,6 +75,7 @@ Liste amenée à évoluer. N'hésitez-pas si vous avez des propositions.
   - [Mustache.js](https://github.com/janl/mustache.js) - Templating JS
   - [Haml.js](https://github.com/creationix/haml-js) - Templating JS
   - [Héritage en JS](http://ejohn.org/blog/simple-javascript-inheritance/)
+  - [Airbnb Style Guide](https://github.com/airbnb/javascript)
 
 ### WebGL
 
