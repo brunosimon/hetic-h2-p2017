@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 2 - Cours 22 - PHP</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Bruno Simon">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+        <!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            p {margin-bottom:0.6em !important;}
+            li{margin-bottom:0.6em !important;}
+            ul.checked-list li {list-style-type:none;}
+            .default{text-transform:none !important;}
+            img.no-style {border:none !important;background:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
+            table.visible {border:1px solid #fff;width:100%;}
+            table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;}
+            table.visible td {color:#aaa;}
+        </style>
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2017</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 22 - 2014-01-27</h3>
+                    <p>github : <a target="_blank" href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+                    <p>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2017/">http://bruno-simon.com/hetic/p2017/</a></p>
+                    <p>contact : <a target="_blank" mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a> - <a target="_blank" href="https://twitter.com/bruno_simon">@bruno_simon</a></p>
+                </section>
+
+                <section>
+                    <h3>PHP</h3>
+                    <h1>Base de données</h1>
+                </section>
+
+                <section>
+                    <h2>Qu'est-ce que MySQL ?</h2>
+                </section>
+
+                <section>
+                    <p>Système de Gestion de Bases de Données Relationnelles (SGBDR)</p>
+                    <p>Logiciel permettant de stocker de grande quantité de données</p>
+                    <p>Se trouve sur le serveur</p>
+                    <p>Utilisable en PHP</p>
+                    <p>Très répandu</p>
+                    <p>Inventé par Michael Widenius</p>
+                    <p>SQL = Structured Query Language</p>
+                    <p>My = ?</p>
+                </section>
+
+                <section>
+                    <p>Une base de donnée contient des <a href="">tables</a></p>
+                    <p>Ces tables contiennent des <a href="">lignes</a></p>
+                    <p>Ces lignes contiennes des <a href="">céllules</a>/<a href="">colonnes</a></p>
+                    <p>Ces colonnes contiennes des <a href="">données</a></p>
+                </section>
+
+                <section>
+                    <p>Exemple de table d'utilisateurs</p>
+                    <table class="visible" cellspacing="0">
+                        <tr>
+                            <th>id</th>
+                            <th>first_name</th>
+                            <th>last_name</th>
+                            <th>age</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Adnan</td>
+                            <td>Vince</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Vasil</td>
+                            <td>Avner</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Landen</td>
+                            <td>Roch</td>
+                            <td>31</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <p>La structure de la table ici est id, first_name, last_name, age</p>
+                    <p>L'ID est presque toujours présent</p>
+                    <p>Unique pour chaque ligne</p>
+                </section>
+
+                <section>
+                    <p>Il faut spécifier le type de données de chaque colonne</p>
+                    <p>Il en existe de nombreux</p>
+                </section>
+
+                <section>
+                    <ul>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">INT</a> : Un entier</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">FLOAT</a> : Un nombre à virgule</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">DATE</a> : Une date au format YYYY-MM-DD</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">DATETIME</a> : Une date au format YYYY-MM-DD HH:MM:SS</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">VARCHAR</a> : Un texte court</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">TEXT</a> : Un texte long</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">BOOLEAN</a> : Un booléen (true/false)</li>
+                        <li><a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">ENUM</a> : Un choix parmi une liste</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Et encore <a href="http://dev.mysql.com/doc/refman/5.0/fr/column-types.html" target="_blank">plein d'autres</a></p>
+                </section>
+
+                <section>
+                    <p>Tous ces types peuvent avoir des options</p>
+                    <p>Parmi ces options on trouve l'encodage</p>
+                    <p>Les plus utilisés sont <a href="">utf8_general_ci</a> et <a href="">utf8_unicode_ci</a></p>
+                    <p><a href="">utf8_general_ci</a> est plus rapide mais ne fait pas la différence entre certains caractères</p>
+                </section>
+
+                <section>
+                    <p>PhpMyAdmin :</p>
+                    <p>Interface permettant de manipuler les données</p>
+                    <p>Pas besoin de maîtriser SQL</p>
+                    <p>Installé avec WAMP et MAMP</p>
+                </section>
+
+                <section>
+                    <p>
+                        Mac : 
+                        <br /><img src="src/img/mamp-demarrage.png" alt=""> <img src="src/img/mamp-pro-demarrage.png" alt="">
+                        <br /><img src="src/img/mac-phpmyadmin.png" alt="">
+                    </p>
+                    <p>
+                        Windows :
+                        <br /><img src="src/img/wamp-phpmyadmin.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Une base de donnée est accessible par connexion</p>
+                    <p>Les comptes sont administrables et ont des droits spécifiques</p>
+                    <p>Ex : créer des tables, créer des données, supprimer des données, ...</p>
+                    <p>Ne donnez pas trop de droits à un utilisateur (sécurité)</p>
+                </section>
+
+                <section>
+                    <p>Pour rajouter un compte, dans PhpMyAdmin, allez dans l'onglet "Utilisateurs" puis cliquez sur "Ajouter un utilisateur"</p>
+                    <p>
+                        <img src="src/img/phpmyadmin-utilisateurs.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Créez votre première base de données dans l'onglet "Bases de données"</p>
+                    <p>Appellez la comme vous le voulez et choissez <a href="">utf8_general_ci</a></p>
+                    <p>
+                        <img src="src/img/phpmyadmin-base-de-donnes.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Rentrez dans la base de donnée (menu de gauche)</p>
+                    <p>Créez une nouvelle table nommée "<a href="">users</a>" avec <a href="">5 colonnes</a></p>
+                    <p>Cliquez sur <a href="">Exécuter</a></p>
+                    <p>
+                        <img src="src/img/phpmyadmin-new-table.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Dans le formulaire qui apparait, chacune des lignes correspond aux colonnes de la base de données</p>
+                    <p>Remplissez-les comme cela :</p>
+                    <p>
+                        <img src="src/img/phpmyadmin-new-table-datas.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Essayez d'ajouter des données</p>
+                    <p>De les modifier</p>
+                    <p>De les supprimer</p>
+                    <p>Testez de mauvaises valeurs<br />(trop de caractères, pas le bon type, etc.)</p>
+                    <p>Explorez les différents onglets</p>
+                    <p>
+                        <img src="src/img/phpmyadmin-tabs.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Cliquez sur le petit icône SQL dans le menu de gauche pour ouvrir une popup</p>
+                    <p>
+                        <img src="src/img/phpmyadmin-sql-button.png" alt="">
+                    </p>
+                    <p>
+                        <img src="src/img/phpmyadmin-sql-popup.png" alt="">
+                    </p>
+                </section>
+
+                <section>
+                    <p>Essayez les requêtes SQL suivantes</p>
+                    <pre><code contenteditable class="sql">
+INSERT INTO users (login,password,email,age) 
+VALUES ('bruno','azerty','bruno@simon.com',24)
+                    </code></pre>
+                    <pre><code contenteditable class="sql">
+UPDATE users SET login = 'bueno' WHERE id = 1
+                    </code></pre>
+                    <pre><code contenteditable class="sql">
+DELETE FROM users WHERE id = 1
+                    </code></pre>
+                    <pre><code contenteditable class="sql">
+SELECT * FROM users
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Ça y est, vous êtes des pro du SQL</p>
+                    <p>Les retours à la ligne et les espaces n'ont aucune importance</p>
+                    <p>Les majuscule non-plus (juste pour la lisibilité)</p>
+                </section>
+
+                <section>
+                    <h2>En PHP</h2>
+                </section>
+
+                <section>
+                    <p>Il faut se connecter à la base de données</p>
+                    <p>À l'ancienne :</p>
+                    <pre><code contenteditable class="php">
+$db = mysql_connect(&#039;localhost&#039;,&#039;user&#039;,&#039;password&#039;);
+mysql_select_db(&#039;database&#039;);
+                    </code></pre>
+                    <p>Remplacez les différentes valeurs</p>
+                </section>
+
+                <section>
+                    <p>Vous pouvez oublier ce que vous venez de voir</p>
+                </section>
+
+                <section>
+                    <p>Via PDO</p>
+                    <pre><code contenteditable class="php">
+try
+{
+    $pdo = new PDO(&#039;mysql:dbname=&#039;.DB_NAME.&#039;;host=&#039;.DB_HOST,DB_USER,DB_PASS);
+}
+catch (PDOException $e)
+{
+    die(&#039;error&#039;);
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>PDO permet de se connecter à la base de données</p>
+                    <p>Plus sécurisé</p>
+                    <p>Plus logique</p>
+                    <p>Plus facile (presque)</p>
+                </section>
+
+                <section>
+                    <p>En PHP, essayez les requêtes suivantes :</p>
+                    <pre><code contenteditable class="php">
+$result = $pdo-&gt;exec(&#039;INSERT INTO users (login,password,email,age) VALUES (\&#039;bruno\&#039;,\&#039;azerty\&#039;,\&#039;bruno@simon.com\&#039;,24)&#039;);
+echo &#039;&lt;pre&gt;&#039;;
+print_r($result);
+echo &#039;&lt;/pre&gt;&#039;;
+                    </code></pre>
+
+                    <pre><code contenteditable class="php">
+$result = $pdo-&gt;exec(&#039;UPDATE users SET login = \&#039;toto\&#039; WHERE id = 2&#039;);
+echo &#039;&lt;pre&gt;&#039;;
+print_r($result);
+echo &#039;&lt;/pre&gt;&#039;;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>La méthode <a href="http://www.php.net/manual/fr/pdo.exec.php" target="_blank">exec()</a> exécute une requête SQL et renvoie le nombre de lignes affectées</p>
+                </section>
+
+                <section>
+                    <p>En PHP, essayez les requêtes suivantes :</p>
+                    <pre><code contenteditable class="php">
+$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+$users  = $result-&gt;fetchAll();
+
+echo &#039;&lt;pre&gt;&#039;;
+print_r($users);
+echo &#039;&lt;/pre&gt;&#039;;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>La méthode <a href="http://www.php.net/manual/fr/pdo.query.php" target="_blank">query()</a> renvoie une instance de <a href="http://www.php.net/manual/fr/class.pdostatement.php" target="_blank">PDOStatement</a></p>
+                    <p>Cette instance possède des méthodes</p>
+                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a> renvoie un tableau de toutes les données</p>
+                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetch()</a> renvoie une seule donnée</p>
+                    <p>En appelant <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> à nouveau, on aura la donnée suivante</p>
+                </section>
+
+                <section>
+                    <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetch()</a> dans un while</p>
+                    <pre><code contenteditable class="php">
+$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+
+while($user = $result-&gt;fetch())
+{
+    echo &#039;&lt;pre&gt;&#039;;
+    print_r($user);
+    echo &#039;&lt;/pre&gt;&#039;;
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>C'est tout pour les bases</p>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="../tools/reveal.js/lib/js/head.min.js"></script>
+        <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls     : false,
+                progress     : true,
+                history      : true,
+                center       : true,
+                theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                dependencies : [
+                    { src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged',function(e)
+            {
+                document.getElementById('pagination').innerHTML = e.indexh + 1;
+            });
+        </script>
+    </body>
+</html>
