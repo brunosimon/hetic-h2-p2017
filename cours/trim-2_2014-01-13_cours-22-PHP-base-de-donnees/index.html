@@ -5,8 +5,8 @@
         <title>TRIM 2 - Cours 22 - PHP</title>
         <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
         <meta name="author" content="Bruno Simon">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
         <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
@@ -25,12 +25,10 @@
             .default{text-transform:none !important;}
             img.no-style {border:none !important;background:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
             table.visible {border:1px solid #fff;width:100%;}
-            table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;}
+            table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;color:#fff;}
             table.visible td {color:#aaa;}
+            u {border-bottom:0.13em solid #FF8F00 !important;text-decoration:none;}
         </style>
-        <!--[if lt IE 9]>
-            <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
     </head>
     <body>
         <div class="reveal">
@@ -66,10 +64,10 @@
                 </section>
 
                 <section>
-                    <p>Une base de donnée contient des <a href="">tables</a></p>
-                    <p>Ces tables contiennent des <a href="">lignes</a></p>
-                    <p>Ces lignes contiennes des <a href="">céllules</a>/<a href="">colonnes</a></p>
-                    <p>Ces colonnes contiennes des <a href="">données</a></p>
+                    <p>Une base de donnée contient des <u>tables</u></p>
+                    <p>Ces tables contiennent des <u>lignes</u></p>
+                    <p>Ces lignes contiennes des <u>céllules</u> / <u>colonnes</u></p>
+                    <p>Ces colonnes contiennes des <u>données</u></p>
                 </section>
 
                 <section>
@@ -133,8 +131,8 @@
                 <section>
                     <p>Tous ces types peuvent avoir des options</p>
                     <p>Parmi ces options on trouve l'encodage</p>
-                    <p>Les plus utilisés sont <a href="">utf8_general_ci</a> et <a href="">utf8_unicode_ci</a></p>
-                    <p><a href="">utf8_general_ci</a> est plus rapide mais ne fait pas la différence entre certains caractères</p>
+                    <p>Les plus utilisés sont <u>utf8_general_ci</u> et <u>utf8_unicode_ci</u></p>
+                    <p><u>utf8_general_ci</u> est plus rapide mais ne fait pas la différence entre certains caractères</p>
                 </section>
 
                 <section>
@@ -172,7 +170,7 @@
 
                 <section>
                     <p>Créez votre première base de données dans l'onglet "Bases de données"</p>
-                    <p>Appellez la comme vous le voulez et choissez <a href="">utf8_general_ci</a></p>
+                    <p>Appellez la comme vous le voulez et choissez <u>utf8_general_ci</u></p>
                     <p>
                         <img src="src/img/phpmyadmin-base-de-donnes.png" alt="">
                     </p>
@@ -180,8 +178,8 @@
 
                 <section>
                     <p>Rentrez dans la base de donnée (menu de gauche)</p>
-                    <p>Créez une nouvelle table nommée "<a href="">users</a>" avec <a href="">5 colonnes</a></p>
-                    <p>Cliquez sur <a href="">Exécuter</a></p>
+                    <p>Créez une nouvelle table nommée "<u>users</u>" avec <u>5 colonnes</u></p>
+                    <p>Cliquez sur <u>Exécuter</u></p>
                     <p>
                         <img src="src/img/phpmyadmin-new-table.png" alt="">
                     </p>
@@ -257,7 +255,7 @@ mysql_select_db(&#039;database&#039;);
                     <p>Vous pouvez oublier ce que vous venez de voir</p>
                 </section>
 
-                <section>
+                <section id="pdo">
                     <p>Via PDO</p>
                     <pre><code contenteditable class="php">
 try
@@ -279,20 +277,105 @@ catch (PDOException $e)
                 </section>
 
                 <section>
-                    <p>En PHP, essayez les requêtes suivantes :</p>
-                    <pre><code contenteditable class="php">
-$result = $pdo-&gt;exec(&#039;INSERT INTO users (login,password,email,age) VALUES (\&#039;bruno\&#039;,\&#039;azerty\&#039;,\&#039;bruno@simon.com\&#039;,24)&#039;);
-echo &#039;&lt;pre&gt;&#039;;
-print_r($result);
-echo &#039;&lt;/pre&gt;&#039;;
-                    </code></pre>
+                    <p>La méthode <a href="http://www.php.net/manual/fr/pdo.query.php" target="_blank">query()</a> renvoie une instance de <a href="http://www.php.net/manual/fr/class.pdostatement.php" target="_blank">PDOStatement</a></p>
+                    <p>Cette instance possède des méthodes</p>
+                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a> renvoie un tableau de toutes les lignes</p>
+                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetch()</a> renvoie une seule ligne</p>
+                    <p>En appelant <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> à nouveau, on aura la ligne suivante</p>
+                </section>
 
+                <section>
+                    <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a></p>
                     <pre><code contenteditable class="php">
-$result = $pdo-&gt;exec(&#039;UPDATE users SET login = \&#039;toto\&#039; WHERE id = 2&#039;);
+$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+$users  = $result-&gt;fetchAll();
+
 echo &#039;&lt;pre&gt;&#039;;
-print_r($result);
+print_r($users);
 echo &#039;&lt;/pre&gt;&#039;;
+
+// $users est un tableau contenant toutes les lignes de la table users
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> dans un while</p>
+                    <pre><code contenteditable class="php">
+$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+
+while($user = $result-&gt;fetch())
+{
+    echo &#039;&lt;pre&gt;&#039;;
+    print_r($user);
+    echo &#039;&lt;/pre&gt;&#039;;
+
+    // $user correspond à une seule ligne
+    // Mais dans le while, chaque ligne sera récupérée
+}
+
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Par défaut, PDO renvoie un tableau dans un format étrange</p>
+                    <pre><code data-trim contenteditable class="php">
+$query = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+$user  = $query-&gt;fetch();
+
+echo &#039;&lt;pre&gt;&#039;;
+print_r($user);
+echo &#039;&lt;/pre&gt;&#039;;
+exit;
+                    </code></pre>
+                    <p>Va afficher</p>
+                    <pre><code data-trim contenteditable class="html">
+Array
+(
+    [id] =&gt; 4
+    [0] =&gt; 4
+    [login] =&gt; bruno
+    [1] =&gt; bruno
+    [email] =&gt; bruno@simon.com
+    [2] =&gt; bruno@simon.com
+    [password] =&gt; azerty
+    [3] =&gt; azerty
+    [age] =&gt; 24
+    [4] =&gt; 24
+)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>C'est un tableau associatif avec les valeurs en double</p>
+                    <p>La valeur associée au nom de la colonne</p>
+                    <p>La valeur associée à un numéro</p>
+                </section>
+
+                <section>
+                    <p>Il est possible de modifier le type de résultat lors de <a href="#/pdo">l'initialisation de PDO</a></p>
+                    <p>Pour cela, on utilise la méthode <a href="http://www.php.net/manual/fr/pdo.setattribute.php" target="_blank">setAttribute()</a> sur l'objet PDO</p>
+                    <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">PDO::ATTR_DEFAULT_FETCH_MODE</a> en premier paramètre</p>
+                    <pre><code contenteditable class="php">
+try
+{
+    $pdo = new PDO('mysql:dbname='.DB_NAME.';host='.DB_HOST,DB_USER,DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+}
+catch (PDOException $e)
+{
+    die('error');
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Il existe plusieurs valeurs a mettre en second paramètre de <a href="http://www.php.net/manual/fr/pdo.setattribute.php" target="_blank">setAttribute()</a>. Voici les principales :</p>                    
+                    <ul>
+                        <li><a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">PDO::FETCH_BOTH</a> : Tableau associatif avec valeurs dupliquées dans clés et numéros (par défaut)</li>
+                        <li><a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">PDO::FETCH_NAMED</a> : Tableau associatif</li>
+                        <li><a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">PDO::FETCH_OBJ</a> : Objet (très utilisé)</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -302,39 +385,22 @@ echo &#039;&lt;/pre&gt;&#039;;
                 <section>
                     <p>En PHP, essayez les requêtes suivantes :</p>
                     <pre><code contenteditable class="php">
-$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
-$users  = $result-&gt;fetchAll();
+// 'INSERT INTO ... VALUES ...' permet d'ajouter une ligne dans la table
 
+$result = $pdo-&gt;exec(&#039;INSERT INTO users (login,password,email,age) VALUES (\&#039;bruno\&#039;,\&#039;azerty\&#039;,\&#039;bruno@simon.com\&#039;,24)&#039;);
 echo &#039;&lt;pre&gt;&#039;;
-print_r($users);
+print_r($result);
 echo &#039;&lt;/pre&gt;&#039;;
                     </code></pre>
-                </section>
 
-                <section>
-                    <p>La méthode <a href="http://www.php.net/manual/fr/pdo.query.php" target="_blank">query()</a> renvoie une instance de <a href="http://www.php.net/manual/fr/class.pdostatement.php" target="_blank">PDOStatement</a></p>
-                    <p>Cette instance possède des méthodes</p>
-                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a> renvoie un tableau de toutes les données</p>
-                    <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetch()</a> renvoie une seule donnée</p>
-                    <p>En appelant <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> à nouveau, on aura la donnée suivante</p>
-                </section>
-
-                <section>
-                    <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetch()</a> dans un while</p>
                     <pre><code contenteditable class="php">
-$result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
+// 'UPDATE ... SET ...' permet de mettre à jour une ou plusieurs lignes
 
-while($user = $result-&gt;fetch())
-{
-    echo &#039;&lt;pre&gt;&#039;;
-    print_r($user);
-    echo &#039;&lt;/pre&gt;&#039;;
-}
+$result = $pdo-&gt;exec(&#039;UPDATE users SET login = \&#039;toto\&#039; WHERE id = 2&#039;);
+echo &#039;&lt;pre&gt;&#039;;
+print_r($result);
+echo &#039;&lt;/pre&gt;&#039;;
                     </code></pre>
-                </section>
-
-                <section>
-                    <p>C'est tout pour les bases</p>
                 </section>
 
             </div>

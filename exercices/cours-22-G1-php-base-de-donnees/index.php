@@ -1,4 +1,20 @@
-<?php require_once 'form.php'; ?>
+<?php 
+    
+    /**
+     * TODO
+     *  - Reminder
+     *  - Add inputs
+     *  - Configurer PDO
+     *  - Save to database
+     *  - List all users
+     *  - Delete user
+     *  - Edit user
+     *  - Password storing
+     */
+    
+    require_once 'config.php';
+    require_once 'form.php';
+?>
 <html>
 <head>
     <title>Cours 19 - G2 - HTML / PHP Formulaire</title>

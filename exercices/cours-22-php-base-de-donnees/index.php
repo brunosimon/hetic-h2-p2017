@@ -1,5 +1,27 @@
-<?php require_once 'config.php'; ?>
-<?php require_once 'form.php'; ?>
+<?php 
+
+    /**
+     * TODO
+     *  - Edit user
+     */
+    
+    require_once 'config.php'; 
+    require_once 'form.php';
+
+    if(!empty($_GET['action']) && $_GET['action'] === 'delete' && !empty($_GET['id']) && (int)$_GET['id'] > 0)
+    {
+        $id   = (int)$_GET['id'];
+        $exec = $pdo->exec('DELETE FROM users WHERE id = '.$id);
+
+        if($exec == 0)
+            $errors[] = 'No user deleted';
+        else
+            $success[] = 'User deleted';
+    }
+
+    $query = $pdo->query('SELECT * FROM users');
+    $users = $query->fetchAll();
+?>
 <html>
 <head>
     <title>Cours 19 - G2 - HTML / PHP Formulaire</title>
@@ -7,6 +29,8 @@
         .errors {border:1px solid #f00;padding:0 20px;color:#f00;}
         .success {border:1px solid #0b0;padding:0 20px;color:#0b0;}
         input.error {border:1px solid #f00;color:#f00;}
+        table {border:1px solid #ccc;}
+        table td,table th {border:1px solid #ccc;padding:10px 20px;text-align:left;}
     </style>
 </head>
 <body>
@@ -56,6 +80,23 @@
             </div>
         </fieldset>
     </form>
+
+    <table cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach($users as $_user): ?>
+            <tr>
+                <td><?php echo $_user['id'] ?></td>
+                <td><?php echo $_user['login'] ?></td>
+                <td><?php echo $_user['email'] ?></td>
+                <td><a href="?action=delete&amp;id=<?php echo $_user['id'] ?>">Delete</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>
 

@@ -1,12 +1,5 @@
 <?php 
 
-    /**
-     * ADDED :
-     *  - Insert in DB
-     *  - Remove data if ok
-     *  - Success message
-     */
-
     $errors = array();
     $success = array();
     if(!empty($_POST))

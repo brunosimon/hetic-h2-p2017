@@ -7,21 +7,8 @@
 
     if(!empty($_POST))
     {
-        // echo '<pre>';
-        // print_r($_POST);
-        // echo '</pre>';
-
         $data = sanetize($_POST);
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-
         $errors = check($data);
-
-        echo '<pre>';
-        print_r($errors);
-        echo '</pre>';
     }
 
     else

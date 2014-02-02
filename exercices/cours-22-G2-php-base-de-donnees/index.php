@@ -1,4 +1,17 @@
-<?php 
+<?php
+
+    /**
+     * TODO
+     *  - Reminder
+     *  - Déplacer error reporting
+     *  - Add inputs
+     *  - Save to database
+     *  - List all users
+     *  - Delete user
+     *  - Edit user
+     *  - Password storing
+     */
+    require_once 'config.php';
     require_once 'form.php';
 ?>
 <!doctype html>

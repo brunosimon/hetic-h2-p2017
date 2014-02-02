@@ -14,6 +14,7 @@ define('DB_NAME','hetic-P2017-first');
 try
 {
     $pdo = new PDO('mysql:dbname='.DB_NAME.';host='.DB_HOST,DB_USER,DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_NAMED);
 }
 catch (PDOException $e)
 {

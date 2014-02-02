@@ -1,29 +1,11 @@
 <?php 
 
-    /**
-     * TODO
-     *  - Add inputs
-     *  - Save to database
-     */
 
     $errors = array();
     if(!empty($_POST))
     {
-        // echo '<pre>';
-        // print_r($_POST);
-        // echo '</pre>';
-
-        $data = sanetize($_POST);
-
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-
+        $data   = sanetize($_POST);
         $errors = check($data);
-
-        // echo '<pre>';
-        // print_r($errors);
-        // echo '</pre>';
     }
     else
     {
