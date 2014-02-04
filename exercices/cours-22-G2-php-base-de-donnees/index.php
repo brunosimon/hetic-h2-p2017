@@ -3,9 +3,7 @@
     /**
      * TODO
      *  - Reminder
-     *  - Déplacer error reporting
      *  - Add inputs
-     *  - Save to database
      *  - List all users
      *  - Delete user
      *  - Edit user
@@ -21,16 +19,29 @@
     <title>Cours 19 - G2 - Formulaire</title>
     <style>
         .errors {border:1px solid #f00;color:#f00;padding:0 16px;}
+        .successes {border:1px solid #0f0;color:#0f0;padding:0 16px;}
         input.error {border:1px solid #f00;color:#f00;}
     </style>
 </head>
 <body>
 
+    <!-- ERRORS -->
     <?php if(!empty($errors)): ?>
         <div class="errors">
             <?php foreach($errors as $_error): ?>
                 <p>
                     <?php echo $_error; ?>
+                </p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- SUCCESS -->
+    <?php if(!empty($success)): ?>
+        <div class="successes">
+            <?php foreach($success as $_success): ?>
+                <p>
+                    <?php echo $_success; ?>
                 </p>
             <?php endforeach; ?>
         </div>

@@ -1,11 +1,25 @@
 <?php 
 
-
-    $errors = array();
+    $errors  = array();
+    $success = array();
     if(!empty($_POST))
     {
         $data   = sanetize($_POST);
         $errors = check($data);
+
+        if(empty($errors))
+        {
+            $exec = $pdo->exec('INSERT INTO users (login,password,email,age) VALUES (\''.$data['login'].'\',\''.$data['password'].'\',\''.$data['email'].'\','.$data['age'].')');
+            
+            $data = array(
+                'login'    => '',
+                'password' => '',
+                'email'    => '',
+                'age'      => 25
+            );
+
+            $success[] = 'User well registered';
+        }
     }
     else
     {

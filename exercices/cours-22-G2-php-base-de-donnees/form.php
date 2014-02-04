@@ -1,14 +1,19 @@
 <?php
-
-    error_reporting(E_ALL); 
-    ini_set("display_errors", 1);
     
-    $errors = array();
+    $errors  = array();
+    $success = array();
 
     if(!empty($_POST))
     {
         $data = sanetize($_POST);
         $errors = check($data);
+
+        if(empty($errors))
+        {
+            $success[] = 'Well done';
+
+            $exec = $pdo->exec('INSERT INTO users (login,email,password,age) VALUES (\''.$data['login'].'\',\''.$data['email'].'\',\''.$data['password'].'\',\''.$data['age'].'\')');
+        }
     }
 
     else

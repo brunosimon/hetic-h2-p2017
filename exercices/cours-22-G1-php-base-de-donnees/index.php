@@ -2,10 +2,7 @@
     
     /**
      * TODO
-     *  - Reminder
      *  - Add inputs
-     *  - Configurer PDO
-     *  - Save to database
      *  - List all users
      *  - Delete user
      *  - Edit user
@@ -21,15 +18,29 @@
     <style>
         .errors {border:1px solid #f00;padding:0 20px;color:#f00;}
         input.error {border:1px solid #f00;color:#f00;}
+        .successes {border:1px solid #0f0;padding:0 20px;color:#0f0;}
+        input.success {border:1px solid #0f0;color:#0f0;}
     </style>
 </head>
 <body>
 
+    <!-- ERRORS -->
     <?php if(!empty($errors)): ?>
         <div class="errors">
             <?php foreach($errors as $_error): ?>
                 <p class="error">
                     <?php echo $_error; ?>
+                </p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- SUCCESS -->
+    <?php if(!empty($success)): ?>
+        <div class="successes">
+            <?php foreach($success as $_success): ?>
+                <p class="success">
+                    <?php echo $_success; ?>
                 </p>
             <?php endforeach; ?>
         </div>
