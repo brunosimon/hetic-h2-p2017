@@ -1,0 +1,44 @@
+.chart-container {
+	width: 300px;
+	margin: auto;
+}
+
+.legend {
+	margin-top: 5px;
+	text-align: center;
+	span {
+		display: inline-block;
+		padding: 6px 10px 6px 24px;
+		margin: 4px;
+		position: relative;
+		background-color: white;
+		border-radius: 2px;
+
+		span {
+			display: block;
+			width: 12px;
+			height: 12px;
+			border:none;
+			border-radius: 50%;
+			position: absolute;
+			top: 6px;
+			left: 2px;
+			background-color: black;
+			padding-left: 0;
+		}
+	}
+}
+
+.survey-description {
+	font-weight: bold;
+	border-top: solid 1px @medium-grey;
+	padding-top: 6px;
+	margin-top: 5px;
+}
+
+.other-surveys:after {
+	content: ',';
+}
+.other-surveys:last-child:after {
+	content: '.';
+}

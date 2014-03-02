@@ -1,0 +1,65 @@
+body{
+	background:#2A2F36;
+	font-family:'Arial',sans-serif;
+	font-size:62,5%;
+	color:#FFFDF5;
+	font-family:Arial,sans-serif;
+	width:100%;
+}
+
+a{
+	text-decoration:none; 
+	color: #FF6F3F;
+
+}
+a:hover{
+	text-decoration: underline;
+}
+
+h1{
+	font-size: 100px; 
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	color: #202429;
+}
+
+h2{
+	font-size: 50px; 
+	text-align: left;
+}
+
+header{
+	width: auto;
+	height: auto;
+}
+
+.content{
+	width: 80%;
+	height: auto;
+	position: absolute; 
+	top: 150px; 
+ 
+}
+
+section .intro{
+
+}
+
+.error{border: 1px solid #f00; padding: 0 20px; color: #f00;}
+input.error{border: 1px solid #f00; padding: 0 20px; color: #f00;}
+
+.resultat{
+	background-color: red;
+}
+
+
+#study_oui{
+	display: none;
+}
+
+#study_non{
+	display: none;
+}
+#etudiant_sup{
+	display:none;
+}

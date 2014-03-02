@@ -276,7 +276,7 @@ catch (PDOException $e)
                     <p>Plus facile (presque)</p>
                 </section>
 
-                <section>
+                <section id="query">
                     <p>La méthode <a href="http://www.php.net/manual/fr/pdo.query.php" target="_blank">query()</a> renvoie une instance de <a href="http://www.php.net/manual/fr/class.pdostatement.php" target="_blank">PDOStatement</a></p>
                     <p>Cette instance possède des méthodes</p>
                     <p><a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a> renvoie un tableau de toutes les lignes</p>
@@ -284,7 +284,7 @@ catch (PDOException $e)
                     <p>En appelant <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> à nouveau, on aura la ligne suivante</p>
                 </section>
 
-                <section>
+                <section id="fetch-all">
                     <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetchall.php" target="_blank">fetchAll()</a></p>
                     <pre><code contenteditable class="php">
 $result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
@@ -298,7 +298,7 @@ echo &#039;&lt;/pre&gt;&#039;;
                     </code></pre>
                 </section>
 
-                <section>
+                <section id="fetch">
                     <p>Avec <a href="http://www.php.net/manual/fr/pdostatement.fetch.php" target="_blank">fetch()</a> dans un while</p>
                     <pre><code contenteditable class="php">
 $result = $pdo-&gt;query(&#039;SELECT * FROM users&#039;);
@@ -378,7 +378,7 @@ catch (PDOException $e)
                     </ul>
                 </section>
 
-                <section>
+                <section id="exec">
                     <p>La méthode <a href="http://www.php.net/manual/fr/pdo.exec.php" target="_blank">exec()</a> exécute une requête SQL et renvoie le nombre de lignes affectées</p>
                 </section>
 
@@ -401,6 +401,62 @@ echo &#039;&lt;pre&gt;&#039;;
 print_r($result);
 echo &#039;&lt;/pre&gt;&#039;;
                     </code></pre>
+                </section>
+
+                <section>
+                    <p>Les requêtes SQL deviennent vite trop compliquées comme ci-dessous</p>
+                    <pre><code contenteditable class="php">
+$exec = $pdo->exec('INSERT INTO users (login,password,email,age) VALUES (\''.$data['login'].'\',\''.$data['password'].'\',\''.$data['email'].'\','.$data['age'].')');
+                    </code></pre>
+                    <p>Il est visuellement trop difficile de dinstiguer la requête SQL propre, des variables PHP, des quotes échapées, etc.</p>
+                </section>
+
+                <section>
+                    <p>PDO offre une solution</p>
+                    <pre><code contenteditable class="php">
+$prepare = $pdo->prepare('INSERT INTO users (login,password,email,age) VALUES (:login,:password,:email,:age)');
+$prepare->bindValue(':login',$data['login']);
+$prepare->bindValue(':password',$data['password']);
+$prepare->bindValue(':email',$data['email']);
+$prepare->bindValue(':age',$data['age']);
+$exec = $prepare->execute();
+                    </code></pre>
+                    <p>Ce n'est pas plus rapide à écrire mais c'est beaucoup plus clair</p>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="php">
+$prepare = $pdo->prepare('INSERT INTO users (login,password,email,age) VALUES (:login,:password,:email,:age)');
+
+/* ... */
+                    </code></pre>
+                    <p>La méthode <a href="http://www.php.net/manual/fr/pdo.prepare.php" target="_blank">prepare()</a> prépare la requête SQL</p>
+                    <p>Les différentes valeurs sont remplacées par des identifiants avec le signe <a href="">:</a> devant</p>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="php">
+/* ... */
+
+$prepare->bindValue(':login',$data['login']);
+$prepare->bindValue(':password',$data['password']);
+$prepare->bindValue(':email',$data['email']);
+$prepare->bindValue(':age',$data['age']);
+
+/* ... */
+                    </code></pre>
+                    <p>La méthode <a href="http://www.php.net/manual/en/pdostatement.bindvalue.php" target="_blank">bindValue()</a> sur l'objet renvoyé par <a href="http://www.php.net/manual/fr/pdo.prepare.php" target="_blank">prepare()</a> permet d'assigner les valeurs à chaque identifiant</p>
+                </section>
+
+                <section>
+                    <pre><code contenteditable class="php">
+/* ... */
+
+$exec = $prepare->execute();
+                    </code></pre>
+                    <p>Il ne reste plus qu'à exécuter la requête avec la méthode <a href="http://www.php.net/manual/en/pdostatement.execute.php" target="_blank">execute()</a> sur l'objet renvoyé par <a href="http://www.php.net/manual/fr/pdo.prepare.php" target="_blank">prepare()</a></p>
+                    <p>L'object renvoyé par <a href="http://www.php.net/manual/en/pdostatement.execute.php" target="_blank">execute()</a> fonctionne comme l'objet renvoyé par <a href="#exec">exec()</a> et par <a href="#query">query()</a></p>
+                    <p>Il est possible d'utiliser <a href="#fetch">fetch()</a> et <a href="#fetch-all">fetchAll()</a> dessus</p>
                 </section>
 
             </div>

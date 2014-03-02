@@ -1,0 +1,197 @@
+.panel:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+form h3 {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.progress {
+  width: 100%;
+  background: red;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.whole-page {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+form .answer {
+  width: 50%;
+  height: 50%;
+  float: left;
+  position: relative;
+  background: #fafafa;
+}
+form .answer:hover {
+  background: #e6e6e6;
+}
+form .answer:nth-child(2) {
+  background: #3498db;
+}
+form .answer:nth-child(3) {
+  background: #2ecc71;
+}
+form .answer:nth-child(4) {
+  background: #1abc9c;
+}
+form .answer:nth-child(5) {
+  background: #e74c3c;
+}
+form label {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+form label:hover {
+  cursor: pointer;
+}
+form label p {
+  width: 50%;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+form input[type=radio]:checked + label {
+  background: #555555;
+}
+form h3 {
+  padding: 10px 0;
+  height: 35px;
+  width: 50%;
+  text-align: center;
+  background: #333;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0px 10px;
+}
+
+header.header {
+  background: #222;
+  height: 45px;
+  color: white;
+  font-size: 20px;
+  line-height: 45px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  background: #fafafa;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+}
+.panel article {
+  padding: 10px;
+}
+.panel article h2 {
+  font-size: 18px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.identity {
+  height: 250px;
+}
+.identity img {
+  float: left;
+  margin-right: 10px;
+  height: 100%;
+}
+.identity .description {
+  font-size: 15px;
+  line-height: 22.5px;
+  height: 195px;
+  overflow: auto;
+}
+
+.details {
+  overflow: hidden;
+}
+.details p.bars {
+  background: #2ecc71;
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: normal;
+  height: 10px;
+  width: 0%;
+}
+
+.graph {
+  margin: 5px 0;
+}
+.graph li {
+  display: inline-block;
+  background: red;
+  padding: 5px 0;
+  text-align: center;
+  height: 26px;
+  width: 0%;
+  overflow: hidden;
+}
+.graph li:nth-child(1) {
+  background: #3498db;
+}
+.graph li:nth-child(3) {
+  background: #2ecc71;
+}
+.graph li:nth-child(4) {
+  background: #1abc9c;
+}
+.graph li:nth-child(2) {
+  background: #27ae60;
+}
+.graph li.current {
+  background: #e67e22;
+}
+
+.redo {
+  display: block;
+  background: #ecf0f1;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  width: 200px;
+  margin: 20px auto;
+}
+.redo:hover {
+  background: #bdc3c7;
+}

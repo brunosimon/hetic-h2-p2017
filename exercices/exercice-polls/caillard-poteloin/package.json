@@ -1,0 +1,22 @@
+{
+  "name": "survey",
+  "version": "0.0.0",
+  "description": "Survey project for HETIC, PHP",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "author": "Hugo Caillard",
+  "license": "I don't care",
+  "devDependencies": {
+    "gulp": "~3.5.1",
+    "gulp-util": "~2.2.10",
+    "gulp-less": "~1.2.1",
+    "gulp-jshint": "~1.3.4",
+    "gulp-csslint": "~0.1.3",
+    "gulp-livereload": "0.3.2",
+    "tiny-lr": "0.0.5",
+    "gulp-ftp": "~0.1.1"
+  }
+}

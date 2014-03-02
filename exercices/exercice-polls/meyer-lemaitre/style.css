@@ -1,0 +1,120 @@
+
+/* index.html */
+
+.accueil {
+	background: #bdc3c7;
+	padding-left: 500px;
+	padding-right: 500px;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* poll.php */
+
+form, p{
+	text-align: center;
+}
+
+p.sentence1{
+	font-size: 40px;
+	text-align: center;
+}
+
+.poll{
+	background: #bdc3c7;
+	font-family: 'Source Sans Pro', sans-serif;
+} 													
+
+.drama{
+	margin-bottom: 30px;
+	font-style: white;
+} 	
+
+.Action{
+	margin-bottom: 30px;	
+
+}
+
+.sciencefiction{
+	margin-bottom: 30px;	
+}
+
+.comedy{
+	margin-bottom: 30px;	
+
+}
+
+.fantastic{
+	margin-bottom: 30px;	
+}
+
+
+/* results.php */
+
+/*
+.h1{
+	font-family: 'Source Sans Pro', sans-serif;
+}*/
+
+h1{
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-seri100
+}
+
+.users{
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 50px;
+	text-align: center;
+}
+
+.result{
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	background: #bdc3c7;
+	width:100%;
+	height: 265px;
+}
+
+.separateur1{
+	position : absolute;
+	background-color: black;
+	width:1px;
+	height: 230px;
+	left:205px;
+	top:100px;
+
+}
+.separateur2{
+	position : absolute;
+	background-color: black;
+	width: 1px;
+	height: 230px;
+	left:385px;
+	top:100px;
+
+}
+.separateur3{
+	position : absolute;
+	background-color: black;
+	width:1px;
+	height: 230px;
+	left:635px;
+	top:100px;
+
+}
+.separateur4{
+	position : absolute;
+	background-color: black;
+	width:1px;
+	height: 230px;
+	left:845px;
+	top:100px;
+
+}
+.column{
+	padding-left: 50px;
+	float:right;
+	float: left;
+}

@@ -1,0 +1,21 @@
+.progress{
+	width: 600px;
+	height: 15px;
+	position: fixed;
+	top: 50%;
+	right: 0px;
+	-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		 -o-transform: rotate(90deg);
+			transform: rotate(90deg);
+	display: none;
+}
+.panel{
+	display: none;
+	position: fixed;
+	width: 200px;
+}
+canvas{
+	display: block;
+	margin: auto;
+}

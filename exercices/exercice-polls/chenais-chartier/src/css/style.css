@@ -1,0 +1,131 @@
+*, *:before, *:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body{
+	font-size: 16px;
+	background-color: #EBEBEB;
+}
+
+.container{
+	width: 100%;
+	margin: auto;
+	background-color: #EBEBEB;
+}
+
+/* -----------------------HEADER ----------------------- */
+
+h1{
+	font-family: 'Kameron', serif;
+	text-align: center;
+	font-size: 2.5em;
+	line-height: 3em;
+	color: #C2A341;
+}
+
+
+/* -----------------------CONTENT----------------------- */
+
+.content{
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+.description{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.5em;
+	color: #000;
+}
+
+.poster{
+	width: 270px;
+	margin: 10px 10px;
+	height: 370px;
+}
+
+.valider{
+	background: #B80000;
+	margin-top: 40px;
+	text-transform: uppercase;
+	padding: 20px;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	font-size: 1.4em;
+	width: 200px;
+	border: none;
+}
+
+.valider:hover{
+	background: #E43B3B;
+}
+
+.results{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.1em;
+	color: #000;
+}
+
+.dataviz{
+	height: 30px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	-webkit-animation: width 0.5s ease;
+	-o-animation: width 0.5s ease;
+	-moz-animation: width 0.5s ease;
+	animation: width 0.5s ease;
+}
+
+.dataviz-bg{
+	width: 100%;
+	border-radius: 8px;
+	height: 36px;
+	background-color: #777;
+	padding: 3px;
+
+}
+
+.warning{
+	color: #B80000;
+	height: 40px;
+	width: 60%;
+	border-radius: 10px;
+	border: 2px solid #B80000;
+	display: block;
+	margin: auto;
+	line-height: 40px;
+	font-size: 1.5em;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+/* -----------------------FOOTER ----------------------- */
+
+footer{
+	text-align: center;
+	color: #000;
+	font-size: 1.1em;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 40px;
+}
+
+footer a{
+	text-decoration: none;
+	color: #3d3d3d;
+	border-bottom-color: 1px dotted #999;
+}
+
+footer a:hover{
+	border-bottom-color: rgb(238, 46, 34);
+}
+
+/* -----------------------FONTS ------------------------ */
+
+
+
+

@@ -1,0 +1,57 @@
+input[name="choice3"], input[name="choice4"], input[name="choice5"] {
+	display: none;
+}
+
+.label.label-danger {
+	display: inline-block;
+	margin: 0 0 2px 0;
+}
+
+.label.label-danger+input {
+	display: block;
+}
+
+.add-choice {
+	margin: 8px 0;
+	border: solid 2px #999;
+	background-color: #eee;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	transition: border-color .3s, background .3s;
+
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		background-color: #999;
+		transition: border .3s, background .3s;
+	}
+
+	&:before {
+		top: 7px;
+		left: 2px;
+		width: 12px;
+		height: 2px;
+	}
+
+	&:after {
+		top: 2px;
+		left: 7px;
+		width: 2px;
+		height: 12px;
+	}
+
+	&:hover {
+		border-color: #444;
+		background-color: #ddd;
+		-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+
+		&:before, &:after {
+			background-color: #444;
+		}
+	}
+}

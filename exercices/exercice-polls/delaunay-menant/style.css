@@ -1,0 +1,116 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+/* BOX SIZING */
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* BASE SITE */
+body {
+    background-color: #afe3ff;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    color: #2E2E2E;
+}
+
+strong { font-weight:bold; } i { font-style:italic; }
+a, a:hover, a:active, a:focus { text-decoration:none; }
+input[type="submit"]{ border:none; cursor:pointer; font-size:14px; }
+
+h1, .overweight, h2, .weight, h3, .bigger, h4, .big, h5, .fatter, h6, .fat {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight:bold;
+    font-style:normal;
+}
+
+h1, .overweight { font-size:52px; }
+h2, .weight     { font-size:44px; }
+h3, .bigger     { font-size:32px; }
+h4, .big        { font-size:24px; }
+h5, .fatter     { font-size:20px; }
+h6, .fat        { font-size:18px; }
+
+li {
+    list-style-type: none;
+}
+
+.left { float:left; position:relative; }
+.right { float:right; position:relative; }
+.clear { clear:both; }
+
+/* DISPLAY 960px */
+header.head { background:white; position:fixed; height:60px; width:100%; z-index:99; }
+    .head .logotype { float:left; background:#2E2E2E; height:40px; top:10px; left:10px; position:relative; width:40px; }
+    .head .head-nav { float:right; height:40px; right:10px; position:relative; width: 500px; }
+        .head .head-nav li.head-list { display:inline-block; margin:0 10px; }
+            .head .head-nav li.head-list a.head-link { color:#2E2E2E; cursor:pointer; display:block; height:60px; line-height:60px; text-align: center; padding:0 10px; }
+            .head .head-nav li.head-list a.head-link:hover, .head .head-nav li.head-list a.head-link:focus { background:#88abee; color:white; }
+            .head .head-nav li.head-list a.head-link:active { background:#78a0ee; color:white; }
+                .head .head-nav li.head-list .count { display:none; visibility:hidden; background:white; padding-top:12px; position:absolute; right:0px; width:300px; z-index:100; }
+                .head .head-nav li.head-list:hover .count { display:block; visibility:visible; }
+                    .head .head-nav li.head-list:hover .count li { padding:12px 20px; }
+
+section.create_poll { height:600px; left:50%; margin:-300px 0 0 -300px; padding:40px; position:absolute; top:40%; width: 600px; }
+.create_poll form input[type="email"], .create_poll form input[type="password"], .create_poll form input[type="text"],.create_poll form input[type="number"] { border:none; display:block; font-size:14px; height:32px; line-height:32px; margin:12px auto; padding:0 10px; width:180px; }
+    
+
+section.connect { height:600px; left:50%; margin:-300px 0 0 -300px; padding:80px; position:fixed; top:50%; width: 600px; }
+    .connect .logo {}
+    h1.bigger { padding:30px 0 12px 0; text-align:center;}
+    h2.fatter { padding:0px; text-align: center;}
+    .connect form { margin-top:0px; }
+        .connect form input[type="email"], .connect form input[type="password"], .connect form input[type="text"],.connect form input[type="number"] { border:none; display:block; font-size:14px; height:32px; line-height:32px; margin:12px auto; padding:0 10px; width:180px; }
+    .connect .or { display:block; padding:30px 0; text-align: center; }
+
+section.todo-contain, section.done-contain { height:auto; margin:0 10px; padding-top:150px; position: relative; width:auto; z-index:9; }
+    .todo-contain h3, .done-contain h3 { color:#2E2E2E; margin:18px auto; text-align:center; width: 500px; }
+    .todo-contain .todo-list, .done-contain .done-list { padding:0 14px; }
+        .todo-contain .todo-list li, .done-contain .done-list li { display:inline-block; margin:10px 10px; }
+            .todo-contain .todo-list li figure, .done-contain .done-list li figure  { background:white; height: 150px; width: 150px; }
+            .todo-contain .todo-list li article, .done-contain .done-list li article { padding:8px; text-align:center; }
+
+section.done-contain { border-top: 1px solid white; padding-bottom:220px; padding-top:100px; top:50px; }
+
+.errors { background:#efa3aa; color:white; line-height:24px; margin:30px auto; padding:12px 20px; width:400px; }
+.success { background:#33d055; color:white; line-height:24px; margin:30px auto; padding:12px 20px; width:400px; }
+
+h1.poll { background: -moz-linear-gradient(top, rgba(175,227,255,1) 50%, rgba(175,227,255,1) 60%, rgba(175,227,255,0) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(175,227,255,1)), color-stop(60%,rgba(175,227,255,1)), color-stop(100%,rgba(175,227,255,0))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(175,227,255,1) 50%,rgba(175,227,255,1) 60%,rgba(175,227,255,0) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(175,227,255,1) 50%,rgba(175,227,255,1) 60%,rgba(175,227,255,0) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(175,227,255,1) 50%,rgba(175,227,255,1) 60%,rgba(175,227,255,0) 100%); /* IE10+ */
+            background: linear-gradient(to bottom, rgba(175,227,255,1) 50%,rgba(175,227,255,1) 60%,rgba(175,227,255,0) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afe3ff', endColorstr='#00afe3ff',GradientType=0 ); /* IE6-9 */
+            padding: 100px 0 60px 0; position:fixed; text-align:center; width:100%; z-index:98 }
+ul.end-list {padding: 500px 0 400px 0}
+ul.poll-list {margin:auto; position:relative; width:700px;}
+    .poll-list li.question { padding:400px 0 400px 0; position:relative; }
+        .poll-list li .title { display:block; font-size:20px; font-weight:bold; margin:0 0 20px 20px; }    
+            .poll-list li ul { margin-bottom:30px; }
+                .poll-list li ul li { display:block; padding:8px 10px; }
+                   .poll-list li ul li label { border-radius:20px; cursor:pointer; padding:6px 10px; -o-transition:all 500ms; -moz-transition:all 500ms; -webkit-transition:all 500ms; transition:all 500ms;  }
+                  .poll-list li ul li label:hover, .poll-list li form ul li label:focus { background:rgba(255,255,255,0.5); }
+                  .poll-list li ul li label:active { background:rgba(255,255,255,0.8); }
+                  .poll-list li ul li input[type="radio"] { padding:0 20px 0 0; }
+.btn { background: #88ABEE; color:white; display:block; border-radius:4px; line-height:36px; height:36px; margin:auto; padding:0 20px; text-align: center; width:180px; }
+.btn:hover, .btn:focus { background: #779fEa; color:white; }
+.btn:active { background: #669aE0; color:#eee; }
+.valid { background:#33d055; } .valid:hover, .valid:focus { background:#30ca50; } .valid:active { background:#3aba45; } 
+
+
+footer.foot { background-color:#88abee; color:white; height:100px; line-height:100px; margin-bottom:80px; position:relative; text-align:center; width:auto; }
+
+@media screen and (max-height:750px) {
+    .poll-list li.question { padding:200px 0 200px 0; position:relative; }
+    section.done-contain { padding:30px 0 70px 0; }
+    section.todo-contain { padding:100px 0 20px 0; }
+}
+
+@media screen and (max-height:850px) and (min-height:751px) {
+    .poll-list li.question { padding:280px 0 280px 0; position:relative; }
+    section.done-contain { padding:60px 0 150px 0; }
+    section.todo-contain { padding:130px 0 40px 0; }
+}
+
+@media screen and (max-height:950px) and (min-height:851px) {
+    .poll-list li.question { padding:380px 0 380px 0; position:relative; }
+    section.done-contain { padding:100px 0 230px 0; }
+    section.todo-contain { padding:160px 0 60px 0; }
+}

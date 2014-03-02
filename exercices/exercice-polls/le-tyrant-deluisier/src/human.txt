@@ -1,0 +1,17 @@
+/* TEAM */
+                       
+Mon rôle sur ce projet: Mathieu, Développeur WEB                 
+Site: Mathieu.Letyrant@gmail.com                  
+Twitter: @MathLTY                     
+Location: Paris, France
+		
+/* THANKS */
+							
+Name: Pauline Deloisier
+                
+/* SITE */   
+
+Last update:  AAAA/MM/JJ 
+Standards: HTML5, CSS3, JS, PHP
+Components: Jquery, Bootstrap, ChartJs
+Software: SublimeText 3

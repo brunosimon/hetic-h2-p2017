@@ -1,0 +1,30 @@
+img.profile{
+	float:left;
+}
+
+blockquote.tweet{
+	margin-left: 65px;
+}
+
+.btn{
+	margin-top:4px;
+}
+
+.main-title{
+	text-align:center;
+}
+
+.button-unchecked{
+	background-color: #eb8378;
+}
+
+.loader{
+	width:20%;
+	margin-left:40%;
+	margin-top:30px;
+}
+
+.content{
+	margin-left:10px;
+	margin-right:10px;
+}

@@ -1,0 +1,130 @@
+/*
+ * RESET CSS
+ **/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+ * CUSTOM CSS
+ **/
+
+body {
+	background-color: #ececec;
+	color : #3d3d3d;
+	font: normal 300 1em 'Raleway', 'Helvetica', 'Arial', sans-serif;
+	line-height: 1.4em;
+}
+
+/* Content */
+.content {
+	width : 960px;
+	padding: 20px;
+	margin : 0 auto;
+}
+
+h1{
+	font-size: 2em;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	font-weight: 700;
+}
+
+h2{
+	font-weight: 700;
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+h3{
+	font-weight: 500;
+	font-size: 1.1em;
+	margin-bottom: 15px;
+}
+
+
+input{
+	border : none;
+	box-shadow: none;
+	outline : none;
+	height:20px;
+	
+}
+
+
+	input[type='submit'] {
+		background-color: #ff795e;
+		border: none;
+		width : 250px;
+		margin: 15px 0 5px;
+		height: 50px;
+		box-sizing: border-box;
+		color: #f6f6f6;
+		text-transform: uppercase;
+	}
+	
+	input[type='radio'] {
+		display: inline-block;
+		clear: both;
+		animation:fromright 1s ease 0s 1 normal;
+	}
+	
+	@keyframes fromright {
+    0%   {left:-100px;}
+    50%  {left:-70px;}
+    100% {left:0px;}
+}
+
+.response {
+	clear: both;
+	margin-bottom: 8px;
+}
+
+/* Hidden class */
+.hidden{
+	display : none;
+	visibility: hidden;	
+}
+

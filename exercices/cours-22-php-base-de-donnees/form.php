@@ -10,7 +10,12 @@
         // Add
         if(empty($errors))
         {
-            $pdo->exec('INSERT INTO users (login,password,email,age) VALUES (\''.$data['login'].'\',\''.$data['password'].'\',\''.$data['email'].'\','.$data['age'].')');
+            $prepare = $pdo->prepare('INSERT INTO users (login,password,email,age) VALUES (:login,:password,:email,:age)');
+            $prepare->bindValue(':login',$data['login']);
+            $prepare->bindValue(':password',$data['password']);
+            $prepare->bindValue(':email',$data['email']);
+            $prepare->bindValue(':age',$data['age']);
+            $prepare->execute();
 
             // Success message
             $success[] = 'User saved';

@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule	^([a-z]+)\.html$ index.php?page=$1 [L]
+RewriteRule	^([a-z]+)-([0-9]+)\.html$ index.php?page=$1&id=$2 [L]

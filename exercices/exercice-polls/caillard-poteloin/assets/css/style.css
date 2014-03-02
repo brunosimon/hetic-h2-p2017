@@ -1,0 +1,215 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #f1f1f1;
+  color: #888888;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+}
+.push {
+  height: 50px;
+}
+.wrap {
+  min-height: 100%;
+  height: auto;
+}
+h1 {
+  display: block;
+  margin: 10px 0;
+}
+h1 a {
+  color: #666666;
+}
+h1 a:hover {
+  color: #444;
+  text-decoration: none;
+}
+h1 a:active {
+  text-shadow: 2px 2px 0 #fff;
+}
+h2 {
+  color: #666666;
+}
+.unanswered {
+  margin-top: 20px;
+}
+p {
+  font-weight: 400;
+}
+footer {
+  height: 40px;
+  margin-top: -40px;
+}
+footer p {
+  text-align: center;
+}
+.chart-container {
+  width: 300px;
+  margin: auto;
+}
+.legend {
+  margin-top: 5px;
+  text-align: center;
+}
+.legend span {
+  display: inline-block;
+  padding: 6px 10px 6px 24px;
+  margin: 4px;
+  position: relative;
+  background-color: white;
+  border-radius: 2px;
+}
+.legend span span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  background-color: black;
+  padding-left: 0;
+}
+.survey-description {
+  font-weight: bold;
+  border-top: solid 1px #888888;
+  padding-top: 6px;
+  margin-top: 5px;
+}
+.other-surveys:after {
+  content: ',';
+}
+.other-surveys:last-child:after {
+  content: '.';
+}
+.new-survey {
+  margin-top: 20px;
+}
+.new-survey form {
+  width: 300px;
+  margin: auto;
+}
+input[type="text"],
+textarea {
+  display: block;
+  border: none;
+  font-size: 12px;
+  padding: 4px;
+  margin: 5px 2px;
+  color: #555;
+  resize: none;
+  width: 100%;
+}
+input[type="text"]:focus,
+textarea:focus {
+  outline: transparent;
+  border: none;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border: solid 6px #888888;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s;
+}
+input[type="radio"]:checked {
+  border-width: 4px;
+}
+input[type="radio"]:checked + label {
+  color: black;
+}
+input[type="radio"]:focus {
+  outline-color: transparent;
+  outline: none;
+}
+input[type="radio"]:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+input[type="submit"] {
+  margin: auto;
+}
+label {
+  color: #888888;
+  font-weight: 200;
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+}
+input[name="choice3"],
+input[name="choice4"],
+input[name="choice5"] {
+  display: none;
+}
+.label.label-danger {
+  display: inline-block;
+  margin: 0 0 2px 0;
+}
+.label.label-danger + input {
+  display: block;
+}
+.add-choice {
+  margin: 8px 0;
+  border: solid 2px #999;
+  background-color: #eee;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
+.add-choice:before,
+.add-choice:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #999;
+  transition: border .3s, background .3s;
+}
+.add-choice:before {
+  top: 7px;
+  left: 2px;
+  width: 12px;
+  height: 2px;
+}
+.add-choice:after {
+  top: 2px;
+  left: 7px;
+  width: 2px;
+  height: 12px;
+}
+.add-choice:hover {
+  border-color: #444;
+  background-color: #ddd;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.add-choice:hover:before,
+.add-choice:hover:after {
+  background-color: #444;
+}
+.survey-validation table {
+  width: 100%;
+  background-color: white;
+}
+.survey-validation th,
+.survey-validation td {
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22%2FUsers%2Fhugo%2FSites%2FHETIC%2Fsurvey%2Fassets%2Fless%2Fmain.less%22%2C%22%2FUsers%2Fhugo%2FSites%2FHETIC%2Fsurvey%2Fassets%2Fless%2Fsurvey.less%22%2C%22%2FUsers%2Fhugo%2FSites%2FHETIC%2Fsurvey%2Fassets%2Fless%2Fform.less%22%2C%22%2FUsers%2Fhugo%2FSites%2FHETIC%2Fsurvey%2Fassets%2Fless%2Fnewsurvey.less%22%2C%22%2FUsers%2Fhugo%2FSites%2FHETIC%2Fsurvey%2Fassets%2Fless%2Fadmin.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAA%3BEACC%2C8BAAA%3BEAAgC%2C2BAAA%3BEAA6B%2CsBAAA%3B%3BAAG9D%3BAAAM%3BEACL%2CYAAA%3B%3BAAGD%3BEACC%2CyBAAA%3BEACA%2CcAAA%3BEACA%2CmCAAA%3BEACA%2CcAAA%3B%3BAAGD%3BEACC%2CYAAA%3B%3BAAGD%3BEACC%2CgBAAA%3BEACA%2CYAAA%3B%3BAAGD%3BEACC%2CcAAA%3BEACA%2CcAAA%3B%3BAAGD%2CEAAG%3BEACF%2CcAAA%3B%3BAAEA%2CEAHE%2CEAGD%3BEACA%2CWAAA%3BEACA%2CqBAAA%3B%3BAAGD%2CEARE%2CEAQD%3BEACA%2C2BAAA%3B%3BAAIF%3BEACC%2CcAAA%3B%3BAAGD%3BEACC%2CgBAAA%3B%3BAAGD%3BEACC%2CgBAAA%3B%3BAAGD%3BEACC%2CYAAA%3BEACA%2CiBAAA%3B%3BAAGD%2CMAAO%3BEACN%2CkBAAA%3B%3BAC5DD%3BEACC%2CYAAA%3BEACA%2CYAAA%3B%3BAAGD%3BEACC%2CeAAA%3BEACA%2CkBAAA%3B%3BAAFD%2COAGC%3BEACC%2CqBAAA%3BEACA%2C0BAAA%3BEACA%2CWAAA%3BEACA%2CkBAAA%3BEACA%2CuBAAA%3BEACA%2CkBAAA%3B%3BAATF%2COAGC%2CKAQC%3BEACC%2CcAAA%3BEACA%2CWAAA%3BEACA%2CYAAA%3BEACA%2CYAAA%3BEACA%2CkBAAA%3BEACA%2CkBAAA%3BEACA%2CQAAA%3BEACA%2CSAAA%3BEACA%2CuBAAA%3BEACA%2CeAAA%3B%3BAAKH%3BEACC%2CiBAAA%3BEACA%2C6BAAA%3BEACA%2CgBAAA%3BEACA%2CeAAA%3B%3BAAGD%2CcAAc%3BEACb%2CSAAS%2CGAAT%3B%3BAAED%2CcAAc%2CWAAW%3BEACxB%2CSAAS%2CGAAT%3B%3BAC1CD%3BEACC%2CgBAAA%3B%3BAADD%2CWAGC%3BEACC%2CYAAA%3BEACA%2CYAAA%3B%3BAAIF%2CKAAK%3BAAAe%3BEACnB%2CcAAA%3BEACA%2CYAAA%3BEACA%2CeAAA%3BEACA%2CYAAA%3BEACA%2CeAAA%3BEACA%2CWAAA%3BEACA%2CYAAA%3BEACA%2CWAAA%3B%3BAAEA%2CKAVI%2CaAUH%3BAAAD%2CQAAC%3BEACA%2CoBAAA%3BEACA%2CYAAA%3B%3BAAIF%2CKAAK%3BEACJ%2CwBAAA%3BEACA%2CqBAAA%3BEACA%2CWAAA%3BEACA%2CYAAA%3BEACA%2CqBAAA%3BEACA%2CyBAAA%3BEACA%2CkBAAA%3BEACA%2CeAAA%3BEACA%2CmBAAA%3B%3BAAEA%2CKAXI%2CcAWH%3BEACA%2CiBAAA%3B%3BAAEA%2CKAdG%2CcAWH%2CQAGC%3BEACA%2CYAAA%3B%3BAAKF%2CKApBI%2CcAoBH%3BEACA%2C0BAAA%3BEACA%2CaAAA%3B%3BAAGD%2CKAzBI%2CcAyBH%3BEACA%2CmBAAmB%2CWAAnB%3BEACA%2CgBAAgB%2CWAAhB%3BEACA%2CWAAW%2CWAAX%3B%3BAAIF%2CKAAK%3BEACJ%2CYAAA%3B%3BAAGD%3BEACC%2CcAAA%3BEACA%2CgBAAA%3BEACA%2CqBAAA%3BEACA%2CkBAAA%3BEACA%2CeAAA%3B%3BAClED%2CKAAK%3BAAAkB%2CKAAK%3BAAAkB%2CKAAK%3BEAClD%2CaAAA%3B%3BAAGD%2CMAAM%3BEACL%2CqBAAA%3BEACA%2CiBAAA%3B%3BAAGD%2CMAAM%2CaAAa%3BEAClB%2CcAAA%3B%3BAAGD%3BEACC%2CaAAA%3BEACA%2CsBAAA%3BEACA%2CsBAAA%3BEACA%2CWAAA%3BEACA%2CYAAA%3BEACA%2CkBAAA%3BEACA%2CkBAAA%3BEACA%2CeAAA%3BEACA%2C8CAAA%3B%3BAAEA%2CWAAC%3BAAAS%2CWAAC%3BEACV%2CSAAS%2CEAAT%3BEACA%2CcAAA%3BEACA%2CkBAAA%3BEACA%2CsBAAA%3BEACA%2CsCAAA%3B%3BAAGD%2CWAAC%3BEACA%2CQAAA%3BEACA%2CSAAA%3BEACA%2CWAAA%3BEACA%2CWAAA%3B%3BAAGD%2CWAAC%3BEACA%2CQAAA%3BEACA%2CSAAA%3BEACA%2CUAAA%3BEACA%2CYAAA%3B%3BAAGD%2CWAAC%3BEACA%2CkBAAA%3BEACA%2CsBAAA%3BEACA%2CmBAAmB%2CWAAnB%3BEACA%2CWAAW%2CWAAX%3B%3BAAEA%2CWANA%2CMAMC%3BAAAS%2CWANV%2CMAMW%3BEACV%2CsBAAA%3B%3BACjDH%2CkBACC%3BEACC%2CWAAA%3BEACA%2CuBAAA%3B%3BAAHF%2CkBAMC%3BAAND%2CkBAMK%3BEACH%2CYAAA%3BEACA%2CkBAAA%3BEACA%2CsBAAA%22%7D */

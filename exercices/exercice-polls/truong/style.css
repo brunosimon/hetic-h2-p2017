@@ -1,0 +1,51 @@
+*
+ 	{
+ 		font-family: Arial;
+ 	}
+ 	body
+ 	{
+ 		background: url("dessert.png");
+ 		background-repeat: no-repeat;
+ 		background-position: top;
+ 	}
+ 	.carre0
+ 	{
+ 		font-size:25px;
+ 		color: white;
+ 		width:200px;
+ 		height:130px;
+ 		background:#2B2B29;
+ 		position:absolute;
+ 		right:45%;
+ 		top:15%;
+ 	}
+ 	.sond
+ 	{
+ 		text-align: center;
+ 		position:relative;
+ 	}
+ 	.carre1
+ 	{
+ 		width:200px;
+ 		height:90px;
+ 		background:#2B2B29;
+ 		position:absolute;
+ 		right:45%;
+ 		top:30%;
+ 	}
+
+ 	.info{
+ 		color:red;
+ 		text-align: center;
+ 		position:absolute;
+ 		top:50px;
+ 		right:20%;
+ 	}
+    form
+    {
+        text-align:center;
+    }
+    #nom, #valider 
+    {
+    	margin-top:10px;
+    }

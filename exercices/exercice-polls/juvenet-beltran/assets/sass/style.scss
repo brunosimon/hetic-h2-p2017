@@ -1,0 +1,641 @@
+@import "compass";
+
+@import "fonts";
+@import "reset";
+
+/* ----------- VARIABLES ----------- */
+
+$nav : #191b1f;
+
+$orange : darken(orange,1%);
+$red : #d53e52;
+$blue : #4567ce;
+$green : #49b97a;
+$grey : lightgrey;
+$active : darken(#6f7b92, 36%);
+
+/* ----------- GENERAL ----------- */
+
+*{	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+html, body{
+	height:100%;
+	max-height:100%;
+	font-family: 'Roboto', Helvetica, Arial;
+	font-size: 16px;
+	overflow:hidden;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+h1{
+	font-size: 24px;
+	font:{
+		weight:300;
+	}
+}
+
+/* ----------- NAV ----------- */
+
+#nav{
+	height:100%;
+	width:280px;
+	background: $nav;
+	float:left;
+	position:fixed;
+	top:0;
+	left:0;
+	margin-left:0 !important;
+	z-index:2;
+
+	h1.logo{
+		color:white;
+		line-height: 80px;
+		padding-left:30px;
+	}
+	.select{
+		position:absolute; 
+		z-index: -1;
+		height:50px; 
+		width:278px; 
+		top:0; 
+		margin-left:-280px; 
+		left:0;
+		&.red{ background: $red; }
+		&.orange{ background: $orange; }
+		&.green{ background: $green; }
+		&.blue{ background: $blue; }
+		&.grey{ background: $active; }
+	}
+	ul.category li{
+		z-index: 4;
+		position:relative;
+		a{
+			line-height: 50px;
+			padding-left:30px;
+			display:block;
+			width:100%;
+			color:white;
+			font:{
+				weight:300;
+			}
+			span.nbBattle{
+				float:right;
+				padding-right:30px;
+				font:{
+					weight:400;
+					size:14px;
+				}
+			}
+			span.icon{
+				font:{
+					size:14px;
+				}
+				color: darken(#6f7b92, 20%);
+				margin-right:20px;
+				&.active{
+					color:white;
+				}
+			}
+		}
+		&.active{
+			background:$active;
+		}
+		&:hover{
+			background:lighten($active,3%);
+		}
+		&.red{ border-left:2px solid $red; }
+		&.orange{ border-left:2px solid $orange; }
+		&.green{ border-left:2px solid $green; }
+		&.blue{ border-left:2px solid $blue; }
+		&.grey{ border-left:2px solid $grey; }
+	}
+}
+
+#navMobile{
+	display:none;
+	height:100%;
+	width:50px;
+	background: $nav;
+	float:left;
+	position:relative;
+	padding-top:6px;
+	span.menuBar{
+		height:4px;
+		width:8px;
+		margin:6px 0 0 19px;
+		display:block;
+		background:white;
+		&.red{ border-left:4px solid $red; }
+		&.orange{ border-left:4px solid $orange; }
+		&.green{ border-left:4px solid $green; }
+	}
+	h1.logo{
+		text-align: center;
+		color:white;
+		font:{
+			weight:500;
+		}
+		margin:10px 0 14px 0;
+	}
+}
+
+/* ----------- SEARCH ----------- */
+
+#topBar{
+	position:fixed;
+	top:0;
+	left:280px;
+	right:0;
+	height:80px;
+	background:white;
+	#search{
+		width:80%;
+		float:left;
+		input[type=search]{
+			background:white;
+			outline:none;
+			border:none;
+			height:80px;
+			width:100%;
+			color:#acacac;
+			padding:0 30px;
+			-webkit-appearance: none;
+			font:{
+				size:16px;
+			}
+			&::-webkit-input-placeholder { 
+			    font-weight:300; text-overflow: ellipsis; 
+			}
+			&:-moz-placeholder { 
+			    font-weight:300; text-overflow: ellipsis; 
+			}
+			&::-moz-placeholder { 
+			    font-weight:300; text-overflow: ellipsis; 
+			} /* for the future */
+			&:-ms-input-placeholder { 
+			    font-weight:300; text-overflow: ellipsis; 
+			}
+		}
+	}
+	.addItem{
+		cursor:pointer;
+		float:right;
+		width:40px;
+		height:40px;
+		line-height:40px;
+		text-align: center;
+		margin:20px 25px 0 0;
+		border:1px solid lighten(black, 30%);
+		font:{
+			size:30px;
+		}
+		a{
+			color:lighten(black, 10%);
+		}
+	}
+}
+
+/* ----------- CONTENT ----------- */
+
+.hideContent{
+	display:none;
+	background:rgba(0,0,0,0.2);
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:1;
+}
+
+.content{
+	max-width:100%;
+	height:100%;
+	background:#F8F8F8;
+	overflow-x:hidden;
+	overflow-y:auto;
+	-webkit-overflow-scrolling: touch;
+	margin:80px 0 0 280px;
+	padding-bottom:110px;
+	.loader{
+		height:100%;
+		text-align: center;
+		color:lightgrey;
+		img{
+    		height: 16px;
+    		width:16px;
+    		vertical-align: middle;
+		}
+		&:before{
+			content: "";
+		    display: inline-block;
+		    height: 100%;
+		    vertical-align: middle;
+		}
+	}
+	#battles{
+		ul.battles{
+			li.battle{
+				position:relative;
+				min-width: 200px;
+				height:200px;
+				float:left;
+				background:#efefef;
+				margin-top:30px;
+				margin-left: 2%;
+				div.cut{
+					width:50%;
+					overflow:hidden;
+					float:left;
+					height:200px;
+					border-left:1px solid white;
+					&:first-child{
+						border-right:1px solid white;
+						border-left:0;
+					}
+					img{
+						position: relative;
+						top:0;
+						left:0;
+						height:200px;
+					}
+				}
+				div.title{
+					position:absolute;
+					height:40px;
+					width:100%;
+					bottom:0;
+					color:white;
+					padding:0 14px;
+					font:{
+						size:14px;
+						weight:300;
+					}
+					line-height: 40px;
+					&.orange{ background: $orange; }
+					&.blue{ background: $blue; }
+					&.green{ background: $green; }
+					&.red{ background: $red; }
+				}
+				div.vs{
+					position: absolute;
+					top:55px;
+					left:50%;
+					margin-left:-25px;
+					width:50px;
+					height:50px;
+					background:white;
+					font:{
+						weight:500;
+						size:14px;
+					}
+					border-radius:25px;
+					text-align: center;
+					line-height: 50px;
+				}
+				div.addItem{
+					cursor:pointer;
+					background:#F8F8F8;
+					border:1px solid lighten(black, 90%);
+					font:{
+						size:120px;
+						weight:300;
+					}
+					color:lighten(black, 90%);
+					text-align: center;
+					line-height:200px;
+				}
+			}
+		}
+	}
+	#battle, .addBattle {
+		width:100%;
+		&.orange{ background: $orange; }
+		&.blue{ background: $blue; }
+		&.green{ background: $green; }
+		&.red{ background: $red; }
+		div.elements{
+			position:relative;
+			margin:auto;
+			max-width:630px;
+			padding: 50px 0;
+			div.element{
+				position:relative;
+				padding-bottom:36px;
+				width: 300px;
+				height: 300px;
+				display:inline-block;
+				overflow:hidden;
+				&:first-child{
+					margin-right: 2%;
+				}
+				img{
+					height:100%;
+					width:100%;
+				}
+				div.title{
+					text-align: center;
+					position:absolute;
+					height:40px;
+					width:100%;
+					bottom:0;
+					color:black;
+					background: white;
+					padding:0 14px;
+					line-height: 40px;
+					font:{
+						size:14px;
+						weight:300;
+					}
+				}
+			}
+			div.vs{
+				position: absolute;
+				top:50%;
+				margin-top:-40px;
+				left:50%;
+				margin-left:-30px;
+				width:50px;
+				height:50px;
+				background:white;
+				font:{
+					weight:500;
+					size:14px;
+				}
+				border-radius:25px;
+				text-align: center;
+				line-height: 50px;
+			}
+		}
+		form{
+			width:630px;
+			margin:auto;
+		}
+		.boxed{
+			max-width:630px;
+		}
+	}
+	.addBattle{
+		background:#eaeaea;
+		padding:20px 0 40px 0;
+		div.elements{
+			padding:20px 0;
+		}
+		div.element{
+			min-height:340px;
+		}
+		.radio{
+			background:none;
+			width:630px;
+			line-height: 40px;
+			height:40px;
+			color:black;
+			margin-bottom:10px;
+		}
+		img{
+			background:#dadada;
+		}
+		div.vs{
+			margin-top: -10px !important;
+		}
+		span.radioLabel{
+			font:{
+				size:14px;
+				weight:400;
+			}
+			margin-left:10px;
+		}
+		input[type=radio]{
+			margin-left:40px;
+			margin-bottom: 40px;	
+			&:first-child{
+				margin-left:0;
+			}
+		}
+		input[type=button]{
+			padding:10px;
+			border:none;
+			margin:0;
+			outline:none;
+			background:$green;
+			font:{
+				size:14px;
+				weight:300;
+			}
+			color:white;
+			&.up{
+				background:$red;
+			}
+		}
+		input[type=url], input[type=text]{
+			padding:10px;
+			border:none;
+			margin:0;
+			background:white;
+			outline:none;
+			font:{
+				size:14px;
+				weight:300;
+			}
+		}
+		input[type=url]{
+			margin-bottom:40px;
+		}
+		input[type=text]{
+			width:100%;
+		}
+	}
+	.backBar{
+		height:40px;
+		width:100%;
+		line-height: 40px;
+		background:#F8F8F8;
+		position: relative;
+		font:{
+			size:14px;
+			weight:300;
+		}
+		color:lighten(black, 20%);
+		.icon{
+			font:{
+				size:13px;
+			}
+			margin:0 10px;
+		}
+		.messageBar{
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			color:white;
+			padding:0 30px;
+			display:none;
+			p{
+				float:left;
+			}
+			span{
+				float:right;
+				display:inline-block;
+				line-height:40px;
+			}
+			&.error{ 
+				background:$red; 
+				.icon{
+					color:darken($red, 20%);
+				}
+			}
+			&.success{ 
+				background:$green;
+				.icon{
+					color:darken($green, 20%);
+				} 
+			}
+		}
+	}	
+	#result{
+		max-width:630px;
+		margin:50px auto;
+		display:none;
+		.score1, .score2{
+			width:300px;
+			height:80px;
+			display: inline-block;
+			line-height: 80px;
+			text-align: center;
+			background: white;
+			font:{
+				size:40px;
+				weight:300;
+			}
+		}
+		.score1{
+			margin-right:2%;
+		}
+	}
+}
+
+/* ----------- MEDIA QUERIES ----------- */
+
+@media screen and (min-width:1392px){ // 5 blocs
+	li.battle{
+		width:17.6%;
+	}
+}
+
+@media screen and (max-width:1392px){ // 4 blocs
+	li.battle{
+		width:22.5%;
+	}
+}
+
+@media screen and (max-width:1164px){ // 3 blocs
+	li.battle{
+		width:30.66%;
+	}
+}
+
+@media screen and (max-width:934px){ // 2 blocs
+	li.battle{
+		width:47%;
+	}
+	#nav{
+		margin-left:-280px !important;
+	}
+	#navMobile{
+		display:block;
+	}
+	.content{
+		margin-left:50px;
+	}
+	#topBar{
+		left:50px;
+	}
+}
+
+@media screen and (max-width:720px){
+	#battle div.elements div.element{
+		width:47% !important;
+		height:auto !important;
+		margin-left:2% !important;
+		margin-right:0 !important;
+	}
+	#result{
+		.score1, .score2{
+			width:47% !important;
+			margin-left:2% !important;
+			margin-right:0 !important;
+		}
+	}
+}
+
+@media screen and (max-width:481px){
+	li.battle{
+		width:96%;
+	}
+	#nav{
+		margin-left:-280px !important;
+	}
+	#navMobile{
+		display:block;
+	}
+	.content{
+		margin-top:50px;
+		margin-left:50px;
+		ul.battles li.battle div.cut img{
+			min-width:100%;
+		}
+	}
+	#topBar{
+		height:50px;
+		left:50px;
+		#search input[type=search]{
+			height:50px;
+		}
+		.addItem{
+			height:30px;
+			width:30px;
+			line-height: 30px;
+			margin:10px 15px 0 0;
+			font:{
+				size:24px;
+			}
+		}
+	}
+	#battle div.elements{
+		padding:20px 0 !important;
+		div.element{
+			width:47% !important;
+			height:auto !important;
+			margin-left:2% !important;
+			margin-right:0 !important;
+		}
+		div.vs{
+			height:40px !important;
+			width: 40px !important;
+			line-height: 40px !important;
+			margin-left:-20px !important;
+		}
+	}
+	#result{
+		margin-top:20px !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

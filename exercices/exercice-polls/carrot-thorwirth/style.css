@@ -1,0 +1,82 @@
+body{
+	width: 600px;
+	height: 600px;
+	background-color: #A2A9B3;
+	color: #1E375C;
+	font-family: arial;
+
+}
+
+legend{
+	color: #1E375C;
+	font-family: arial;
+	font-size: 20px;
+	font-family: arial;
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 40px;
+	margin-top: 20px;
+	
+}
+label{
+color: #1E375C;
+}
+
+input{
+margin-left: 24%;
+margin-top: 10px;
+
+}
+.validation{
+	background-color: white;
+	border: none;
+	float: right;
+	margin-top: -21%;
+	margin-right: 10px;
+	height: 30px;
+	width: 60px;
+	font-family: arial;
+	font-size: 15px;
+	color: #28497B;
+	
+}
+
+.validation:hover{
+	color: white;
+	background-color: #28497B;
+	border: none;
+}
+
+.perfect{
+	font-family: arial;
+	float: left;
+}
+.notperfect{
+	float: right;
+}
+
+.compteur{
+	width: 200px;
+	height: 15px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.total{
+	float: left;
+	margin-top: 17%;
+	position: absolute;
+	color: #1E375C;
+	margin-left: 20px;
+}
+strong{
+	color: white;
+}
+
+
+
+.jauge{-webkit-animation : monanimation 3s;}
+@-webkit-keyframes monanimation {0%   {width:100%;} 100% {width:<?php echo round(($results['Interessant'] / $total)*100); ?>%;}
+
+
+

@@ -1,0 +1,68 @@
+.new-survey {
+	margin-top: 20px;
+
+	form {
+		width: 300px;
+		margin: auto;
+	}
+}
+
+input[type="text"], textarea {
+	display: block;
+	border: none;
+	font-size: 12px;
+	padding: 4px;
+	margin: 5px 2px;
+	color: #555;
+	resize: none;
+	width: 100%;
+
+	&:focus {
+		outline: transparent;
+		border: none;
+	}
+}
+
+input[type="radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	border: solid 6px @medium-grey;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all .3s;
+	
+	&:checked {
+		border-width: 4px;
+
+		&+label {
+			color: black;
+			//font-weight: 400;
+		}
+	}
+
+	&:focus {
+		outline-color: transparent;
+		outline: none;
+	}
+
+	&:hover {
+		-webkit-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+}
+
+input[type="submit"] {
+	margin: auto;
+}
+
+label {
+	color: @medium-grey;
+	font-weight: 200;
+	display: inline-block;
+	margin-right: 20px;
+	cursor: pointer;
+}
