@@ -4,26 +4,47 @@
     $success = array();
     if(!empty($_POST))
     {
-        $data   = sanetize($_POST);
-        $errors = check($data);
-
-        if(empty($errors))
+        // Supprimer
+        if($_POST['action'] == 'delete')
         {
-            $exec = $pdo->exec('INSERT INTO users (login,password,email,age) VALUES (\''.$data['login'].'\',\''.$data['password'].'\',\''.$data['email'].'\','.$data['age'].')');
-            
-            $data = array(
-                'login'    => '',
-                'password' => '',
-                'email'    => '',
-                'age'      => 25
-            );
+            $data = get_default();
 
-            $success[] = 'User well registered';
+            if(!empty($_POST['id']))
+            {
+                $id = (int)$_POST['id'];
+                $exec = $pdo->exec('DELETE FROM users WHERE id = '.$id);
+
+                if($exec)
+                    $success[] = 'User deleted';
+                else
+                    $errors[] = 'User not deleted';
+            }
+        }
+
+        // Ajouter
+        else if($_POST['action'] == 'add')
+        {
+            $data   = sanetize($_POST);
+            $errors = check($data);
+
+            if(empty($errors))
+            {
+                $exec = $pdo->exec('INSERT INTO users (login,password,email,age) VALUES (\''.$data['login'].'\',\''.$data['password'].'\',\''.$data['email'].'\','.$data['age'].')');
+                
+                $data = get_default();
+
+                $success[] = 'User well registered';
+            }
         }
     }
     else
     {
-        $data = array(
+        $data = get_default();
+    }
+
+    function get_default()
+    {
+        return array(
             'login'    => '',
             'password' => '',
             'email'    => '',

@@ -11,7 +11,10 @@
     
     require_once 'config.php';
     require_once 'form.php';
-?>
+
+    $query = $pdo->query('SELECT * FROM users');
+    $users = $query->fetchAll();
+?> 
 <html>
 <head>
     <title>Cours 19 - G2 - HTML / PHP Formulaire</title>
@@ -20,6 +23,10 @@
         input.error {border:1px solid #f00;color:#f00;}
         .successes {border:1px solid #0f0;padding:0 20px;color:#0f0;}
         input.success {border:1px solid #0f0;color:#0f0;}
+
+        table {border:1px solid #ccc;}
+        table td,table th {border:1px solid #ccc;padding:10px 20px;text-align:left;}
+
     </style>
 </head>
 <body>
@@ -47,6 +54,7 @@
     <?php endif; ?>
 
     <form action="#" method="post">
+        <input type="hidden" name="action" value="add">
         <fieldset>
             <legend>Register</legend>
 
@@ -71,8 +79,39 @@
             </div>
         </fieldset>
     </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach($users as $_user): ?>
+            <tr>
+                <td><?php echo $_user['id'] ?></td>
+                <td><?php echo $_user['login'] ?></td>
+                <td><?php echo $_user['email'] ?></td>
+                <td><?php echo $_user['age'] ?></td>
+                <td>
+                    <form action="#" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $_user['id'] ?>">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

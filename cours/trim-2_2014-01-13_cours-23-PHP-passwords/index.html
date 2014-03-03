@@ -57,11 +57,14 @@
                 <section>
                     <p>Nous allons nous baser sur une base de données simple</p>
                     <pre><code contenteditable class="sql">
+
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
                     </code></pre>
                 </section>
 
