@@ -2,29 +2,39 @@
     
     $errors  = array();
     $success = array();
+    $data    = array(
+        'login'    => '',
+        'email'    => '',
+        'password' => '',
+        'age'      => 25
+    );
 
     if(!empty($_POST))
     {
-        $data = sanetize($_POST);
-        $errors = check($data);
-
-        if(empty($errors))
+        // Delete
+        if($_POST['action'] == 'delete')
         {
-            $success[] = 'Well done';
+            $id = (int)$_POST['id'];
+            $prepare = $pdo->prepare('DELETE FROM users WHERE id = :id');
+            $prepare->bindValue(':id',$id);
+            $exec = $prepare->execute();
+        }
 
-            $exec = $pdo->exec('INSERT INTO users (login,email,password,age) VALUES (\''.$data['login'].'\',\''.$data['email'].'\',\''.$data['password'].'\',\''.$data['age'].'\')');
+        // Add
+        else
+        {
+            $data = sanetize($_POST);
+            $errors = check($data);
+
+            if(empty($errors))
+            {
+                $success[] = 'Well done';
+
+                $exec = $pdo->exec('INSERT INTO users (login,email,password,age) VALUES (\''.$data['login'].'\',\''.$data['email'].'\',\''.$data['password'].'\',\''.$data['age'].'\')');
+            }
         }
     }
 
-    else
-    {
-        $data = array(
-            'login'    => '',
-            'email'    => '',
-            'password' => '',
-            'age'      => 25
-        );
-    }
 
     function sanetize($data)
     {

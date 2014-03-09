@@ -73,9 +73,9 @@ CREATE TABLE `users` (
                     <p>Admettons que les données soient envoyées en POST et qu'elles n'aient pas besoin d'être vérifiées</p>
                     <p>Le code d'inscription ressemblerait à ça</p>
                     <pre><code contenteditable class="php">
-$prepare = $pdo->prepare('INSERT INTO users (email,password) VALUES (:email,:password)');
+$prepare = $pdo->prepare('INSERT INTO users (login,password) VALUES (:login,:password)');
 
-$prepare->bindValue(':email',$_POST['email']);
+$prepare->bindValue(':login',$_POST['login']);
 $prepare->bindValue(':password',$_POST['password']);
 
 $exec = $prepare->execute();
@@ -85,9 +85,9 @@ $exec = $prepare->execute();
                 <section>
                     <p>Et le code de login ressemblerait à ça</p>
                     <pre><code contenteditable class="php">
-$prepare = $pdo->prepare('SELECT * FROM users WHERE email = :email LIMIT 1');
+$prepare = $pdo->prepare('SELECT * FROM users WHERE login = :login LIMIT 1');
 
-$prepare->bindValue(':email',$_POST['email']);
+$prepare->bindValue(':login',$_POST['login']);
 
 $query = $prepare->execute();
 $user  = $prepare->fetch();
@@ -104,7 +104,7 @@ else
                     <p>
                         <img src="src/img/no.gif" alt="" width="300">
                     </p>
-                    <p>Si vous sauvegardez les mots de passe en clair, n'importe quelle personne ayant accès à la base de données (hack, vole des logins, ...) pourra voir le mot de passe de chaque utilisateur</p>
+                    <p>Si vous sauvegardez les mots de passe en clair, n'importe quelle personne ayant accès à la base de données (administrateur, injection SQL, vole des logins) pourra voir le mot de passe de chaque utilisateur</p>
                 </section>
 
                 <section>
@@ -123,14 +123,13 @@ echo hash('sha256','monmotdepasse');
                 <section>
                     <p>Notre code d'inscription deviendra donc</p>
                     <pre><code contenteditable class="php">
-$prepare = $pdo->prepare('INSERT INTO users (email,password) VALUES (:email,:password)');
+$prepare = $pdo->prepare('INSERT INTO users (login,password) VALUES (:login,:password)');
 
-$prepare->bindValue(':email',$_POST['email']);
+$prepare->bindValue(':login',$_POST['login']);
 $prepare->bindValue(':password',hash('sha256',$_POST['password']));
 
 $exec = $prepare->execute();
                     </code></pre>
-                    <p>Avec cette méthode, le mot de passe est sauvegardé en clair...</p>
                 </section>
 
                 <section>
@@ -145,10 +144,10 @@ $exec = $prepare->execute();
                     <p>Cette technique s'appelle le salage (salt)</p>
                     <p>Notre code d'inscription deviendra</p>
                     <pre><code contenteditable class="php">
-$salt    = '8Qqudè!è§S76D';
-$prepare = $pdo->prepare('INSERT INTO users (email,password) VALUES (:email,:password)');
+$salt    = '8Qqudè!è§S76D'; // Chaîne de caractères aléatoires
+$prepare = $pdo->prepare('INSERT INTO users (login,password) VALUES (:login,:password)');
 
-$prepare->bindValue(':email',$_POST['email']);
+$prepare->bindValue(':login',$_POST['login']);
 $prepare->bindValue(':password',hash('sha256',$_POST['password'].$salt));
 
 $exec = $prepare->execute();
@@ -158,10 +157,10 @@ $exec = $prepare->execute();
                 <section>
                     <p>Et notre code de login</p>
                     <pre><code contenteditable class="php">
-$salt    = '8Qqudè!è§S76D';
-$prepare = $pdo->prepare('SELECT * FROM users WHERE email = :email LIMIT 1');
+$salt    = '8Qqudè!è§S76D'; // Même chaîne de caractères aléatoires que pour l'inscription
+$prepare = $pdo->prepare('SELECT * FROM users WHERE login = :login LIMIT 1');
 
-$prepare->bindValue(':email',$_POST['email']);
+$prepare->bindValue(':login',$_POST['login']);
 
 $query = $prepare->execute();
 $user  = $prepare->fetch();

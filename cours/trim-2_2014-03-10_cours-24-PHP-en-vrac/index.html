@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 2 - Cours 24 - PHP en vrac</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Bruno Simon">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+        <!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            p {margin-bottom:0.6em !important;}
+            li{margin-bottom:0.6em !important;}
+            ul.checked-list li {list-style-type:none;}
+            .default{text-transform:none !important;}
+            img.no-style {border:none !important;background:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
+            table.visible {border:1px solid #fff;width:100%;}
+            table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;color:#fff;}
+            table.visible td {color:#aaa;}
+            u {border-bottom:0.13em solid #FF8F00 !important;text-decoration:none;}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2017</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 24 - 2014-03-10</h3>
+                    <p>github : <a target="_blank" href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+                    <p>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2017/">http://bruno-simon.com/hetic/p2017/</a></p>
+                    <p>contact : <a target="_blank" mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a> - <a target="_blank" href="https://twitter.com/bruno_simon">@bruno_simon</a></p>
+                </section>
+
+                <section>
+                    <h3>PHP</h3>
+                    <h1>En vrac</h1>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>La fonction <a href="http://fr2.php.net/manual/fr/function.mail.php" target="_blank">mail()</a> de PHP permet d'envoyer des emails</p>
+                    <p>Elle ne fonctionne pas par défaut en localhost</p>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>Exemple</p>
+                    <pre><code contenteditable class="php">
+$to      = 'toto@domain.com';
+$subject = 'Subject';
+$message = 'Hello !';
+$headers = 'MIME-Version:1.0'."\r\n".
+           'From:server@domain.com'."\r\n";
+
+mail($to,$subject,$message,$headers);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>Destinataires</p>
+                    <pre><code contenteditable class="php">
+// Destinataire unique
+$to = &#039;toto@domain.com&#039;;
+
+// Plusieurs destinataires
+$to = &#039;toto@domain.com, tata@domain.com&#039;;
+
+// Plusieurs destinataires nomm&eacute;s
+$to = &#039;Toto &lt;toto@domain.com&gt;, Tata &lt;tata@domain.com&gt;&#039;;
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>Subject</p>
+                    <pre><code contenteditable class="php">
+// Classique
+$subject = 'Subject';
+
+// Forcer l'encodate UTF-8
+$subject = '=?UTF-8?B?'.base64_encode('Subject éèêùà').'?=';
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>Message</p>
+                    <pre><code contenteditable class="php">
+// Text
+// \r\n permet d&#039;aller &agrave; la ligne et ne fonctionne qu&#039;avec les doubles quotes
+$message = &quot;Salut,\r\n&quot;; 
+
+// HTML
+// Ne fonctionnera pas sans les bons headers
+$message = &#039;&lt;strong&gt;Salut&lt;/strong&gt;&lt;br /&gt;&Ccedil;a va ?&#039;;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Envoyer des mails</h2>
+                    <p>Headers</p>
+                    <pre><code contenteditable class="php">
+// Les valeurs sont séparées par des \r\n entre double quotes
+
+$headers  = 'MIME-Version:1.0'."\r\n";                       // Email content type system (?)
+$headers .= 'From:server@domain.com'."\r\n";                 // Classique
+$headers .= 'Reply-To:server@domain.com'."\r\n";             // Reply to
+$headers .= 'Cc:tutu@domain.com'."\r\n";                     // Cc
+$headers .= 'Bcc:tete@domain.com'."\r\n";                    // Bcc
+$headers .= 'Subject:subject@domain.com'."\r\n";             // Subject
+$headers .= 'Content-type:text/html;charset=utf-8'."\r\n";   // Contenu HTML
+$headers .= 'Content-Type:text/plain;charset=ISO-8859-1'."\r\n"; // Contenu text
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Headers</h2>
+                    <p>La fonction <a href="http://www.php.net/manual/fr/function.header.php" target="_blank">header()</a> de PHP permet de modifier l'entête d'une page</p>
+                    <p>Cette fonction doit être appelée avant que le moindre contenu soit envoyé</p>
+                </section>
+
+                <section>
+                    <h2>Headers</h2>
+                    <p>Il est possible de déclencher une redirection avec 'Location'</p>
+                    <pre><code contenteditable class="php">
+header('Location:http://www.google.com/');
+exit;
+                    </code></pre>
+                    <p>Il ne faut pas oublier de mettre un exit ou un die() car le reste du code sera exécuté même si l'utilisateur est redirigé</p>
+                </section>
+
+                <section>
+                    <h2>Headers</h2>
+                    <p>Il est possible de spécifier le code HTTP de la page<br />(200, 401, 404, ...)</p>
+                    <pre><code contenteditable class="php">
+header('HTTP/1.0 404 Not Found');
+exit;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Headers</h2>
+                    <p><a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">Liste des codes</a></p>
+                    <ul>
+                        <li>2XX : Success</li>
+                        <li>3XX : Redirection</li>
+                        <li>4XX : Client error</li>
+                        <li>5XX : Server error</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Headers</h2>
+                    <p>Les plus connus :</p>
+                    <ul>
+                        <li>200 : Ok</li>
+                        <li>301 : Moved Permanently</li>
+                        <li>401 : Unauthorized</li>
+                        <li>403 : Forbidden</li>
+                        <li>404 : Not found</li>
+                        <li>500 : Server error</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>cURL</h2>
+                    <p><a href="http://php.net/manual/fr/book.curl.php/" target="_blank">cURL</a> est une librairie PHP permettant de se connecter à d'autres serveurs</p>
+                    <p>Elle se traduit par plusieurs fonctions PHP commençant toutes par 'curl_'</p>
+                    <p>Elle est disponible de base sur la majorité des configurations</p>
+                </section>
+
+                <section>
+                    <h2>Curl</h2>
+                    <p>Exemple</p>
+                    <pre><code contenteditable class="php">
+// Initialise une instance de curl
+$ch = curl_init();
+
+// Configure la requête
+curl_setopt($ch,CURLOPT_URL,'http://www.google.com/');
+
+// Exécute la requête et echo le résultat
+curl_exec($ch);
+
+// Fermeture de la session cURL
+curl_close($ch);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Curl</h2>
+                    <p>Options</p>
+                    <p><a href="http://www.php.net/manual/fr/function.curl-setopt.php" target="_blank">curl_setopt()</a> permet de définir les différentes options</p>
+                    <p></p>
+                    <ul>
+                        <li>CURLOPT_URL : Indique l'URL de la requête</li>
+                        <li>CURLOPT_FOLLOWLOCATION : Donne pour consigne de suivre les redirections</li>
+                        <li>CURLOPT_HEADER : Indique si la requête doit renvoyer les entêtes</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Curl</h2>
+                    <p>Options</p>
+                    <ul>
+                        <li>CURLOPT_POST : Indique si la requête est en POST</li>
+                        <li>CURLOPT_POSTFIELDS : Indique les paramètres à envoyer en POST</li>
+                        <li>CURLOPT_USERAGENT : Indique le user agent</li>
+                        <li>CURLOPT_COOKIE : Indique les cookies</li>
+                        <li>CURLOPT_RETURNTRANSFER : Indique si curl doit renvoyer le resultat ou l'afficher directement</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Curl</h2>
+                    <p>Exemple d'options</p>
+                    <pre><code contenteditable class="php">
+$ch = curl_init();
+
+curl_setopt($ch,CURLOPT_URL,'http://www.google.com/');
+curl_setopt($ch,CURLOPT_FOLLOWLOCATION,1);
+curl_setopt($ch,CURLOPT_HEADER,1);
+curl_setopt($ch,CURLOPT_POST,1);
+curl_setopt($ch,CURLOPT_POSTFIELDS,'toto=tata&test=1');
+curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_2 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A4449d Safari/9537.53');
+curl_setopt($ch,CURLOPT_COOKIE,'tete=tutu;test=2');
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+
+$result = curl_exec($ch);
+curl_close($ch);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Constantes magiques</h2>
+                    <p>PHP fournit des <a href="http://www.php.net/manual/en/language.constants.predefined.php" target="_blank">constantes magiques</a> dont la valeurs change (?) selon l'endroit où elles sont appelées</p>
+                    <p>
+                        <img src="src/img/its-magic-shia-labeouf.gif" width="500" alt="It's magic">
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Constantes magiques</h2>
+                    <pre><code contenteditable class="php">
+echo __LINE__; // Ligne
+echo __FILE__; // Fichier
+echo __DIR__;  // Dossier du fichier
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Constantes magiques</h2>
+                    <pre><code contenteditable class="php">
+function ma_fonction()
+{
+    echo __FUNCTION__;
+}
+
+ma_fonction();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Constantes magiques</h2>
+                    <pre><code contenteditable class="php">
+class Ma_Class
+{
+    public function __construct()
+    {
+        echo __CLASS__;
+    }
+}
+
+$class = new Ma_Class();
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p>En PHP, il existe une large quantité de fonctions permettant de manipuler les fichiers. Il est possible de les créer, de les lire, de les modifier, de les supprimer, de les lister, d'obtenir la date de création/modification, de changer les droits d'accès, etc.</p>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.dirname.php" target="_blank">dirname()</a> permet d'extraire le chemin vers le dossier</p>
+                    <pre><code contenteditable class="php">
+echo dirname(__FILE__);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.glob.php" target="_blank">glob()</a> renvoie un tableau de chemins verifiant un masque (ou pattern)</p>
+                    <pre><code contenteditable class="php">
+$dir   = dirname(__FILE__);
+$files = glob($dir.&#039;/*&#039;);
+                    </code></pre>
+                    <p>$files contient la liste de tous les fichiers dans le repertoire courrant</p>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.file-get-contents.php" target="_blank">file_get_contents()</a> récupère le contenu d'un fichier</p>
+                    <pre><code contenteditable class="php">
+$path    = 'monfichier.txt';
+$content = file_get_contents($path);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.file-put-contents.php" target="_blank">file_put_contents()</a> ajoute du contenu au fichier</p>
+                    <p>Par défaut, elle va remplacer le contenu existant</p>
+                    <p>Si le fichier n'existe pas, elle va le créer</p>
+                    <pre><code contenteditable class="php">
+// Remplace le contenu du fichier monfichier.txt
+$path = 'monfichier.txt';
+file_put_contents($path,'test 1234');
+
+// Ajoute le contenu à la fin du fichier monfichier.txt
+$path = 'monfichier.txt';
+file_put_contents($path,'test 1234',FILE_APPEND);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.file-exists.php" target="_blank">file_exists()</a> test si le fichier existe</p>
+                    <pre><code contenteditable class="php">
+$path = 'monfichier.txt';
+
+if(file_exists($path))
+    echo 'le fichier existe';
+else
+    echo 'le fichier n\'existe pas';
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p><a href="http://www.php.net/manual/fr/function.unlink.php" target="_blank">unlink()</a> supprime le fichier</p>
+                    <pre><code contenteditable class="php">
+$path = 'monfichier.txt';
+unlink($path);
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p>Une liste de fonctions PHP permettent de manipuler les fichiers tout comme nous l'avons fait jusqu'à présent mais avec moins d'automatismes et plus de flexibilité</p>
+                    <ul>
+                        <li><a href="http://www.php.net/manual/fr/function.fopen.php">fopen</a> ouvre un fichier</li>
+                        <li><a href="http://www.php.net/manual/fr/function.fclose.php">fclose</a> le ferme</li>
+                        <li><a href="http://www.php.net/manual/fr/function.fread.php">fread</a> le lit</li>
+                        <li><a href="http://www.php.net/manual/fr/function.fwrite.php">fwrite</a> écrit dedans</li>
+                        <li><a href="http://www.php.net/manual/fr/book.filesystem.php">...</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Fichiers</h2>
+                    <p>exemple avec fopen / fwrite / fclose</p>
+                    <pre><code contenteditable class="php">
+$path = 'monfichier.txt';
+$fp   = fopen($path,'a+');
+fwrite($fp,'hey');
+fclose($fp);
+                    </code></pre>
+                </section>
+            </div>
+        </div>
+
+        <script src="../tools/reveal.js/lib/js/head.min.js"></script>
+        <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls     : false,
+                progress     : true,
+                history      : true,
+                center       : true,
+                theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                dependencies : [
+                    { src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged',function(e)
+            {
+                document.getElementById('pagination').innerHTML = e.indexh + 1;
+            });
+        </script>
+    </body>
+</html>
