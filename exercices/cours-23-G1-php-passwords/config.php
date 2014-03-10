@@ -7,6 +7,7 @@
     define('DB_HOST','localhost');
     define('DB_USER','hetic-p2017-g1');
     define('DB_PASS','azerty');
+    define('SALT'   ,'34§gf§dz$');
 
     try
     {

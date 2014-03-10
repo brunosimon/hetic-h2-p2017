@@ -7,6 +7,7 @@ define('DB_NAME','hetic-p2017-g2-passwords');
 define('DB_HOST','localhost');
 define('DB_USER','hetic-p2017-g2');
 define('DB_PASS','azerty');
+define('SALT'   ,'sçè(§evy)');
 
 try
 {

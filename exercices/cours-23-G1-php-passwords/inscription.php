@@ -12,12 +12,12 @@
         {
             $prepare = $pdo->prepare('INSERT INTO users (login,password) VALUES (:login,:password)');
             $prepare->bindValue(':login',$login);
-            $prepare->bindValue(':password',$password_1);
+            $prepare->bindValue(':password',hash('sha256',$password_1.SALT));
             $exec = $prepare->execute();
 
-            echo '<pre>';
-            print_r($exec);
-            echo '</pre>';
+            // User saved
+            if($exec)
+                echo 'User saved';
         }
 
         // Differents password

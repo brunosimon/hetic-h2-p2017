@@ -12,7 +12,7 @@
         {
             $prepare = $pdo->prepare('INSERT INTO users (login,password) VALUES (:login,:password)');
             $prepare->bindValue(':login',$login);
-            $prepare->bindValue(':password',$password);
+            $prepare->bindValue(':password',hash('sha256',$password.SALT));
             $exec = $prepare->execute();
 
             if($exec)

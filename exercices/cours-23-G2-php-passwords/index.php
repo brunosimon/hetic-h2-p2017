@@ -1,5 +1,42 @@
 <?php 
+
     require 'config.php';
+
+    if(!empty($_POST))
+    {
+        $login    = $_POST['login'];
+        $password = $_POST['password'];
+
+        $prepare = $pdo->prepare('SELECT * FROM users WHERE login = :login');
+        $prepare->bindValue(':login',$login);
+        $prepare->execute();
+        $user = $prepare->fetch();
+
+        // User found
+        if($user)
+        {
+            // Password match
+            if(hash('sha256',$password.SALT) == $user['password'])
+            {
+                echo 'You shall pass';
+            }
+            
+            // Password doesn't match
+            else
+            {
+                echo 'You shall not pass';
+            }
+        }
+
+        // User not found
+        else
+        {
+            echo 'user not found';
+        }
+
+
+
+    }
 ?>
 <!doctype html>
 <html lang="en">
