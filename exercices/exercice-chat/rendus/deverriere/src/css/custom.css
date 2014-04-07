@@ -1,0 +1,33 @@
+.container {
+	width: 960px;
+}
+
+.form-action {
+	width: 500px;
+	margin: 10px auto;
+	text-align: center;
+	padding: 0 0 10px;
+}
+
+.form-action h2 {
+	margin: 0;
+}
+
+.tchat{
+	overflow-y: auto;
+	height: 500px;	
+	width: 600px;
+	margin: 10px auto;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.tchat-form {
+	text-align: center;
+}
+
+.tchat-form input {
+	height: 30px;
+	display: inline-block;
+	vertical-align: top;
+}

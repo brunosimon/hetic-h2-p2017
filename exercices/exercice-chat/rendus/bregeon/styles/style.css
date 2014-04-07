@@ -1,0 +1,162 @@
+html {
+	background-color: #f1f1f1;
+	font-family: helvetica, arial;
+	color: #666666
+}
+
+/* HEADER */
+header {
+	height: 100px;
+}
+h1 a {
+		text-decoration: none;
+		color: grey;
+}
+#home {
+	position: relative; /* on positionne le conteneur */
+	margin-top: 50px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 480px;
+
+}
+#box fieldset{
+	height: 130px;
+}
+#inscription{
+	width: 150px;
+	height: 250px;
+	float: left;
+}
+#navigateur{
+	width: 370px;
+	height: 150px;
+	float: left;
+	margin:300px 0 0 400px;
+	position:fixed;
+}
+#moitier{
+padding:0 0 0 100px;
+}
+#mp{
+float:center;
+margin:5px 0 5px 338px;
+}
+#center{
+margin: 0 0 0 400px;
+}
+#centre{
+margin: 0 0 0 450px;
+}
+#connection{
+width: 150px;
+height: 250px;
+float: left;
+}
+#bas{
+margin: 50px;
+}
+#bas2{
+margin: 105px;
+}
+table{
+border:1px solid black;
+}
+td{
+border:1px solid black;
+}
+#homme{
+color: rgb(66,53,227);
+margin:0 0 0 5px;
+}
+#femme{
+color: rgb(235,46,235);
+margin:0 0 0 5px;
+}
+#admin{
+color: rgb(63,243,37);
+margin:0 0 0 5px;
+}
+#membre{
+float: center;
+margin:0 0 0 510px;
+}
+#chat{
+float: left;
+}
+textarea{ 
+resize:none;
+height:50px;
+width:494px;
+}
+#contenu{
+margin:0 0 0 5px;
+}
+#bouton{
+margin:5px;
+width: 150px;
+}
+#millieu{
+margin:0 0 0 15%;
+}
+#chat {
+	word-wrap:break-word;
+	overflow:auto;
+	height:400px;
+	width:500px;
+	background-color: white;
+}
+#membre{
+	overflow:auto;
+	height:400px;
+	width:200px;
+	background-color: white;
+}
+#lien{
+text-decoration:none;
+color:green;
+margin:0 0 0 25%;
+}
+#lien:hover{
+text-decoration:none;
+color:red;
+margin:0 0 0 25%;
+}
+#lienadmin{
+text-decoration:none;
+color:grey;
+margin:0 0 0 2%;
+}
+#lienadmin:hover{
+text-decoration:none;
+color:red;
+margin:0 0 0 2%;
+}
+#salon{
+text-decoration:none;
+color:rgb(223,156,3);
+margin:0 0 0 2%;
+}
+#salon:hover{
+text-decoration:none;
+color:red;
+margin:0 0 0 2%;
+}
+#messagepriver {
+color:rgb(89,189,95);
+}
+#messagepriver2 {
+color:rgb(189,154,89);
+}
+#petit{
+font-size:14px;
+margin:2px 0 2px 2px;
+}
+#robot{
+color:rgb(193,185,17);
+margin:0 0 0 5px;
+}
+#help{
+color:rgb(13,45,198);
+margin:0 0 0 2%;
+}

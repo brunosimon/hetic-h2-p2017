@@ -1,0 +1,465 @@
+/*
+	red : #d74b4b;
+	blue : #475f77;
+	darkblue : #354b5e;
+	white : #fffff;
+	gray : #dcddd8;
+*/
+/*
+@media screen and (max-height: 500px) {
+	body{
+		font-size:8px;
+	}
+}
+
+@media screen and (min-height: 500px) and (max-height: 650px) {
+	body{
+		font-size:10px;
+	}
+}
+
+@media screen and (min-height: 650px) and (max-height: 850px) {
+	body{
+		font-size:12px;
+	}
+}
+
+@media screen and (min-height: 850px) {
+	body{
+		font-size:14px;
+	}
+}
+*/
+
+@media screen and (max-width: 500px) {
+	body{
+		font-size:8px;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 900px) {
+	body{
+		font-size:10px;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+	body{
+		font-size:12px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body{
+		font-size:14px;
+	}
+}
+
+body, html{
+	height: 100%;
+	background: #354b5e;
+}
+
+/* HOMEPAGE */
+
+.home_header{
+	background: #d74b4b;
+	color:#FFFFFF;
+	padding:1%;
+	border-bottom: 4px #FFFFFF solid;
+}
+
+.home_header h1{
+	font-family: 'CabinSketch';
+	font-size: 5em;
+	text-align: center;
+}
+
+.home_header h2{
+	font-family: 'HelveticaQuiz';
+	font-size: 2em;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+}
+
+.home_container{
+	text-align: center;
+	margin-top:2%;
+}
+
+.home_container h3{
+	font-family: 'HelveticaQuiz';
+	font-size: 2em;
+	font-style: normal;
+	font-weight: normal;
+	color:#FFFFFF;
+}
+
+.home_input{
+	display: block;
+	margin:auto;
+	background-color:transparent;
+	border:0;
+	outline: 0;
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.6em;
+	background: #FFFFFF;
+	width:15%;
+	padding:0.5%;
+	padding-left: 1%;
+	margin-top: 1%;
+}
+
+.home_submit{
+	display: block;
+	margin:auto;
+	background-color:transparent;
+	padding:0.5%;
+	padding-left: 1%;
+	margin-top: 1%;
+	border:1px #FFFFFF solid;
+	outline: 0;
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.6em;
+	color:#FFFFFF;
+}
+
+.home_submit:hover{
+	cursor:pointer;
+	background:#FFFFFF;
+	color:#354b5e;
+}
+
+
+.home_container a{
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em;
+	color:#FFFFFF;
+	text-decoration: none;
+	padding-top: 0.4%;
+	display:block;
+}
+
+.home_container a:hover{
+	text-decoration: underline;
+}
+
+
+/* -------- */
+
+.mes_question{
+	border:1px solid #d74b4b;
+	/*background:#d74b4b;*/
+	padding:1%;
+	margin-top:1%;
+	margin-bottom:1%;
+}
+
+.mes_time{
+	border:1px solid #475f77;
+	/*background:#475f77;*/
+	padding:1%;
+	margin-top:1%;
+	margin-bottom:1%;
+}
+
+.mes_time .tchat_console_titre{
+	color: #475f77;
+	font-weight: bold;
+}
+
+.tchat_console_titre{
+	color:#d74b4b;
+}
+
+.tchat_console_question{
+	color:#000000;
+}
+
+.mes_time .tchat_console_question{
+	color: #475f77;
+}
+
+.classement_bas_2{
+	width:100%;
+	height:39%;
+}
+
+.classement_bas{
+	width:100%;
+	height:39%;
+}
+
+.classement_bas div.lesnuls div{
+	padding:10%;
+	padding-top:4%;
+}
+
+.lesnuls{
+	width: 50%;
+	height: 100%;
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-size: 2em;
+	color:#FFFFFF;
+	float:left;
+}
+
+.lesnuls table{
+	width: 100%;
+}
+
+.lesnuls tr{
+	width: 100%;
+}
+
+.lesnuls td.place{
+	width:20%;
+}
+
+.lesnuls td.pseudo{
+	width:70%;
+}
+
+.lesnuls td.points{
+	width:10%;
+}
+
+.infos{
+	width: 30%;
+	height: 100%;
+	float:left;
+}
+
+.player{
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	
+	color:#FFFFFF;
+	text-align: center;
+	position:relative;
+}
+
+.score_podium{
+	width: 100%;
+	position: absolute;
+	bottom: 4%;
+	left: 0px;
+}
+
+.txt{
+	font-size: 2em;
+}
+
+.pts{
+	font-size: 1em;
+}
+
+.podium{
+	width:90%;
+	height: 40%;
+	margin:auto;
+}
+
+.podium1{
+	float: left;
+	width:33.3333%;
+	height: 100%;
+}
+
+.podium1 .player{
+	width:100%;
+	height: 40%;
+}
+
+.podium1 .blanc{
+	width:100%;
+	height: 60%;
+	background:#FFFFFF;
+}
+
+.podium1 .blanc p, .podium2 .blanc p, .podium3 .blanc p{
+	font-family: "HelveticaQuiz";
+	font-weight: bold;
+	font-size: 3em;
+	color:#d74b4b;
+	text-align: center;
+	padding-top:2%;
+}
+
+.podium2{
+	float: left;
+	width:33.3333%;
+	height: 100%;
+}
+
+.podium2 .player{
+	width:100%;
+	height: 60%;
+}
+
+.podium2 .blanc{
+	width:100%;
+	height: 40%;
+	background:#FFFFFF;
+}
+
+.podium3{
+	float: left;
+	width:33.3333%;
+	height: 100%;
+}
+
+.podium3 .player{
+	width:100%;
+	height: 75%;
+}
+
+.podium3 .blanc{
+	width:100%;
+	height: 25%;
+	background:#FFFFFF;
+}
+
+
+
+
+.title1{
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-size: 3em;
+	color: #FFFFFF;
+}
+
+.classement .title1{
+	margin-top:2%;
+	margin-left:2%;
+	margin-right:2%;
+	padding-bottom: 1%;
+	border-bottom: 1px #FFFFFF solid;
+}
+
+#container{
+	font-family: "HelveticaQuiz";
+	font-style: normal;
+	font-size: 1.5em;
+	padding:2%;
+}
+
+.question{
+	width:100%;
+	height:20%;
+	background: #d74b4b;
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	color: #FFFFFF;
+	overflow:hidden;
+}
+
+.question p.title1{
+	font-size: 3em;
+	padding-top:1%;
+	padding-left:1%;
+	padding-right:1%;
+}
+
+.question p.txt_question{
+	font-size: 2.5em;
+	padding-bottom:1%;
+	padding-left:1%;
+	padding-right:1%;
+}
+
+.container_timer{
+	height: 80%;
+	width: 1%;
+	float:left;
+	background: #475f77;
+}
+
+.other_container_timer{
+	height: 90%;
+	width: 100%;
+}
+
+#timer{
+	height: 54%;
+	width: 100%;
+	background: #FFFFFF;
+}
+
+#sous_timer{
+	height: 10%;
+	width: 100%;
+	background: #475f77;
+}
+
+.timer{
+	height: 54%;
+	width: 100%;
+}
+
+.classement{
+	width:49.5%;
+	height:80%;
+	background: #354b5e;
+	float:left;
+}
+
+.tchat{
+	width:49.5%;
+	height:80%;
+	float:left;
+	overflow:hidden;
+}
+
+.messages{
+	width:100%;
+	height:90%;
+	background: #dcddd8;
+	overflow:auto;
+}
+
+.sender{
+	width:100%;
+	height:10%;
+	background: #475f77;
+}
+
+.sender form{
+	height: 100%;
+	width:100%;
+}
+
+.sender input{
+	background-color:transparent;
+	border:0;
+	outline: 0;
+	font-family: "HelveticaQuiz";
+	font-weight: normal;
+	font-style: italic;
+	font-size: 2em;
+	color: #FFFFFF;
+	background: #475f77;
+	width:93%;
+	height:100%;
+	padding-left:7%;
+
+}
+
+.tchat_user_message{
+	font-weight: normal;
+	color: #354b5e;
+}
+
+.tchat_user_pseudo{
+	font-weight: normal;
+	color: #000000;
+}

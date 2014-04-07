@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta http-equiv="Content-Language" content="fr" />
+<meta name="Copyright" content="Loic" />
+<meta name="Author" content="Devillierre" />
+<title>Mychat</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script type="text/javascript" src="chat.js"></script>
+</head>
+<body onload="refreshChat();">
+<h1>MyChat</h1>
+<!-- Affichage du minichat ici -->
+<div id="chat"></div>
+<!-- Fin Affichage du minichat -->
+<p>
+<font face="">pseudo</font><br/><input type="text" name="pseudo" id="pseudo" /><br />
+<font face="">message :</font><br/><textarea name="message" rows="5" cols="30" id="message"></textarea><br />
+
+<input type="button" value="Envoyer" onclick="submitChat();" />
+
+</p>
+</body>
+</html>

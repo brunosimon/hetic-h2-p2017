@@ -1,0 +1,22 @@
+body{
+	background: #2163FF;
+	position: absolute;
+	font-style: verdana;
+}
+
+
+.tchatForm{
+	bottom: 3px;
+	left:200px;
+	position: fixed;
+	margin: auto;
+}
+
+.tchatForm .message{
+	background: #ffffff;
+}
+
+form div{
+	display: inline-block;
+	background: #ffffff;
+}

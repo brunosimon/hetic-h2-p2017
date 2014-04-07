@@ -1,0 +1,53 @@
+.error{
+	color: red;
+}
+.validate{
+	color: green;
+}
+.welcome{
+	color: blue;
+}
+
+
+/*********************
+
+		CHAT
+
+*********************/
+.chat{
+	width: 50%;
+	height: 300px;
+	overflow: auto;
+}
+.message{
+	margin-left: 10px;
+	width: 85%;
+}
+
+.content{
+	margin-left: 25%;
+	width: 50%;
+	border: solid 1px black;
+
+}
+.button{
+	position: absolute;
+	background-color: #eee;
+	margin-left: 1%;
+}
+h1{
+	margin-left: 1%;
+}
+
+/*********************
+
+		FORM
+
+*********************/
+.form{
+	width: 15%;
+	padding:10px;
+	margin-left: 40%;
+	margin-top: 150px;
+	border: solid 1px black;
+}

@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'HelveticaQuiz';
+    src: url('helveticaneueltcom-roman.eot');
+    src: url('helveticaneueltcom-roman.eot') format('embedded-opentype'),
+         url('helveticaneueltcom-roman.woff') format('woff'),
+         url('helveticaneueltcom-roman.ttf') format('truetype'),
+         url('helveticaneueltcom-roman.svg#HelveticaNeueLTCom55Roman') format('svg');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'HelveticaQuiz';
+    src: url('helveticaneueltcom-th.eot');
+    src: url('helveticaneueltcom-th.eot') format('embedded-opentype'),
+         url('helveticaneueltcom-th.woff') format('woff'),
+         url('helveticaneueltcom-th.ttf') format('truetype'),
+         url('helveticaneueltcom-th.svg#HelveticaNeueLTCom35Thin') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaQuiz';
+    src: url('helveticaneueltcom-thit.eot');
+    src: url('helveticaneueltcom-thit.eot') format('embedded-opentype'),
+         url('helveticaneueltcom-thit.woff') format('woff'),
+         url('helveticaneueltcom-thit.ttf') format('truetype'),
+         url('helveticaneueltcom-thit.svg#HelveticaNeueLTCom36ThinItalic') format('svg');
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'CabinSketch';
+    src: url('cabinsketch-bold-webfont.eot');
+    src: url('cabinsketch-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cabinsketch-bold-webfont.woff') format('woff'),
+         url('cabinsketch-bold-webfont.ttf') format('truetype'),
+         url('cabinsketch-bold-webfont.svg#cabinsketchbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

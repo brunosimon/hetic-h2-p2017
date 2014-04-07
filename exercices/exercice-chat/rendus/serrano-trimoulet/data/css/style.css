@@ -1,0 +1,151 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+.chat{
+	width: 100%;
+	height: 100%;
+	background:url(img/vinyl2.jpg);
+}
+.container_chat{
+	padding-top: 150px;
+	width: 500px;
+	height: 300px;
+	display: block;
+	margin: auto;
+
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background: url(img/party2.jpg) no-repeat;
+}
+
+.messages{
+	width: 500px;
+	height: 300px;
+	overflow: auto;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 50px;
+	color: white;
+	background: none;
+}
+
+#sender_message {
+	margin-top:5%;
+	margin-left: 5%;
+	position: absolute;
+}
+
+.input_msg {
+	width: 500px;
+	height: 30px;
+	border: solid 2px #E13739;
+	margin-left: -10%;	
+	font-family: helvetica, arial;
+	font-size: 14px;
+	font-weight: 550;
+	color: #fff;
+	text-align: center;
+	background: none;
+	margin-right: 30%;
+	position: relative;
+}
+
+
+.input_send {
+	border: solid 3px #E13739;
+	background: none;
+    color: #E13739;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica, arial;
+    font-size: 16px;
+    font-weight: 550;
+    padding: 16px 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+	margin-top: 50px;
+	float: left;
+	margin-left: 17%; 
+	position: relative;
+	
+	-webkit-transition: background 0.1s linear 0s, color 0.1s linear 0s;	
+	   -moz-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+		 -o-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+		    transition: background 0.1s linear 0s, color 0.1s linear 0s;
+}
+
+.input_send:hover {
+    background: #E13739;
+    color: #FFFFFF;
+    border: solid 3px #E13739; 
+}
+
+form {
+	margin-top: 400px;
+	margin-left: 45%;
+	position: absolute;
+}
+
+form input.pseudo {
+	width: 300px;
+	height: 30px;
+	border: solid 3px #E13739;
+	margin-left: -20%;	
+	font-family: helvetica, arial;
+	font-size: 14px;
+	font-weight: 550;
+	color: #fff;
+	text-align: center;
+	background: none;
+}
+
+.btn-home {
+	border: solid 3px #E13739;
+	background: none;
+    color: #E13739;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica, arial;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+	margin-top: 50px;
+	margin-right: 40%; 
+	position: relative;
+	
+	-webkit-transition: background 0.1s linear 0s, color 0.1s linear 0s;	
+	   -moz-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+		 -o-transition: background 0.1s linear 0s, color 0.1s linear 0s;
+		    transition: background 0.1s linear 0s, color 0.1s linear 0s;
+}
+
+.btn-home:hover {
+    background: #E13739;
+    color: #FFFFFF;
+    border: solid 3px #E13739; 
+}
+
+.author {
+	font-family: helvetica, arial;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.text {
+	font-family: helvetica, arial;
+	font-size: 14px;	
+	color: #E13739;
+}
+.date {
+	font-family: helvetica, arial;
+	font-size: 10px;
+	font-weight: lighter;
+	color: #C4C4C4;	
+}

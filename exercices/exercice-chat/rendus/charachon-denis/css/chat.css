@@ -1,0 +1,306 @@
+/******************************************
+
+BASICS
+
+******************************************/
+
+body{
+	color: #eee;
+	font:15px Calibri,Arial,sans-serif;
+	background: #1A5260;
+}
+
+.logo{
+	display: block;
+	margin: auto;
+}
+
+.logo img{
+	padding-top: 3%;
+	width: 500px;
+	display: block;
+	margin: auto;
+}
+
+a, a:visited {
+	text-decoration:none;
+	color:#97cae6;
+}
+
+.clear{
+	clear:both;
+}
+
+/******************************************
+
+CHAT
+
+******************************************/
+
+/* Main chat container */
+
+#chatContainer{
+	width:1000px;
+	margin:50px auto;
+	position:relative;
+}
+
+/* Top Bar */
+
+#chatTopBar{
+	height:75px;
+	background: #202020;
+	border-bottom:5px solid #1A5260;
+	position:relative;
+	color:#F4F5F5;
+}
+
+#chatTopBar .name{
+	position:absolute;
+	top:16px;
+	left:90px;
+	font-size: 2em;
+}
+
+#chatTopBar img{
+	position:absolute;
+}
+
+
+/* Chats */
+
+
+#chatLineHolder{
+	height:375px;
+	width:750px;
+}
+
+.chat{
+	background:#2E3134;
+	min-height:50px;
+	border-bottom:1px solid #3A5869;
+	padding:13px 6px 4px 37px;
+	position:relative;
+	
+}
+
+.chat:last-child{
+	margin-bottom:0;
+}
+
+.chat span{
+	color:#BDD0DB;
+	font-size:16px;
+}
+
+.chat .text{
+	color:#E5ECF1;
+	display:inline-block;
+	font-size:16px;
+	vertical-align:top;
+	width:590px;
+}
+
+.chat .gravatar{
+	background:url('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size=23') no-repeat;
+	left:7px;
+	position:absolute;
+	top:13px;
+}
+
+.chat img{
+	display:block;
+	visibility:hidden;
+}
+
+.chat .time{
+	right:10px;
+	top:12px;
+	font-size:12px;
+}
+
+.chat .author{
+	margin-right:6px;
+	font-size:12px;
+}
+
+
+/******************************************
+
+CHAT USER AREA
+
+******************************************/
+
+
+#chatUsers{
+	background-color:#202020;
+	height:380px;
+	position:absolute;
+	right:0;
+	top:75px;
+	width:300px;
+}
+
+#chatUsers .user{
+	background:url('http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?size=30') no-repeat;
+	float:left;
+	height:32px;
+	margin:10px 0 0 10px;
+	width:32px;
+}
+
+#chatUsers .user img{
+	display:block;
+	visibility:hidden;
+}
+
+
+/* Bottom Bar */
+
+
+#chatBottomBar{
+	background:#E9EBEC;
+	position:relative;
+	padding:10px;
+}
+
+#chatBottomBar .tip{
+	position:absolute;
+	width:0;
+	height:0;
+	border:10px solid transparent;
+	border-bottom-color:#eeeeee;
+	top:-20px;
+	left:20px;
+}
+
+#chatContainer input{
+	height:35px;
+	font:13px/26px Calibri,Arial,sans-serif;
+	color:#777;
+	padding:0 5px;
+	margin-right:15px;
+	width:185px;
+	outline:none;
+	border:none;
+}
+
+
+#submitForm{
+	display:none;
+}
+
+/* The chat submit text field */
+input#chatText{
+	width:590px;
+}
+
+.jspVerticalBar{
+	background:none;
+	width:20px;
+}
+
+.jspTrack{
+	background-color:#202020;
+	border:1px solid #111111;
+	width:3px;
+	right:-10px;
+}
+
+.jspDrag {
+	background:url('../img/slider.png') no-repeat;
+	width:20px;
+	left:-9px;
+	height:20px !important;
+	margin-top:-5px;
+}
+
+.jspDrag:hover{
+	background-position:left bottom;
+}
+
+
+/* Additional styles */
+
+
+a.logoutButton{
+	background-color:#D03925;
+	color:#FFFFFF !important;
+	font-size:16px;
+	padding:5px 9px;
+	position:absolute;
+	right:310px;
+	top:21px;
+	border-bottom: 2px solid #792115;
+
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+
+a.logoutButton:hover {
+	background-color:#9C2B1C;
+
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+
+#chatContainer .blueButton{
+	background: #45B29D;
+	border:none !important;
+	color:#fff !important;
+	display:inline-block;
+	font-size:16px;
+	height:29px;
+	text-align:center;
+	width:75px;
+	margin:0;
+	cursor:pointer;
+	border-bottom: 2px solid #2E7667 !important;
+
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+
+#chatContainer .blueButton:hover{
+	background-position:left bottom;
+	background: #399381;
+
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+
+p.noChats,
+#chatUsers .count{
+	clear:both;
+	font-size:24px;
+	padding:10px;
+	text-align:center;
+}
+
+#chatUsers .count{
+	font-size:12px;
+}
+
+#chatErrorMessage{
+	width:100%;
+	top:0;
+	left:0;
+	position:fixed;
+	background-color:#ab0909;
+	font-size:23px;
+	padding:16px;
+	text-align:center;
+	color:#fff;
+}

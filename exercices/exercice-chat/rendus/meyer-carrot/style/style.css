@@ -1,0 +1,302 @@
+/* Global Style*/
+
+a {
+	text-decoration: none;
+}
+
+/* Welcome Page */
+
+#home-page {
+	background-image: url(img/welcome.jpg);
+	background-repeat: none;
+}
+
+#welcome-title {
+	margin: auto;
+	text-align: center;
+	color: white;
+	font-family: 'Candal';
+	font-size: 40px; 
+}
+
+#login-container {
+	text-align: center;
+	width: 250px;
+    height: 300px;
+	display: block;
+	margin: auto;
+	background-color: white;
+	opacity: 0.4;
+}
+
+
+#login {
+	width: 150px;
+	height: 40px;
+	background-color: #FFA070;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+	margin: auto;
+	margin-top: 35%;
+
+}
+
+#login::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+	font-family: 'Share Tech', sans-serif;
+}
+
+
+#login-title h2 {
+	color: white;
+	padding: 20px;
+}
+
+#go {
+	margin: auto;
+	border: none;
+	margin-top: 30px;
+	background-color: #FFD1BA;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+	color: white;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+
+}
+
+#go:hover {
+	background-color: #FFA070;
+	color: white;
+	display: block;
+}
+
+/* Room Page */
+
+#room-page {
+	background-image: url(img/room-page.jpg);
+	background-repeat: none;
+}
+
+#creating {
+	background-color: white;
+	opacity: 0.8;
+	float:left;
+}
+
+#creating h2 {
+	color: black;
+	font-family: 'Candal';
+	font-size: 30px;
+}
+
+#creating form {
+	margin-top: 100px;
+}
+
+#joining {
+	background-color: white;
+	opacity: 0.8;
+	float:right;
+	overflow: scroll;
+}
+
+#joining h2 {
+	color: black;
+	font-family: 'Candal';
+	font-size: 30px;
+}
+
+
+#joining, #creating {
+	width: 400px;
+	height: 400px;	
+	text-align: center;
+	border-radius: 10px;
+}
+
+#action-room{
+	width: 900px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+#sucess {
+	text-align: center;
+}
+
+#sucess p {
+	font-family: 'Candal';
+	font-size: 40px;
+	color: white;
+
+}
+
+#creating-button {
+	margin: auto;
+	border: none;
+	margin-top: 30px;
+	background-color: #FFD1BA;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+	color: white;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+
+}
+
+#creating-button:hover {
+	background-color: #FFA070;
+	color: white;
+	display: block;
+}
+
+#creating-name {
+	width: 150px;
+	height: 40px;
+	background-color: #FFA070;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+}
+
+#creating-name::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+	font-family: 'Share Tech', sans-serif;
+}
+
+#room-container {
+	background-color: #FFA070;
+	padding: 10px;
+	text-align: left;
+}
+
+#room-container a {
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Candal';
+	text-align: center;
+}
+
+#creator {
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Share Tech';
+}
+
+#creation-date {
+	color: white;
+	font-family: 'Share Tech';
+	font-style: italic;
+	float: right;
+	font-size: 0.8em;
+}
+
+/* Chat Page */
+
+#chat-page {
+	background-image: url(img/chat-page.jpg);
+	background-repeat: none;
+}
+
+#go-back, #title-room, #logout {
+	background-color: white;
+	opacity: 0.8;
+	display: inline-block;
+	font-family: 'Candal';
+	text-align: center;
+	vertical-align: top;
+}
+
+#go-back, #logout{
+	width: 10%;
+	height: 10%;
+}
+	
+
+#logout {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+}
+
+#go-back {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+#title-room {
+	position: relative;
+	width: 30%;
+	left: 35%;
+}
+
+
+.messages {
+	width: 50%;
+	height: 300px;
+	overflow: scroll;
+	margin: auto;
+	margin-top: 40px;
+	font-family: 'Candal';
+	background-color: white;
+	opacity: 0.8;
+	padding: 20px;
+}
+
+#message-container {
+	background-color: #FFA070;
+	}
+
+#message-chat {
+	position: relative;	
+	left: 5%;
+}
+
+.message {
+	width: 45%;
+	height: 100px;
+	position: relative;
+	margin-top: 30px;
+	left: 25%;
+	border-radius: 10px;
+	background-color: white;
+	opacity: 0.8;
+	font-family: 'Candal';
+	font-size: 1.2em;
+}
+
+#sending-button {
+
+	position: relative;
+	left: 22%;
+	border: none;
+	margin-top: 30px;
+	background-color: #FFA070;
+	font-family: 'Share Tech', sans-serif;
+	font-size: 20px;
+	color: white;
+	width: 106px;
+	height: 106px;
+	border-radius: 53px;
+}
+
+.message, #sending-button {
+	display: inline-block;
+	vertical-align: top;
+
+}

@@ -1,0 +1,56 @@
+html{
+	height: 680px;
+}
+
+h1{
+	margin-bottom: 30px;
+	color: white;
+}
+.background{
+	background: url('../img/fond1.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	height: 700px;
+}
+
+.chat{
+	overflow: auto;
+	width: 400px;
+	height: 250px;
+}
+
+.sendMessage{
+	margin-top: 20px;
+}
+
+.inscription{
+	position: absolute;
+	z-index: 10;
+	margin-top: 200px;
+}
+
+.login{
+	margin-top: 200px;
+}
+
+.chat{
+	border: black 1px solid;
+	width: 66%;
+}
+
+.logout{
+	margin-top: 20px;
+}
+
+.background_chat{
+	background-color:rgb(200,200,200);
+	height: 680px;
+	
+}
+
+
+/*MEDIA QUERIES*/
+
+

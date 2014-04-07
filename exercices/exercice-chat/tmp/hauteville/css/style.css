@@ -1,0 +1,239 @@
+/*------ RESET ------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*------  ------*/
+
+.pseudo{
+	font-family:helvetica;
+ 	font-size:90%;
+ 	font-weight: bold;
+}
+
+.date{
+	color: black;
+	font-style: italic;
+}
+
+body {
+	background-image:url(../images/giftly.png);
+}
+
+
+
+.chat{
+	width:600px;
+	height: 400px;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+	overflow: auto;
+
+	padding: 15px;
+
+	border-top: 15px solid #d4eb74;
+	border-bottom: 1px solid #d4eb74;
+	border-left: 1px solid #2b2936;
+	border-right: 1px solid #2b2936;
+
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.message, .pseudo, {
+	display: inline-block;
+	width: auto;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+.date{
+	display: block;
+	font-size: 10px;
+}
+.message_form{
+	width: 600px;
+	height: 60px;
+	position: absolute;
+	top: 480px;
+	left: 50%;
+	margin-left: -300px;
+	background-color: white;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-bottom: 10px solid #d4eb74;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+h1 {
+	background-color: #fcfcfa;
+	font-family: 'Lobster', cursive;
+	font-size: 35px;
+	text-align: center;
+	color: #7d7c77;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #aaaaab;
+	padding-top: 5px;
+	opacity: 0.7;
+
+}
+
+h1 img{
+	margin-top: 5px;
+}
+
+#champ{
+	width: 88%;
+	height: 30px;
+	border: none;
+	border: 1px solid #2980b9;
+	margin-left: 5px;
+	padding-left: 5px;
+	font-size: 15px;
+	border-radius: 5px;
+	color: black;
+	position: absolute;
+	top: 10px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+#submit{
+	width: 10%;
+	height: 31px;
+	border: none;
+	background-color: #53bf6b;
+	padding-top: 5px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	position: absolute;
+	top: 10px;
+	left: 89%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.deconnexion a{
+	width: 10%;
+	height: 31px;
+	border: 2px solid #53bf6b;
+	padding-top: 6px;
+	text-decoration: none;
+	font-family: helvetica;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	color: #53bf6b;
+	font-size: 16px;
+	position: absolute;
+	top: 10px;
+	left: 89%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+.deconnexion a:hover{
+	background-color: #53bf6b;
+	color: white;
+}
+
+.message{
+	border-radius: 10px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #7d7c77;
+	font-family: cambria;
+}
+
+.colors > li{
+	float:left;
+	margin-right: 5px;
+}
+
+.colors > li > a{
+	width: 20px;
+	height: 20px;
+	display: block;
+	border-radius: 20px;
+}
+
+.colors > li > a.active{
+	border: 2px solid #333;
+	margin-top:-2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

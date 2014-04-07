@@ -1,0 +1,147 @@
+
+/******************************FONT**************************************/
+@font-face {
+	font-family: 'Impossible';
+		src: 	url('../fonts/impossible.otf') format('otf'),
+				url('../fonts/impossible.ttf') format('truetype'),
+				url('../fonts/impossible.svg') format('svg');
+}
+
+/*******************************ALL**************************************/
+body {
+	background: url(../imgs/background.jpg) no-repeat top fixed #000;
+}
+
+a {
+	text-decoration: none;
+}
+img {
+	vertical-align: middle;
+}
+
+/*******************************WELCOME**************************************/
+h1 {
+	font-family: 'Impossible';
+	color: rgba(239,239,239,1);
+	font-size: 105px;
+	font-weight: 200;
+	margin-top: -10px;
+}
+
+h2 {
+	font-family: 'Impossible';
+	color: rgba(239,239,239,0.8);
+	font-size: 140px;
+	font-weight: 200;
+	margin-top: -110px;
+}
+
+.unlog {
+	color: #FFF;
+	font-family: 'arial';
+	text-align: center;
+	margin-left: 600px;
+	margin-top: -150px;
+}
+
+.unlog input {
+	margin-top: 10px;
+	border: solid 5px #FFF;
+	border-radius: 5px;
+}
+
+/*******************************CHAT**************************************/
+#content_chat{
+	margin-top: -90px;
+}
+
+#exit {
+	color: #FFF;
+	font-family: 'arial';
+	font-size: 20px;
+}
+
+.post_message  {
+	width: 98%;
+	margin: auto;
+	padding: 3px;
+}
+
+.post_message #message {
+	width: 63%;
+	height: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.post_message #post {
+	width: 10%;
+	margin-right: 20px;
+	font-size: 20px;
+}
+
+#send-punchline {
+	width: 50%;
+	font-size: 20px;
+}
+
+.chat {
+	width: 98%;
+	margin: 10px auto;
+	padding: 0px;
+}
+
+.chat #loading {
+	margin-top: 50px;
+}
+
+.chat #text-td {
+	margin: 0px; 
+	padding: 5px; 
+	width: 75%; 
+	background: rgba(255,255,255,0.5); 
+}
+
+.chat #users-td, .chat #users-chat-td {
+	margin-top: -490px; 
+	padding: 5px; 
+	width: 20%; 
+	float: right;
+	color: white;
+}
+.chat #text, .chat #users, .chat #users-chat {
+	height:500px; 
+	overflow-y: auto;
+}
+
+.status {
+	width: 95%;
+	padding-right: 30px;
+	border: none;
+	margin: auto;
+	text-align: right;
+}
+
+.status-busy {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #ef9901;
+	border-radius: 50%;
+}
+
+.status-active {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #0f0;
+	border-radius: 50%;
+}
+
+.status-inactive {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #a00;
+	border-radius: 50%;
+}
