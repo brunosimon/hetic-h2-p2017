@@ -2,6 +2,7 @@
 require_once(__DIR__."/classes/managers/PDOUserManager.class.php");
 
 session_start();
+
 if(isset($_SESSION["user"])){
     header("location: index.php");
 }
@@ -82,7 +83,7 @@ if(isset($_REQUEST["pseudo"]) && isset($_REQUEST["password"])){
     <div class="container">
         <h1>Bienvenue, sur Hetic Chat!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a href="http://localhost/chat/signup.php" class="btn btn-primary btn-lg" role="button">S'inscrire &raquo;</a></p>
+        <p><a href="signup.php" class="btn btn-primary btn-lg" role="button">S'inscrire &raquo;</a></p>
     </div>
 </div>
 

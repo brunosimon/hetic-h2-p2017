@@ -43,18 +43,19 @@ Sujets pouvant potentiellement être abordés durant l'année
   - SQL (Select,Update,Delete)(Where,Or,And,Order,Limit)
   - Joins (Left,Right)
 
+### Trimestre 3 : PHP / MySQL / APIs / MVC
+ 
+ - MySQL
+  - Joins (Left,Right)
+
+ - API
+  - Facebook
+  - Twitter
+  - Instagram
+
  - Frameworks
 
  - Security
-
-### Trimestre 3 : PHP / MySQL / APIs / MVC
- 
- - API Facebook
- - API Twitter
- - API Foursquare
- - API Instagram
- - API Google Map
- - Création d'un micro framework MVC
 
 # LIENS
 

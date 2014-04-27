@@ -3,7 +3,7 @@ $(function(){
     var form  = $('.tchat-form form');
 
     var old_res={
-        messages:new Array()
+        messages:[]
     };
 
     window.setInterval(function()

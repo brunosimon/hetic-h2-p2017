@@ -1,10 +1,9 @@
 ﻿
 <?php
 
-mysql_select_db( "exercice-chat-goguelin" ) or die( 'Error'. mysql_error() );
-
-
 include("connect.php");
+
+mysql_select_db( "exercice-chat-goguelin" ) or die( 'Error'. mysql_error() );
 
 
 // On vérifie si l'utilisateur a bien choisi un pseudo et si celui ci a bien été posté.

@@ -11,7 +11,7 @@ ini_set("display_errors", 1);
 		$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 		// INFORMATIONS DE CONNEXION
 		$host = 	'localhost';
-		$dbname = 	'exercice-chat-peyrot-magnan';
+		$dbname = 	'exercice-chat-combes-dekerpoisson';
 		$user = 	'root';
 		$password = 'root';
 		// FIN DES DONNEES

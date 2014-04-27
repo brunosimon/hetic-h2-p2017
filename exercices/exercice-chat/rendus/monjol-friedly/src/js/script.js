@@ -14,7 +14,7 @@
 		if(message != null && message != ''){
 			$.ajax({
 	    		type: "POST",
-	    		url: "../../includes/send.php",
+	    		url: "../includes/send.php",
 	    		data: {message: message},
 	    		success: function(){
 	    		$('.message').val('');
@@ -36,7 +36,7 @@
 		//Receiving message
 		window.setInterval(function(){
 			$.ajax({
-				url: '../../includes/receive.php',
+				url: '../includes/receive.php',
 				type: 'POST',
 				dataType: 'json',
 				success: function(res)

@@ -1,4 +1,5 @@
 <?php
+    include "connect.php";
 
 	mysql_select_db( "exercice-chat-goguelin" ) or die( 'Error'. mysql_error() );
 
@@ -10,7 +11,6 @@
 		header("location:index.php");
 	}
 
-	include "connect.php";
 ?>
 
 <!DOCTYPE HTML>
@@ -26,7 +26,7 @@
 			$req = mysql_query($sql) or die(mysql_error());
 			$data = mysql_fetch_assoc($req);
 		?>
-		var lastid = <?php echo $data["id"]; ?>
+		var lastid = <?php echo empty($data["id"]) ? 0 : $data["id"]; ?>;
   	</script>
 </head>
 

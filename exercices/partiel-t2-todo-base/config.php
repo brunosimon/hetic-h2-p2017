@@ -3,7 +3,7 @@
 error_reporting(E_ALL); 
 ini_set("display_errors",1);
 
-define('DB_NAME','nom_de_la_bdd'); // Nom de la base de donnée que vous avez créé
+define('DB_NAME','hetic-p2017-partiel-t2-todo'); // Nom de la base de donnée que vous avez créé
 define('DB_HOST','localhost');     // Laissez localhost
 define('DB_USER','root');
 define('DB_PASS','root');

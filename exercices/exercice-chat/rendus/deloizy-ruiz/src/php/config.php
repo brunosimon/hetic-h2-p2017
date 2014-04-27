@@ -4,9 +4,9 @@
 	ini_set("display_errors", 1);
 
 	define('DB_HOST', 'localhost');
-	define('DB_USER', 'mistruck');
-	define('DB_PASS', 'mistruck1993');
-	define('DB_NAME', 'chat');
+	define('DB_USER', 'root');
+	define('DB_PASS', 'root');
+	define('DB_NAME', 'exercice-chat-deloizy-ruiz');
 
 try
 	{
