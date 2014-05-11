@@ -1,0 +1,11 @@
+{% include 'inc/header.twig' %}
+
+<a href="{{url('home')}}">Home</a>
+<br />
+{% for i in range(1,5) %}
+    <a href="{{url('page',{page:i})}}">Page {{i}}</a>
+{% endfor %}
+
+<br />Home
+
+{% include 'inc/footer.twig' %}

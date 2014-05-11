@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>TRIM 3 - Cours 27 - Silex</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Bruno Simon">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="../tools/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="../tools/reveal.js/css/theme/default-orange.css" id="theme">
+        <!-- <link rel="stylesheet" href="../tools/reveal.js/lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="../tools/reveal.js/lib/css/github.css">
+        <script>
+            document.write( '<link rel="stylesheet" href="../tools/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="../tools/reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            p {margin-bottom:0.6em !important;}
+            li{margin-bottom:0.6em !important;}
+            ul.checked-list li {list-style-type:none;}
+            .default{text-transform:none !important;}
+            img.no-style {border:none !important;background:none !important;-webkit-box-shadow:none !important;-moz-box-shadow:none !important;box-shadow:none !important;}
+            table.visible {border:1px solid #fff;width:100%;}
+            table.visible td,table.visible th {border:1px solid #fff;margin:0;padding:10px 20px;text-align:center;color:#fff;}
+            table.visible td {color:#aaa;}
+            u {border-bottom:0.13em solid #FF8F00 !important;text-decoration:none;}
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div id="pagination"></div>
+            <div class="slides">
+                <section>
+                    <h3>H2 - P2017</h3>
+                    <h1>Développement web</h1>
+                    <h3>Cours 27 - 2014-05-10</h3>
+                    <p>github : <a target="_blank" href="https://github.com/brunosimon/hetic">https://github.com/brunosimon/hetic</a></p>
+                    <p>site : <a target="_blank" href="http://bruno-simon.com/hetic/p2017/">http://bruno-simon.com/hetic/p2017/</a></p>
+                    <p>contact : <a target="_blank" mailto="bruno.simon@hetic.net">bruno.simon@hetic.net</a> - <a target="_blank" href="https://twitter.com/bruno_simon">@bruno_simon</a></p>
+                </section>
+
+                <section>
+                    <h1>Silex</h1>
+                    <p><a href="http://silex.sensiolabs.org" target="_blank">http://silex.sensiolabs.org</a></p>
+                    <p><img class="no-style" src="src/img/silex.png" alt="Logo silex"></p>
+                </section>
+
+                <section>
+                    <p>Silex est un "micro-framework" PHP</p>
+                    <p>Développé par <a href="http://sensiolabs.com/" target="_blank">SensioLabs</a></p>
+                    <p>Repose sur certains composants du Framework Symfony 2</p>
+                    <p>Beaucoup moins complexe et lourd mais très performant</p>
+                    <p>Courbe d'apprentissage élevée</p>
+                    <p>Nécessite au minimum PHP 5.3</p>
+                </section>
+
+                <section>
+                    <p>Dans ce cours, nous allons mettre en place un site avec Silex</p>
+                    <p>Nous nous occuperons principalement de la partie "logique"</p>
+                    <p>Ce cours se déroulera sur plusieurs séances</p>
+                    <p>Nous aborderons beaucoup de nouvelles notions comme le templating, les routes, l'URL rewriting, etc.</p>
+                </section>
+
+                <section>
+                    <p>Nous allons créer un site de snippets</p>
+                    <p class="fragment">Ou pas ?</p>
+                </section>
+
+                <section>
+                    <h2>Étapes</h2>
+                    <ol>
+                        <li><a href="#step-1">Créer le projet et importer Silex</a></li>
+                        <li><a href="#step-2">Configurer le projet</a></li>
+                        <li><a href="#step-3">Créer les premières routes</a></li>
+                        <li><a href="#step-4">Créer les premiers templates</a></li>
+                        <li><a href="#step-5">Récupérer les données depuis la BDD</a></li>
+                    </ol>
+                </section>
+
+                <section id="step-1">
+                    <h2>1 - Créer le projet et importer Silex</h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Rendez-vous sur la <a href="http://silex.sensiolabs.org/download" target="_blank">page de téléchargement de Silex</a></li>
+                        <li>Télécharger le <a href="http://silex.sensiolabs.org/get/silex_fat.zip" target="_blank">zip de la version "fat"</a></li>
+                        <li>Dans un nouveau dossier sur votre serveur au nom du projet, rajoutez le contenu du zip ("composer.json", "composer.lock", "vendor", "web")</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Les fichiers "composer" ne seront pas utilisés. Il permettent de récupérer les dernières versions des librairies et autres Frameworks</p>
+                    <p>Le dossier "vendor" contient Silex ainsi que d'autres composants que nous verrons plus tard</p>
+                    <p>Le dossier "web" contiendra notre site</p>
+                </section>
+
+                <section>
+                    <h3>URL Rewriting</h3>
+                    <p>Pour fonctionner correctement, nous devons mettre en place une réécriture d'URL (URL rewriting)</p>
+                    <p>
+                        Jusqu'à présent, pour accéder à une page PHP, il fallait écrire l'URL exacte du fichier PHP
+                        <br />(exemple : <a href="">http://monsite.com/scripts/contact.php</a>)
+                    </p>
+                    <p>
+                        L'URL rewriting permet d'avoir des URLs plus propres, user-friendly et SEO-friendly
+                        <br />(exemple : <a href="">http://monsite.com/contact</a>)
+                    </p>
+                </section>
+
+                <section>
+                    <h3>URL Rewriting</h3>
+                    <p>Nous ne rentrerons pas dans les détails mais allons aborder les notions</p>
+                    <p>L'URL rewriting permet de specifier des conditions et des actions à effectuer</p>
+                    <p>Ainsi, <a href="">http://monsite.com/page/2</a> peut avoir le même effet que <a href="">http://monsite.com/index.php?page=2</a></p>
+                    <p>Tout comme, <a href="">http://monsite.com/category/anything</a> peut avoir le même effet que <a href="">http://monsite.com/une-page.php?category=anything</a></p>
+                </section>
+
+                <section>
+                    <h3>URL Rewriting</h3>
+                    <p>Avec Apache, le comportement à adopter par le serveur est spécifié dans un fichier .htaccess qu'il faudra placer dans le dossier concerné</p>
+                    <p>On peut indiquer chacune des règles à suivre à l'intérieur</p>
+                    <p>Les fichiers commençant par un "." n'apparaissent pas par défaut sur Mac. Pour les faire apparaître, ouvrez le terminal et tapez</p>
+                    <pre><code class="">defaults write com.apple.finder AppleShowAllFiles -bool true</code></pre>
+                    <p>Suivi de</p>
+                    <pre><code class="">killall Finder</code></pre>
+                </section>
+
+                <section>
+                    <h3>URL Rewriting</h3>
+                    <ul>
+                        <li>Créez le fichier ".htaccess" dans le dossier "web"</li>
+                        <li>Ajoutez-y le code ci-dessous</li>
+                        <li>Remplacez "/path/to/app" par le chemin vers votre site<br />Par exemple, pour <a href="">http://localhost/monchemin/web/</a>, le chemin est "/monchemin/web"</li>
+                    </ul>
+                    <pre><code data-trim class="">
+&lt;IfModule mod_rewrite.c&gt;
+    Options -MultiViews
+
+    RewriteEngine On
+    RewriteBase /path/to/app
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+&lt;/IfModule&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>URL Rewriting</h3>
+                    <p>Ce code provient de la <a href="http://silex.sensiolabs.org/doc/web_servers.html" target="_blank">documentation de Silex</a></p>
+                    <p>Il active l'URL rewriting et permet de rediriger toutes les requêtes vers index.php</p>
+                    <p>L'URL sera ensuite analysée par Silex pour pouvoir servir le bon contenu</p>
+                </section>
+
+                <section id="step-2">
+                    <h2>2 - Configurer le projet</h2>
+                </section>
+
+                <section>
+                    <h3>Configuration</h3>
+                    <ul>
+                        <li>Rendez-vous à l'adresse de votre site<br />(exemple : <a href="http://localhost/monchemin/web/" target="_blank">http://localhost/monchemin/web/</a>)</li>
+                        <li>Vous devriez obtenir un message d'erreur.<br />Bonne nouvelle, c'est Silex qui vous l'envoie</li>
+                        <li>Rajoutez "hello" à la fin de l'url<br />(exemple : <a href="http://localhost/monchemin/web/hello" target="_blank">http://localhost/monchemin/web/hello</a>)</li>
+                        <li>Vous devriez obtenir le message "Hello!" en retour.<br />Votre site fonctionne</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Configuration</h3>
+                    <p><img width="300" src="src/img/good-job.gif" alt="" class="no-style"></p>
+                </section>
+
+                <section id="autoload">
+                    <h3>Configuration</h3>
+                    <ul>
+                        <li>Ouvrez le fichier index.php</li>
+                    </ul>
+                    <p>L'autoload permet de d'inclure automatiquement les Classes lorsqu'elles doivent être instanciées</p>
+                    <p>De cette manière, il n'a pas été nécessaire d'inclure le fichier contenant la classe Silex</p>
+                    <p><a href="">$app</a> est le coeur du site (on parle d'application)</p>
+                </section>
+
+                <section id="step-3">
+                    <h2>3 - Créer les premières routes</h2>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Une route correspond au chemin vers une destination<br />(fonctionne en anglais)</p>
+                    <p>La méthode <a href="">$app->get()</a> permet de définir une route</p>
+                    <p>Dans l'exemple, si le visiteur accède à l'url <a href="http://localhost/monchemin/web/hello" target="_blank">http://localhost/monchemin/web/hello</a>, la fonction de la route sera executée</p>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Avec Silex, il est possible de spécifier des routes avec des paramètres</p>
+                    <pre><code data-trim class="php">
+$app->get('/hello/{name}', function($name) {
+    return 'Hello '.$name;
+});
+                    </code></pre>
+                    <p>exemple : <a href="http://localhost/monchemin/web/hello/toto" target="_blank">http://localhost/monchemin/web/hello/toto</a></p>
+                    <p>Le nom du paramètre est défini entre accolades</p>
+                    <p>Il faut ensuite rajouter la variable avec l'exacte même nom dans les paramètres de la fonction pour pouvoir l'utiliser dans la fonction</p>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Il est, bien sûr, possible de spécifier des routes avec plusieurs paramètres</p>
+                    <pre><code data-trim class="php">
+$app->get('/hello/{first_name}-{last_name}', function($first_name,$last_name) {
+    return 'Hello '.$first_name.' '.$last_name;
+});
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>L'ordre des routes a son importance</p>
+                    <p>La première route qui "match" la requête sera utilisée</p>
+                    <p>Dans l'exemple suivant, la deuxième route ne sera jamais utilisée car la première est prioritaire</p>
+                    <pre><code data-trim class="php">
+// Route 1
+$app->get('/hello/{name}', function($name) {
+    return 'Route 1';
+});
+
+// Route 2
+$app->get('/hello/tata', function() {
+    return 'Route 2';
+});
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Il est possible de spécifier le format attendu du paramètre</p>
+                    <pre><code data-trim class="php">
+$app->get('/page/{id}', function($id) {
+    return 'Page '.$id;
+})
+->assert('id','\d+');
+                    </code></pre>
+                    <p><a href="">\d+</a> signifie "1 ou plusieurs chiffre"<br />C'est ce qu'on appelle une regex</p>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Nous n'allons pas apprendre à faire des regex mais en voici quelques-unes bien utiles :</p>
+                    <ul>
+                        <li><a href="">\w+</a> (un mot)</li>
+                        <li><a href="">\d+</a> (un nombre)</li>
+                        <li><a href="">[a-z0-9_-]{3,16}</a> (pseudo entre 3 et 16 caractères)</li>
+                        <li><a href="">[a-z0-9-]+</a> (un slug)</li>
+                        <li><a href="">([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})</a> (une adresse mail)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Nous allons déclarer toutes nos routes dans index.php mais nous aurions pu inclure un autre fichier les contenant</p>
+                    <p>Notre site va se composer (pour le moment) des pages suivantes</p>
+                    <ul>
+                        <li><a href="">/</a> (page d'accueil)</li>
+                        <li><a href="">/page/{page}</a> (pagination)</li>
+                        <li><a href="">/category/{category}</a> (category)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <ul>
+                        <li>Créez ces routes</li>
+                        <li>Rajoutez les assert()</li>
+                        <li>Testez les URLs</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Routes</h3>
+                    <p>Vous devriez obtenir quelque-chose comme ça</p>
+                    <pre><code data-trim class="php">
+// Home
+$app->get('/', function()
+{
+    return 'Accueil';
+});
+
+// Pages
+$app->get('page/{page}',function($page)
+{
+    return 'Page '.$page;
+})
+->assert('page','\d+'); // Number
+
+// Categories
+$app->get('category/{category}',function($category)
+{
+    return 'Category '.$category;
+})
+->assert('category','[a-z0-9-]+'); // Slug
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>Actuellement, les contenus sont renvoyés dans le "return" des fonctions<br />Nous souhaitons avoir de vraies pages HTML</p>
+                    <p>Nous allons utiliser un <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a></p>
+                </section>
+
+                <section id="step-4">
+                    <h2>4 - Créer les premiers templates</h2>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Jusqu'à présent, pour rajouter du contenu PHP dans une page, il fallait ouvrir et fermer PHP (<a href="">&lt;?php ?&gt;</a>) puis faire un echo de la variable.<br />De même pour les boucles</p>
+                    <p>PHP est un language de templating mais il est loin d'être top et la page devient rapidement confuse.</p>
+                    <p>C'est pourquoi il existe des moteurs de templating (template engine) dédiés à cette tâche.</p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p><a href="http://en.wikipedia.org/wiki/Comparison_of_web_template_engines" target="_blank">Liste de moteurs de templating</a></p>
+                    <p>En PHP, les moteurs de templating se ressemblent beaucoup. Puisque Silex est conçu pour fonctionner facilement avec Twig, nous allons utiliser ce dernier</p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>La première chose à faire est de configurer son éditeur de code pour reconnaître la syntaxe de Twig</p>
+                    <p>Sur Sublime Text, utilisez <a href="https://sublime.wbond.net/installation" target="_blank">Package Control</a> pour l'installer facilement</p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p><img src="src/img/screen-sublime-twig-1.png" alt=""></p>
+                    <p><img src="src/img/screen-sublime-twig-2.png" alt=""></p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Il faut ensuite configurer Silex pour faire fonctionner Twig</p>
+                    <ul>
+                        <li>Allez dans index.php</li>
+                        <li>Rajoutez le code suivant juste avant les routes</li>
+                        <li>Créez un dossier "views" à côté de "index.php"</li>
+                    </ul>
+                    <pre><code data-trim class="php">
+// Twig
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/views',
+));
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Silex fonctionne avec un système de "<a href="ServiceProviderInterface" target="_blank">Service Providers</a>"</p>
+                    <p>Pour faire simple, cela permet de rajouter facilement des briques à Silex</p>
+                    <p>Le code précédemment collé va simplement rajouter la brique Twig avec quelques options</p>
+                    <p>Les fichiers de Twig se trouvent normalement dans le dossier vendor. Il n'est donc pas nécessaire de télécharger Twig ni de l'inclure (cela grâce à l'<a href="#autoload">autoload</a>)</p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <ul>
+                        <li>Créez un fichier home.twig dans le dossier "views"</li>
+                        <li>
+                            Ajoutez-y le code suivant
+                            <pre><code data-trim class="php">
+Value : {{value}}
+                            </code></pre>
+                        </li>
+                        <li>
+                            Dans index.php, remplacez le code de la route "home" par
+                            <pre><code data-trim class="php">
+// Home
+$app->get('/',function(Silex\Application $app)
+{
+    $data = array(
+        'value' => 'Toto'
+    );
+    return $app['twig']->render('home.twig',$data);
+});
+                            </code></pre>
+                        </li>
+                        <li>Rendez-vous sur le site</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>La valeur rentrée dans le tableau <a href="">$data</a> s'affiche bien</p>
+                    <p>Nous n'avons plus besoin d'écrire de PHP dans la vue</p>
+                    <p>Un echo se fait directement avec la double accolade <a href="">{{ }}</a></p>
+                    <p>Le <a href="">$</a> a disparu</p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Quelques exemples d'utilisation de Twig</p>
+                    <p>(Pour aller plus loin, utilisez la <a href="http://twig.sensiolabs.org/documentation" target="_blank">documentation Twig</a>)</p>
+                </section>
+
+                <section>
+                    <h3>Twig : echo</h3>
+                    <p>Faire un echo d'une variable et d'un tableau indexé</p>
+                    <p>index.php</p>
+                    <pre><code data-trim class="php">
+$data = array(
+    'mavaleur'   => 'Toto',
+    'montableau' => array(
+        'foo'  => 'bar',
+        'mad'  => 'ness',
+        'tutu' => 'tata'
+    )
+);
+return $app['twig']->render('home.twig',$data);
+                    </code></pre>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="">
+{{mavaleur}}
+&lt;br /&gt;{{montableau.foo}}
+&lt;br /&gt;{{attribute(montableau,&#039;mad&#039;)}}
+&lt;br /&gt;{{montableau[&#039;tutu&#039;]}}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : echo</h3>
+                    <p>
+                        Pour les tableaux, il est possible d'utiliser le "<a href="">.</a>"
+                        <br />exemple : <a href="">variable.thekey</a>
+                    </p>
+                    <p>
+                        Ou comme en PHP classique
+                        <br />exemple : <a href="">variable['thekey']</a>
+                    </p>
+                    <p>
+                        Ou avec la fonction attribute()
+                        <br />exemple : <a href="">attribute(variable,'thekey')</a>
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Twig : filters</h3>
+                    <p>Il est possible d'appliquer des filtres</p>
+                    <p>index.php</p>
+                    <pre><code data-trim class="php">
+$data = array(
+    'mavaleur' => '    Toto'
+);
+return $app['twig']->render('home.twig',$data);
+                    </code></pre>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="">
+{{mavaleur|trim|upper|replace('O','A')|reverse}}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : filters</h3>
+                    <p>Les filtres sont séparés par des pipes <a href="">|</a> et appliqués dans l'ordre de gauche à droite</p>
+                    <p>La liste des filtres est disponible dans la <a href="http://twig.sensiolabs.org/documentation">documention Twig</a></p>
+                </section>
+
+                <section>
+                    <h3>Twig : if</h3>
+                    <p>Il est possible de faire un if</p>
+                    <p>index.php</p>
+                    <pre><code data-trim class="php">
+$data = array(
+    'mavaleur' => false
+);
+return $app['twig']->render('home.twig',$data);
+                    </code></pre>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="">
+{% if mavaleur %}
+    Vrai !
+{% else %}
+    Faux !
+{% endif %}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : if</h3>
+                    <p>Pour un if et tout ce qui n'implique pas de faire un echo, nous n'utilisons pas la double accolade mais <a href="">{%&nbsp;</a>if<a href="">&nbsp;%}</a></p>
+                </section>
+
+                <section>
+                    <h3>Twig : foreach</h3>
+                    <p>Il est possible de faire un foreach sur un tableau</p>
+                    <p>index.php</p>
+                    <pre><code data-trim class="php">
+$data = array(
+    'values' => array(
+        'key1' => 'value 1',
+        'key2' => 'value 2',
+        'key3' => 'value 3',
+        'key4' => 'value 4',
+        'key5' => 'value 5',
+    )
+);
+return $app['twig']->render('home.twig',$data);
+                    </code></pre>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="">
+{% for item in values %}
+    {{item}}
+{% endfor %}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : for</h3>
+                    <p>Tout comme il est possible de faire un for classique</p>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="html">
+{% for i in range(0,3) %}
+    {{i}}
+{% endfor %}
+&lt;br /&gt;
+{% for i in range(low = 2, high = 10, step = 2) %}
+    {{i}}
+{% endfor %}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : for</h3>
+                    <p>Il est possible de définir une variable</p>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="html">
+{% set foo = 'bar' %}
+{{foo}}
+                    </code></pre>
+                </section>
+
+                <section id="include">
+                    <h3>Twig : include</h3>
+                    <p>Il est possible d'inclure d'autres templates Twig</p>
+                    <p>home.twig</p>
+                    <pre><code data-trim class="html">
+{{include('inc/header.twig',{title:'home'})}}
+{{include('inc/footer.twig')}}
+                    </code></pre>
+                    <p>inc/header.twig</p>
+                    <pre><code data-trim class="html">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;{{title}}&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;src/css/style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+                    </code></pre>
+                    <p>inc/footer.twig</p>
+                    <pre><code data-trim class="html">
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Twig : extends / block</h3>
+                    <p>Enfin, Twig propose des systèmes d'<a href="http://twig.sensiolabs.org/doc/tags/extends.html" target="_blank">extends</a> et de <a href="http://twig.sensiolabs.org/doc/tags/extends.html" target="_blank">blocks</a> qui font la force du moteur</p>
+                    <ul>
+                        <li><a href="http://twig.sensiolabs.org/doc/tags/extends.html" target="_blank">Extends</a> permet à un template d'hériter d'un autre template</li>
+                        <li><a href="http://twig.sensiolabs.org/doc/tags/extends.html" target="_blank">Block</a> permet de définir un morceau d'un template hérité (extends) et d'en disposer dans le template enfant</li>
+                    </ul>
+                    <p>Puisque ces notions sont complexes, nous ne les verrons pas en détail dans ce cours</p>
+                </section>
+
+                <section>
+                    <h3>Twig</h3>
+                    <p>Il existe encore d'autres fonctionnalités qu'il est possible de retrouver dans le <a href="http://twig.sensiolabs.org/documentation">documentation</a></p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <ul>
+                        <li>Créez les différents templates</li>
+                        <li>Créez les fichiers header.twig et footer.twig dans un dossier "inc" comme dans l'<a href="#include">exemple des includes</a></li>
+                        <li>Modifiez index.php de manière à utiliser ces templates</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Le fichier index.php devrait ressembler à quelque chose comme ça</p>
+                    <pre><code data-trim class="php">
+&lt;?php
+
+require_once __DIR__.&#039;/../vendor/autoload.php&#039;;
+
+$app = new Silex\Application();
+
+// Twig
+$app-&gt;register(new Silex\Provider\TwigServiceProvider(), array(
+    &#039;twig.path&#039; =&gt; __DIR__.&#039;/views&#039;,
+));
+
+// Home
+$app-&gt;get(&#039;/&#039;,function(Silex\Application $app)
+{
+    $data = array(
+        &#039;title&#039; =&gt; &#039;Home&#039;
+    );
+    return $app[&#039;twig&#039;]-&gt;render(&#039;home.twig&#039;,$data);
+});
+
+// Pages
+$app-&gt;get(&#039;page/{page}&#039;,function(Silex\Application $app, $page)
+{
+    $data = array(
+        &#039;title&#039; =&gt; &#039;Page &#039;.$page,
+        &#039;page&#039;  =&gt; $page
+    );
+    return $app[&#039;twig&#039;]-&gt;render(&#039;page.twig&#039;,$data);
+})
+-&gt;assert(&#039;page&#039;,&#039;\d+&#039;); // Number
+
+// Categories
+$app-&gt;get(&#039;category/{category}&#039;,function(Silex\Application $app, $category)
+{
+    $data = array(
+        &#039;title&#039;    =&gt; &#039;Category : &#039;.$category,
+        &#039;category&#039; =&gt; $category
+    );
+    return $app[&#039;twig&#039;]-&gt;render(&#039;category.twig&#039;,$data);
+})
+-&gt;assert(&#039;category&#039;,&#039;[a-z0-9-]+&#039;); // Slug
+
+$app-&gt;run();
+
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>La structure de fichiers à l'intérieur du dossier web devrait ressembler à ça</p>
+                    <pre><code data-trim class="php">
+├── .htaccess
+├── index.php
+└── views/
+    └── home.twig
+    └── page.twig
+    └── category.twig
+    └── inc/
+        └── header.twig
+        └── footer.twig
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>Nous allons avoir besoin de créer des liens entre les différentes pages</p>
+                    <p>Nous pourrions écrire le lien en brut mais nous allons plutôt utiliser un Service adapté</p>
+                    <p><a href="http://silex.sensiolabs.org/doc/providers/url_generator.html" target="_blank">UrlGeneratorServiceProvider</a></p>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <ul>
+                        <li>
+                            Rajoutez le service dans index.php (comme pour Twig)
+                            <pre><code data-trim class="php">
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+                            </code></pre>
+                        </li>
+                        <li>
+                            Appliquez la méthode bind() sur chacune des vues pour lui donner un nom/identifiant
+                            <pre><code data-trim class="php">
+/* ... */
+->bind('home');
+
+/* ... */
+->bind('page');
+
+/* ... */
+->bind('category');
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Templating</h3>
+                    <p>URL Generator fonctionne parfaitement avec Twig</p>
+                    <p>Les fonctions sont <a href="">url</a> (pour une URL absolue) et <a href="">path</a> (pour un chemin relatif)</p>
+                    <p>home.twig</p>
+                            <pre><code data-trim class="html">
+{% include &#039;inc/header.twig&#039; %}
+
+&lt;a href=&quot;{{url(&#039;home&#039;)}}&quot;&gt;Home&lt;/a&gt;
+&lt;br /&gt;
+{% for i in range(1,5) %}
+    &lt;a href=&quot;{{url(&#039;page&#039;,{page:i})}}&quot;&gt;Page {{i}}&lt;/a&gt;
+{% endfor %}
+
+&lt;br /&gt;Home
+
+{% include &#039;inc/footer.twig&#039; %}
+                            </code></pre>
+                </section>
+
+                <section>
+                    <p>Nous pouvons désormais lier les différents pages entre elles et créer le contenu de ces pages</p>
+                    <p>Il est temps de créer et récupérer les données</p>
+                </section>
+
+                <section id="step-5">
+                    <h2>5 - Récupérer les données depuis la BDD</h2>
+                </section>
+
+                <section>
+                    <p>Dans le prochain épisode</p>
+                </section>
+            </div>
+        </div>
+
+        <script src="../tools/reveal.js/lib/js/head.min.js"></script>
+        <script src="../tools/reveal.js/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls     : false,
+                progress     : true,
+                history      : true,
+                center       : true,
+                theme        : Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition   : Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                dependencies : [
+                    { src: '../tools/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../tools/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../tools/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../tools/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('slidechanged',function(e)
+            {
+                document.getElementById('pagination').innerHTML = e.indexh + 1;
+            });
+        </script>
+    </body>
+</html>
