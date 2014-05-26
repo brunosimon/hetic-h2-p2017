@@ -1,0 +1,21 @@
+Par groupe de 2, rajouter les pages et fonctionnalités suivantes :
+
+- Pagination
+    Affiche les liens vers les pages ("page 1", "page 2", ...)
+    Par défaut, la home correspond à la "page 1"
+
+- Page categories
+    Affiche les liens vers les différentes catégories
+
+- Page soumission de snippets
+    Un formulaire permettant aux visiteurs du site de proposer leurs snippets
+
+- Page about
+    Une simple page affichant un texte
+
+- Page contact
+    Un formulaire permettant aux visiteurs d'envoyer un mail à l'administrateur du site
+
+- Design
+    Un minimum de design
+    (utilisez un framework front tel que bootstrap pour gagner du temps)
