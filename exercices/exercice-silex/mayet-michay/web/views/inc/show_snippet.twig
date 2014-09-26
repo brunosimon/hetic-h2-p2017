@@ -1,0 +1,5 @@
+<div class=" show-snippet {{snippet.category_slug}}">
+    <h3 class="snippet-title"><a href="{{url('snippet', {id : snippet.id})}}">{{ snippet.title }}</a></h3>
+    <div class="snippet-content"><pre><code> {{ snippet.content | e }} </code></pre></div>
+    <a href="{{ url('category', {category: snippet.category_slug}) }}" class="snippet-category " title="">{{ snippet.category_title }}</a>
+</div>

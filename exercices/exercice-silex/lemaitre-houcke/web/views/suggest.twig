@@ -1,0 +1,22 @@
+{{include('inc/header.twig')}}
+
+<form action="" method="POST">
+	
+	<label for="name">Name of Snippet</label>
+	<input type="text" name="name">
+
+	<label for="category">Category of Snippet</label>
+	<select name="category">
+		<option value="1">PHP</option>
+		<option value="2">CSS</option>
+		<option value="3">JS</option>
+		<option value="4">HTML</option>
+	</select>
+
+	<label for="content">Content of Snippet</label>
+	<textarea name="content" cols="30" rows="10"></textarea>
+
+	<input type="submit" valiue="Seed">	
+</form>
+
+{{include('inc/footer.twig')}}

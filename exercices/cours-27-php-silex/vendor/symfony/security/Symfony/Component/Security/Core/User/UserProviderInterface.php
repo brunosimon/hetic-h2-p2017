@@ -70,7 +70,7 @@ interface UserProviderInterface
      *
      * @param string $class
      *
-     * @return bool
+     * @return Boolean
      */
     public function supportsClass($class);
 }

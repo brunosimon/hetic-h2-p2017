@@ -1,0 +1,40 @@
+{% extends 'incs/layout.twig' %}
+
+{% block top %}
+	<div class="container">
+		<h1>{{category|upper}}</h1>
+		{% if category == 'php' %}
+			<p>PHP est un language de programmation, éxécuté en local il sert à communiquer avec une base de données, traiter des formulaires ou encore communiquer avec des API</p>
+		{% elseif category == 'js' %}
+			<p>Javascript ou plus communément appelé JS est un langague de programmation principalement utilisé dans les pages web intéractives, il est exécuté par le navigateur</p>
+		{% elseif category == 'html' %}
+			<p>C'est le langague de base de la programmation web, il est en quelque sorte l'architecte d'une page</p>
+		{% else %}
+			<p>CSS ou Cascading StyleSheets, est le language de mise en forme, il en défini les cractéristiques graphiques</p>
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block container %}
+	<div class="row">
+        <div class="col-md-8">
+			{% for snippet in snippets %}
+				<blockquote>
+		            <p>{{snippet.title}}</p>
+		            <small>Par {{snippet.username|title}}</small>
+		            <a href="{{url('snippet', {id: snippet.id})}}" class="btn btn-primary btn-xs">Voir le Snippet</a>
+		         </blockquote>
+			{% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-5">
+   		<ul class="pagination">
+            {% for page in pages %}
+                <li><a href="{{url('category',{category: category, id:page.number})}}">{{page.number}}</a></li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+{% endblock %}

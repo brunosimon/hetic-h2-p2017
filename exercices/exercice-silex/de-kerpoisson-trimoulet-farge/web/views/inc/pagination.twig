@@ -1,0 +1,11 @@
+<div class="container">
+<section>
+    {% for page in pages %}
+        {% if page.current %}
+            Page {{page.number}}
+        {% else %}
+            <a href="{{url('page',{page:page.number})}}">Page {{page.number}}</a>
+        {% endif %}
+    {% endfor %}
+</section>
+</div>

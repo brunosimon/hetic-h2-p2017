@@ -36,10 +36,10 @@ class Version
      * @param string       $version1  A version string.
      * @param string       $version2  A version string to compare.
      * @param string       $operator  The comparison operator.
-     * @param int|null     $precision The number of components to compare. Pass
+     * @param integer|null $precision The number of components to compare. Pass
      *                                NULL to compare the versions unchanged.
      *
-     * @return bool    Whether the comparison succeeded.
+     * @return Boolean Whether the comparison succeeded.
      *
      * @see normalize()
      */
@@ -64,7 +64,7 @@ class Version
      *     // => '1.2'
      *
      * @param string       $version   A version string.
-     * @param int|null     $precision The number of components to include. Pass
+     * @param integer|null $precision The number of components to include. Pass
      *                                NULL to return the version unchanged.
      *
      * @return string|null The normalized version or NULL if it couldn't be
@@ -83,7 +83,7 @@ class Version
         }
 
         if (!preg_match('/^' . $pattern . '/', $version, $matches)) {
-            return;
+            return null;
         }
 
         return $matches[0];

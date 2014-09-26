@@ -1,0 +1,13 @@
+<snippet>
+					<content><![CDATA[
+				body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+}
+				]]></content>
+					<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+					<tabTrigger>BetterHelvetica</tabTrigger>
+					<!-- Optional: Set a scope to limit where the snippet will trigger -->
+					<!-- <scope>source.python</scope> -->
+				</snippet>
+			

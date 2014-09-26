@@ -1,0 +1,7 @@
+{% for snippets in snippets %}
+	<div class="snipets">
+		<div>
+			<a href="{{url('category',{category:snippets.category_slug})}}">{{snippets.category_title}}</a>
+		</div>
+	</div>
+{% endfor %}

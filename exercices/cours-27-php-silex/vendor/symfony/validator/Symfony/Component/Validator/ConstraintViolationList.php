@@ -52,7 +52,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function add(ConstraintViolationInterface $violation)
     {
@@ -60,7 +60,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addAll(ConstraintViolationListInterface $otherList)
     {
@@ -70,7 +70,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function get($offset)
     {
@@ -82,7 +82,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function has($offset)
     {
@@ -90,7 +90,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function set($offset, ConstraintViolationInterface $violation)
     {
@@ -98,7 +98,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function remove($offset)
     {
@@ -106,7 +106,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getIterator()
     {
@@ -114,7 +114,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function count()
     {
@@ -122,7 +122,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function offsetExists($offset)
     {
@@ -130,7 +130,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function offsetGet($offset)
     {
@@ -138,7 +138,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function offsetSet($offset, $violation)
     {
@@ -150,7 +150,7 @@ class ConstraintViolationList implements \IteratorAggregate, ConstraintViolation
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function offsetUnset($offset)
     {

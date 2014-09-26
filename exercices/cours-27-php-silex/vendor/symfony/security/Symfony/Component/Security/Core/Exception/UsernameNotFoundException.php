@@ -22,7 +22,7 @@ class UsernameNotFoundException extends AuthenticationException
     private $username;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMessageKey()
     {
@@ -50,7 +50,7 @@ class UsernameNotFoundException extends AuthenticationException
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serialize()
     {
@@ -61,7 +61,7 @@ class UsernameNotFoundException extends AuthenticationException
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function unserialize($str)
     {

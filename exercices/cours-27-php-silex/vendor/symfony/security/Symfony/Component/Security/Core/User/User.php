@@ -64,6 +64,7 @@ final class User implements AdvancedUserInterface
      */
     public function getSalt()
     {
+        return null;
     }
 
     /**

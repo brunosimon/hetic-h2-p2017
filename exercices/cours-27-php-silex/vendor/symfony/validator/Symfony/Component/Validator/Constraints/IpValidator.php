@@ -26,7 +26,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class IpValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {

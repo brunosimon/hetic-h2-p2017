@@ -100,19 +100,15 @@ class ChromePHPHandler extends AbstractProcessingHandler
      */
     protected function send()
     {
-        if (self::$overflowed || !self::$sendHeaders) {
+        if (self::$overflowed) {
             return;
         }
 
         if (!self::$initialized) {
-            self::$initialized = true;
-
             self::$sendHeaders = $this->headersAccepted();
-            if (!self::$sendHeaders) {
-                return;
-            }
-
             self::$json['request_uri'] = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+
+            self::$initialized = true;
         }
 
         $json = @json_encode(self::$json);
@@ -134,9 +130,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
             $data = base64_encode(utf8_encode($json));
         }
 
-        if (trim($data) !== '') {
-            $this->sendHeader(self::HEADER_NAME, $data);
-        }
+        $this->sendHeader(self::HEADER_NAME, $data);
     }
 
     /**
@@ -159,11 +153,8 @@ class ChromePHPHandler extends AbstractProcessingHandler
      */
     protected function headersAccepted()
     {
-        if (empty($_SERVER['HTTP_USER_AGENT'])) {
-            return false;
-        }
-
-        return preg_match('{\bChrome/\d+[\.\d+]*\b}', $_SERVER['HTTP_USER_AGENT']);
+        return !isset($_SERVER['HTTP_USER_AGENT'])
+               || preg_match('{\bChrome/\d+[\.\d+]*\b}', $_SERVER['HTTP_USER_AGENT']);
     }
 
     /**

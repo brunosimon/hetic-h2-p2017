@@ -41,17 +41,10 @@ class X509AuthenticationListener extends AbstractPreAuthenticatedListener
      */
     protected function getPreAuthenticatedData(Request $request)
     {
-        $user = null;
-        if ($request->server->has($this->userKey)) {
-            $user = $request->server->get($this->userKey);
-        } elseif ($request->server->has($this->credentialKey) && preg_match('#/emailAddress=(.+\@.+\..+)(/|$)#', $request->server->get($this->credentialKey), $matches)) {
-            $user = $matches[1];
+        if (!$request->server->has($this->userKey)) {
+            throw new BadCredentialsException(sprintf('SSL key was not found: %s', $this->userKey));
         }
 
-        if (null === $user) {
-            throw new BadCredentialsException(sprintf('SSL credentials not found: %s, %s', $this->userKey, $this->credentialKey));
-        }
-
-        return array($user, $request->server->get($this->credentialKey, ''));
+        return array($request->server->get($this->userKey), $request->server->get($this->credentialKey, ''));
     }
 }

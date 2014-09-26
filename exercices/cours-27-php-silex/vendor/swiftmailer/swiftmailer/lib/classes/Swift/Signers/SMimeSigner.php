@@ -89,7 +89,7 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
      *
      * @param string       $certificate
      * @param string|array $privateKey  If the key needs an passphrase use array('file-location', 'passphrase') instead
-     * @param int          $signOptions Bitwise operator options for openssl_pkcs7_sign()
+     * @param integer      $signOptions Bitwise operator options for openssl_pkcs7_sign()
      *
      * @return Swift_Signers_SMimeSigner
      */
@@ -118,7 +118,7 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
      * @link http://nl3.php.net/manual/en/openssl.ciphers.php
      *
      * @param string|array $recipientCerts Either an single X.509 certificate, or an assoc array of X.509 certificates.
-     * @param int          $cipher
+     * @param integer      $cipher
      *
      * @return Swift_Signers_SMimeSigner
      */
@@ -176,7 +176,7 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
     }
 
     /**
-     * @return bool
+     * @return Boolean
      */
     public function isSignThenEncrypt()
     {

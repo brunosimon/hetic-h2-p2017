@@ -1,0 +1,14 @@
+{% include 'inc/header.twig' %}
+<div class="container fix marketing">
+	<h1 class=>Categories</h1>
+	<div class="row">
+		{% for categorie in categories %}
+			<div class="col-lg-4">
+				<a href="{{url('category',{category:categorie.slug, page:1})}}"><h2>{{categorie.title}}</h2></a>
+				<p>{{categorie.count}} snippets in this category</p>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% include 'inc/footer.twig' %}

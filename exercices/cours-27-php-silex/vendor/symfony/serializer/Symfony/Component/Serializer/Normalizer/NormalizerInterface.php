@@ -35,7 +35,7 @@ interface NormalizerInterface
      * @param mixed  $data   Data to normalize.
      * @param string $format The format being (de-)serialized from or into.
      *
-     * @return bool
+     * @return Boolean
      */
     public function supportsNormalization($data, $format = null);
 }

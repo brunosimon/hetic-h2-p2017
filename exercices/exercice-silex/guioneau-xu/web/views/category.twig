@@ -1,0 +1,27 @@
+{{include('inc/header.twig',{title:'Category'})}}
+
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        {{include('inc/menu.twig')}}
+  	
+        <!-- main area -->
+        <div class="col-xs-12 col-sm-9">
+
+          {{include('inc/snippets.twig')}}
+
+          <section>
+              {% for page in pages %}
+                  {% if page.current %}
+                      Page {{page.number}}
+                  {% else %}
+                      Page {{page.number}}</a>
+                  {% endif %}
+              {% endfor %}
+          </section>
+
+        </div><!-- /.col-xs-12 main -->
+      </div><!--/.row-->
+    </div><!--/.container-->
+
+{{include('inc/footer.twig')}}

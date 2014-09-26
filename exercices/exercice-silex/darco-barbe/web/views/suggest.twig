@@ -1,0 +1,16 @@
+{{include('inc/header.twig')}}
+	<div id="content_form" class="img-thumbnail">
+		<h2 id="suggest_form"> Suggest a picture </h2>
+		<form action="#" method="POST">
+			{{form_widget(form)}}
+			<div id="margin_form">
+				{% for category in categories %}
+		
+				{{category.title}}<input type="radio" value="{{category.id}}" name="categ"><br/>
+				{% endfor %}
+			</div>
+			<input type="submit" class="btn_submit" class="btn btn-default" name="submit" value="Suggest"/>
+		</form>
+	</div>
+
+{{include('inc/footer.twig')}}

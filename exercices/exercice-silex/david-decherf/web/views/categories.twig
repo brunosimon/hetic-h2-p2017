@@ -1,0 +1,12 @@
+{% include 'inc/header.twig' %}
+
+{% for categorie in categories %}
+
+	<div class="list-group">
+		<a href="{{url('category', {category:categorie.slug})}}" class="list-group-item">{{categorie.title}}</a>
+	</div>
+
+{% endfor %}
+
+{% include 'inc/footer.twig' %}
+

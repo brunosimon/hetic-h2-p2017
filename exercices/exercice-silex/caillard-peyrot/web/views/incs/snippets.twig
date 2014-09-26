@@ -1,0 +1,18 @@
+<section class="snippets">
+  {% if snippets is empty %}
+    <p>No snippet found</p>
+  {% endif %}
+  {% for snippet in snippets %}
+    <div class="snippet row">
+      <div class="col-md-4 infos">
+        <h4>{{snippet.title}}</h4>
+        <p>by <a href="{{url('user', {username:snippet.username})}}">{{snippet.username}}</a> in 
+        <a href="{{url('category', {category:snippet.category_slug})}}">{{snippet.category_title}}</a></p>
+        <small><a href="{{url('snippet', {id:snippet.id})}}">Details</a></small>
+      </div>
+      <div class="col-md-8 code">
+        <p>{{snippet.description}}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>

@@ -25,7 +25,7 @@ class XmlFileLoader extends FileLoader
     protected $classes = null;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function loadClassMetadata(ClassMetadata $metadata)
     {

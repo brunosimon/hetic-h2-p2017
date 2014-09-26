@@ -1,0 +1,15 @@
+<!-- Pagination -->
+<section>
+    {% for page in pages %}
+        {% if page.current %}
+        <ul class="pager">
+            <li>{{page.number}}</li>
+		</ul>
+              
+        {% else %}
+        <ul class="pager">
+            <li><a href="{{url('page',{page:page.number})}}">{{page.number}}</a></li>
+		</ul>
+        {% endif %}
+    {% endfor %}
+</section>

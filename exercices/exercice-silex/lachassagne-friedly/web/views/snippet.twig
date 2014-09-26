@@ -1,0 +1,11 @@
+{% include 'inc/header.twig' %}
+
+<div class="container fix">
+	<h2>{{snippet.title}}</h2>
+	<pre><code class="html">{{snippet.content}}</code></pre>
+	<a href="{{app.request.basepath}}/snippets/{{snippet.down}}.zip"><button class="btn">Download sublime snippet</button></a>
+</div>
+
+
+
+{% include 'inc/footer.twig' %}

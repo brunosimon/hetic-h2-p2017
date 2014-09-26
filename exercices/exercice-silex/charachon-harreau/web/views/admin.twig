@@ -1,0 +1,20 @@
+{{include('include/header.twig',{title:'Contact'})}}
+
+<h3>Admin </h3>
+<br>
+
+{% if app.session.get('Connected') %} 
+ 
+ Cliquez sur les boutons pour changer l'état de chaque post.
+
+{{include('include/snippets_admin.twig')}}
+
+
+{% else %}
+<form action="#" method="post">
+    {{ form_widget(form) }}
+
+    <input type="submit" name="submit" />
+</form>
+{% endif %}
+{{include('include/footer.twig')}}

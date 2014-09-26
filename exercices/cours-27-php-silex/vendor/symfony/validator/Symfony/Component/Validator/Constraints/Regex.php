@@ -15,7 +15,6 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
@@ -29,7 +28,7 @@ class Regex extends Constraint
     public $match = true;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDefaultOption()
     {
@@ -37,7 +36,7 @@ class Regex extends Constraint
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequiredOptions()
     {
@@ -79,7 +78,7 @@ class Regex extends Constraint
     {
         // If match = false, pattern should not be added to HTML5 validation
         if (!$this->match) {
-            return;
+            return null;
         }
 
         if (preg_match('/^(.)(\^?)(.*?)(\$?)\1$/', $this->pattern, $matches)) {
@@ -93,5 +92,7 @@ class Regex extends Constraint
 
             return $start.$pattern.$end;
         }
+
+        return null;
     }
 }

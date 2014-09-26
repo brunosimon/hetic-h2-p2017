@@ -62,7 +62,7 @@ class PersistentTokenBasedRememberMeServices extends AbstractRememberMeServices
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function cancelCookie(Request $request)
     {
@@ -79,7 +79,7 @@ class PersistentTokenBasedRememberMeServices extends AbstractRememberMeServices
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function processAutoLoginCookie(array $cookieParts, Request $request)
     {
@@ -117,7 +117,7 @@ class PersistentTokenBasedRememberMeServices extends AbstractRememberMeServices
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function onLoginSuccess(Request $request, Response $response, TokenInterface $token)
     {

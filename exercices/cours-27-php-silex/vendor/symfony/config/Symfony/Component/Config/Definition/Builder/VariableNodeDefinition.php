@@ -31,7 +31,7 @@ class VariableNodeDefinition extends NodeDefinition
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function createNode()
     {

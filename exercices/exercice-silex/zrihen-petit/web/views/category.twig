@@ -1,0 +1,12 @@
+{{include('inc/header.twig')}}
+
+
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+  <li><a href="{{url('category', {category:'php'})}}" data-toggle="tab">PHP</a></li>
+  <li><a href="{{url('category', {category:'javascript'})}}" data-toggle="tab">JAVASCRIPT</a></li>
+  <li><a href="{{url('category', {category:'css'})}}" data-toggle="tab">CSS</a></li>
+  <li><a href="{{url('category', {category:'html'})}}" data-toggle="tab">HTML</a></li>
+</ul>
+
+{{include('inc/snippets.twig')}}
+{{include('inc/footer.twig')}}

@@ -84,7 +84,7 @@ abstract class ElementMetadata
     /**
      * Returns whether this element has any constraints.
      *
-     * @return bool
+     * @return Boolean
      */
     public function hasConstraints()
     {

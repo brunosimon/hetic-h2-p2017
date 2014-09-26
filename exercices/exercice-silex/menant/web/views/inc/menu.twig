@@ -1,0 +1,15 @@
+<a class="trs home" href="{{url('home')}}"></a>
+<ul class="left">
+	<li><a class="trs navlink" href="{{url('categories')}}">Catagories</a></li>
+	<li><a class="trs navlink" href="{{url('about')}}">About</a></li>
+	<li><a class="trs navlink" href="{{url('contact')}}">Contact me</a></li>
+</ul>
+<ul class="right">
+	<li><a class="trs btn btn-new" href="{{url('addsnippet')}}">Add a snippet</a></li>
+	<li>{% if app.session.get('admin') %}<a class="trs btn" href="{{url('admin/logout')}}">Logout</a>{% else %}<a class="trs btn btn-new" href="{{url('login')}}">Login</a>{% endif %}</li>
+</ul>
+
+
+
+
+

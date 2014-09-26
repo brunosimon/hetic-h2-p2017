@@ -1,0 +1,34 @@
+{{include('inc/header.twig')}}
+
+<form action="{{url('formulaire_post')}}" method="post">
+	<input type="hidden" name="action" value="add">
+	<fieldset>
+		<legend>Ajout de snippets</legend>
+		<label class="col-lg-1 control-label" for="title">Catégorie</label><br>
+
+		<div>
+	        {% for categ in categories %}
+	        <label class="col-lg-1 control-label"></label>
+	        <div class="radio">
+	        <input required id="{{categ.slug}}" type="radio" name="category" value="{{categ.id}}">{{categ.title}}</br></br>
+	    	</div>
+	        {% endfor %}
+		
+			<label class="col-lg-1 control-label" for="title">Titre</label><br>
+			<div class="col-lg-2">
+			<input required class="form-control" type="text" name="title" id="title" placeholder="Title" value="">
+			</div><br><br><br><br><br>
+					
+        	<label class="col-lg-1 control-label" for="content">Champs texte</label><br>
+        	<div class="col-lg-10">
+        	<textarea class="form-control" name="content" id="content" rows="5"></textarea>
+        	<span class="help-block">Rentrez votre fabuleux Snippet</span>
+        	</div><br><br><br><br><br><br><br>
+		</div>
+		<div>
+			</br><input class="btn btn-primary" type="submit" name="Register">
+		</div>
+	</fieldset>
+</form>
+
+{{include('inc/footer.twig')}}

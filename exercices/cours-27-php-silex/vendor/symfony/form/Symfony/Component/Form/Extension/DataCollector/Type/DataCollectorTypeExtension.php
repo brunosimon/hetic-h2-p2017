@@ -36,7 +36,7 @@ class DataCollectorTypeExtension extends AbstractTypeExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -44,7 +44,7 @@ class DataCollectorTypeExtension extends AbstractTypeExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getExtendedType()
     {

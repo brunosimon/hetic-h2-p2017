@@ -31,7 +31,7 @@ interface Swift_Transport_Esmtp_Authenticator
      * @param string                    $username
      * @param string                    $password
      *
-     * @return bool
+     * @return boolean
      */
     public function authenticate(Swift_Transport_SmtpAgent $agent, $username, $password);
 }

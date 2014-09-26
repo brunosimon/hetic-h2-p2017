@@ -50,7 +50,7 @@ class TwigExtractor implements ExtractorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function extract($directory, MessageCatalogue $catalogue)
     {
@@ -63,7 +63,7 @@ class TwigExtractor implements ExtractorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setPrefix($prefix)
     {

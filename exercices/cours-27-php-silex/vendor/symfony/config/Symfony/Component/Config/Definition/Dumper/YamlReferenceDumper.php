@@ -45,7 +45,7 @@ class YamlReferenceDumper
 
     /**
      * @param NodeInterface $node
-     * @param int           $depth
+     * @param integer       $depth
      */
     private function writeNode(NodeInterface $node, $depth = 0)
     {

@@ -1,0 +1,41 @@
+{{include('inc/header.twig')}}
+
+<h2>Contact Form</h2>
+
+{% if send is defined %}
+    {% if send == 'email_sent' %}
+    	<div class="alert alert-success"> Votre message a bien été envoyé !</div>
+	{% endif %}
+	{% if send == 'wrong_email' %}
+    	<div class="alert alert-danger"> Votre adresse mail est incorrecte.</div>
+	{% endif %}
+	{% if send == 'fields_empty' %}
+    	<div class="alert alert-danger"> Certains champs n'ont pas été remplis.</div>
+	{% endif %}
+{% endif %}
+
+<form action="#" method="post">
+	<div class="form-group">
+    	{{ form_widget(form.name,{'attr': {'type': 'text', 'value': '', 'class': 'form-control', 'placeholder': data.name } }) }}
+    </div>
+
+	<div class="form-group">
+    	{{ form_widget(form.email,{'attr': {'type': 'text', 'value': '', 'class': 'form-control', 'placeholder': data.email } }) }}
+     </div>
+
+     <div class="form-group">
+    	{{ form_widget(form.subject,{'attr': {'type': 'text', 'value': '', 'class': 'form-control', 'placeholder': data.subject } }) }}
+     </div>
+
+     <div class="form-group">
+    	{{ form_widget(form.text_mail,{'attr': {'class': 'form-control', 'placeholder': data.placeholder_text } }) }}
+     </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+
+    <script>document.getElementById('form_text_mail').value = '';</script>
+    {# Excusez nous pour cela #}
+</form>
+
+
+{{include('inc/footer.twig')}}

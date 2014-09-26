@@ -21,21 +21,21 @@ abstract class IntlGlobals
     /**
      * Indicates that no error occurred
      *
-     * @var int
+     * @var integer
      */
     const U_ZERO_ERROR = 0;
 
     /**
      * Indicates that an invalid argument was passed
      *
-     * @var int
+     * @var integer
      */
     const U_ILLEGAL_ARGUMENT_ERROR = 1;
 
     /**
      * Indicates that the parse() operation failed
      *
-     * @var int
+     * @var integer
      */
     const U_PARSE_ERROR = 9;
 
@@ -53,23 +53,23 @@ abstract class IntlGlobals
     /**
      * The error code of the last operation
      *
-     * @var int
+     * @var integer
      */
     private static $errorCode = self::U_ZERO_ERROR;
 
     /**
      * The error code of the last operation
      *
-     * @var int
+     * @var integer
      */
     private static $errorMessage = 'U_ZERO_ERROR';
 
     /**
      * Returns whether the error code indicates a failure
      *
-     * @param int     $errorCode The error code returned by IntlGlobals::getErrorCode()
+     * @param integer $errorCode The error code returned by IntlGlobals::getErrorCode()
      *
-     * @return bool
+     * @return Boolean
      */
     public static function isFailure($errorCode)
     {
@@ -82,7 +82,7 @@ abstract class IntlGlobals
      *
      * Returns IntlGlobals::U_ZERO_ERROR if no error occurred.
      *
-     * @return int
+     * @return integer
      */
     public static function getErrorCode()
     {
@@ -104,7 +104,7 @@ abstract class IntlGlobals
     /**
      * Returns the symbolic name for a given error code
      *
-     * @param int     $code The error code returned by IntlGlobals::getErrorCode()
+     * @param integer $code The error code returned by IntlGlobals::getErrorCode()
      *
      * @return string
      */
@@ -120,7 +120,7 @@ abstract class IntlGlobals
     /**
      * Sets the current error
      *
-     * @param int     $code    One of the error constants in this class
+     * @param integer $code    One of the error constants in this class
      * @param string  $message The ICU class error message
      *
      * @throws \InvalidArgumentException If the code is not one of the error constants in this class

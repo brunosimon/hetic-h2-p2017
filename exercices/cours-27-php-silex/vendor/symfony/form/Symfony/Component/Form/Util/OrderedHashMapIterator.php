@@ -33,12 +33,12 @@ class OrderedHashMapIterator implements \Iterator
     private $orderedKeys;
 
     /**
-     * @var int
+     * @var integer
      */
     private $cursor;
 
     /**
-     * @var int
+     * @var integer
      */
     private $cursorId;
 
@@ -48,7 +48,7 @@ class OrderedHashMapIterator implements \Iterator
     private $managedCursors;
 
     /**
-     * @var string|int|null
+     * @var string|integer|null
      */
     private $key;
 

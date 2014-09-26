@@ -169,6 +169,7 @@ abstract class Constraint
      */
     public function getDefaultOption()
     {
+        return null;
     }
 
     /**

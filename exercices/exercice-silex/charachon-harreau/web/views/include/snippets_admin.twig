@@ -1,0 +1,33 @@
+{% for snippet in snippets %}
+	<div>
+		<h3>{{snippet.title}}</h3>
+		{% if snippet.state == 0 %}
+		
+		<form action="" method='GET'>
+		<input type="hidden" name="action" value="validate">
+		<input type="hidden" name="id" value="{{snippet.id}}">
+		<input type="submit" class="btn btn-warning" value ="Non validé">
+		</form>
+
+		{% else %}
+
+		<form action="" method='GET'>
+		<input type="hidden" name="action" value="unvalidate">
+		<input type="hidden" name="id" value="{{snippet.id}}">
+		<input type="submit" class="btn btn-succes" value ="Validé">
+		</form>
+		{% endif %}
+		<br>
+		
+		<form action="" method='GET'>
+		<input type="hidden" name="action" value="delete">
+		<input type="hidden" name="id" value="{{snippet.id}}">
+		<input type="submit" class="btn btn-danger" value ="Supprimer le post">
+		</form>
+
+		<a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a>
+		<div> <img src="{{snippet.content}}" />
+		</div>
+
+	</div>
+{% endfor %}

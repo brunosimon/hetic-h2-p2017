@@ -1,0 +1,12 @@
+{% extends layout %}
+
+{% block content %}
+  <section class="col-md-12">
+  	<h1>Full Web Snippets</h1>
+  	<h2>Recent snippets</h2>
+  	<hr>
+    {{include('incs/snippets.twig')}}
+  </section>
+
+  {{include('incs/pagination.twig')}}
+{% endblock %}

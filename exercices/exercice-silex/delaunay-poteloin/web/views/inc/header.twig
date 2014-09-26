@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="{{app.request.basepath}}/src/css/style.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{app.request.basepath}}/src/css/highlight/monokai_sublime.css">
+	<script src="{{app.request.basepath}}/src/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="container">
+
+		<nav class="navbar navbar-inverse" role="navigation">
+	  		<a class="navbar-brand" href="{{url('home')}}">Hetic Snippets</a>
+		</nav>
+		
+    	{% set route = app.request.attributes.get('_route') %}
+	
+		<ul class="nav nav-tabs" style="margin-bottom: 5px;">
+		  <li {% if route == 'page' or route == 'home' %} class="active" 
+		  {% endif %}><a href="{{url('home')}}">All </a></li>
+		  <li {% if route == 'categories' or route == 'category' or route == 'snippet' %} class="active" {% endif %}><a href="{{url('categories')}}">Categories</a></li>
+		  <li {% if route == 'add' %} class="active" {% endif %}><a href="{{url('add')}}">Add Snippet</a></li>
+		  <li {% if route == 'about' %} class="active" {% endif %}><a href="{{url('about')}}">About</a></li>
+		  <li {% if route == 'form' %} class="active" {% endif %}><a href="{{url('form')}}">Contact Us</a></li>
+		</ul>
+
+		<ol class="breadcrumb" style="margin-top: 15px;">
+
+			{% if route == 'page' or route == 'home'%} 
+				<li class="active">Home</li>
+			{% else %}
+				<li class="active"><a href="{{url('home')}}">Home</a></li>
+			{% endif %}
+
+			{% if route == 'categories' %}
+				<li class="active">Categories</li>
+			{% endif %}
+
+			{% if route == 'add' %}
+				<li class="active">Add Snippet</li>
+			{% endif %}
+
+			{% if route == 'about' %}
+				<li class="active">About</li>
+			{% endif %}
+
+			{% if route == 'form' %}
+				<li class="active">Contact Us</li>
+			{% endif %}
+
+
+			{% if route == 'category'%}
+				<li class="active"><a href="{{url('categories')}}">Categories</a></li>
+				<li class="active">{{snippets[0].category_title}}</li>
+			{% elseif route == 'snippet'%}
+				<li class="active"><a href="{{url('categories')}}">Categories</a></li>
+				<li class="active"><a href="{{url('category',{category:snippets[0].category_slug})}}">{{snippets[0].category_title}}</a></li>
+				<li class="active">{{snippets[0].title}}</li>
+
+			{% endif %}
+
+		</ol>

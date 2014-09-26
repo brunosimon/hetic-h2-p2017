@@ -42,7 +42,7 @@ class SecurityIdentityRetrievalStrategy implements SecurityIdentityRetrievalStra
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSecurityIdentities(TokenInterface $token)
     {

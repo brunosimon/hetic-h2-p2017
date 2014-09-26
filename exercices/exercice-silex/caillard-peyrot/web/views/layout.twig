@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{app.request.basePath}}/assets/main.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="{{url('home')}}" class="navbar-brand"><img src="{{app.request.basePath}}/assets/imgs/logo.png" alt="logo"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Categories <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="themes">
+                  {% for category in  categories %}
+                    <li><a href="{{url('category', {category:category.slug})}}">{{category.title}}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li><a href="{{url('new')}}">New Snippet</a></li>
+              <li><form action="{{url('search')}}" method="get" class="form-role">
+                <input type="text" name="search" class="form-control search" placeholder="search">
+              </form></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav">
+                {% if (app.session.get('user')) %}
+                  <li><a href="{{url('user', {username:app.session.get('user')['username']})}}">{{app.session.get('user')['username']}}</a></li>
+                  <li><a href="{{url('logout')}}">Logout</a></li>
+                {% else %}
+                  <li><a href="{{url('login')}}">Login</a></li>
+                  <li><a href="{{url('signup')}}">Signup</a></li>
+                {% endif %}
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+      
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+
+    <footer>
+      <p>Full Web Snippet</p>
+      <p><a href="http://twitter.com/cohars">Hugo Caillard</a> - <a href="http://twitter.com/JustinePeyrot">Justine Peyrot</a></p>
+      <p><a href="{{url('about')}}">About</a></p>
+    </footer>
+  </body>
+
+  <script src="{{app.request.basePath}}/assets/scripts/jquery.min.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/bootstrap.min.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/codemirror.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/modes/xml.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/modes/css.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/modes/javascript.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/modes/php.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/modes/htmlmixed.js"></script>
+  <script src="{{app.request.basePath}}/assets/scripts/editor.js"></script>
+</html>

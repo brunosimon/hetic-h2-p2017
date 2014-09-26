@@ -1,0 +1,37 @@
+{#
+
+{{mavaleur|trim|upper|replace('O','A')|reverse}}
+
+
+{% if nouvellevaleur %}
+	Vrai!
+{% else %}
+	Faux !
+{% endif %}
+
+
+{% for value in values %}
+	{{value}}
+{% endfor %}
+
+
+{% for i in range(0,10,2) %}
+	{{i}}
+{% endfor %}
+
+
+{% set foo = 'bar' %}
+{{foo}}
+
+
+<link rel="stylesheet" href="{{app.request.basepath}}/src/css/style.css">
+
+#}
+
+{{include('inc/header.twig')}}
+
+{{include('inc/pagination.twig')}}
+
+{{include('inc/snippets.twig')}}
+
+{{include('inc/footer.twig')}}

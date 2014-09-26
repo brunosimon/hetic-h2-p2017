@@ -19,7 +19,7 @@ namespace Symfony\Component\Form;
 class SubmitButton extends Button implements ClickableInterface
 {
     /**
-     * @var bool
+     * @var Boolean
      */
     private $clicked = false;
 
@@ -35,7 +35,7 @@ class SubmitButton extends Button implements ClickableInterface
      * Submits data to the button.
      *
      * @param null|string $submittedData The data.
-     * @param bool        $clearMissing  Not used.
+     * @param Boolean     $clearMissing  Not used.
      *
      * @return SubmitButton The button instance
      *

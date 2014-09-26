@@ -1,0 +1,18 @@
+{{include('inc/header.twig')}}
+
+<h2>Add student</h2>
+
+{% if add is defined %}
+    {% if add %}
+        Success : Student added
+    {% else %}
+        Error : Something went wrong
+    {% endif %}
+{% endif %}
+
+<form action="{{url('add-student')}}" method="POST">
+    {{form_widget(form)}}
+    <input type="submit" value="send">
+</form>
+
+{{include('inc/footer.twig')}}

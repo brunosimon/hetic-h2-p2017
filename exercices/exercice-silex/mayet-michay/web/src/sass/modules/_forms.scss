@@ -1,0 +1,24 @@
+form {
+    text-align: center;
+}
+
+
+#form {
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+    label, input, select, textarea {
+        width: 50%;
+        float: left;
+        padding: 5px 10px;
+    }
+    label {
+        text-align: right;
+        padding: 10px;
+        width: 200px;
+    }
+    div {
+        overflow: hidden; /*clear fix*/
+        margin: 5px 0;
+    }
+}

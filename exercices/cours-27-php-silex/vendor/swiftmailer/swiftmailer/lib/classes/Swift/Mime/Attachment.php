@@ -42,7 +42,7 @@ class Swift_Mime_Attachment extends Swift_Mime_SimpleMimeEntity
      *
      * Always returns {@link LEVEL_MIXED}.
      *
-     * @return int
+     * @return integer
      */
     public function getNestingLevel()
     {
@@ -107,7 +107,7 @@ class Swift_Mime_Attachment extends Swift_Mime_SimpleMimeEntity
     /**
      * Get the file size of this attachment.
      *
-     * @return int
+     * @return integer
      */
     public function getSize()
     {
@@ -117,7 +117,7 @@ class Swift_Mime_Attachment extends Swift_Mime_SimpleMimeEntity
     /**
      * Set the file size of this attachment.
      *
-     * @param int     $size
+     * @param integer $size
      *
      * @return Swift_Mime_Attachment
      */

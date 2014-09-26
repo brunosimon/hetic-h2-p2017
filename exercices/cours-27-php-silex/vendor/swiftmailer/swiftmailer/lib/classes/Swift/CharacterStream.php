@@ -54,7 +54,7 @@ interface Swift_CharacterStream
      * Read $length characters from the stream and move the internal pointer
      * $length further into the stream.
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return string
      */
@@ -64,7 +64,7 @@ interface Swift_CharacterStream
      * Read $length characters from the stream and return a 1-dimensional array
      * containing there octet values.
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return int[]
      */
@@ -80,7 +80,7 @@ interface Swift_CharacterStream
     /**
      * Move the internal pointer to $charOffset in the stream.
      *
-     * @param int     $charOffset
+     * @param integer $charOffset
      */
     public function setPointer($charOffset);
 

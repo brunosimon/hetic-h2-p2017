@@ -1,0 +1,18 @@
+{% extends layout %}
+
+{% block content %}
+  <div class="col-md-4 col-md-offset-4">
+    {% if success is defined and success == false %}
+      <p class="bg-danger">Your username or password is wrong, please try again.</p>
+    {% endif %}
+
+    <h2>Login</h2>
+    <hr>
+    <form action="#" method="post" role="form">
+      <input class="form-control" type="text" name="username" placeholder="username"><br>
+      <input class="form-control" type="password" name="password" placeholder="password"><br><br>
+
+      <input class="btn btn-default" type="submit">
+    </form>  
+  </div>
+{% endblock %}

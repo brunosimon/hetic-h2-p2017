@@ -1,0 +1,26 @@
+{% extends layout %}
+
+{% block content %}
+  <div class="col-md-4 col-md-offset-4">
+    {% if success is defined and success == 1 %}
+      <h2>Success</h2>
+      <p>You successfully registered, you can now <a href="{{url('login')}}">login</a></p>
+    {% else %}
+      {% if success.errors is defined %}
+        {% for error in success.errors %}
+            <p class="bg-danger">{{error}}</p>
+        {% endfor %}
+      {% endif %}
+      <h2>Signup</h2>
+      <hr>
+      <form action="#" method="post" role="form">
+        <input class="form-control" type="text" name="username" placeholder="Username"><br>
+        <input class="form-control" type="text" name="mail" placeholder="Mail"><br>
+        <input class="form-control" type="password" name="password" placeholder="Password"><br>
+        <input class="form-control" type="password" name="confirm" placeholder="Confirm"><br>
+        <br>
+        <input class="btn btn-default" type="submit">
+      </form>
+    {% endif %}
+  </div>
+{% endblock %}

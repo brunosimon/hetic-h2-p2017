@@ -99,9 +99,6 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
                     $attributeValue = call_user_func($this->callbacks[$attributeName], $attributeValue);
                 }
                 if (null !== $attributeValue && !is_scalar($attributeValue)) {
-                    if (!$this->serializer instanceof NormalizerInterface) {
-                        throw new \LogicException(sprintf('Cannot normalize attribute "%s" because injected serializer is not a normalizer', $attributeName));
-                    }
                     $attributeValue = $this->serializer->normalize($attributeValue, $format);
                 }
 
@@ -178,7 +175,7 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function supportsNormalization($data, $format = null)
     {
@@ -186,7 +183,7 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
@@ -198,7 +195,7 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
      *
      * @param string $class
      *
-     * @return bool
+     * @return Boolean
      */
     private function supports($class)
     {
@@ -218,7 +215,7 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
      *
      * @param \ReflectionMethod $method the method to check
      *
-     * @return bool    whether the method is a getter.
+     * @return Boolean whether the method is a getter.
      */
     private function isGetMethod(\ReflectionMethod $method)
     {

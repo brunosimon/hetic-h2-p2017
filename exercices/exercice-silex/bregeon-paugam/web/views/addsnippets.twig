@@ -1,0 +1,85 @@
+{{include('inc/header.twig')}}
+ <h4>{{title}}</h4>
+<hr>
+	<div class="container">
+    	<div class="row">
+      		<div class="col-md-6 col-md-push-3">
+      			
+      			<form role="form" method="post" id="contactform">
+          			<fieldset>
+			
+						<div>
+								{{ form_label(form.category, 'Choose a category:') }}<br />
+					 
+								<div class='form-input'>
+										{{ form_widget(form.category) }}
+										{{ form_errors(form.category) }}
+								</div>
+						</div>
+					 	<br/>
+						<div>
+								{{ form_label(form.title, 'Snippet title:') }}<br />
+					 
+								<div class='form-input'>
+									{{ form_errors(form.title) }}
+									{{ form_widget(form.title) }}
+								</div>
+						</div>
+					 
+						<div>
+								{{ form_label(form.content, 'Content:') }}<br />
+					 
+								<div class='form-input'>
+									{{ form_errors(form.content) }}
+									{{ form_widget(form.content) }}
+								</div>
+						</div>
+						<br/>
+						<div>
+							<input type="submit" name="submit" class="btn btn-default"/>
+
+						</div>
+
+         			</fieldset>
+      			</form>
+    		</div>
+  		</div>
+	</div>
+
+<p>{{include('inc/footer.twig')}}</p>
+
+
+
+<!-- 					Essai pour styliser mon formulaire en bootstrap
+
+ <textarea id="form_message" name="form[message]" required="required">Votre message</textarea>
+
+            <div class="form-group">
+              <label for="name">Votre nom <span class="help-required">*</span></label>
+              <input id="form_name" name="form[name]" required="required" class="form-control required" role="input"/>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Votre adresse email <span class="help-required">*</span></label>
+              <input id="form_email" name="form[email]" required="required" class="form-control required email" role="input" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet <span class="help-required">*</span></label>
+              <input type="text" id="form_subject" name="form[subject]" required="required" class="form-control required" role="input" />
+            </div>            
+
+            <div class="form-group">
+              <label for="message">Votre message <span class="help-required">*</span></label>
+              <textarea rows="8" id="form_message" name="form[message]" required="required" class="form-control required" role="textbox"></textarea>
+            </div>
+
+            <p><span class="label label-info">Les champs marqués d'un * sont obligatoires</span></p>
+            <div class="actions">
+              <input type="submit" name="submit" id="submitButton" class="btn btn-primary" title="Cliquez ici pour envoyer votre message!" />
+              <input type="reset" value="Effacer le formulaire" class="btn btn-danger" title="Retirez toutes les données du formulaire." />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div> -->

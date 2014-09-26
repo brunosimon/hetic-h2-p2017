@@ -1,0 +1,11 @@
+{{include('inc/header.twig')}}
+
+<div class="categories">
+	{% for categorie in categories %}
+		
+    	<h2 class="{{categorie.title}}"><a href="{{url('category',{category: categorie.slug})}}">{{categorie.title}}</a></h2>
+    	<p>Le {{categorie.title}} c'est cool j'adore ça. Je ne pourrais m'en passer c'est comme une drogue.</p>
+	{% endfor %}
+</div>
+
+{{include('inc/footer.twig')}}

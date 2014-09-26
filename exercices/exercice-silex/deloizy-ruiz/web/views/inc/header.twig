@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LexCakes</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+
+  <div class="navbar navbar-inverse navbar-absolute-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{url('home')}}">LexCakes</a>
+      </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li {% if(actual_page=='') %} class='active' {% endif %}><a href="{{url('home')}}">Accueil</a></li> 
+              <li {% if(actual_page=='proposition') %} class='active' {% endif %}><a href="{{url('proposition')}}">Proposer une recette</a></li>
+              <li {% if(actual_page=='about') %} class='active' {% endif %}><a href="{{url('about')}}">À propos</a></li>
+              <li {% if(actual_page=='contact') %} class='active' {% endif %}><a href="{{url('contact')}}">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+  

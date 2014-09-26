@@ -86,7 +86,7 @@ class Form implements \IteratorAggregate, FormInterface
 
     /**
      * Whether this form was submitted
-     * @var bool
+     * @var Boolean
      */
     private $submitted = false;
 
@@ -124,7 +124,7 @@ class Form implements \IteratorAggregate, FormInterface
      * Whether the data in model, normalized and view format is
      * synchronized. Data may not be synchronized if transformation errors
      * occur.
-     * @var bool
+     * @var Boolean
      */
     private $synchronized = true;
 
@@ -138,13 +138,13 @@ class Form implements \IteratorAggregate, FormInterface
      * manually, making the initialization with the configured default value
      * superfluous.
      *
-     * @var bool
+     * @var Boolean
      */
     private $defaultDataSet = false;
 
     /**
      * Whether setData() is currently being called.
-     * @var bool
+     * @var Boolean
      */
     private $lockSetData = false;
 
@@ -209,7 +209,7 @@ class Form implements \IteratorAggregate, FormInterface
         }
 
         if (null === $this->getName() || '' === $this->getName()) {
-            return;
+            return null;
         }
 
         $parent = $this->parent;
@@ -238,7 +238,7 @@ class Form implements \IteratorAggregate, FormInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isDisabled()
     {
@@ -767,6 +767,8 @@ class Form implements \IteratorAggregate, FormInterface
         if ($this->parent && method_exists($this->parent, 'getClickedButton')) {
             return $this->parent->getClickedButton();
         }
+
+        return null;
     }
 
     /**
@@ -782,7 +784,7 @@ class Form implements \IteratorAggregate, FormInterface
      *
      * This method should only be used to help debug a form.
      *
-     * @param int     $level The indentation level (used internally)
+     * @param integer $level The indentation level (used internally)
      *
      * @return string A string representation of all errors
      */
@@ -930,7 +932,7 @@ class Form implements \IteratorAggregate, FormInterface
      *
      * @param string $name The name of the child
      *
-     * @return bool
+     * @return Boolean
      */
     public function offsetExists($name)
     {
@@ -992,7 +994,7 @@ class Form implements \IteratorAggregate, FormInterface
     /**
      * Returns the number of form children (implements the \Countable interface).
      *
-     * @return int     The number of embedded form children
+     * @return integer The number of embedded form children
      */
     public function count()
     {

@@ -1,0 +1,17 @@
+{{include('inc/header.twig')}}
+
+	<h2>Snippet : {{snippets[0].category_title}}</h2>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">{{snippets[0].title}}</h3>
+	  </div>
+	  <div class="panel-body">
+	  	<pre><code class="snippet hljs bash">
+	    		{{snippets[0].content}}
+			</code></pre>
+	  </div>
+	</div>
+
+
+{{include('inc/footer.twig')}}

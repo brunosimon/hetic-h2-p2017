@@ -1,0 +1,38 @@
+{{include('inc/header.twig')}}
+<div class='content'>
+	<form action="#" class="form-horizontal" method="post">
+  <fieldset>
+	<legend style='margin:10px;'>Soumettre un snippet</legend>
+	<div class="form-group">
+	  <label for="lname" class="col-lg-2 control-label">Nom</label>
+	  <div class="col-lg-5">
+		<input type='text' class="form-control" rows="3" id="title" name='title' placeholder="Nom du snippet"></input>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label for="textArea" class="col-lg-2 control-label">Contenu</label>
+	  <div class="col-lg-5">
+		<textarea class="form-control" rows="3" id="textArea" placeholder='Votre snippet' name='content'></textarea>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label for="select" class="col-lg-2 control-label">Catégorie</label>
+	  <div class="col-lg-5">
+		<select class="form-control" id="select" name='id_category'>
+		  <option value='1'>Javascript</option>
+		  <option value='2'>PHP</option>
+		  <option value='3'>HTML</option>
+		  <option value='4'>CSS</option>
+		</select>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <div class="col-lg-10 col-lg-offset-2">
+		<button type="submit" class="btn btn-primary">Soumettre</button>
+		<button class="btn btn-default">Annuler</button>
+	  </div>
+	</div>
+  </fieldset>
+</form>
+</div>
+{{include('inc/footer.twig')}}

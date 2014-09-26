@@ -1,0 +1,57 @@
+{{include('inc/header.twig')}}
+
+
+<!-- Form Add Snippet -->
+
+<form action="#" method="POST" class="form-horizontal">
+
+  <fieldset>
+    {% if success is defined %}
+        <p class="text-success">{{success}}</p>
+    {% endif %} 
+    <div class="form-group">
+      <label for="inputSnippetName" class="col-lg-2 control-label">Snippet Name</label>
+        <div class="col-lg-10">
+          {% if error.snippetName is defined %}
+              <p class="text-danger">{{error.snippetName}}</p>
+          {% endif %}
+          <input type="text" name="snippetName" class="form-control" id="inputSnippetName" value="{% if form.snippetName is defined %} {{form.snippetName}} {% endif %}" placeholder="Snippet Name">
+        </div>
+    </div>
+
+ <div class="form-group">
+      <label class="col-lg-2 control-label">Category</label>
+      <div class="col-lg-10">
+
+      <select name="snippetSelect" class="form-control">
+        {% for category in categories %}
+          <option value="{{category.id}}">{{category.title}}</option>
+        {% endfor %}
+      </select>
+
+      </div>
+</div>
+
+    <div class="form-group">
+      <label for="textSnippet" class="col-lg-2 control-label">Snippet</label>
+        <div class="col-lg-10">
+          {% if error.textSnippet is defined %}
+              <p class="text-danger">{{error.textSnippet}}</p>
+          {% endif %}
+          <textarea class="form-control" name="textSnippet" rows="3" id="textSnippet"></textarea>
+          <span class="help-block">Write the snippet here!</span>
+        </div>
+    </div>
+
+   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <input type="submit" name="submit" class="btn btn-primary" value="Send">
+      </div>
+    </div>
+  </fieldset>
+
+</form>
+
+
+{{include('inc/footer.twig')}}

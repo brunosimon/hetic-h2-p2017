@@ -49,7 +49,7 @@ class Swift_CharacterStream_NgCharacterStream implements Swift_CharacterStream
     /**
      * Number of bytes in the stream
      *
-     * @var int
+     * @var integer
      */
     private $_datasSize = 0;
 
@@ -63,21 +63,21 @@ class Swift_CharacterStream_NgCharacterStream implements Swift_CharacterStream
     /**
      * Map Type.
      *
-     * @var int
+     * @var integer
      */
     private $_mapType = 0;
 
     /**
      * Number of characters in the stream.
      *
-     * @var int
+     * @var integer
      */
     private $_charCount = 0;
 
     /**
      * Position in the stream.
      *
-     * @var int
+     * @var integer
      */
     private $_currentPos = 0;
 
@@ -157,7 +157,7 @@ class Swift_CharacterStream_NgCharacterStream implements Swift_CharacterStream
     /**
      * @see Swift_CharacterStream::read()
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return string
      */
@@ -223,7 +223,7 @@ class Swift_CharacterStream_NgCharacterStream implements Swift_CharacterStream
     /**
      * @see Swift_CharacterStream::readBytes()
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return integer[]
      */
@@ -242,7 +242,7 @@ class Swift_CharacterStream_NgCharacterStream implements Swift_CharacterStream
     /**
      * @see Swift_CharacterStream::setPointer()
      *
-     * @param int     $charOffset
+     * @param integer $charOffset
      */
     public function setPointer($charOffset)
     {

@@ -15,7 +15,6 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *

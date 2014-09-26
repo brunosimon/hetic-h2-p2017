@@ -1,0 +1,21 @@
+{% extends 'incs/layout.twig' %}
+
+{% block top %}
+  <div class="container">
+    <h1>{{snippet.title|upper}}</h1>
+  </div>
+{% endblock %}
+
+{% block container %}
+  <div class="row">
+      <div class="col-md-8">
+        <blockquote>
+          <p>{{snippet.title|upper}}</p>
+          <small>Par {{snippet.username|title}}</small>
+          <div class="well">
+            {{snippet.content}}
+          </div>
+        </blockquote>
+      </div>
+  </div>
+{% endblock %}

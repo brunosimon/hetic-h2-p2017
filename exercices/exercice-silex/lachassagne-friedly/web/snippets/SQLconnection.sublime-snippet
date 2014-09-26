@@ -1,0 +1,31 @@
+<snippet>
+					<content><![CDATA[
+				<?php
+
+define ('HOSTNAME', 'localhost');
+define ('USERNAME', 'username');
+define ('PASSWORD', 'password');
+define ('DATABASE_NAME', 'recommendations');
+
+$db = mysql_connect(HOSTNAME, USERNAME, PASSWORD) or die ('I cannot connect to MySQL.');
+
+mysql_select_db(DATABASE_NAME);
+
+$query = "SELECT testimonial,author FROM recommendations WHERE 1 ORDER by rand() LIMIT 1";
+
+$result = mysql_query($query);
+
+while ($row = mysql_fetch_array($result)) {
+echo "<p id="quote">" , ($row['testimonial']) , "</p> \n <p id="author">&ndash;" , nl2br($row['author']) , "</p>";
+}
+
+mysql_free_result($result);
+mysql_close();
+?>
+				]]></content>
+					<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+					<tabTrigger>SQLconnection</tabTrigger>
+					<!-- Optional: Set a scope to limit where the snippet will trigger -->
+					<!-- <scope>source.python</scope> -->
+				</snippet>
+			

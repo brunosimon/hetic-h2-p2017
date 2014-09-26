@@ -22,7 +22,7 @@ namespace Symfony\Component\Form\Test;
 abstract class FormPerformanceTestCase extends FormIntegrationTestCase
 {
     /**
-     * @var    int
+     * @var    integer
      */
     protected $maxRunningTime = 0;
 
@@ -47,7 +47,7 @@ abstract class FormPerformanceTestCase extends FormIntegrationTestCase
     }
 
     /**
-     * @param  int     $maxRunningTime
+     * @param  integer $maxRunningTime
      * @throws \InvalidArgumentException
      */
     public function setMaxRunningTime($maxRunningTime)
@@ -60,7 +60,7 @@ abstract class FormPerformanceTestCase extends FormIntegrationTestCase
     }
 
     /**
-     * @return int
+     * @return integer
      * @since  Method available since Release 2.3.0
      */
     public function getMaxRunningTime()

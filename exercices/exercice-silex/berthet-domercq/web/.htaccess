@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+    RewriteBase /p2017/exercices/exercice-silex/berthet-domercq/web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

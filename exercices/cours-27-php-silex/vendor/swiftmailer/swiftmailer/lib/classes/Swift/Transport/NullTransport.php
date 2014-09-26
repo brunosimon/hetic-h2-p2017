@@ -30,7 +30,7 @@ class Swift_Transport_NullTransport implements Swift_Transport
     /**
      * Tests if this Transport mechanism has started.
      *
-     * @return bool
+     * @return boolean
      */
     public function isStarted()
     {
@@ -57,7 +57,7 @@ class Swift_Transport_NullTransport implements Swift_Transport
      * @param Swift_Mime_Message $message
      * @param string[]           $failedRecipients An array of failures by-reference
      *
-     * @return int     The number of sent emails
+     * @return integer The number of sent emails
      */
     public function send(Swift_Mime_Message $message, &$failedRecipients = null)
     {
@@ -73,13 +73,7 @@ class Swift_Transport_NullTransport implements Swift_Transport
             $this->_eventDispatcher->dispatchEvent($evt, 'sendPerformed');
         }
 
-        $count = (
-            count((array) $message->getTo())
-            + count((array) $message->getCc())
-            + count((array) $message->getBcc())
-            );
-
-        return $count;
+        return 0;
     }
 
     /**

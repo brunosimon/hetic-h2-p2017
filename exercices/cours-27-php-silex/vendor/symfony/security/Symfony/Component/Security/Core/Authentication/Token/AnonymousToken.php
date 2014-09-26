@@ -57,7 +57,7 @@ class AnonymousToken extends AbstractToken
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function serialize()
     {
@@ -65,7 +65,7 @@ class AnonymousToken extends AbstractToken
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function unserialize($serialized)
     {

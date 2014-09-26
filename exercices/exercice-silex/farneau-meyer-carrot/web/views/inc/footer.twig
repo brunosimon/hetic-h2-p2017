@@ -1,0 +1,104 @@
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{app.request.basepath}}/src/js/bootstrap.min.js"></script>
+    <script src="{{app.request.basepath}}/src/js/ZeroClipboard.min.js"></script>
+
+    <script>
+
+    	var i = 0;
+    	var client = new Array();
+
+    	ZeroClipboard.config({
+			moviePath: '{{app.request.basepath}}/src/js/ZeroClipboard.swf',
+			forceHandCursor: true,
+			debug: true
+		});
+
+	    $('.blog-post').each(function(){
+
+	    	client[i] = new ZeroClipboard($(this).find('.copy-button'));
+
+			$(this).find('.copy-button').attr('data-clipboard-target',"codecontent"+i);
+			$(this).find('code').attr('id',"codecontent"+i);
+
+			client[i].on('complete',function(client, args){
+				$(this).text('Copied !').removeClass('btn-primary').addClass('btn-success').hide().fadeIn();
+			});
+
+		    i++;
+	    });
+
+		hljs.initHighlightingOnLoad();
+
+	    $('.alert-success').hide();
+	    $('.alert-danger').hide();
+
+	    // Add snippet form
+		$('.add_snippet').submit(function(){
+			var data = {
+				title: $('.input_title').val(),
+				message: $('.input_content').val(),
+				category: $('.input_cat').val()
+			};
+
+			$.ajax({
+			  type: "POST",
+			  url: "{{path('add_snippet')}}",
+			  data: data,
+			  success : function(data){
+
+			  	 if(data.trim()=="ok"){
+			  	 	$('.alert-danger').hide();
+			  	 	$('.alert-success').fadeIn();
+
+			  	 	// clean fields
+			  	 	$('.input_title').val("");
+			  	 	$('.input_content').val("");
+
+			  	 }else{
+			  	 	$('.alert-danger').hide();
+			  	 	$('.alert-danger').fadeIn();
+			  	 }
+			  }
+			});
+			return false;
+		});
+
+		 // Contact us form
+		$('.send_mail').submit(function(){
+			var data = {
+				title: $('.input_title').val(),
+				name: $('.input_name').val(),
+				email: $('.input_email').val(),
+				message: $('.input_message').val()
+			};
+
+			$.ajax({
+			  type: "POST",
+			  url: "{{path('contact_submit')}}",
+			  data: data,
+			  success : function(data){
+			  	 if(data.trim()=="ok"){
+			  	 	$('.alert-danger').hide();
+			  	 	$('.alert-success').fadeIn();
+
+			  	 	// clean fields
+			  	 	$('.input_title').val("");
+			  	 	$('.input_name').val("");
+			  	 	$('.input_email').val("");
+			  	 	$('.input_message').val("");
+
+			  	 }else{
+			  	 	$('.alert-danger').hide();
+			  	 	$('.alert-danger').fadeIn();
+			  	 }
+			  }
+			});
+			return false;
+		});
+	</script>
+
+  </body>
+</html>

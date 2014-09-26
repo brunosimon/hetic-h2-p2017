@@ -1,0 +1,49 @@
+{% include 'inc/header.twig' %}
+
+	<div class="container fix">
+		<form class="form-horizontal" method="post">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Sign in</legend>
+
+			<!-- Text input-->
+			<div class="control-group">
+			  <label class="control-label" for="name">Username</label>
+			  <div class="controls">
+			    <input id="name" name="name" type="text" placeholder="username" class="input-xlarge" required="">
+			    
+			  </div>
+			</div>
+
+			<!-- Password input-->
+			<div class="control-group">
+			  <label class="control-label" for="password">Password</label>
+			  <div class="controls">
+			    <input id="password" name="password" type="password" placeholder="password" class="input-xlarge" required="">
+			    
+			  </div>
+			</div>
+
+			<!-- Password input-->
+			<div class="control-group">
+			  <label class="control-label" for="password2">Password</label>
+			  <div class="controls">
+			    <input id="password2" name="password2" type="password" placeholder="password" class="input-xlarge" required="">
+			    
+			  </div>
+			</div>
+
+			<!-- Button -->
+			<div class="control-group">
+			  <label class="control-label" for="submit"></label>
+			  <div class="controls">
+			    <button id="submit" name="submit" class="btn btn-success">Submit</button>
+			  </div>
+			</div>
+
+			</fieldset>
+		</form>
+	</div>
+
+{% include 'inc/footer.twig' %}

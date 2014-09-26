@@ -1,0 +1,14 @@
+{% for snippet in snippets %}
+	<div>
+		<h3>{{snippet.title}}</h3>
+		
+		<div>
+			<a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a>	
+		</div>
+		
+		<textarea class="code-mirror" mode="{{snippet.category_slug}}">{{snippet.content}}</textarea>
+
+		<br/>
+	</div>
+
+{% endfor %}

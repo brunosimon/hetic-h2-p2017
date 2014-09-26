@@ -154,7 +154,7 @@ class Swift_Signers_OpenDKIMSigner extends Swift_Signers_DKIMSigner
     /**
      * Enable / disable the DebugHeaders
      *
-     * @param bool    $debug
+     * @param boolean $debug
      * @return Swift_Signers_DKIMSigner
      */
     public function setDebugHeaders($debug)

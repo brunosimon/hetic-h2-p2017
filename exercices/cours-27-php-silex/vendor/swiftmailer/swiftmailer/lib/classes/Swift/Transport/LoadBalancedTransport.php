@@ -62,7 +62,7 @@ class Swift_Transport_LoadBalancedTransport implements Swift_Transport
     /**
      * Test if this Transport mechanism has started.
      *
-     * @return bool
+     * @return boolean
      */
     public function isStarted()
     {

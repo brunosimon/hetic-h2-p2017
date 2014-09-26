@@ -20,7 +20,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 class RangeValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {

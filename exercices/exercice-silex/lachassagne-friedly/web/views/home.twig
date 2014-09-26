@@ -1,0 +1,33 @@
+{% include 'inc/header.twig' %}
+
+   
+
+
+
+	<!-- Marketing messaging and featurettes
+	================================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
+
+	<div class="container marketing home-contain">
+		<h1 class=>Featured categories</h1>
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-lg-4">
+			  <h2>{{categories.0.title|upper}}</h2>
+			  <p>PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. As of January 2013, PHP was installed on more than 240 million websites (39% of those sampled) and 2.1 million web servers. Originally created by Rasmus Lerdorf in 1994, the reference implementation of PHP is now produced by The PHP Group. While PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor, a recursive backronym.</p>
+			  <p><a class="btn btn-default" href="{{url('category',{category:categories.0.slug, page:1})}}" role="button">See the snippets &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			  <h2>{{categories.1.title|upper}}</h2>
+			  <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document written in a markup language. While most often used to style web pages and interfaces written in HTML and XHTML, the language can be applied to any kind of XML document, including plain XML, SVG and XUL. CSS is a cornerstone specification of the web and almost all web pages use CSS style sheets to describe their presentation.</p>
+			  <p><a class="btn btn-default" href="{{url('category',{category:categories.1.slug, page:1})}}" role="button">See the snippets &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			  <h2>{{categories.2.title|upper}}</h2>
+			  <p>HTML or HyperText Markup Language is the standard markup language used to create web pages.
+HTML is written in the form of HTML elements consisting of tags enclosed in angle brackets (like html). HTML tags most commonly come in pairs like h1 and h1, although some tags represent empty elements and so are unpaired, for example img. The first tag in a pair is the start tag, and the second tag is the end tag (they are also called opening tags and closing tags).</p>
+			  <p><a class="btn btn-default" href="{{url('category',{category:categories.2.slug, page:1})}}" role="button">See the snippets &raquo;</a></p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+
+{% include 'inc/footer.twig' %}

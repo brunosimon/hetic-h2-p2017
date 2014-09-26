@@ -48,7 +48,7 @@ final class RoleSecurityIdentity implements SecurityIdentityInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function equals(SecurityIdentityInterface $sid)
     {

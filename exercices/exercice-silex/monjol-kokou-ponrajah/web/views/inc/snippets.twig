@@ -1,0 +1,13 @@
+<div class="modal-content col-lg-12">
+	<!-- Show Snippets -->
+	{% for snippet in snippets %}
+		<div>
+			<!-- Title -->
+			<a href="{{url('snippet', {id:snippet.id})}}"><h3>{{snippet.title}}</h3></a>
+			<!-- Category -->
+			<div>
+				<a href="{{url('category', {category:snippet.category_slug})}}">{{snippet.category_title}}</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

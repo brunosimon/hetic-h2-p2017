@@ -28,7 +28,6 @@ class BufferHandler extends AbstractHandler
     protected $bufferLimit;
     protected $flushOnOverflow;
     protected $buffer = array();
-    protected $initialized = false;
 
     /**
      * @param HandlerInterface $handler         Handler.
@@ -43,6 +42,9 @@ class BufferHandler extends AbstractHandler
         $this->handler = $handler;
         $this->bufferLimit = (int) $bufferLimit;
         $this->flushOnOverflow = $flushOnOverflow;
+
+        // __destructor() doesn't get called on Fatal errors
+        register_shutdown_function(array($this, 'close'));
     }
 
     /**
@@ -52,12 +54,6 @@ class BufferHandler extends AbstractHandler
     {
         if ($record['level'] < $this->level) {
             return false;
-        }
-
-        if (!$this->initialized) {
-            // __destructor() doesn't get called on Fatal errors
-            register_shutdown_function(array($this, 'close'));
-            $this->initialized = true;
         }
 
         if ($this->bufferLimit > 0 && $this->bufferSize === $this->bufferLimit) {

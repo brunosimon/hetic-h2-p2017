@@ -1,0 +1,25 @@
+{{include('inc/header.twig')}}
+
+
+{% for cake in cakes %}
+	<div>
+		<h3>{{cake.title}}</h3>
+		<p>{{cake.content}}</p>
+		<img src="{{cake.img_url}}" alt="Gateau">
+
+	</div>
+{% endfor %}
+
+
+
+{{include('inc/footer.twig')}}
+
+
+
+
+
+
+
+
+
+

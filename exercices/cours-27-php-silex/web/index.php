@@ -1,94 +1,137 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Response;
-require_once 'config.php';
-require_once __DIR__.'/../vendor/autoload.php';
-
-$app = new Silex\Application();
-$app['debug'] = true;
-
-// Twig
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints as Assert;
+require 'config.php';
 
 // Home
 $app->get('/',function()
 {
-    // Globals
     global $app;
     global $snippets_model;
 
-
-    // Prepare data
     $data = array(
         'title'    => 'Home',
         'snippets' => $snippets_model->get(),
-        'pages'    => $snippets_model->get_pages()
     );
+
     return $app['twig']->render('home.twig',$data);
 })
 ->bind('home');
 
-
-// Pages
-$app->get('page/{page}',function($page)
+// Page
+$app->get('/page/{page}', function($page)
 {
-    // Globals
     global $app;
     global $snippets_model;
 
-    // Get snippets
-    $snippets = $snippets_model->get_by_page($page);
-
-    // Prepare data
     $data = array(
-        'title'    => 'Page '.$page,
-        'snippets' => $snippets,
-        'page'     => $page,
-        'pages'    => $snippets_model->get_pages($page)
+        'title'    => 'Page',
+        'snippets' => $snippets_model->get_by_page($page),
     );
+
     return $app['twig']->render('page.twig',$data);
 })
-->assert('page','\d+') // Number
-->bind('page');
+->bind('page')
+->assert('page','\d+');
 
-
-// Categories
-$app->get('category/{category}',function($category)
+// Category
+$app->get('/category/{category}',function($category)
 {
-    // Globals
     global $app;
     global $snippets_model;
 
-    // Get snippets
-    $snippets = $snippets_model->get_by_category_slug($category);
-
-    // Prepare data
     $data = array(
-        'title'    => 'Category : '.$category,
-        'category' => $category,
-        'snippets' => $snippets
+        'title'    => 'Category',
+        'snippets' => $snippets_model->get_by_category_slug($category),
     );
+
     return $app['twig']->render('category.twig',$data);
 })
-->assert('category','[a-z0-9-]+') // Slug
-->bind('category');
+->bind('category')
+->assert('category','[a-z0-9-]+');
 
-
-// Errors
-$app->error(function (\Exception $e, $code)
+// Contact
+$app->match('/contact',function(Request $request)
 {
-    // Globals
     global $app;
 
+    // Create form and add fields
+    $form = $app['form.factory']->createBuilder('form');
+    $form->add('name','text',array(
+        'constraints' => new Assert\Length(array('min' => 5))
+    ));
+    $form->add('subject','text',array(
+        'constraints' => new Assert\Length(array('min' => 5))
+    ));
+    $form->add('message','textarea',array(
+        'constraints' => new Assert\Length(array('min' => 5))
+    ));
+
+    $form = $form->getForm();
+
+    $form->handleRequest($request);
+
+    if($form->isValid())
+    {
+        $data = $form->getData();
+
+    }
+
     $data = array(
-        'title' => $code
+        'title' => 'Contact',
+        'form'  => $form->createView()
     );
-    if($code == 404)
-        return $app['twig']->render('404.twig',$data);
+
+    return $app['twig']->render('contact.twig',$data);
 });
 
+// Suggest
+$app->match('/suggest',function(Request $request)
+{
+    global $app;
+
+    $choices = array(
+        1 => 'HTML',
+        2 => 'PHP',
+        3 => 'CSS',
+        4 => 'JS',
+    );
+
+    $form = $app['form.factory']->createBuilder('form')
+                                ->add('title','text',array(
+                                    'constraints' => new Assert\Length(array('min' => 5))
+                                ))
+                                ->add('category','choice',array(
+                                    'choices'     => $choices,
+                                    'constraints' => new Assert\Choice(array_keys($choices))
+                                ))
+                                ->add('content','textarea')
+                                ->add('send','submit')
+                                ->getForm();
+
+    $form->handleRequest($request);
+
+    if($form->isValid())
+    {
+        $data = $form->getData();
+    }
+
+    $data = array(
+        'title' => 'Suggest',
+        'form'  => $form->createView()
+    );
+
+    return $app['twig']->render('suggest.twig',$data);
+});
+
+
 $app->run();
+
+
+
+
+
+
+
+

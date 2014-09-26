@@ -1,0 +1,52 @@
+{{include('inc/header.twig')}}
+
+<div class="col-md-6">
+	<form class="form-horizontal" action="{{url('add_snippets_post')}}" method="post">
+	
+		<fieldset>
+	    	<legend>Ajouter un snippets</legend>
+
+				<!-- Category -->
+				<div class="form-group">
+		     		<label class="col-lg-2 control-label">Catégorie</label>
+		     		<div class="col-lg-10">
+
+		     			{# dynamic recovery of categories which already exists#}
+		     			{% for categories in categories_count %}
+			        		<div class="radio">
+			          			<label>			
+			            			<input required name="category" id="{{categories.slug}} " value="{{categories.id}} " checked="" type="radio">{{categories.title}} 
+			          			</label>
+			        		</div>
+		        		{% endfor %}
+      				</div>
+    			</div>
+
+
+				<!-- Title -->
+			    <div class="form-group">
+			      <label for="inputTitle" class="col-lg-2 control-label">Titre</label>
+			      <div class="col-lg-10">
+			        <input required class="form-control title" id="inputTitle" placeholder="Titre" name="title" type="mail">
+			      </div>
+			    </div>
+
+
+				<!-- Content -->
+			    <div class="form-group">
+			      <label for="textArea" class="col-lg-2 control-label">Code</label>
+			      <div class="col-lg-10">
+			        <textarea required class="form-control content" rows="3" id="textArea" name="content"></textarea>
+			      </div>
+			    </div>
+
+			    <div class="form-group">
+			      <div class="col-lg-10 col-lg-offset-2">
+			        <button type="submit" class="btn btn-success">Submit</button>
+			      </div>
+			    </div>
+		</fieldset>
+	</form>
+</div>
+
+{{include('inc/footer.twig')}}

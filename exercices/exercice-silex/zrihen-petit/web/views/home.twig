@@ -1,0 +1,11 @@
+{{include('inc/header.twig')}}
+{{include('inc/snippets.twig')}}
+{{include('inc/footer.twig')}}
+
+</br>
+</br>
+{% for i in range(1,5) %}
+	<ul class="pagination">
+   		<li><a href="{{url('page',{page:i})}}">{{i}}</a></li>
+	</ul>
+{% endfor %}

@@ -105,7 +105,7 @@ class StructuredBundleReader implements StructuredBundleReaderInterface
     private function getFallbackLocale($locale)
     {
         if (false === $pos = strrpos($locale, '_')) {
-            return;
+            return null;
         }
 
         return substr($locale, 0, $pos);

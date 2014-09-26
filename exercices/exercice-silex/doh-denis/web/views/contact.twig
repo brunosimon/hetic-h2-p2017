@@ -1,0 +1,33 @@
+{{include('inc/header.twig')}}
+
+<div class='content'>
+	<form class="form-horizontal" method='post' action='#'>
+	    <legend>Contactez-nous</legend>
+	    <div class="form-group">
+	      <label for="lname" class="col-lg-2 control-label">Nom</label>
+	      <div class="col-lg-5">
+	        <input type='text' class="form-control" rows="3" id="lname" name='lname' placeholder="Nom"></input>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+	      <div class="col-lg-5">
+	        <input type="text" class="form-control" id="inputEmail" name='mail'placeholder="Votre adresse E-mail">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label for="textArea" class="col-lg-2 control-label">Message</label>
+	      <div class="col-lg-5">
+	        <textarea class="form-control" rows="3" id="textArea" name='message' placeholder="Tapez votre message"></textarea>
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <div class="col-lg-10 col-lg-offset-2">
+	        <button type="submit" class="btn btn-primary">Soumettre</button>
+	        <button class="btn btn-default">Annuler</button>
+	      </div>
+	    </div>
+	  </fieldset>
+	</form>
+</div>
+{{include('inc/footer.twig')}}

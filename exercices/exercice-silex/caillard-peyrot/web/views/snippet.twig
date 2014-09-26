@@ -1,0 +1,34 @@
+{% extends layout %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-5">
+      <h2>{{snippet.title}}</h2>
+      <h4>By <a href="{{url('user', {username:snippet.username})}}">{{snippet.username}}</a>
+      in <a href="{{url('category', {category:snippet.category_slug})}}">{{snippet.category_title}}</a></h4>
+      {% if snippet.parent != 0 %}
+        <p>This snippet is a version of <a href="{{url('snippet', {id:snippet.parent})}}">this one</a>.</p>
+      {% endif %}
+      <p></p>
+      <p><a href="{{url('improve', {id:snippet.id})}}">Improve this snippet</a></p>
+    </div>
+    <div class="col-md-7">
+      <h4>Description</h4>
+      <p>{{snippet.description}}</p>
+    </div>
+  </div>
+  <hr>
+  <textarea class="codemirror {{snippet.category_slug}}">{{snippet.content}}</textarea>
+
+  {% if children is not empty %}
+    <hr>
+    <h2>Improvements</h2>
+    {% for child in children %}
+      <p>
+        <a href="{{url('snippet', {id:child.id})}}">Snippet</a>
+        by <a href="{{url('user', {username:child.username})}}">{{child.username}}</a>
+      </p>
+    {% endfor %}
+
+  {% endif %}
+{% endblock %}

@@ -20,7 +20,7 @@ namespace Symfony\Component\Security\Core\Exception;
 class InvalidCsrfTokenException extends AuthenticationException
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMessageKey()
     {

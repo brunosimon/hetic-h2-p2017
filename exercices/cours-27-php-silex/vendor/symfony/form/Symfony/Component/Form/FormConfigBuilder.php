@@ -48,7 +48,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     );
 
     /**
-     * @var bool
+     * @var Boolean
      */
     protected $locked = false;
 
@@ -68,22 +68,22 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     private $propertyPath;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $mapped = true;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $byReference = true;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $inheritData = false;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $compound = false;
 
@@ -108,17 +108,17 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     private $dataMapper;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $required = true;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $disabled = false;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $errorBubbling = false;
 
@@ -143,7 +143,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     private $dataClass;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $dataLocked;
 
@@ -168,7 +168,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     private $requestHandler;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $autoInitialize = false;
 
@@ -180,7 +180,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     /**
      * Creates an empty form configuration.
      *
-     * @param string|int               $name       The form name
+     * @param string|integer           $name       The form name
      * @param string                   $dataClass  The class of the form's data
      * @param EventDispatcherInterface $dispatcher The event dispatcher
      * @param array                    $options    The form options
@@ -603,7 +603,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
             throw new BadMethodCallException('FormConfigBuilder methods cannot be accessed anymore once the builder is turned into a FormConfigInterface instance.');
         }
 
-        $this->disabled = (bool) $disabled;
+        $this->disabled = (Boolean) $disabled;
 
         return $this;
     }
@@ -631,7 +631,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
             throw new BadMethodCallException('FormConfigBuilder methods cannot be accessed anymore once the builder is turned into a FormConfigInterface instance.');
         }
 
-        $this->errorBubbling = null === $errorBubbling ? null : (bool) $errorBubbling;
+        $this->errorBubbling = null === $errorBubbling ? null : (Boolean) $errorBubbling;
 
         return $this;
     }
@@ -645,7 +645,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
             throw new BadMethodCallException('FormConfigBuilder methods cannot be accessed anymore once the builder is turned into a FormConfigInterface instance.');
         }
 
-        $this->required = (bool) $required;
+        $this->required = (Boolean) $required;
 
         return $this;
     }
@@ -713,7 +713,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     /**
      * Alias of {@link setInheritData()}.
      *
-     * @param bool    $inheritData Whether the form should inherit its parent's data.
+     * @param Boolean $inheritData Whether the form should inherit its parent's data.
      *
      * @return FormConfigBuilder The configuration object.
      *
@@ -855,7 +855,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
      */
     public function setAutoInitialize($initialize)
     {
-        $this->autoInitialize = (bool) $initialize;
+        $this->autoInitialize = (Boolean) $initialize;
 
         return $this;
     }
@@ -879,7 +879,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
     /**
      * Validates whether the given variable is a valid form name.
      *
-     * @param string|int     $name The tested form name.
+     * @param string|integer $name The tested form name.
      *
      * @throws UnexpectedTypeException   If the name is not a string or an integer.
      * @throws InvalidArgumentException If the name contains invalid characters.
@@ -910,7 +910,7 @@ class FormConfigBuilder implements FormConfigBuilderInterface
      *
      * @param string $name The tested form name.
      *
-     * @return bool    Whether the name is valid.
+     * @return Boolean Whether the name is valid.
      */
     public static function isValidName($name)
     {

@@ -19,7 +19,7 @@ namespace Symfony\Component\Validator\Constraints;
 class LessThanValidator extends AbstractComparisonValidator
 {
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     protected function compareValues($value1, $value2)
     {

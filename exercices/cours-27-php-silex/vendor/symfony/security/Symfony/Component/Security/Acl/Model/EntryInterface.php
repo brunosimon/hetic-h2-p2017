@@ -31,14 +31,14 @@ interface EntryInterface extends \Serializable
     /**
      * The primary key of this ACE
      *
-     * @return int
+     * @return integer
      */
     public function getId();
 
     /**
      * The permission mask of this ACE
      *
-     * @return int
+     * @return integer
      */
     public function getMask();
 
@@ -59,7 +59,7 @@ interface EntryInterface extends \Serializable
     /**
      * Returns whether this ACE is granting, or denying
      *
-     * @return bool
+     * @return Boolean
      */
     public function isGranting();
 }

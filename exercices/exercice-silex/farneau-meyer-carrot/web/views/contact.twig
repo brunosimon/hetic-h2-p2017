@@ -1,0 +1,31 @@
+{{include('inc/header.twig')}}
+
+<div class="container">	
+	<h1>Contact us</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, nemo atque autem ipsum. Quisquam, architecto, aut tempora praesentium aliquid aspernatur officiis itaque veniam hic autem consequuntur nostrum maxime dignissimos rerum.</p>
+	
+	<hr>
+
+	<div class="alert alert-success">Email sent successfully sent</div>
+	<div class="alert alert-danger">Error, please check your fields</div>
+	<form role="form" method="POST" action="{{path('add_snippet')}}" class="send_mail">
+		<div class="row form-group">
+		  <div class="col-xs-6">
+		    <input type="text" class="form-control input_name" id="name" name="name" placeholder="Your name">
+		  </div>
+		   <div class="col-xs-6">
+		    <input type="text" class="form-control input_email" id="email" name="email" placeholder="Your email">
+		  </div>
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control input_title" id="title" name="title" placeholder="Message subject">
+		</div>
+		<div class="form-group">
+			<textarea class="form-control input_message" name="content" placeholder="Write us your message" rows="10"></textarea>
+		</div>
+		<input type="submit" class="btn btn-default" value="send">
+	</form>
+
+</div>
+
+{{include('inc/footer.twig')}}

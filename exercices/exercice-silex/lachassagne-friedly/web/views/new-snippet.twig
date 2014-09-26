@@ -1,0 +1,53 @@
+{% include 'inc/header.twig' %}
+
+	<div class="container fix">
+		<form class="form-horizontal" method="post">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>New snippet</legend>
+
+			<!-- Text input-->
+			<div class="control-group">
+			  <label class="control-label" for="title">Name</label>
+			  <div class="controls">
+			    <input id="title" name="title" type="text" placeholder="Name" class="input-xlarge">
+			    
+			  </div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="control-group">
+			  <label class="control-label" for="category">Category</label>
+			  <div class="controls">
+			    <select id="category" name="category" class="input-xlarge">
+			      <option value="1">PHP</option>
+			      <option value="2">CSS</option>
+			      <option value="3">HTML</option>
+			      <option value="4">JS</option>
+			    </select>
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  <label class="control-label" for="content">Content</label>
+			  <div class="controls">                     
+			    <textarea id="content" name="content"></textarea>
+			  </div>
+			</div>
+
+			<!-- Button -->
+			<div class="control-group">
+			  <label class="control-label" for="submit"></label>
+			  <div class="controls">
+			    <button id="submit" name="submit" class="btn btn-success">Submit</button>
+			  </div>
+			</div>
+
+			</fieldset>
+		</form>
+
+	</div>
+
+{% include 'inc/footer.twig' %}

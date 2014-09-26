@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snippets - {{title}}</title>
+    <link rel="stylesheet" href="{{app.request.baseUrl}}/src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{app.request.baseUrl}}/src/css/codemirror.css">
+    <link rel="stylesheet" href="{{app.request.baseUrl}}/src/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- Static navbar -->
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{{url('home')}}">Snippets</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<form class="navbar-form navbar-left" action="search" onSubmit="if(this['q'].value == '') return false;">
+				      <input type="search" class="form-control" name="q" value="{% if q is defined %}{{q}}{% endif %}" placeholder="Search" onKeypress="if (event.keyCode == 32) event.returnValue = false; if (event.which == 32) return false;">
+				    </form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{{url('add')}}">Add</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		</div>

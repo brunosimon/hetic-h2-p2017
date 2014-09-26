@@ -39,7 +39,7 @@ class Swift_StreamFilters_StringReplacementFilter implements Swift_StreamFilter
      *
      * @param string $buffer
      *
-     * @return bool
+     * @return boolean
      */
     public function shouldBuffer($buffer)
     {

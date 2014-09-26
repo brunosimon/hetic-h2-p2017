@@ -1,0 +1,17 @@
+<section class="base">
+	<ul class="regroup">
+		{% if snippets %}
+		    {% for snippet in snippets %}
+		        <li class="trs">
+		            <a class="trs cat" href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a>
+		            <h4 class="big {% if app.session.get('admin') %}editsnip{% else %}smplsnip{% endif %}"><a class="trs" href="{{url('snippet', {snippet:snippet.id})}}">{{snippet.title}}</a></h4>
+		            {% if app.session.get('admin') %}<a class="trs modify" href="{{url('admin/snippet/update', {snippet:snippet.id})}}">Modify</a><a class="trs delete" href="{{url('admin/snippet/delete', {snippet:snippet.id})}}">Delete</a>{% endif %}
+		        </li>
+		    {% endfor %}
+		{% else %}
+			<section class="wrap base about">
+				<h3>There isn't snippet here. Sorry :(<h3>
+			</section>
+		{% endif %}
+	</ul>
+</section>

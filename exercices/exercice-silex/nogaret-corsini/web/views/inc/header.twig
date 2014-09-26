@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mighty Chainsaw</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{app.request.basepath}}/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{app.request.basepath}}/bootstrap/css/style.css">
+
+  </head>
+
+<body>
+	<div class="navbar navbar-default">
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="{{url('home')}}">Hetic Snippet</a>
+	  </div>
+	  <div class="navbar-collapse collapse navbar-responsive-collapse">
+	    <ul class="nav navbar-nav">
+	      <li><a href="{{url('suggest')}}">Ajouter</a></li>
+	      <li><a href="{{url('categories')}}">Categories</a></li>
+	      <li><a href="{{url('contact')}}">Contact</a></li>
+	      <li><a href="{{url('about')}}">About</a></li>
+	    </ul>
+	  </div>
+	</div>
+
+	<div class="container">

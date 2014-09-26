@@ -26,7 +26,7 @@ class EncoderFactory implements EncoderFactoryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEncoder($user)
     {

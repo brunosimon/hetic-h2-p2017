@@ -1,0 +1,15 @@
+{{include('inc/header.twig')}}
+
+<h2>{{student.first_name}} {{student.last_name}}</h2>
+
+{% if quotes|length > 0 %}
+    <ul>
+        {% for quote in quotes %}
+            <li>"{{quote.content}}"</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    No quotes
+{% endif %}
+
+{{include('inc/footer.twig')}}

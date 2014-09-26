@@ -1,0 +1,57 @@
+{% if page is not defined %}
+    {% set page = 1 %}
+{% endif %}
+
+
+<!-- Required because we cannot pass the parameters in a parameter. (because of the brackets) -->
+{% if category is defined %}
+    {% if number_page > 1 %}
+    <nav class="pagination">
+        <ul>
+            {% if page > 1 %}
+                <li class="prec">
+                    <a href="{{url('page_category', {page: page-1, category: category} )}}"><</a>
+                </li>
+            {% endif %}
+
+            {% for i in 1 .. number_page %}
+                <li {% if page == i %} class="active" {% endif %}>
+                    <a href="{{url('page_category', {page: i, category: category} )}}">{{i}}</a>
+                </li>
+            {% endfor %}
+
+            {% if page < number_page %}
+               <li class="next">
+                   <a href="{{url('page_category', {page: page+1, category: category} )}}">></a>
+               </li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+{% else %}
+    {% if number_page > 1 %}
+    <nav class="pagination">
+        <ul>
+            {% if page > 1 %}
+                <li class="prec">
+                    <a href="{{url('page', {page: page-1} )}}"><</a>
+                </li>
+            {% endif %}
+
+            {% for i in 1 .. number_page %}
+                <li {% if page == i %} class="active" {% endif %}>
+                    <a href="{{url('page', {page: i} )}}">{{i}}</a>
+                </li>
+            {% endfor %}
+
+            {% if page < number_page %}
+               <li class="next">
+                   <a href="{{url('page', {page: page+1} )}}">></a>
+               </li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+{% endif %}

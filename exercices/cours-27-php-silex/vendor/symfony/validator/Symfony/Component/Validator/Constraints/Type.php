@@ -15,7 +15,6 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
@@ -27,7 +26,7 @@ class Type extends Constraint
     public $type;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDefaultOption()
     {
@@ -35,7 +34,7 @@ class Type extends Constraint
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequiredOptions()
     {

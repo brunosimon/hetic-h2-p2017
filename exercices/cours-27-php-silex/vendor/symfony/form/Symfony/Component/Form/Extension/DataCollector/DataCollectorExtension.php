@@ -34,7 +34,7 @@ class DataCollectorExtension extends AbstractExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function loadTypeExtensions()
     {

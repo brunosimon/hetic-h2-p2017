@@ -24,7 +24,7 @@ class StaticMethodLoader implements LoaderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function loadClassMetadata(ClassMetadata $metadata)
     {

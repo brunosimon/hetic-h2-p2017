@@ -1,0 +1,19 @@
+<ul class="pagination pagination-sm">
+	{% for page in pages %}
+		{% if loop.first %}
+			{% if current == 1 %}
+				<li  class="disabled"><a>«</a></li>
+			{% else %}
+				<li><a href="{% if app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' %}{{url('page', {page:current-1})}}{% elseif app.request.attributes.get('_route') == 'search' %}{{url('search', {q:q, page:current-1})}}{% else %}{{url('category', {category:category, page:current-1})}}{% endif %}">«</a></li>
+			{% endif %}
+		{% endif %}
+		<li {% if page.number == current %} class="active" {% endif %}><a href="{% if app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' %}{{url('page', {page:page.number})}}{% elseif app.request.attributes.get('_route') == 'search' %}{{url('search', {q:q, page:page.number})}}{% else %}{{url('category', {category:category, page:page.number})}}{% endif %}">{{page.number}}</a></li>
+		{% if loop.last %}
+			{% if current == loop.length %}
+				<li  class="disabled"><a>»</a></li>
+			{% else %}
+				<li><a href="{% if app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' %}{{url('page', {page:current+1})}}{% elseif app.request.attributes.get('_route') == 'search' %}{{url('search', {q:q, page:current+1})}}{% else %}{{url('category', {category:category, page:current+1})}}{% endif %}">»</a></li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</ul> 

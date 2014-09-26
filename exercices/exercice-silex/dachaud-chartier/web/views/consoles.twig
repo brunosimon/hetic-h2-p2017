@@ -1,0 +1,7 @@
+{{include('include/header.twig',{title:'Circuits par console'})}}
+
+{% for category in categories %}
+		<a href="{{url('category',{category:category.slug})}}"><img src="{{app.request.basepath}}/src/img/categ_{{category.slug}}.png" alt="{{category.nom}}"/></a>
+{% endfor %}
+
+{{include('include/footer.twig')}}

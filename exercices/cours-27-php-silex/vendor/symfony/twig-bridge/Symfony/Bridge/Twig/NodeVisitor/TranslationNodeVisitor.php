@@ -111,7 +111,7 @@ class TranslationNodeVisitor implements \Twig_NodeVisitorInterface
         } elseif ($arguments->hasNode($index)) {
             $argument = $arguments->getNode($index);
         } else {
-            return;
+            return null;
         }
 
         return $this->getReadDomainFromNode($argument);
@@ -125,7 +125,7 @@ class TranslationNodeVisitor implements \Twig_NodeVisitorInterface
     private function getReadDomainFromNode(\Twig_Node $node = null)
     {
         if (null === $node) {
-            return;
+            return null;
         }
 
         if ($node instanceof \Twig_Node_Expression_Constant) {

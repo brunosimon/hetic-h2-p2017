@@ -53,7 +53,7 @@ class PreAuthenticatedAuthenticationProvider implements AuthenticationProviderIn
      public function authenticate(TokenInterface $token)
      {
          if (!$this->supports($token)) {
-             return;
+             return null;
          }
 
         if (!$user = $token->getUser()) {

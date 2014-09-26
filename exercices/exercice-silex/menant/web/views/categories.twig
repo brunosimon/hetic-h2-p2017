@@ -1,0 +1,16 @@
+{% include 'inc/header.twig' %}
+{% include 'inc/message.twig' %}
+<section class="base-cat">
+        {% for category in categories %}
+            {% if app.session.get('admin') %}<a class="trs delete-cat" href="{{url('admin/category/delete', {category:category.id})}}">Delete</a>{% endif %}
+            <a class="trs category-band" href="{{url('category', {category:category.slug})}}">{{category.title}} <strong>+{{category.total_cat}}</strong></a>
+            <div class="clear"></div>
+        {% endfor %}
+        {% if app.session.get('admin') %}
+        	<form class="new-cat" method="POST" action="admin/category">
+    				<input class="trs" type="text" name="title" placeholder="New category" onKeypress="if (event.keyCode == 32) event.returnValue = false; if (event.which == 32) return false;">
+    				<input class="trs" type="submit" value="Add">
+			</form>
+        {% endif %}
+</section>
+{% include 'inc/footer.twig' %}

@@ -1,0 +1,130 @@
+{# Pour appliquer un filtre (dispo sur doc de twig) un applique un pipe (alt+shift+l) #}
+{# Voici un commentaire en twig #}
+
+{# Création d'une condition
+{% if nouvellevaleur %}
+	VRAI
+{% else %}
+	FAUX !
+{% endif %}
+#}
+
+{# Création d'un foreach
+{% for value in values %}
+	{{value}}
+{% endfor %}
+#}
+
+{# Création d'une boucle for
+{% for i in range(0,10,2) %}
+	{{i}}
+{% endfor %}
+#}
+
+{# Pour créer une variable on utilise la commande set
+{% set foo = 'bar' %}
+{{foo}}
+#}
+
+{{include('inc/header.twig')}}
+  <div class="row">
+    <h2>Bienvenu sur votre bookmark.</h2>
+    <h4>Sélectionnez une catégorie pour retrouver vos bookmarks associés.</h4>
+  </div>
+  
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="row">
+        <!-- <div class="large-4 small-12 columns">
+          <img src="http://placehold.it/500x500&text=Logo">
+ 
+          <div class="hide-for-small panel">
+            <h3>Header</h3>
+            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
+            </h5>
+          </div>
+ 
+          <a href="#">
+          <div class="panel callout radius">
+            <h6>99  items in your cart</h6>
+          </div>
+          </a>
+        </div> -->
+
+        <div class="large-12 columns">
+          <div class="row">
+ 
+            <div class="large-4 small-6 columns">
+              <a href="{{url('category',{category:'web'})}}">
+                <img src="http://placehold.it/1000x1000&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>Web</h5>
+                </div>
+              </a>
+            </div>
+            
+            <a href="{{url('category',{category:'inspiration'})}}">
+              <div class="large-4 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>Inspiration</h5>
+                </div>
+              </div>
+            </a>
+ 
+            <a href="{{url('category',{category:'icons'})}}">
+              <div class="large-4 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>Icons</h5>
+                </div>
+              </div>
+            </a>
+ 
+            <a href="{{url('category',{category:'typography'})}}">
+              <div class="large-4 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>Typography</h5>
+                </div>
+              </div>
+            </a>
+
+            <a href="{{url('category',{category:'parallax'})}}">
+              <div class="large-4 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>Parallax</h5>
+                </div>
+              </div>
+            </a>
+
+            <a href="{{url('category',{category:'css'})}}">
+              <div class="large-4 small-6 columns">
+                <img src="http://placehold.it/500x500&text=Thumbnail">
+   
+                <div class="panel">
+                  <h5>CSS</h5>
+                </div>
+              </div>
+            </div>
+          </a>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+
+{{include('inc/pagination.twig')}}
+{# Dans ce lien on a en premier l'identifiant et ensuite un paramètre {page:3} 
+<a href="{{url('page',{page:3})}}">Page 3</a>
+#}
+{{include('inc/footer.twig')}}

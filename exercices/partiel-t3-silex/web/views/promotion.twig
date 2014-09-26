@@ -1,0 +1,10 @@
+{{include('inc/header.twig')}}
+<h2>Promotion {{promotion.title}}</h2>
+<ul>
+    {% for student in students %}
+        <li>
+            <a href="{{url('student',{id:student.id})}}">{{student.first_name}} {{student.last_name}} ({{student.count}})</a>
+        </li>
+    {% endfor %}
+</ul>
+{{include('inc/footer.twig')}}

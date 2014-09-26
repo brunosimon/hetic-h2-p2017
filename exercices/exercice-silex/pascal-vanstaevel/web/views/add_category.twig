@@ -1,0 +1,30 @@
+{{include('inc/header.twig')}}
+
+<div class="col-md-6">
+	<form class="form-horizontal" action="{{url('add_category')}}" method="post">
+	
+		<div class="list-group col-lg-2">
+			<legend>Ajouter une catégorie</legend>
+				<input required class="form-control title" id="inputAdd_category" placeholder="Entrez ici le nom de la nouvelle catégorie" name="add_category" type="text">
+
+				{# dynamic recovery of categories which already exists#}
+			  	{% for categories in categories_count %}
+			  		<a href="{{url('category',{category:categories.slug})}}" class="col-lg-2 list-group-item ">{{categories.title}} </a>
+			   	{% endfor %}
+		</div> 
+
+		<div class="form-group">
+	      	<div class="col-lg-2 col-lg-offset-2 ">
+	        	<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+{{include('inc/footer.twig')}}
+
+
+
+             

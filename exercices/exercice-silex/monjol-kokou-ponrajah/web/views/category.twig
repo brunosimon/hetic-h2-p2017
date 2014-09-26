@@ -1,0 +1,10 @@
+{{include('inc/header.twig',{title:'Category'})}}
+
+<h1>CATEGORY</h1>
+<a href="{{url('category', {category:'php'})}}"><button type="button" class="btn btn-primary">PHP</button></a>
+<a href="{{url('category', {category:'html'})}}"><button type="button" class="btn btn-primary">HTML</button></a>
+<a href="{{url('category', {category:'css'})}}"><button type="button" class="btn btn-primary">CSS</button></a>
+<a href="{{url('category', {category:'javascript'})}}"><button type="button" class="btn btn-primary">Javascript</button></a>
+
+{{include('inc/snippets.twig')}}
+{{include('inc/footer.twig')}}

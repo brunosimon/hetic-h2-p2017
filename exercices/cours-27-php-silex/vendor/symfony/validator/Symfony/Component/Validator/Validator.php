@@ -72,7 +72,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMetadataFor($value)
     {
@@ -80,7 +80,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, $groups = null, $traverse = false, $deep = false)
     {
@@ -94,7 +94,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws ValidatorException If the metadata for the value does not support properties.
      */
@@ -125,7 +125,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @throws ValidatorException If the metadata for the value does not support properties.
      */
@@ -156,7 +156,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validateValue($value, $constraints, $groups = null)
     {

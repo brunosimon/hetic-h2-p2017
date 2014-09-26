@@ -1,0 +1,21 @@
+{% extends 'incs/layout.twig' %}
+
+{% block top %}
+	<div class="container">
+		<h1>Bonjour !</h1>
+		<p>Bienvenue sur Snippet Style, créez, partagez ici vos snippets en PHP, Javascript, HTML et CSS</p>
+		<p><a class="btn btn-primary btn-lg" role="button" href="{{url('signup')}}">Inscription &raquo;</a></p>
+	</div>
+{% endblock %}
+
+{% block container %}
+	<div class="row">
+		{% for cat in categories %}
+			<div class="col-md-3 text-center">
+	            <h2>{{cat.title}}</h2>
+	            <p><img src="{{app.request.basePath}}/assets/images/{{cat.img}}" style="width: 140px; height: 140px;"></p>
+	            <p><a class="btn btn-danger" href="{{url('category', {category: cat.slug, id: 1})}}" role="button">Voir les Snippets </a></p>
+	        </div>	
+		{% endfor %}
+    </div>
+{% endblock %}

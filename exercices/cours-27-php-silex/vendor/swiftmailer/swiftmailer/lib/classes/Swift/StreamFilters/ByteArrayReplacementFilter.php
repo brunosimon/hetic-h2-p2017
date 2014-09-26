@@ -100,7 +100,7 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
      *
      * @param array $buffer
      *
-     * @return bool
+     * @return boolean
      */
     public function shouldBuffer($buffer)
     {
@@ -113,7 +113,7 @@ class Swift_StreamFilters_ByteArrayReplacementFilter implements Swift_StreamFilt
      * Perform the actual replacements on $buffer and return the result.
      *
      * @param array   $buffer
-     * @param int     $_minReplaces
+     * @param integer $_minReplaces
      *
      * @return array
      */

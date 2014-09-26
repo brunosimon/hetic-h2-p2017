@@ -1,0 +1,31 @@
+
+{# Équivaut à echo $mavaleur.
+   Si on veut rajouter un filtre, on fait |trim 
+   Respecter l'ordre première fonction, première application ! #}
+{#{{mavaleur|lower|upper|replace('0','A')|reverse}}
+
+{# faire un if #}
+{#{% if nouvellevaleur %}
+	VRAI !
+{% else %}
+	FAUX !
+{% endif %}
+
+{# faire des boucles for /foreach #}
+{#{% for value in values %}
+{{value}}
+{% endfor %}
+
+{# range(début,fin,incrémentation) #}
+{#{% for i in range(0,10,2) %}
+{{i}}
+{% endfor %}
+
+{# #}
+{#{% set foo = 'bar' %}
+{{foo}}#}
+
+{% include 'inc/header.twig' %}
+{% include 'inc/snippets.twig' %}
+{% include 'inc/pagination.twig' %}
+{% include 'inc/footer.twig' %}

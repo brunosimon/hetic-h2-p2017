@@ -1,0 +1,13 @@
+{{include('inc/header.twig',{title:'category'})}}
+
+{{include('inc/snippets.twig')}}
+
+{% for snippet in snippets %}
+	<div>
+		<h3></h3>
+		<a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a>
+		<div></div>
+	</div>
+{% endfor %}
+
+{{include('inc/footer.twig')}}

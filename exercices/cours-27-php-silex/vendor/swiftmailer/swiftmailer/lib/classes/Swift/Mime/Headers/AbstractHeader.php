@@ -179,7 +179,7 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
     /**
      * Set the maximum length of lines in the header (excluding EOL).
      *
-     * @param int     $lineLength
+     * @param integer $lineLength
      */
     public function setMaxLineLength($lineLength)
     {
@@ -240,7 +240,7 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
      * @param string                   $string  as displayed
      * @param string                   $charset of the text
      * @param Swift_Mime_HeaderEncoder $encoder
-     * @param bool                     $shorten the first line to make remove for header name
+     * @param boolean                  $shorten the first line to make remove for header name
      *
      * @return string
      */
@@ -317,7 +317,7 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
      *
      * @param string $token
      *
-     * @return bool
+     * @return boolean
      */
     protected function tokenNeedsEncoding($token)
     {
@@ -359,7 +359,7 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
      * Get a token as an encoded word for safe insertion into headers.
      *
      * @param string  $token           token to encode
-     * @param int     $firstLineOffset optional
+     * @param integer $firstLineOffset optional
      *
      * @return string
      */
@@ -430,7 +430,7 @@ abstract class Swift_Mime_Headers_AbstractHeader implements Swift_Mime_Header
     /**
      * Clear the cached value if $condition is met.
      *
-     * @param bool    $condition
+     * @param boolean $condition
      */
     protected function clearCachedValueIf($condition)
     {

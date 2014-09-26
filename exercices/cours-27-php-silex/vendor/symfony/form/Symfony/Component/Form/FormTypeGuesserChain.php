@@ -41,7 +41,7 @@ class FormTypeGuesserChain implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessType($class, $property)
     {
@@ -51,7 +51,7 @@ class FormTypeGuesserChain implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessRequired($class, $property)
     {
@@ -61,7 +61,7 @@ class FormTypeGuesserChain implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessMaxLength($class, $property)
     {
@@ -71,7 +71,7 @@ class FormTypeGuesserChain implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessPattern($class, $property)
     {

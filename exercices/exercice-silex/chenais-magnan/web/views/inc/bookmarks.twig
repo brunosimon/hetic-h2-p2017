@@ -1,0 +1,7 @@
+{% for bookmark in bookmarks %}
+	<div>
+		<h3>{{bookmark.url}}</h3>
+		<a href="{{url('category',{category:bookmark.category_slug})}}">{{bookmark.category_title}}</a>
+		<div>{{bookmark.description}}</div>
+	</div>
+{% endfor %}

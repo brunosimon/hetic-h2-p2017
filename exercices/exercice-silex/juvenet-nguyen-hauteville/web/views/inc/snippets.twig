@@ -1,0 +1,29 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      {% if admin is defined %}
+        <th>Active</th>
+        <th>Action</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% if snippets %}
+  		{% for snippet in snippets %}
+  			<tr>
+  				<td><a href="{% if (snippet.active is defined and snippet.active) or app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' or app.request.attributes.get('_route') == 'search' %}{{url('snippet', {snippet:snippet.id})}}{% endif %}">{{snippet.title}}</a></td>
+  				<td><a href="{% if (snippet.category_active is defined and snippet.category_active) or app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page'or app.request.attributes.get('_route') == 'search' %}{{url('category', {category:snippet.category_slug})}}{% endif %}">{{snippet.category_title}}</a></td>
+          {% if admin is defined %}
+            <td><a href="{{url('admin/snippet/active', {snippet:snippet.id, active: 1})}}" class="btn btn-{% if snippet.active %}primary{% else %}default{% endif %} btn-xs">Yes</a><a href="{{url('admin/snippet/active', {snippet: snippet.id, active: 0})}}" class="btn btn-{% if snippet.active %}default{% else %}primary{% endif %} btn-xs">No</a></td>
+            <td><a href="{{url('admin/snippet', {id:snippet.id})}}" class="btn btn-info btn-xs">Modify</a> <a href="{{url('admin/snippet/delete', {snippet:snippet.id})}}" class="btn btn-danger btn-xs">Delete</a></td>
+          {% endif %}
+  			</tr>
+  		{% endfor %}
+    {% else %}
+        <td>No snippet</td>
+        <td></td>
+    {% endif %}
+  </tbody>
+</table>

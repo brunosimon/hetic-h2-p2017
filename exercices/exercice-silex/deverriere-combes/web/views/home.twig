@@ -1,0 +1,45 @@
+
+{{include('inc/header.twig')}}
+{{include('inc/snippets.twig')}}
+{{include('inc/pagination.twig')}}
+{{include('inc/footer.twig')}}
+
+
+{#
+
+<a href="{{url('page',{page:3})}}">Page 3</a>
+
+#}
+
+{#
+
+<link rel="stylesheet" href="{{app.basePath}}/src/css/style.css">
+
+#}
+
+{#Value : {{mavaleur|upper|replace('O','A')|reverse}}
+#}
+
+{#
+{% if nouvellevaleur %}
+	VRAI
+{% else %}
+	FAUX
+{% endif %}
+
+#}
+
+{#
+
+{% for i in range(0,10,2) %}
+	{{i}}
+{% endfor %}
+
+#}
+
+{#
+
+{% set foo = 'bar' %}
+{{foo}}
+
+#}

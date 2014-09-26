@@ -1,0 +1,9 @@
+{{include('inc/header.twig')}}
+<legend style='margin:10px;'>Les différentes catégories disponibles...</legend>
+<div class='center' style='margin:10px;'>
+    {% for category in categories %}
+	    <h3><a href="{{url('category',{category:category.slug})}}">{{category.title}}</a></h3>
+    {% endfor %}
+</div>
+
+{{include('inc/footer.twig')}}

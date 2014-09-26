@@ -36,7 +36,7 @@ class FormTypeCsrfExtension extends AbstractTypeExtension
     private $defaultTokenManager;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $defaultEnabled;
 
@@ -117,7 +117,7 @@ class FormTypeCsrfExtension extends AbstractTypeExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
@@ -145,7 +145,7 @@ class FormTypeCsrfExtension extends AbstractTypeExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getExtendedType()
     {

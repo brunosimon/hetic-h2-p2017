@@ -1,0 +1,11 @@
+<div class="col-md-12">
+	<h4>Administration</h4>
+</div>
+<div class="col-md-3">
+<div class="list-group">
+  <a href="{{url('admin')}}" class="list-group-item {% if app.request.attributes.get('_route') == 'admin' %}active{% endif %}">Snippets</a>
+  <a href="{{url('admin/categories')}}" class="list-group-item {% if app.request.attributes.get('_route') == 'admin/categories' %}active{% endif %}">Categories</a>
+  <a href="{{url('admin/pages')}}" class="list-group-item {% if app.request.attributes.get('_route') == 'admin/pages' %}active{% endif %}">Pages</a>
+  <a href="{{url('admin/logout')}}" class="list-group-item">Logout</a>
+</div>
+</div>

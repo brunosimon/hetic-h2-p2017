@@ -1,0 +1,39 @@
+/************** LAYOUT *******************/
+
+html, body {width: 100%; height: 100%;}
+
+.sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0; 
+    width: $sidebarWidth;
+}
+
+.container {
+    position: fixed;
+    top: 0; bottom: 0; right: 0;
+    left: $sidebarWidth;
+    padding: 50px;
+    overflow: auto;
+}
+
+
+
+
+
+/************* END LAYOUT **************/
+
+body {
+	background: $fakeWhite;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a { color: inherit; text-decoration: none;}
+
+.row {
+    @include cf();
+}
+
+.section {
+	width: 100%;
+	height: 100%;	
+}

@@ -1,0 +1,25 @@
+{% include 'inc/header.twig' %}
+
+   {% if message is defined %}
+        {% if message.error is defined %}
+        
+        <div class="error"> {{message.error}} </div> 
+        
+        <form action="{{url('signin')}}" method="post">
+            {{ form_widget(form) }}
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+        {% endif %}
+        
+        {% if message.success is defined %} <div class="success"> {{message.success}}</div> {% endif %}
+    
+    {% else %}
+        <!-- The code should not be repeated ! ! ! -->      
+         <form action="{{url('signin')}}" method="post">
+            {{ form_widget(form) }}
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    {% endif %}
+    
+    
+{% include 'inc/footer.twig' %}

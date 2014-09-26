@@ -19,12 +19,12 @@ namespace Symfony\Component\PropertyAccess;
 class PropertyAccessorBuilder
 {
     /**
-     * @var bool
+     * @var Boolean
      */
     private $magicCall = false;
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $throwExceptionOnInvalidIndex = false;
 
@@ -53,7 +53,7 @@ class PropertyAccessorBuilder
     }
 
     /**
-     * @return bool true if the use of "__call" by the PropertyAccessor is enabled
+     * @return Boolean true if the use of "__call" by the PropertyAccessor is enabled
      */
     public function isMagicCallEnabled()
     {
@@ -85,7 +85,7 @@ class PropertyAccessorBuilder
     }
 
     /**
-     * @return bool    true is exceptions in read context for array is enabled
+     * @return Boolean true is exceptions in read context for array is enabled
      */
     public function isExceptionOnInvalidIndexEnabled()
     {

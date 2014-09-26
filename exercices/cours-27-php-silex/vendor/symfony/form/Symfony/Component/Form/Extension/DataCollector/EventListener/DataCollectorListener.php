@@ -36,7 +36,7 @@ class DataCollectorListener implements EventSubscriberInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function getSubscribedEvents()
     {

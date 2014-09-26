@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snippet - {{title}}</title>
+    <link href="{{app.request.basePath}}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{app.request.basePath}}/assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{url('home')}}">Snippet Style</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{url('home')}}">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{url('category', {category: 'html', id: 1})}}">HTML</a></li>
+                <li><a href="{{url('category', {category: 'php', id: 1})}}">PHP</a></li>
+                <li><a href="{{url('category', {category: 'css', id: 1})}}">CSS</a></li>
+                <li><a href="{{url('category', {category: 'javascript', id: 1})}}">JS</a></li>
+              </ul>
+            </li>
+            <li><a href="{{url('about')}}">About</a></li>
+            <li><a href="{{url('contact')}}">Contact</a></li>
+          </ul>
+          {% if logged is defined and logged %}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{url('new')}}">Create</a></li>
+                <li><a href="{{url('logout')}}">Deconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+          {% else %}
+            <form class="navbar-form navbar-right" role="form" action="{{url ('checklogin')}}" method="POST">
+              <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control" name="username">
+              </div>
+              <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control" name="password">
+              </div>
+              <button type="submit" class="btn btn-success">Login</button>
+            </form> 
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      {{ block('top') }}
+    </div>
+
+    <div class="container">
+        {{ block('container') }}
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{app.request.basePath}}/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

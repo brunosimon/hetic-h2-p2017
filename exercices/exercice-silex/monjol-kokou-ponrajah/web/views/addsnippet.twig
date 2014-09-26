@@ -1,0 +1,48 @@
+{{include('inc/header.twig',{title:'Add Snippet'})}}
+
+<!-- Add a snippet -->
+<form action="#" method="POST" class="form-horizontal modal-content col-lg-12">
+  <fieldset>
+    <legend>Add snippet</legend>
+    <!-- Select Category -->
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Categorie</label>
+      <div class="col-lg-8">
+        <select name="select" class="form-control" id="select">
+			<option value="1">Javascript</option>
+			<option value="2">PHP</option>
+         	<option value="3">HTML</option>
+			<option value="4">CSS</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title" class="col-lg-2 control-label">Titre</label>
+      <div class="col-lg-8">
+        <input type="text" name="title" class="form-control" id="title" placeholder="Titre">
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="form-group">
+      <label for="content" class="col-lg-2 control-label">Contenu</label>
+      <div class="col-lg-8">
+        <textarea class="form-control" rows="3" id="content" name="content"></textarea>
+      </div>
+    </div>
+    <!-- Button -->
+    <div class="form-group">
+      <div class="col-lg-8 col-lg-offset-2">
+        <button class="btn btn-default">Annuler</button>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+
+
+
+
+{{include('inc/footer.twig')}}

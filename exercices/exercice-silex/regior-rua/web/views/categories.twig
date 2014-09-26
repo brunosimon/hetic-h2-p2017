@@ -1,0 +1,33 @@
+<!-- Page Affichage de toutes les catégories et ajout de catégories -->
+
+{{include('inc/header.twig')}}
+
+<ul class="list-group">
+	{% for categories in categories %}
+		<li class="list-group-item">
+   			<span class="badge">{{categories.total_snippets}}</span>
+    		<a href="{{ url('category',{category:categories.slug})  }}">{{categories.title|upper}}</a>
+  		</li>
+	{% endfor %}
+</ul>
+
+{% if success is defined %}
+	<p class="text-success">{{success}}</p>
+{% endif %}
+
+{% if error.newCategory is defined %}
+<p class="text-danger">{{error.newCategory}}</p>
+{% endif %} 
+
+<ul class="list-group">
+	<li class="list-group-item">
+		<form action="#" method="POST">
+			<input type="text" name="newCategory" class="form-control" id="addCategory" placeholder="Add a category !" required>
+			<br/>
+			<input type="submit" name="submit" class="btn btn-primary" value="Send">
+		</form>
+	</li>
+</ul>
+
+{{include('inc/footer.twig')}}
+

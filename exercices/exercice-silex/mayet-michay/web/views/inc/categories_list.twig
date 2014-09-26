@@ -1,0 +1,7 @@
+<section class="row">
+    {% for snippet in categories %}
+        <a href="{{url('category', {category: snippet.slug})}}" class="snippet {{snippet.slug}}">
+            {{ snippet.title }}
+        </a>
+    {% endfor %}
+</section>

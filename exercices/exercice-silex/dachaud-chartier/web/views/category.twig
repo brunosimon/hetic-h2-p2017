@@ -1,0 +1,11 @@
+{{include('include/header.twig',{title:'Tous les circuits de cette console'})}}
+
+{% for snippet in snippets %}
+	<div class="circuit">
+		<h3>{{snippet.nom}}</h3>
+		<p>Console : <a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a></p>
+		<img src="{{snippet.img}}" alt="{{snippet.nom}}"/>
+	</div>
+{% endfor %}
+
+{{include('include/footer.twig')}}

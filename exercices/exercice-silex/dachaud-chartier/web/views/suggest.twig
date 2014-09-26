@@ -1,0 +1,12 @@
+{{include('include/header.twig',{title:'un oubli ?'})}}
+
+{% if (sent == 1) %}
+    <div>C'est envoyé !</div>
+{% else %}
+	<form action="#" method="POST">
+		{{form_widget(form)}}
+		<input type="submit" name="submit" value="Proposer le circuit"/>
+	</form>
+{% endif %}
+
+{{include('include/footer.twig')}}

@@ -1,0 +1,9 @@
+{% for snippets in snippets %}
+	<div>
+		<div><img src="{{snippets.content}}" alt="{{snippets.title}}" id="cats_home" class="img-thumbnail" class="img_snippet"></div>
+				<h3 class="home_catname">{{snippets.title}}</h3>
+		<div class="home_category">
+			<a href="{{url('category',{category:snippets.category_slug})}}">{{snippets.category_title}}</a>
+		</div>
+	</div>
+{% endfor %}

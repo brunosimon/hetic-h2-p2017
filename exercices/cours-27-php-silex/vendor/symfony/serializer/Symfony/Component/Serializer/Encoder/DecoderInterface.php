@@ -39,7 +39,7 @@ interface DecoderInterface
      *
      * @param string $format format name
      *
-     * @return bool
+     * @return Boolean
      */
     public function supportsDecoding($format);
 }

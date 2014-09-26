@@ -28,7 +28,7 @@ interface AuthenticationTrustResolverInterface
      *
      * @param TokenInterface $token
      *
-     * @return bool
+     * @return Boolean
      */
     public function isAnonymous(TokenInterface $token = null);
 
@@ -38,7 +38,7 @@ interface AuthenticationTrustResolverInterface
      *
      * @param TokenInterface $token
      *
-     * @return bool
+     * @return Boolean
      */
     public function isRememberMe(TokenInterface $token = null);
 
@@ -47,7 +47,7 @@ interface AuthenticationTrustResolverInterface
      *
      * @param TokenInterface $token
      *
-     * @return bool
+     * @return Boolean
      */
     public function isFullFledged(TokenInterface $token = null);
 }

@@ -31,7 +31,7 @@ class NumericNode extends ScalarNode
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function finalizeValue($value)
     {

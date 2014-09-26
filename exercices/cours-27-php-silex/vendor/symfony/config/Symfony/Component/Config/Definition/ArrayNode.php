@@ -33,7 +33,7 @@ class ArrayNode extends BaseNode implements PrototypeNodeInterface
 
     public function setNormalizeKeys($normalizeKeys)
     {
-        $this->normalizeKeys = (bool) $normalizeKeys;
+        $this->normalizeKeys = (Boolean) $normalizeKeys;
     }
 
     /**
@@ -99,51 +99,51 @@ class ArrayNode extends BaseNode implements PrototypeNodeInterface
      * Sets whether to add default values for this array if it has not been
      * defined in any of the configuration files.
      *
-     * @param bool    $boolean
+     * @param Boolean $boolean
      */
     public function setAddIfNotSet($boolean)
     {
-        $this->addIfNotSet = (bool) $boolean;
+        $this->addIfNotSet = (Boolean) $boolean;
     }
 
     /**
      * Sets whether false is allowed as value indicating that the array should be unset.
      *
-     * @param bool    $allow
+     * @param Boolean $allow
      */
     public function setAllowFalse($allow)
     {
-        $this->allowFalse = (bool) $allow;
+        $this->allowFalse = (Boolean) $allow;
     }
 
     /**
      * Sets whether new keys can be defined in subsequent configurations.
      *
-     * @param bool    $allow
+     * @param Boolean $allow
      */
     public function setAllowNewKeys($allow)
     {
-        $this->allowNewKeys = (bool) $allow;
+        $this->allowNewKeys = (Boolean) $allow;
     }
 
     /**
      * Sets if deep merging should occur.
      *
-     * @param bool    $boolean
+     * @param Boolean $boolean
      */
     public function setPerformDeepMerging($boolean)
     {
-        $this->performDeepMerging = (bool) $boolean;
+        $this->performDeepMerging = (Boolean) $boolean;
     }
 
     /**
      * Whether extra keys should just be ignore without an exception.
      *
-     * @param bool    $boolean To allow extra keys
+     * @param Boolean $boolean To allow extra keys
      */
     public function setIgnoreExtraKeys($boolean)
     {
-        $this->ignoreExtraKeys = (bool) $boolean;
+        $this->ignoreExtraKeys = (Boolean) $boolean;
     }
 
     /**
@@ -159,7 +159,7 @@ class ArrayNode extends BaseNode implements PrototypeNodeInterface
     /**
      * Checks if the node has a default value.
      *
-     * @return bool
+     * @return Boolean
      */
     public function hasDefaultValue()
     {

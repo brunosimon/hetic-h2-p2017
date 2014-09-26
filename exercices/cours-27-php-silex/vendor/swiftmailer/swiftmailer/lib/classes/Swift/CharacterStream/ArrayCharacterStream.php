@@ -124,7 +124,7 @@ class Swift_CharacterStream_ArrayCharacterStream implements Swift_CharacterStrea
      * Read $length characters from the stream and move the internal pointer
      * $length further into the stream.
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return string
      */
@@ -156,7 +156,7 @@ class Swift_CharacterStream_ArrayCharacterStream implements Swift_CharacterStrea
      * Read $length characters from the stream and return a 1-dimensional array
      * containing there octet values.
      *
-     * @param int     $length
+     * @param integer $length
      *
      * @return integer[]
      */
@@ -247,7 +247,7 @@ class Swift_CharacterStream_ArrayCharacterStream implements Swift_CharacterStrea
     /**
      * Move the internal pointer to $charOffset in the stream.
      *
-     * @param int     $charOffset
+     * @param integer $charOffset
      */
     public function setPointer($charOffset)
     {

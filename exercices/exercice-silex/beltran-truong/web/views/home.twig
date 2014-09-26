@@ -1,0 +1,22 @@
+{{include('inc/header.twig')}}
+
+Home
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Snippet Title</th>
+      <th>Snippet Category Title</th>
+      <th>Snippet Content</th>
+    </tr>
+  </thead>
+  <tbody>
+	{{include('inc/snippets.twig')}}
+  </tbody>
+</table> 
+
+{{include('inc/pagination.twig')}}
+{{include('inc/footer.twig')}}
+
+

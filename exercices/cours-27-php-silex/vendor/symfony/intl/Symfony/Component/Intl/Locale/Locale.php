@@ -76,7 +76,7 @@ class Locale
      *
      * @param string  $langtag      The language tag to check
      * @param string  $locale       The language range to check against
-     * @param bool    $canonicalize
+     * @param Boolean $canonicalize
      *
      * @return string The corresponding locale code
      *
@@ -271,7 +271,7 @@ class Locale
      *
      * @param array   $langtag      A list of the language tags to compare to locale
      * @param string  $locale       The locale to use as the language range when matching
-     * @param bool    $canonicalize If true, the arguments will be converted to canonical form before matching
+     * @param Boolean $canonicalize If true, the arguments will be converted to canonical form before matching
      * @param string  $default      The locale to use if no match is found
      *
      * @see http://www.php.net/manual/en/locale.lookup.php
@@ -304,7 +304,7 @@ class Locale
      *
      * @param string $locale The locale code
      *
-     * @return bool    true on success or false on failure
+     * @return Boolean true on success or false on failure
      *
      * @see http://www.php.net/manual/en/locale.parselocale.php
      *

@@ -1,0 +1,22 @@
+<div class="bs-example">
+	<h2>Add a snippet</h2>
+	<div class="alert alert-success">Snippet successfully added</div>
+	<div class="alert alert-danger">Error, please check your fields</div>
+	<form role="form" method="POST" action="{{path('add_snippet')}}" class="add_snippet">
+	  <div class="form-group">
+	    <input type="text" class="form-control input_title" id="title" name="title" placeholder="Snippet's title">
+	  </div>
+	  <div class="form-group">
+	   <textarea class="form-control input_content" name="content" placeholder="Snippet's content" rows="10"></textarea>
+	  </div>
+	  <div class="form-group">
+	  	<select class="form-control input_cat" name="category">
+			{% for category in categories %}
+				<option value="{{category.id}}">{{category.title}}</option>
+			{% endfor %}
+		</select>
+	  </div>
+
+	 	<input type="submit" class="btn btn-default" value="send">
+	</form>
+</div>

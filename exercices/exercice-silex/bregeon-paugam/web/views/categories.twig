@@ -1,0 +1,15 @@
+{{include('inc/header.twig')}}
+
+<div>
+	<h4>{{title}}</h4>
+</div>
+<hr>
+<section class="btn-group">
+	{% for category in categories %}
+		<button type="button" class="btn btn-default"  >
+			<a href="{{url('category',{category:category.slug})}}">{{category.title}}</a>
+		</button>	
+	{% endfor %}
+</section>
+
+{{include('inc/footer.twig')}}

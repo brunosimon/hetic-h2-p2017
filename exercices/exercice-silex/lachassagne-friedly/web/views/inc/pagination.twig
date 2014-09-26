@@ -1,0 +1,9 @@
+<section class="pagination">
+	{% for page in pages %}
+		{% if page.current %}
+			Page {{page.number}}
+		{% else %}
+			<a href="{{url('category',{category: category, page:page.number})}}">Page {{page.number}}</a>
+		{% endif %}
+	{% endfor %}
+</section>

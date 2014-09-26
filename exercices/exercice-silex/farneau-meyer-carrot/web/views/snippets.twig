@@ -1,0 +1,38 @@
+{{include('inc/header.twig')}}
+
+<div class="container">	
+
+	{% if(actualPage.page=='category') %}
+		<h1>Category : {{catdetails.title}} <span class="label label-info" style="font-size: 13px;">{{catdetails.count}} {% if(catdetails.count==1) %}snippet{% else %}snippets{% endif %}</span></h1>
+	{% else %}
+		<h1>Snippets from all categories</h1>
+	{% endif %}
+
+	<hr>
+
+	{% for snippet in snippets %}
+		<div class="blog-post">
+			<h3 class="blog-post-title">{{ snippet.title }} | <i>
+				<a href="{{path('category',{category:snippet.category_slug})}}" style="font-style:normal;">{{snippet.category_title}}</a></i></h3>
+			<pre><code>{{ snippet.content }}</code></pre>
+			<button class="copy-button btn btn-primary" data-clipboard-target="" title="Click to copy me.">Copy to Clipboard</button>
+		</div>
+		<hr>
+	{% endfor %}
+
+    <section>
+    	<ul class="pagination">
+	    {% for page in pages %}
+	        {% if page.current %}
+	            <li class="active"><a href="#">{{page.number}}</a></lI>
+	        {% else %}
+	            <li><a href="{{url('category',{category:actualPage.category,page:page.number})}}">{{page.number}}</a></li>
+	        {% endif %}
+	    {% endfor %}
+	    </ul>
+	</section>
+
+	{{include('inc/add_snippet.twig')}}
+</div>
+
+{{include('inc/footer.twig')}}

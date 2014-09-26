@@ -1,0 +1,49 @@
+	{#
+
+{{mavaleur |trim|upper|replace('O','A')|reverse}}
+
+#}
+{#
+
+{% if nouvellevalleur %}
+	VRAI!
+{% else %}
+	FAUX!
+{% endif %}
+#}
+
+{#
+{% for value in values %}
+
+	{{value}}
+
+{% endfor %}
+#}
+
+
+{#
+{% for i in range (0,10,2)%}
+	{{i}}
+{% endfor %}
+#}
+
+{{include('inc/header.twig')}}
+
+{{include('inc/snippets.twig')}}
+
+{{include('inc/pagination.twig')}}
+
+{{include('inc/footer.twig')}}
+
+
+
+
+
+
+
+
+
+
+
+
+

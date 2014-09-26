@@ -1,0 +1,43 @@
+{% extends layout %}
+
+{% block content %}
+  <div class="col-md-6 col-md-offset-3">
+    {% if success is defined and success == 1 %}
+      <h2>Thank you</h2>
+      <hr>
+      <p>Your snippet has been successfully added.</p>
+    {% else %}
+
+      {% if error is defined and error == 'login' %}
+        <p>You need to <a href="{{url('login')}}">login</a> to add a snippet.</p>
+        <p>If you don't already have an account, <a href="{{url('signup')}}">please signup</a>.</p>
+      {% else %}
+
+      {% if success.errors is defined %}
+        {% for error in success.errors %}
+            <p class="bg-danger">{{error}}</p>
+        {% endfor %}
+      {% endif %}
+
+      <h2>New Snippet</h2>
+      <hr>
+      <form action="#" method="post" role="form">
+        <select class="form-control" name="category" id="category">
+        {% for category in categories %}
+            <option value="{{category.id}}">{{category.title}}</option>
+        {% endfor %}
+        </select><br>
+        <input class="form-control" type="text" name="title" placeholder="Title"><br>
+        <p><label for="descritpion">Description:</label></p>
+        <textarea class="form-control" name="description" cols="30" rows="3"></textarea>
+        <br>
+        <p><label for="content">Code:</label></p>
+        <textarea class="codemirror" name="content" cols="30" rows="10"></textarea>
+        <br>
+        <input class="btn btn-success" type="submit">
+      {% endif %}
+    {% endif %}
+  </div>
+
+  </form>
+{% endblock %}

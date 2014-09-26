@@ -34,7 +34,7 @@ class Swift_Transport_Esmtp_Auth_CramMd5Authenticator implements Swift_Transport
      * @param string                    $username
      * @param string                    $password
      *
-     * @return bool
+     * @return boolean
      */
     public function authenticate(Swift_Transport_SmtpAgent $agent, $username, $password)
     {

@@ -34,7 +34,7 @@ interface PermissionMapInterface
      * Whether this map contains the given permission
      *
      * @param string $permission
-     * @return bool
+     * @return Boolean
      */
     public function contains($permission);
 }

@@ -39,7 +39,7 @@ class Swift_Transport_Esmtp_Auth_NTLMAuthenticator implements Swift_Transport_Es
      * @param string $username
      * @param string $password
      *
-     * @return bool
+     * @return boolean
      */
     public function authenticate(Swift_Transport_SmtpAgent $agent, $username, $password)
     {

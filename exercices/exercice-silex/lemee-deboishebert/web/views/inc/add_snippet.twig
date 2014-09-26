@@ -1,0 +1,22 @@
+<form method="post" action="{{app.request.basepath}}/post_form">
+	<div class="inputAdd">
+		<input type="text" name="name" placeholder="Name of the snippet"/>
+	</div>
+	
+	<div class="inputAdd">
+		<select name="category">
+			<option value="1">Javascript</option> 
+			<option value="2">PHP</option> 
+			<option value="3">HTML</option> 
+			<option value="4">CSS</option> 
+		</select>
+	</div>
+	
+	<div class="inputAdd">
+		<textarea name="snippet"></textarea>
+	</div>
+	
+	<div class="inputAdd">
+		<input type="submit" value="Add snippet"/>
+	</div>
+</form>

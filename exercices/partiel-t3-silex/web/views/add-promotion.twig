@@ -1,0 +1,18 @@
+{{include('inc/header.twig')}}
+
+<h2>Add promotion</h2>
+
+{% if add is defined %}
+    {% if add %}
+        Success : Promotion added
+    {% else %}
+        Error : Something went wrong
+    {% endif %}
+{% endif %}
+
+<form action="{{url('add-promotion')}}" method="POST">
+    {{form_widget(form)}}
+    <input type="submit" value="send">
+</form>
+
+{{include('inc/footer.twig')}}

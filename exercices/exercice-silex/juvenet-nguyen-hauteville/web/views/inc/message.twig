@@ -1,0 +1,8 @@
+{% if app.session.FlashBag is defined %}
+	{% for message in app.session.getFlashBag.get('message') %}
+		<div class="alert alert-dismissable alert-{% if message.type == 'Error' %}danger{% else %}success{% endif %}">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<strong>{{message.type}} :</strong> {{message.value}}  
+		</div>
+	{% endfor %}
+{% endif %}

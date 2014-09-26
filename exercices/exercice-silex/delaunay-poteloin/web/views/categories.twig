@@ -1,0 +1,23 @@
+{{include('inc/header.twig')}}
+
+	<h2>Categories</h2>
+	<table class="table table-striped">
+	  <tr>
+	  	<th>#</th>
+	  	<th>Name</th>
+	  	<th>Last Snippet</th>
+	  </tr>
+
+	{% for key, categories in categories %}
+
+		<tr>
+			<td>{{key+1}}</td>
+			<td><span class="label {{categories.category_class}}"><a class="link_category" href="{{url('category',{category:categories.slug})}}">{{categories.category_title}}</a></td>
+			<td><a href="{{url('snippet',{id:categories.id}, {category:categories.category_title})}}">{{categories.snippet_title}}</a></td>
+		</tr>
+
+	{% endfor %}
+
+	</table>
+
+{{include('inc/footer.twig')}}

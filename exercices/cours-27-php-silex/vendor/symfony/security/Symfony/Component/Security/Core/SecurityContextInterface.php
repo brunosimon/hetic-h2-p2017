@@ -44,7 +44,7 @@ interface SecurityContextInterface
      * @param mixed $attributes
      * @param mixed $object
      *
-     * @return bool
+     * @return Boolean
      */
     public function isGranted($attributes, $object = null);
 }

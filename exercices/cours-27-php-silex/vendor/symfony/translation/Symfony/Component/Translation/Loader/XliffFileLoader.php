@@ -11,7 +11,6 @@
 
 namespace Symfony\Component\Translation\Loader;
 
-use Symfony\Component\Config\Util\XmlUtils;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\Exception\InvalidResourceException;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
@@ -87,13 +86,27 @@ class XliffFileLoader implements LoaderInterface
      */
     private function parseFile($file)
     {
-        try {
-            $dom = XmlUtils::loadFile($file);
-        } catch (\InvalidArgumentException $e) {
-            throw new InvalidResourceException(sprintf('Unable to load "%s": %s', $file, $e->getMessage()), $e->getCode(), $e);
+        $internalErrors = libxml_use_internal_errors(true);
+        $disableEntities = libxml_disable_entity_loader(true);
+        libxml_clear_errors();
+
+        $dom = new \DOMDocument();
+        $dom->validateOnParse = true;
+        if (!@$dom->loadXML(file_get_contents($file), LIBXML_NONET | (defined('LIBXML_COMPACT') ? LIBXML_COMPACT : 0))) {
+            libxml_disable_entity_loader($disableEntities);
+
+            throw new InvalidResourceException(implode("\n", $this->getXmlErrors($internalErrors)));
         }
 
-        $internalErrors = libxml_use_internal_errors(true);
+        libxml_disable_entity_loader($disableEntities);
+
+        foreach ($dom->childNodes as $child) {
+            if ($child->nodeType === XML_DOCUMENT_TYPE_NODE) {
+                libxml_use_internal_errors($internalErrors);
+
+                throw new InvalidResourceException('Document types are not allowed.');
+            }
+        }
 
         $location = str_replace('\\', '/', __DIR__).'/schema/dic/xliff-core/xml.xsd';
         $parts = explode('/', $location);
@@ -124,7 +137,7 @@ class XliffFileLoader implements LoaderInterface
     /**
      * Returns the XML errors of the internal XML parser
      *
-     * @param bool    $internalErrors
+     * @param Boolean $internalErrors
      *
      * @return array An array of errors
      */

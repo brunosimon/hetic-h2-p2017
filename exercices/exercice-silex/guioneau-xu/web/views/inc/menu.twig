@@ -1,0 +1,26 @@
+<!-- Menu Left -->
+
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <ul class="nav">
+      <li class="active"><a href="{{app.request.basepath}}/">Home</a></li>
+
+      <li>
+        <ul class="nav nav-tabs">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {% for category in categories %}
+                  <li>
+                    <a href="{{app.request.basepath}}/category/{{category.slug}}">{{category.title}}</a> <!-- Categories in the menu are updated according to the database -->
+                  </li>
+              {% endfor %}
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li><a href="{{app.request.basepath}}/suggestion">Propose your snippets</a></li>
+      <li><a href="{{app.request.basepath}}/about">About</a></li>
+      <li><a href="{{app.request.basepath}}/contact">Contact</a></li>            
+    </ul>
+</div>

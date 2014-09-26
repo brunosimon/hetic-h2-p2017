@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TEST</title>
+		<link rel="stylesheet" href="{{app.request.basepath}}/src/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{app.request.basepath}}/src/css/style.css">
+	</head>
+	<body>
+
+
+	<!--  MENU -->
+
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+		  	<div class="navbar-header">
+		    	<a class="navbar-brand" href="{{url('home')}}">COOLS GIFS</a>
+		  	</div>
+		  	<div class="navbar-collapse collapse navbar-responsive-collapse">
+		    	<ul class="nav navbar-nav">
+		    		{% set currentPath = app.request.get('_route') %}
+		      		<li {% if currentPath == 'home' %} class="active" {% endif %} >
+		      			<a href="{{url('home')}}" >HOME</a>
+		      		</li>
+		      		<li id="drop_down" class="drop-down{% if currentPath == 'category_accueil' %} active {% endif %}" >
+		      			<a href="{{url('category_accueil')}}">CATEGORIES <b class="caret"></b></a>
+		      			<ul class="dropdown-menu">
+				          <li><a href="{{url('category',{category:'rf'})}}">Reaction Faces</a></li>
+				          <li><a href="{{url('category',{category:'fail'})}}">FAIL</a></li>
+				          <li><a href="{{url('category',{category:'weird'})}}">Weird</a></li>
+				          <li><a href="{{url('category',{category:'film'})}}">FILM</a></li>
+			        	</ul>
+		      		</li>
+		      		<li {% if currentPath == 'suggest' %} class="active" {% endif %} >
+		      			<a href="{{url('suggest')}}">ADD GIFS</a>
+		      		</li>
+		      		<li {% if currentPath == 'about' %} class="active" {% endif %} >
+		      			<a href="{{url('about')}}">ABOUT</a>
+		      		</li>
+		      		<li {% if currentPath == 'contact' %} class="active" {% endif %} >
+		      			<a href="{{url('contact')}}">CONTACT</a>
+		      		</li>
+		      		<li {% if currentPath == 'admin' %} class="active" {% endif %} >
+		      			<a href="{{url('admin')}}">ADMIN</a>
+		      		</li>
+
+		    	</ul>
+		  	</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+

@@ -1,0 +1,25 @@
+.pagination {
+    ul li {
+        display: inline-block;
+        margin-right: 5px;
+        color: fakeBlack;
+        a {
+            display: inline-block; 
+            width: 30px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        &:hover {
+            /* Trouver un truc pas trop laid à mettre ici */
+            border-bottom: 2px solid $lightGrey;
+        }
+        &.active {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+        }
+        &.next, &.prec {
+            color: $darkGrey;
+        }
+    }
+}

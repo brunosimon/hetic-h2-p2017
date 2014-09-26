@@ -16,34 +16,18 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Michael Williams <michael.williams@funsational.com>
- * @author Tobias Schultze <http://tobion.de>
  */
 class PdoSessionHandler implements \SessionHandlerInterface
 {
     /**
-     * @var \PDO PDO instance
+     * @var \PDO PDO instance.
      */
     private $pdo;
 
     /**
-     * @var string Table name
+     * @var array Database options.
      */
-    private $table;
-
-    /**
-     * @var string Column for session id
-     */
-    private $idCol;
-
-    /**
-     * @var string Column for session data
-     */
-    private $dataCol;
-
-    /**
-     * @var string Column for timestamp
-     */
-    private $timeCol;
+    private $dbOptions;
 
     /**
      * Constructor.
@@ -68,28 +52,23 @@ class PdoSessionHandler implements \SessionHandlerInterface
             throw new \InvalidArgumentException(sprintf('"%s" requires PDO error mode attribute be set to throw Exceptions (i.e. $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION))', __CLASS__));
         }
         $this->pdo = $pdo;
-        $dbOptions = array_merge(array(
+        $this->dbOptions = array_merge(array(
             'db_id_col'   => 'sess_id',
             'db_data_col' => 'sess_data',
             'db_time_col' => 'sess_time',
         ), $dbOptions);
-
-        $this->table = $dbOptions['db_table'];
-        $this->idCol = $dbOptions['db_id_col'];
-        $this->dataCol = $dbOptions['db_data_col'];
-        $this->timeCol = $dbOptions['db_time_col'];
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function open($savePath, $sessionName)
+    public function open($path, $name)
     {
         return true;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function close()
     {
@@ -97,61 +76,78 @@ class PdoSessionHandler implements \SessionHandlerInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function destroy($sessionId)
+    public function destroy($id)
     {
+        // get table/column
+        $dbTable = $this->dbOptions['db_table'];
+        $dbIdCol = $this->dbOptions['db_id_col'];
+
         // delete the record associated with this id
-        $sql = "DELETE FROM $this->table WHERE $this->idCol = :id";
+        $sql = "DELETE FROM $dbTable WHERE $dbIdCol = :id";
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
             $stmt->execute();
         } catch (\PDOException $e) {
-            throw new \RuntimeException(sprintf('PDOException was thrown when trying to delete a session: %s', $e->getMessage()), 0, $e);
+            throw new \RuntimeException(sprintf('PDOException was thrown when trying to manipulate session data: %s', $e->getMessage()), 0, $e);
         }
 
         return true;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function gc($maxlifetime)
+    public function gc($lifetime)
     {
+        // get table/column
+        $dbTable   = $this->dbOptions['db_table'];
+        $dbTimeCol = $this->dbOptions['db_time_col'];
+
         // delete the session records that have expired
-        $sql = "DELETE FROM $this->table WHERE $this->timeCol < :time";
+        $sql = "DELETE FROM $dbTable WHERE $dbTimeCol < :time";
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':time', time() - $maxlifetime, \PDO::PARAM_INT);
+            $stmt->bindValue(':time', time() - $lifetime, \PDO::PARAM_INT);
             $stmt->execute();
         } catch (\PDOException $e) {
-            throw new \RuntimeException(sprintf('PDOException was thrown when trying to delete expired sessions: %s', $e->getMessage()), 0, $e);
+            throw new \RuntimeException(sprintf('PDOException was thrown when trying to manipulate session data: %s', $e->getMessage()), 0, $e);
         }
 
         return true;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function read($sessionId)
+    public function read($id)
     {
-        $sql = "SELECT $this->dataCol FROM $this->table WHERE $this->idCol = :id";
+        // get table/columns
+        $dbTable   = $this->dbOptions['db_table'];
+        $dbDataCol = $this->dbOptions['db_data_col'];
+        $dbIdCol   = $this->dbOptions['db_id_col'];
 
         try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
-            $stmt->execute();
+            $sql = "SELECT $dbDataCol FROM $dbTable WHERE $dbIdCol = :id";
 
-            // We use fetchAll instead of fetchColumn to make sure the DB cursor gets closed
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
+
+            $stmt->execute();
+            // it is recommended to use fetchAll so that PDO can close the DB cursor
+            // we anyway expect either no rows, or one row with one column. fetchColumn, seems to be buggy #4777
             $sessionRows = $stmt->fetchAll(\PDO::FETCH_NUM);
 
-            if ($sessionRows) {
+            if (count($sessionRows) == 1) {
                 return base64_decode($sessionRows[0][0]);
             }
+
+            // session does not exist, create it
+            $this->createNewSession($id);
 
             return '';
         } catch (\PDOException $e) {
@@ -160,85 +156,89 @@ class PdoSessionHandler implements \SessionHandlerInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    public function write($sessionId, $data)
+    public function write($id, $data)
     {
-        // Session data can contain non binary safe characters so we need to encode it.
+        // get table/column
+        $dbTable   = $this->dbOptions['db_table'];
+        $dbDataCol = $this->dbOptions['db_data_col'];
+        $dbIdCol   = $this->dbOptions['db_id_col'];
+        $dbTimeCol = $this->dbOptions['db_time_col'];
+
+        //session data can contain non binary safe characters so we need to encode it
         $encoded = base64_encode($data);
 
-        // We use a MERGE SQL query when supported by the database.
-        // Otherwise we have to use a transactional DELETE followed by INSERT to prevent duplicate entries under high concurrency.
-
         try {
-            $mergeSql = $this->getMergeSql();
+            $driver = $this->pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
 
-            if (null !== $mergeSql) {
-                $mergeStmt = $this->pdo->prepare($mergeSql);
-                $mergeStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
-                $mergeStmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
-                $mergeStmt->bindValue(':time', time(), \PDO::PARAM_INT);
-                $mergeStmt->execute();
-
-                return true;
-            }
-
-            $this->pdo->beginTransaction();
-
-            try {
-                $deleteStmt = $this->pdo->prepare(
-                    "DELETE FROM $this->table WHERE $this->idCol = :id"
+            if ('mysql' === $driver) {
+                // MySQL would report $stmt->rowCount() = 0 on UPDATE when the data is left unchanged
+                // it could result in calling createNewSession() whereas the session already exists in
+                // the DB which would fail as the id is unique
+                $stmt = $this->pdo->prepare(
+                    "INSERT INTO $dbTable ($dbIdCol, $dbDataCol, $dbTimeCol) VALUES (:id, :data, :time) " .
+                    "ON DUPLICATE KEY UPDATE $dbDataCol = VALUES($dbDataCol), $dbTimeCol = VALUES($dbTimeCol)"
                 );
-                $deleteStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
-                $deleteStmt->execute();
+                $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
+                $stmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
+                $stmt->bindValue(':time', time(), \PDO::PARAM_INT);
+                $stmt->execute();
+            } elseif ('oci' === $driver) {
+                $stmt = $this->pdo->prepare("MERGE INTO $dbTable USING DUAL ON($dbIdCol = :id) ".
+                       "WHEN NOT MATCHED THEN INSERT ($dbIdCol, $dbDataCol, $dbTimeCol) VALUES (:id, :data, sysdate) " .
+                       "WHEN MATCHED THEN UPDATE SET $dbDataCol = :data WHERE $dbIdCol = :id");
 
-                $insertStmt = $this->pdo->prepare(
-                    "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->timeCol) VALUES (:id, :data, :time)"
-                );
-                $insertStmt->bindParam(':id', $sessionId, \PDO::PARAM_STR);
-                $insertStmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
-                $insertStmt->bindValue(':time', time(), \PDO::PARAM_INT);
-                $insertStmt->execute();
+                $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
+                $stmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
+                $stmt->execute();
+            } else {
+                $stmt = $this->pdo->prepare("UPDATE $dbTable SET $dbDataCol = :data, $dbTimeCol = :time WHERE $dbIdCol = :id");
+                $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
+                $stmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
+                $stmt->bindValue(':time', time(), \PDO::PARAM_INT);
+                $stmt->execute();
 
-                $this->pdo->commit();
-            } catch (\PDOException $e) {
-                $this->pdo->rollback();
-
-                throw $e;
+                if (!$stmt->rowCount()) {
+                    // No session exists in the database to update. This happens when we have called
+                    // session_regenerate_id()
+                    $this->createNewSession($id, $data);
+                }
             }
         } catch (\PDOException $e) {
-            throw new \RuntimeException(sprintf('PDOException was thrown when trying to write the session data: %s', $e->getMessage()), 0, $e);
+                throw new \RuntimeException(sprintf('PDOException was thrown when trying to write the session data: %s', $e->getMessage()), 0, $e);
         }
 
         return true;
     }
 
     /**
-     * Returns a merge/upsert (i.e. insert or update) SQL query when supported by the database.
+     * Creates a new session with the given $id and $data
      *
-     * @return string|null The SQL string or null when not supported
+     * @param string $id
+     * @param string $data
+     *
+     * @return boolean True.
      */
-    private function getMergeSql()
+    private function createNewSession($id, $data = '')
     {
-        $driver = $this->pdo->getAttribute(\PDO::ATTR_DRIVER_NAME);
+        // get table/column
+        $dbTable   = $this->dbOptions['db_table'];
+        $dbDataCol = $this->dbOptions['db_data_col'];
+        $dbIdCol   = $this->dbOptions['db_id_col'];
+        $dbTimeCol = $this->dbOptions['db_time_col'];
 
-        switch ($driver) {
-            case 'mysql':
-                return "INSERT INTO $this->table ($this->idCol, $this->dataCol, $this->timeCol) VALUES (:id, :data, :time) " .
-                    "ON DUPLICATE KEY UPDATE $this->dataCol = VALUES($this->dataCol), $this->timeCol = VALUES($this->timeCol)";
-            case 'oci':
-                // DUAL is Oracle specific dummy table
-                return "MERGE INTO $this->table USING DUAL ON ($this->idCol = :id) " .
-                    "WHEN NOT MATCHED THEN INSERT ($this->idCol, $this->dataCol, $this->timeCol) VALUES (:id, :data, :time) " .
-                    "WHEN MATCHED THEN UPDATE SET $this->dataCol = :data";
-            case 'sqlsrv':
-                // MS SQL Server requires MERGE be terminated by semicolon
-                return "MERGE INTO $this->table USING (SELECT 'x' AS dummy) AS src ON ($this->idCol = :id) " .
-                    "WHEN NOT MATCHED THEN INSERT ($this->idCol, $this->dataCol, $this->timeCol) VALUES (:id, :data, :time) " .
-                    "WHEN MATCHED THEN UPDATE SET $this->dataCol = :data;";
-            case 'sqlite':
-                return "INSERT OR REPLACE INTO $this->table ($this->idCol, $this->dataCol, $this->timeCol) VALUES (:id, :data, :time)";
-        }
+        $sql = "INSERT INTO $dbTable ($dbIdCol, $dbDataCol, $dbTimeCol) VALUES (:id, :data, :time)";
+
+        //session data can contain non binary safe characters so we need to encode it
+        $encoded = base64_encode($data);
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $id, \PDO::PARAM_STR);
+        $stmt->bindParam(':data', $encoded, \PDO::PARAM_STR);
+        $stmt->bindValue(':time', time(), \PDO::PARAM_INT);
+        $stmt->execute();
+
+        return true;
     }
 
     /**

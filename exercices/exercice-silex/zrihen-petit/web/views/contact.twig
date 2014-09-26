@@ -1,0 +1,41 @@
+{{include('inc/header.twig')}}
+{{include('inc/footer.twig')}}
+
+
+
+<form method="post" class="form-horizontal">
+  <fieldset>
+  </br>
+    <legend>Commentaires</legend>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Nom :</label>
+      <div class="col-lg-6">
+        <input type="text" name="name" class="form-control" placeholder="Nom">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Prenom :</label>
+      <div class="col-lg-6">
+        <input type="text" name="firstname" class="form-control" placeholder="Prenom">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Commentaire:</label>
+      <div class="col-lg-6">
+        <input type="text" name="comment" class="form-control" placeholder="Commentaire">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Email :</label>
+      <div class="col-lg-6">
+        <input type="text" name="email" class="form-control" placeholder="Email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-6 col-lg-offset-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

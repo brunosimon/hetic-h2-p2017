@@ -61,7 +61,7 @@ class CsrfExtension extends AbstractExtension
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function loadTypeExtensions()
     {

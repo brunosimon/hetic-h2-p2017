@@ -1,0 +1,46 @@
+{{include('inc/header.twig')}}
+{{include('inc/menu.twig')}}
+{{include('inc/message.twig')}}
+
+<div class="admin row">
+	{{include('admin/menu.twig')}}
+	<div class="col-md-9">
+		<div class="panel panel-default">
+      		<div class="panel-body">
+      			<table class="table table-striped table-hover">
+				  <thead>
+				    <tr>
+				      <th>Title</th>
+				      <th>Snippets</th>
+				      <th>Active</th>
+				      <th>Action</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+						{% for category in categories %}
+							<tr>
+								<td><a href="{{url('category', {category:category.slug})}}">{{category.title}}</a></td>
+								<td>{{category.total}}</td>
+				        		<td><a href="{{url('admin/category/active', {category:category.id, active: 1})}}" class="btn btn-{% if category.active %}primary{% else %}default{% endif %} btn-xs">Yes</a><a href="{{url('admin/category/active', {category:category.id, active: 0})}}" class="btn btn-{% if category.active %}default{% else %}primary{% endif %} btn-xs">No</a></td>
+				        		<td><a href="{{url('admin/category/delete', {category:category.id})}}" class="btn btn-danger btn-xs">Delete</a></td>
+							</tr>
+						{% endfor %}
+				  </tbody>
+				</table>
+				<form method="POST">
+					<div class="form-group">	
+				        <h4>Add category</h4>
+				        <div class="col-xs-9" style="padding-left:0; padding-right:0;">
+				        <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="title">
+				        </div>
+				        <div class="col-xs-3">
+				        <button type="submit" class="btn btn-primary">Add</button>
+				        </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{include('inc/footer.twig')}}

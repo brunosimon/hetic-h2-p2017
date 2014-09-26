@@ -19,7 +19,7 @@ namespace Symfony\Component\Intl\DateFormatter\DateFormat;
 class Hour1201Transformer extends HourTransformer
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function format(\DateTime $dateTime, $length)
     {
@@ -27,7 +27,7 @@ class Hour1201Transformer extends HourTransformer
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function normalizeHour($hour, $marker = null)
     {
@@ -42,7 +42,7 @@ class Hour1201Transformer extends HourTransformer
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getReverseMatchingRegExp($length)
     {
@@ -50,7 +50,7 @@ class Hour1201Transformer extends HourTransformer
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function extractDateOptions($matched, $length)
     {

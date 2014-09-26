@@ -1,0 +1,37 @@
+{# Pour appliquer un filtre (dispo sur doc de twig) un applique un pipe (alt+shift+l) #}
+{# Voici un commentaire en twig #}
+
+{# Création d'une condition
+{% if nouvellevaleur %}
+	VRAI
+{% else %}
+	FAUX !
+{% endif %}
+#}
+
+{# Création d'un foreach
+{% for value in values %}
+	{{value}}
+{% endfor %}
+#}
+
+{# Création d'une boucle for
+{% for i in range(0,10,2) %}
+	{{i}}
+{% endfor %}
+#}
+
+{# Pour créer une variable on utilise la commande set
+{% set foo = 'bar' %}
+{{foo}}
+#}
+
+{{include('inc/header.twig')}}
+
+{{include('inc/filter.twig')}}
+{{include('inc/bookmarks.twig')}}
+{{include('inc/pagination.twig')}}
+
+{{include('inc/footer.twig')}}
+
+

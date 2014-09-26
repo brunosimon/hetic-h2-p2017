@@ -1,0 +1,16 @@
+{% include 'inc/header.twig' %}
+<div class="container fix snippets-contain">
+	<h2>My account</h2>
+	<p>Here you can delete and edit you're snippets</p>
+	{% for snippet in snippets %}
+	    <div class="col-lg-4">
+	    	<a href="{{url('snippet',{id:snippet.id})}}"><h2>{{snippet.title}}</h2></a>
+	    	<div class="contain-snippet">
+	    		<p>{{snippet.content}}</p>
+	    	</div>
+	    	<a href="{{url('delete',{id:snippet.id})}}"><img src="src/img/delete.png" alt="delete"></a><br>
+	    	<a href="{{url('edit',{id:snippet.id})}}"><img src="src/img/edit.png" alt="delete"></a>
+	    </div>
+	{% endfor %}
+</div>
+{% include 'inc/footer.twig' %}

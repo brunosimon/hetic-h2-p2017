@@ -1,0 +1,8 @@
+<legend style='margin:10px;'>Quelques exemples de snippets...</legend>
+{% for snippet in snippets %}
+	<div style='margin:10px;'>
+		<h3>{{snippet.title}}</h3>
+		<a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a>
+		<div>{{snippet.content}}</div>
+	</div>
+{% endfor %}

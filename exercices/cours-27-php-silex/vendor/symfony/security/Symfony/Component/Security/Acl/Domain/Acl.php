@@ -49,11 +49,11 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     /**
      * Constructor
      *
-     * @param int                                 $id
+     * @param integer                             $id
      * @param ObjectIdentityInterface             $objectIdentity
      * @param PermissionGrantingStrategyInterface $permissionGrantingStrategy
      * @param array                               $loadedSids
-     * @param bool                                $entriesInheriting
+     * @param Boolean                             $entriesInheriting
      */
     public function __construct($id, ObjectIdentityInterface $objectIdentity, PermissionGrantingStrategyInterface $permissionGrantingStrategy, array $loadedSids = array(), $entriesInheriting)
     {
@@ -75,7 +75,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deleteClassAce($index)
     {
@@ -83,7 +83,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deleteClassFieldAce($index, $field)
     {
@@ -91,7 +91,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deleteObjectAce($index)
     {
@@ -99,7 +99,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function deleteObjectFieldAce($index, $field)
     {
@@ -107,7 +107,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getClassAces()
     {
@@ -115,7 +115,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getClassFieldAces($field)
     {
@@ -123,7 +123,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getObjectAces()
     {
@@ -131,7 +131,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getObjectFieldAces($field)
     {
@@ -139,7 +139,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getId()
     {
@@ -147,7 +147,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getObjectIdentity()
     {
@@ -155,7 +155,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getParentAcl()
     {
@@ -163,7 +163,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function insertClassAce(SecurityIdentityInterface $sid, $mask, $index = 0, $granting = true, $strategy = null)
     {
@@ -171,7 +171,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function insertClassFieldAce($field, SecurityIdentityInterface $sid, $mask, $index = 0, $granting = true, $strategy = null)
     {
@@ -179,7 +179,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function insertObjectAce(SecurityIdentityInterface $sid, $mask, $index = 0, $granting = true, $strategy = null)
     {
@@ -187,7 +187,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function insertObjectFieldAce($field, SecurityIdentityInterface $sid, $mask, $index = 0, $granting = true, $strategy = null)
     {
@@ -195,7 +195,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isEntriesInheriting()
     {
@@ -203,7 +203,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isFieldGranted($field, array $masks, array $securityIdentities, $administrativeMode = false)
     {
@@ -211,7 +211,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isGranted(array $masks, array $securityIdentities, $administrativeMode = false)
     {
@@ -219,7 +219,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isSidLoaded($sids)
     {
@@ -291,7 +291,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setEntriesInheriting($boolean)
     {
@@ -302,7 +302,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setParentAcl(AclInterface $acl = null)
     {
@@ -317,7 +317,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateClassAce($index, $mask, $strategy = null)
     {
@@ -325,7 +325,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateClassFieldAce($index, $field, $mask, $strategy = null)
     {
@@ -333,7 +333,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateObjectAce($index, $mask, $strategy = null)
     {
@@ -341,7 +341,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateObjectFieldAce($index, $field, $mask, $strategy = null)
     {
@@ -349,7 +349,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateClassAuditing($index, $auditSuccess, $auditFailure)
     {
@@ -357,7 +357,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateClassFieldAuditing($index, $field, $auditSuccess, $auditFailure)
     {
@@ -369,7 +369,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateObjectAuditing($index, $auditSuccess, $auditFailure)
     {
@@ -377,7 +377,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function updateObjectFieldAuditing($index, $field, $auditSuccess, $auditFailure)
     {
@@ -392,7 +392,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Deletes an ACE
      *
      * @param string  $property
-     * @param int     $index
+     * @param integer $index
      * @throws \OutOfBoundsException
      */
     private function deleteAce($property, $index)
@@ -416,7 +416,7 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Deletes a field-based ACE
      *
      * @param string  $property
-     * @param int     $index
+     * @param integer $index
      * @param string  $field
      * @throws \OutOfBoundsException
      */
@@ -441,10 +441,10 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Inserts an ACE
      *
      * @param string                    $property
-     * @param int                       $index
-     * @param int                       $mask
+     * @param integer                   $index
+     * @param integer                   $mask
      * @param SecurityIdentityInterface $sid
-     * @param bool                      $granting
+     * @param Boolean                   $granting
      * @param string                    $strategy
      * @throws \OutOfBoundsException
      * @throws \InvalidArgumentException
@@ -489,11 +489,11 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Inserts a field-based ACE
      *
      * @param string                    $property
-     * @param int                       $index
+     * @param integer                   $index
      * @param string                    $field
-     * @param int                       $mask
+     * @param integer                   $mask
      * @param SecurityIdentityInterface $sid
-     * @param bool                      $granting
+     * @param Boolean                   $granting
      * @param string                    $strategy
      * @throws \InvalidArgumentException
      * @throws \OutOfBoundsException
@@ -546,8 +546,8 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Updates an ACE
      *
      * @param string  $property
-     * @param int     $index
-     * @param int     $mask
+     * @param integer $index
+     * @param integer $mask
      * @param string  $strategy
      * @throws \OutOfBoundsException
      */
@@ -573,9 +573,9 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Updates auditing for an ACE
      *
      * @param array   &$aces
-     * @param int     $index
-     * @param bool    $auditSuccess
-     * @param bool    $auditFailure
+     * @param integer $index
+     * @param Boolean $auditSuccess
+     * @param Boolean $auditFailure
      * @throws \OutOfBoundsException
      */
     private function updateAuditing(array &$aces, $index, $auditSuccess, $auditFailure)
@@ -599,9 +599,9 @@ class Acl implements AuditableAclInterface, NotifyPropertyChanged
      * Updates a field-based ACE
      *
      * @param string  $property
-     * @param int     $index
+     * @param integer $index
      * @param string  $field
-     * @param int     $mask
+     * @param integer $mask
      * @param string  $strategy
      * @throws \InvalidArgumentException
      * @throws \OutOfBoundsException

@@ -1,0 +1,66 @@
+{{include('inc/header.twig')}}
+
+
+<!-- Formulaire de Contact -->
+
+<form action="#" method="POST" class="form-horizontal">
+
+  <fieldset>
+    {% if success is defined %}
+        <p class="text-success">{{success}}</p>
+    {% endif %} 
+
+    <div class="form-group">
+      <label for="inputName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+            {% if error.name is defined %}
+              <p class="text-danger">{{error.name}}</p>
+            {% endif %}
+          <input type="text" name="name" class="form-control" id="inputName" value="{% if form.name is defined %} {{form.name}} {% endif %}" placeholder="Your Name">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-10">
+            {% if error.email is defined %}
+                 <p class="text-danger">{{error.email}}</p>
+            {% endif %}
+           <input type="text" name="email" class="form-control" id="inputEmail" value="{% if form.email is defined %} {{form.email}} {% endif %}" placeholder="Your Email">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputSubject" class="col-lg-2 control-label">Subject</label>
+        <div class="col-lg-10">
+          {% if error.subject is defined %}
+               <p class="text-danger">{{error.subject}}</p>
+          {% endif %}
+          <input type="text" name="subject" class="form-control" id="inputSubject" value="{% if form.subject is defined %} {{form.subject}} {% endif %}" placeholder="Your Subject">
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Message</label>
+        <div class="col-lg-10">
+          {% if error.message is defined %}
+               <p class="text-danger">{{error.message}}</p>
+          {% endif %}
+          <textarea class="form-control" name="message" rows="3" id="textArea"></textarea>
+          <span class="help-block">Write us a message here !</span>
+        </div>
+    </div>
+
+   
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <input type="hidden" name="action" value="send">
+        <input type="submit" name="submit" class="btn btn-primary" value="Send">
+      </div>
+    </div>
+  </fieldset>
+
+</form>
+
+
+{{include('inc/footer.twig')}}

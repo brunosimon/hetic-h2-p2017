@@ -1,0 +1,49 @@
+{{include('inc/header.twig')}}
+
+<form class="form-horizontal" action="#" method="post">
+  <fieldset>
+    <legend>Contact</legend>
+
+    <!-- NAME -->
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Your name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputName" placeholder="Name" name="name">
+      </div>
+    </div>
+
+	<!-- EMAIL -->
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Your Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
+      </div>
+    </div>
+
+ <!-- SUBJECT -->
+  <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Subject</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="1" id="textArea" name="subject"></textarea>
+      </div>
+    </div>
+
+ 	<!-- CONTENT -->
+	<div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Contenu</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="4" id="textArea" name="message"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+	</fieldset>
+</form>    
+
+{{include('inc/footer.twig')}}

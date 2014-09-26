@@ -25,7 +25,7 @@ use Symfony\Component\Validator\ConstraintViolation;
 class ViolationMapper implements ViolationMapperInterface
 {
     /**
-     * @var bool
+     * @var Boolean
      */
     private $allowNonSynchronized;
 
@@ -172,7 +172,7 @@ class ViolationMapper implements ViolationMapperInterface
         // Make the path longer until we find a matching child
         while (true) {
             if (!$it->valid()) {
-                return;
+                return null;
             }
 
             if ($it->isIndex()) {
@@ -223,6 +223,8 @@ class ViolationMapper implements ViolationMapperInterface
                 return $foundChild;
             }
         }
+
+        return null;
     }
 
     /**
@@ -287,7 +289,7 @@ class ViolationMapper implements ViolationMapperInterface
     /**
      * @param FormInterface $form
      *
-     * @return bool
+     * @return Boolean
      */
     private function acceptsErrors(FormInterface $form)
     {

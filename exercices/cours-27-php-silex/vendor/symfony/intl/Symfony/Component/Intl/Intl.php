@@ -53,7 +53,7 @@ class Intl
     private static $regionBundle;
 
     /**
-     * @var string|bool|null
+     * @var string|Boolean|null
      */
     private static $icuVersion = false;
 
@@ -70,7 +70,7 @@ class Intl
     /**
      * Returns whether the intl extension is installed.
      *
-     * @return bool    Returns true if the intl extension is installed, false otherwise.
+     * @return Boolean Returns true if the intl extension is installed, false otherwise.
      */
     public static function isExtensionLoaded()
     {

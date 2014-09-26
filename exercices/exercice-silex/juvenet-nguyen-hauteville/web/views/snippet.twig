@@ -1,0 +1,11 @@
+{{include('inc/header.twig')}}
+{{include('inc/menu.twig')}}
+
+<div style="margin-bottom:15px;">
+  <div class="panel-footer" style="border-radius:4px 4px 0 0; margin-bottom:-2px; padding-bottom:12px; border:2px solid #dce4ec; border-bottom:none;">
+    {{snippet.title}} <a href="{{url('category', {category:snippet.category_slug})}}" class="label label-success">{{snippet.category_title}}</a><span class="label label-default copy" data-clipboard-target="clipboard_text">COPY</span>
+  </div>
+  <textarea class="panel-footer" id="clipboard_text">{{snippet.content|raw}}</textarea>
+</div>
+
+{{include('inc/footer.twig')}}

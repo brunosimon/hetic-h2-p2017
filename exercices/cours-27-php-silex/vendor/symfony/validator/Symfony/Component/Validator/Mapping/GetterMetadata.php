@@ -40,7 +40,7 @@ class GetterMetadata extends MemberMetadata
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getPropertyValue($object)
     {
@@ -48,7 +48,7 @@ class GetterMetadata extends MemberMetadata
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function newReflectionMember($objectOrClassName)
     {

@@ -1,0 +1,34 @@
+{{include('inc/header.twig')}}
+
+<h2>Add a Snippet</h2>
+
+{% if add is defined %}
+    {% if add == 'snippet_add' %}
+    	<div class="alert alert-success"> Votre snippet a bien été envoyé !</div>
+	{% endif %}
+	{% if add == 'fields_empty' %}
+    	<div class="alert alert-danger"> Certains champs n'ont pas été remplis.</div>
+	{% endif %}
+{% endif %}
+
+<form action="#" method="post">
+	<div class="form-group">
+    	{{ form_widget(form.name,{'attr': {'type': 'text', 'value': '', 'class': 'form-control', 'placeholder': data.name } }) }}
+    </div>
+
+	<div class="form-group">
+    	{{ form_widget(form.category,{'attr': {'class': 'form-control' }}) }}
+     </div>
+
+     <div class="form-group">
+    	{{ form_widget(form.text_snippet,{'attr': {'class': 'form-control', 'placeholder': data.placeholder_text } }) }}
+     </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+
+    <script>document.getElementById('form_text_snippet').value = '';</script>
+    {# Excusez nous pour cela #}
+</form>
+
+
+{{include('inc/footer.twig')}}

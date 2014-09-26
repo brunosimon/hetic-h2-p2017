@@ -1,0 +1,11 @@
+{% include 'inc/header.twig' %}
+
+<section class="wrap base about">
+	<h3>{{page.title}}</h3>
+	{% if app.session.get('admin') %}<a class="btn btn-cat-mod" href="{{url('admin/page/update', {title:page.title})}}">Modify</a>{% endif %}
+	<article class="content">
+		{{page.content|raw}}
+	</article>
+</section>
+
+{% include 'inc/footer.twig' %}

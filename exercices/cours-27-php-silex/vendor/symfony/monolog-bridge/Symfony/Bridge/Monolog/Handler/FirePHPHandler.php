@@ -58,7 +58,7 @@ class FirePHPHandler extends BaseFirePHPHandler
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function sendHeader($header, $content)
     {

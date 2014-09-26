@@ -1,0 +1,14 @@
+{{include('inc/header.twig')}}
+
+<h2>Quotes</h2>
+
+{% for quote in quotes %}
+    <ul>
+        <li>
+            <a href="{{url('student',{id:quote.student_id})}}">{{quote.student_first_name}} {{quote.student_last_name}}</a> (<a href="{{url('promotion',{slug:quote.promotion_slug})}}">{{quote.promotion_title}}</a>)
+            <br />"{{quote.content}}"
+        </li>
+    </ul>
+{% endfor %}
+
+{{include('inc/footer.twig')}}

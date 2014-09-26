@@ -58,7 +58,7 @@ class DefaultAuthenticationFailureHandler implements AuthenticationFailureHandle
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {

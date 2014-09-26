@@ -1,0 +1,36 @@
+
+<!-- foreach -->
+
+{% for item in valuesfor %}
+    {{item}}
+{% endfor %}
+
+
+<!-- low, minimum / high, maximum / step, le pas -->
+
+<br />{% for i in range(0,30,2) %}
+    {{i}}
+{% endfor %}
+
+<!-- trim, supprimer espaces avant après / upper, passer en uppercase / lower, passer en minuscules / replace, remplacer la première variable   -->
+
+<br />Hello : {{valuename|trim|upper|lower|replace('e','a')|reverse}}
+
+
+<!-- if -->
+<br/> 
+{% if mavaleur %}
+    Vrai !
+{% else %}
+    Faux !
+{% endif %}
+
+<!-- chercher valeur tableau -->
+
+<br />key 1 : {{tabletest.key1}}
+<br />key 2 : {{tabletest['key2']}}
+<br />key 3 : {{attribute(tabletest,'key3')}}
+
+
+<br/> <a href="{{ url('home') }}">Go back to home</a>
+

@@ -183,7 +183,7 @@ class Locale extends \Locale
     protected static function getFallbackLocale($locale)
     {
         if (false === $pos = strrpos($locale, '_')) {
-            return;
+            return null;
         }
 
         return substr($locale, 0, $pos);

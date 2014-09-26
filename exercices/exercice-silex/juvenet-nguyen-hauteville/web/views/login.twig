@@ -1,0 +1,24 @@
+{{include('inc/header.twig')}}
+{{include('inc/menu.twig')}}
+{{include('inc/message.twig')}}
+
+<div class="row">
+  <div class="col-md-12">
+    <form class="form-signin" method="POST">
+      <div class="col-xs-5" style="padding:0;">
+        <div class="form-group">
+          <h4>Please sign in <span style="font-size:13px;">(admin/admin)</span></h4>
+          <input type="text" class="form-control" placeholder="Username" name="username">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" name="password">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{{include('inc/footer.twig')}}

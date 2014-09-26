@@ -1,0 +1,9 @@
+.navbar-inverse, .navbar{
+	border-radius: 0px;
+}
+.well{
+	margin-top: 10px;
+}
+.jumbotron{
+	margin-top: -20px;
+}

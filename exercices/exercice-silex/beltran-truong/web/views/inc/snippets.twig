@@ -1,0 +1,11 @@
+{% for snippet in snippets %}
+	<tr>
+		<td>1</td>
+      	<td>{{snippet.title}}</td></br>
+      	<td><a href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a></td></br>
+      	<td><code contenteditable data-trim>{{snippet.content}}</code></td></br>
+    </tr>
+{% endfor %}
+
+
+      

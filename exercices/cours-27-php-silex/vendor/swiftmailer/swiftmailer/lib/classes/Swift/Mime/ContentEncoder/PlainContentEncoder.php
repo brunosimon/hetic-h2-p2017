@@ -27,7 +27,7 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder implements Swift_Mime_Conten
     /**
      * True if canonical transformations should be done.
      *
-     * @var bool
+     * @var boolean
      */
     private $_canonical;
 
@@ -35,7 +35,7 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder implements Swift_Mime_Conten
      * Creates a new PlainContentEncoder with $name (probably 7bit or 8bit).
      *
      * @param string  $name
-     * @param bool    $canonical If canonicalization transformation should be done.
+     * @param boolean $canonical If canonicalization transformation should be done.
      */
     public function __construct($name, $canonical = false)
     {
@@ -47,8 +47,8 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder implements Swift_Mime_Conten
      * Encode a given string to produce an encoded string.
      *
      * @param string  $string
-     * @param int     $firstLineOffset ignored
-     * @param int     $maxLineLength   - 0 means no wrapping will occur
+     * @param integer $firstLineOffset ignored
+     * @param integer $maxLineLength   - 0 means no wrapping will occur
      *
      * @return string
      */
@@ -66,8 +66,8 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder implements Swift_Mime_Conten
      *
      * @param Swift_OutputByteStream $os
      * @param Swift_InputByteStream  $is
-     * @param int                    $firstLineOffset ignored
-     * @param int                    $maxLineLength   optional, 0 means no wrapping will occur
+     * @param integer                $firstLineOffset ignored
+     * @param integer                $maxLineLength   optional, 0 means no wrapping will occur
      */
     public function encodeByteStream(Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0, $maxLineLength = 0)
     {
@@ -112,7 +112,7 @@ class Swift_Mime_ContentEncoder_PlainContentEncoder implements Swift_Mime_Conten
      * A safer (but weaker) wordwrap for unicode.
      *
      * @param string  $string
-     * @param int     $length
+     * @param integer $length
      * @param string  $le
      *
      * @return string

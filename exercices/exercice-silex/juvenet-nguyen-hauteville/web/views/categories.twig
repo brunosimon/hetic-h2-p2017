@@ -1,0 +1,13 @@
+{{include('inc/header.twig')}}
+{{include('inc/menu.twig')}}
+
+<ul class="list-group">
+  {% for category in categories %}
+    <li class="list-group-item">
+      <span class="badge">{{category.total}}</span>
+      <a href="{{url('category', {category:category.slug})}}">{{category.title}}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{{include('inc/footer.twig')}}

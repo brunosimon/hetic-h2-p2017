@@ -142,6 +142,8 @@ abstract class AbstractRememberMeServices implements RememberMeServicesInterface
         }
 
         $this->cancelCookie($request);
+
+        return null;
     }
 
     /**
@@ -293,7 +295,7 @@ abstract class AbstractRememberMeServices implements RememberMeServicesInterface
      *
      * @param Request $request
      *
-     * @return bool
+     * @return Boolean
      */
     protected function isRememberMeRequested(Request $request)
     {

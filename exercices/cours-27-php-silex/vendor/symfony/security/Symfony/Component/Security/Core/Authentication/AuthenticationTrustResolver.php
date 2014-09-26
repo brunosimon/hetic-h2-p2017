@@ -36,7 +36,7 @@ class AuthenticationTrustResolver implements AuthenticationTrustResolverInterfac
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isAnonymous(TokenInterface $token = null)
     {
@@ -48,7 +48,7 @@ class AuthenticationTrustResolver implements AuthenticationTrustResolverInterfac
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isRememberMe(TokenInterface $token = null)
     {
@@ -60,7 +60,7 @@ class AuthenticationTrustResolver implements AuthenticationTrustResolverInterfac
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isFullFledged(TokenInterface $token = null)
     {

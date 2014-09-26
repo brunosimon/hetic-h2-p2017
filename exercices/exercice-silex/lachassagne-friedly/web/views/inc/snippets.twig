@@ -1,0 +1,14 @@
+<div class="container fix marketing snippets-contain">
+	<h1 class=>Snippets</h1>
+	<div class="row">
+		{% for snippet in snippets %}
+			<div class="col-lg-4">
+				<a href="{{url('snippet',{id:snippet.id})}}" class="title-link"><h2>{{snippet.title}}</h2></a>
+				<p>In <a href="{{url('category',{category:snippet.category_slug, page:1})}}" class="cate-link">{{snippet.category_title}}</a></p>
+				<div class="contain-snippet">
+					<p>{{snippet.content}}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

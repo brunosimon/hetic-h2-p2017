@@ -37,7 +37,7 @@ class DefaultLogoutSuccessHandler implements LogoutSuccessHandlerInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function onLogoutSuccess(Request $request)
     {

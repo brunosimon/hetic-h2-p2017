@@ -1,0 +1,70 @@
+{{include('inc/header.twig')}}
+
+<form action="#" class="form-horizontal" method="post">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>Nouvelle recette</legend>
+
+
+	<!-- Select Basic -->
+	<div class="control-group">
+	  <label class="control-label" for="categorie">Catégorie</label>
+	  <div class="controls">
+	    <select id="categorie" name="categorie" class="input-xlarge">
+	      <option value="10">Charlottes</option>
+	      <option value="9">Cheesecakes</option>
+	      <option value="11">Crumbles</option>
+	      <option value="1">Cupcakes</option>
+	      <option value="6">Entremets</option>
+		  <option value="8">Fondants</option>
+	      <option value="7">Macarons</option>
+	      <option value="2">Muffins</option>
+	      <option value="5">Puddings</option>
+	      <option value="3">Tartes</option>
+	      <option value="4">Tiramisus</option>
+	    </select>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="control-group">
+	  <label class="control-label" for="name">Nom</label>
+	  <div class="controls">
+	    <input id="name" name="name" type="text" placeholder="Nom" class="input-xlarge" required>
+	    
+	  </div>
+	</div>
+
+	<!-- Textarea -->
+	<div class="control-group">
+	  <label class="control-label" for="description">Recette</label>
+	  <div class="controls">                     
+	    <textarea id="description" name="description" placeholder="Votre recette" required></textarea>
+	  </div>
+	</div>
+
+	<!-- Text input
+	<div class="control-group">
+	  <label class="control-label" for="image">Url d'image</label>
+	  <div class="controls">
+	    <input id="image" name="image" type="text" placeholder="Url d'image" class="input-xlarge">
+	    
+	  </div>
+	</div> -->
+
+	
+
+	<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="submit"></label>
+  <div class="controls">
+    <button id="submit" name="submit" class="btn btn-success">Envoyer</button>
+  </div>
+</div>
+
+	</fieldset>
+</form>
+
+
+{{include('inc/footer.twig')}}

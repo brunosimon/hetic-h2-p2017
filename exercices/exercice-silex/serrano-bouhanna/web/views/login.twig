@@ -1,0 +1,36 @@
+{% extends 'incs/layout.twig' %}
+
+{% block top %}
+	<div class="container">
+		<h1>Inscription</h1>
+		<p>Vous pouvez maintenant créer vos propres snippets et les partager sur notre site</p>
+	</div>
+{% endblock %}
+
+{% block container %}
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			{% if logged is defined and logged %}
+  				<p>Vous êtes maintenant connecté</p>
+			{% else %}
+			  {% if logged is defined %}
+			    <p>Il y a une erreur avec votre nom de compte et votre mot de passe</p>
+			  {% endif %}
+				  <form role="form" action="{{url ('checklogin')}}" method="post">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Username</label>
+				    <input type="text" class="form-control" placeholder="Enter Username" name="username">
+				  </div>
+
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Password</label>
+				    <input type="password" class="form-control" placeholder="Enter Password" name="password">
+				  </div>
+				  
+				  <button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+	
+{% endblock %}

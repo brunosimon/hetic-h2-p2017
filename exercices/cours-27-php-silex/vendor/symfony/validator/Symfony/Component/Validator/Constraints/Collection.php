@@ -16,7 +16,6 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 
 /**
  * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
@@ -31,7 +30,7 @@ class Collection extends Constraint
     public $missingFieldsMessage = 'This field is missing.';
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function __construct($options = null)
     {

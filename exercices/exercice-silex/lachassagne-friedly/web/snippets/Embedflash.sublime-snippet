@@ -1,0 +1,15 @@
+<snippet>
+					<content><![CDATA[
+				<object type="application/x-shockwave-flash" 
+  data="your-flash-file.swf" 
+  width="0" height="0">
+  <param name="movie" value="your-flash-file.swf" />
+  <param name="quality" value="high"/>
+</object>
+				]]></content>
+					<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+					<tabTrigger>Embedflash</tabTrigger>
+					<!-- Optional: Set a scope to limit where the snippet will trigger -->
+					<!-- <scope>source.python</scope> -->
+				</snippet>
+			

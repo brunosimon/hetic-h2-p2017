@@ -1,0 +1,307 @@
+/*
+	Fonts
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+
+html, body{
+	min-height: 100%;
+}
+
+body{
+	background: #FCFCFC;
+	font-size: 10px;
+}
+
+.container{
+	width: 700px;
+	margin: auto;
+}
+
+header{
+	height: 7em;
+}
+
+h1{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3em;
+	color: #C7C7CC;
+	text-transform: uppercase;
+
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+
+}
+
+
+h1 .boldTitle{
+	font-weight: 700;
+	color: #DF9000;
+}
+
+/* Menus */
+
+.leftBar{
+	width: 200px;
+	position: relative;
+	float: left;
+	background: #DF9000;
+	height: 100%;
+	left: -200px;
+	
+	-moz-transition-property: left;
+	-o-transition-property: left;
+	-webkit-transition-property: left;
+	transition-property: transform, top;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-moz-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+}
+
+.leftBar.open{
+	left: 0px;
+}
+
+
+.leftBar .menu{
+	margin-top: 180px;
+}
+
+.leftBar .menuCat{
+	color: white;
+	font-size: 2em;
+	font-family: 'Montserrat', sans-serif;
+	margin-left: 1em;
+}
+
+.leftBar li a{
+	text-decoration: none;
+	display: block;
+	width: 70%;
+	padding: 10px;
+	margin: 10%;
+	font-size: 1.5em;
+	color: #DF9000;
+	background: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.leftBar li a:hover{
+	background: #F1F1F1;
+}
+
+
+/*
+	Main
+*/
+
+.clear{
+	clear: both;
+}
+
+.mainSection{
+	margin-top: 50px;
+	height: 400px;
+}
+
+h2{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.5em;
+	color: #646464;
+	display: inline-block;
+}
+
+
+h1 a{
+	text-decoration: none;	
+}
+
+.codeDisplay{
+	padding: 1em;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	color: #DF9000;
+	background: #1D1F21;
+	font-size: 1.5em;
+	margin-top: 25px;
+}
+
+.category{
+	background: #DF9000;
+	color: white;
+	display: inline-block;
+	position: relative;
+	top: -0.5em;
+	margin-right: 1em;
+	text-decoration: none;
+	padding: 0.2em;
+	font-size: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*
+	Categories
+*/
+
+.snippet{
+	margin-top: 75px;
+	margin-bottom: 75px;
+}
+
+
+/*
+	Miscellanous
+*/
+.hamburger {
+	display: block;
+	float: left;
+	position: relative;
+	left: -200px;
+	width: 30px;
+	height: 30px;
+	margin: 1.8em;
+	background: #DF9000;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	-webkit-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+
+.hamburger:before, .hamburger:after {
+	content: '';
+	position: absolute;
+	top: 20%;
+	left: 0;
+	width: 100%;
+	height: 20%;
+	background-color: white;
+	-moz-transition-property: -moz-transform, top;
+	-o-transition-property: -o-transform, top;
+	-webkit-transition-property: -webkit-transform, top;
+	transition-property: transform, top;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-moz-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	-webkit-transition-timing-function: ease;
+	transition-timing-function: ease;
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.hamburger:after {
+  top: 60%;
+}
+
+.hamburger.open {
+	background-color: #DF9000;
+}
+
+.hamburger.open:before, .hamburger.open:after {
+  top: 40%;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.hamburger.open:after {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.pagination{
+	width: 180px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+.pageNumber{
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	padding: 4px;
+
+	background-color: #DF9000;
+	color: white;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 1.6em;
+	text-align: center;`
+}
+
+span.pageNumber{
+	background: none;
+	color: #DF9000;
+}
+
+.pageNumber:hover{
+	background: #C47F02;
+}
+
+.inputAdd input{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5em;
+	padding: 0.4em;
+	color: #646464;
+	outline: none;
+	border: 1px solid #ffeece;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.inputAdd select{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5em;
+	padding: 0.4em;
+	color: #646464;
+	outline: none;
+	border: 1px solid #ffeece;
+	width: 100%;
+}
+
+.inputAdd textarea{
+	font-size: 1.5em;
+	padding: 1em;
+	outline: none;
+	border: none;
+	background: #1D1F21;
+	box-sizing: border-box;
+	width: 100%;
+	height: 300px;
+	padding: 1em;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	color: #DF9000;
+}
+
+.inputAdd input[type="submit"]{
+	cursor: pointer;
+}
+
+.inputAdd input[type="submit"]:hover{
+	background: gray;
+	color: #c6c6c6;
+}
+
+p{
+	font-size: 1.5em;
+	font-family: 'Roboto', sans-serif;
+	color: #999;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	
+}

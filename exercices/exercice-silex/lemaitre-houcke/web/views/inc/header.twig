@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Mon titre</title>
+	<link href="{{app.request.basepath}}/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{url('home')}}">Hétic snippets</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-inverse-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="{{url('suggest')}}">Ajout de snippets</a></li>
+      <li><a href="{{url('contact')}}">Contact</a></li>
+      <li class="drop-down" id="drop_down">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégories<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">PHP</a></li>
+          <li><a href="#">JAVASCRIPT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+

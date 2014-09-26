@@ -87,19 +87,19 @@ class BasicPermissionMap implements PermissionMapInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMasks($permission, $object)
     {
         if (!isset($this->map[$permission])) {
-            return;
+            return null;
         }
 
         return $this->map[$permission];
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function contains($permission)
     {

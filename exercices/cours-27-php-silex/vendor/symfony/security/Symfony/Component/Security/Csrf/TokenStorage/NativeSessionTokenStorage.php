@@ -28,7 +28,7 @@ class NativeSessionTokenStorage implements TokenStorageInterface
     const SESSION_NAMESPACE = '_csrf';
 
     /**
-     * @var bool
+     * @var Boolean
      */
     private $sessionStarted = false;
 

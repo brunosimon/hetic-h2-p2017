@@ -1,0 +1,4 @@
+<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+	<li {% if app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' or app.request.attributes.get('_route') == 'snippet' %} class="active" {% endif %}><a href="{{url('home')}}">Snippets</a></li>
+	<li {% if app.request.attributes.get('_route') == 'categories' or app.request.attributes.get('_route') == 'category' %} class="active" {% endif %}><a href="{{url('categories')}}">Categories</a></li>
+</ul>

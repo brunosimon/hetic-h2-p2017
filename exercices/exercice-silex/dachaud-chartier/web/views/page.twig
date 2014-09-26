@@ -1,0 +1,19 @@
+{{include('include/header.twig',{title:'Tous les circuits'})}}
+
+{{include('include/snippets.twig')}}
+
+<div class="next">
+{% if (actual_page >= 2) %}
+	<a href="{{url('page',{page:actual_page - 1})}}">Page précédente</a>
+{% endif %}
+{% if (actual_page >= 2) %}
+	{% if (max_page == 0) %}
+	 | 
+	{% endif %}
+{% endif %}
+{% if (max_page == 0) %}
+	<a href="{{url('page',{page:actual_page + 1})}}">Page suivante</a>
+{% endif %}
+</div>
+
+{{include('include/footer.twig')}}

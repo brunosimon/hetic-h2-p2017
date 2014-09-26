@@ -21,7 +21,7 @@ namespace Symfony\Component\Security\Core\Exception;
 class ProviderNotFoundException extends AuthenticationException
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMessageKey()
     {

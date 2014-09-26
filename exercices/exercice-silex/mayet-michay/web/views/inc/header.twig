@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="{{ app.request.basePath }}/src/css/reset.css">
+    <link rel="stylesheet" href="{{ app.request.basePath }}/src/css/style.css">
+    <link rel="stylesheet" href="{{ app.request.basePath }}/src/css/monokai_sublime.css">
+</head>
+<body>
+	<aside class="sidebar">
+		<nav class="navigation">
+			<ul>
+				<li ><h1><a href="{{ url('home') }}" {% if active == 'home' %}class="active" {% endif %}>HETIC SNIPPETS</a></h1></li>
+				<li ><a href="{{url('categories')}}" {% if active == 'categories' %}class="active" {% endif %}>Categories</a>
+				    <ul>
+                        {% for category in  categories %}
+                            <li><a href="{{url('category', {category: category.slug})}}" {% if (category is defined) and (active == category.slug) %}class="active" {% endif %}>{{category.title}}</a></li>
+                        {% endfor %}
+				    </ul>
+				</li>
+				<li><a href="{{url('add_snippet')}}" {% if active == 'add' %}class="active" {% endif %}>Add Snippet</a></li>
+				<li>
+                    {% if connected is defined %}
+                        <a href="{{url('signout')}}" {% if active == 'user' %}class="active" {% endif %}>Sign out</a>
+                    {% else %}
+                        <a href="{{url('signin')}}" {% if active == 'signin' %}class="active" {% endif %}>Sign in</a>
+                        <a href="{{url('signup')}}" {% if active == 'signout' %}class="active" {% endif %}>Sign up</a>
+                    {% endif %}
+				</li>
+				<li><a href="{{url('contact')}}" {% if active == 'contact' %}class="active" {% endif %}>Contact</a></li>
+				<li><a href="{{url('about')}}" {% if active == 'about' %}class="active" {% endif %}>About</a></li>
+			</ul>
+		</nav>	
+	</aside>
+	<section class="container">

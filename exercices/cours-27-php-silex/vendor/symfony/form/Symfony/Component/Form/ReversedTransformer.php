@@ -38,7 +38,7 @@ class ReversedTransformer implements DataTransformerInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function transform($value)
     {
@@ -46,7 +46,7 @@ class ReversedTransformer implements DataTransformerInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function reverseTransform($value)
     {

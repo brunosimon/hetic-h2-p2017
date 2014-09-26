@@ -1,0 +1,11 @@
+{% include 'inc/header.twig' %}
+
+<section class="base wrap add-snippet">
+	<h2>Update {{page.title}}</h2>
+	<form method="POST">
+		<textarea name="content" id="edit">{{page.content|raw}}</textarea>
+		<input class="trs" type="submit">
+	</form>
+</section>
+
+{% include 'inc/footer.twig' %}

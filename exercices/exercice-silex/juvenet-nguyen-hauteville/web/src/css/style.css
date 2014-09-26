@@ -1,0 +1,91 @@
+body{
+	margin-top:50px;
+}
+
+.container{
+	width: 720px !important;
+}
+
+table a, .list-group a{
+	text-decoration: none !important;
+	color:inherit !important;
+}
+
+table .btn{
+	color:white !important;
+	margin-right:3px;
+}
+
+.copy{
+	float:right;
+	margin-top:2px;
+}
+
+footer a{
+	color:#383838;
+	margin-right:10px;
+	font-size:14px;
+}
+
+footer a:hover{
+	text-decoration: none;
+	color:inherit;
+}
+
+.form-group{
+	padding-left:0px;
+}
+
+.adminMenu li{
+	text-align: center;
+	border-radius:4px;
+	list-style: none;
+	display: inline-block;
+}
+
+.adminMenu li img{
+	line-height: 200px;
+	display:block;
+	margin:auto;
+}
+
+
+.admin .list-group .active, .admin .list-group .active:hover{
+	background: #ecf0f1;
+	border:inherit;
+	color:inherit;
+}
+
+.admin h4{
+	margin-bottom:20px;
+}
+
+.admin div.pages{
+	margin-bottom:0;
+	border-radius: 4px 4px 0 0;
+}
+
+.admin textarea.pages{
+	border-radius: 0 0 4px 4px;
+	border-color:#ecf0f1;
+	border-top:0;
+}
+
+.admin textarea.pages:hover, .admin textarea.pages:active, .admin textarea.pages:focus{
+	border-color:#ecf0f1;
+}
+
+.page blockquote p{
+	font-size:16px;
+}
+
+
+
+
+
+
+
+
+
+
+

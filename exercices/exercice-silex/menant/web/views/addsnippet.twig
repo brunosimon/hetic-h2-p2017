@@ -1,0 +1,19 @@
+{% include 'inc/header.twig' %}
+{% include 'inc/message.twig' %}
+
+<section class="base wrap add-snippet">
+	<h2>New snippet</h2>
+	<form method="POST">
+		<input class="trs" type="text" name="title" placeholder="Type a title">
+		<select name="category" id="">
+			<option value"">Choose a category</option>
+			{% for category in categories %}
+			<option value="{{category.id}}">{{category.title}}</option>
+			{% endfor %}
+		</select>
+		<textarea name="content" id="snippet_add"></textarea>
+		<input class="trs" type="submit">
+	</form>
+</section>
+
+{% include 'inc/footer.twig' %}

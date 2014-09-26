@@ -1,0 +1,17 @@
+{% include 'inc/header.twig' %}
+
+<section class="base wrap add-snippet">
+	<h2>Update {{snippet.title}}</h2>
+	<form method="POST">
+		<input class="trs" type="text" name="title" placeholder="{{snippet.title}}">
+		<select name="category">
+			{% for category in categories %}
+			<option value="{{category.id}}" {% if category.title == snippet.category_title %}selected{% endif %}>{{category.title}}</option>
+			{% endfor %}
+		</select>
+		<textarea name="content" id="snippet_add">{{snippet.content}}</textarea>
+		<input class="trs" type="submit">
+	</form>
+</section>
+
+{% include 'inc/footer.twig' %}

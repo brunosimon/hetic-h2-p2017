@@ -1,0 +1,60 @@
+{{include('inc/header.twig')}}
+<h4>{{title}}</h4>
+<hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-push-3">
+      	<form role="form" method="post" id="contactform">
+          <fieldset>
+
+			{{ form_start(form) }}
+			{{ form_errors(form) }}
+	 
+			<div>
+				{{ form_label(form.name, 'Your name:') }}<br />
+	 
+				<div class='form-input'>
+					{{ form_widget(form.name) }}
+					{{ form_errors(form.name) }}
+				</div>
+			</div>
+	 
+			<div>
+				{{ form_label(form.email, 'Your Email:') }}<br />
+	 
+				<div class='form-input'>
+					{{ form_errors(form.email) }}
+					{{ form_widget(form.email) }}
+				</div>
+			</div>
+	 
+			<div>
+				{{ form_label(form.subject, 'Subject:') }}<br />
+	 
+				<div class='form-input'>
+					{{ form_errors(form.subject) }}
+					{{ form_widget(form.subject) }}
+				</div>
+			</div>
+
+			<div>
+				{{ form_label(form.message, 'Your Message:') }}<br />
+	 
+				<div class='form-textarea'>
+					{{ form_errors(form.message) }}
+					{{ form_widget(form.message) }}
+				</div>
+			</div>
+			<br/>
+			<div>
+				<input type="submit" name="submit" class="btn btn-default"/>
+				{{ form_end(form) }}
+			</div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+
+<p>{{include('inc/footer.twig')}}</p>

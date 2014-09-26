@@ -1,0 +1,22 @@
+.sidebar {
+    background: $fakeBlack;
+    color: white;
+    .navigation ul li{
+        .active {
+            background: black;
+            border-left: 3px solid #ecf0f1;
+        }
+        a {
+            display: block;
+            padding-left: 30px;
+            width: 100%;
+            line-height: 50px;
+            color: white;        
+            text-transform: uppercase;
+        }
+        ul {
+            padding-left: 40px;
+        }
+    }
+}
+

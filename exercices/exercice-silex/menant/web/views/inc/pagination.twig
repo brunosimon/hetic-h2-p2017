@@ -1,0 +1,9 @@
+<section class="wrap clear pagination">
+    {% for page in pages %}
+        {% if page.current %}
+            <span class="current-page">Page {{page.number}}</span>
+        {% else %}
+            <a class="trs other-page" href="{% if app.request.attributes.get('_route') == 'home' or app.request.attributes.get('_route') == 'page' %}{{url('page', {page:page.number})}}{% elseif app.request.attributes.get('_route') == 'search' %}{{url('search', {q:q, page:page.number})}}{% else %}{{url('category', {category:category, page:page.number})}}{% endif %}">Page {{page.number}}</a>
+        {% endif %}
+    {% endfor %}
+</section>

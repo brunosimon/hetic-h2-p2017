@@ -34,7 +34,7 @@ interface EncoderInterface
      *
      * @param string $format format name
      *
-     * @return bool
+     * @return Boolean
      */
     public function supportsEncoding($format);
 }

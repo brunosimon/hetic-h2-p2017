@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Snippets Box - {{title}}</title>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		
+		<link rel="icon" type="image/ico" href="{{app.request.basepath}}/favicon.ico" />
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		
+		<link href="{{app.request.basepath}}/src/css/reset.css" rel="stylesheet" type="text/css">
+		<link href="{{app.request.basepath}}/src/css/main.css" rel="stylesheet" type="text/css">
+
+	</head>
+<body>
+
+<div class="leftBar">
+	<div class="menu">
+		<span class="menuCat">Categories</span>
+		<ul>
+			<li><a href="{{app.request.basepath}}/category/javascript">Javascript</a></li>
+			<li><a href="{{app.request.basepath}}/category/php">PHP</a></li>
+			<li><a href="{{app.request.basepath}}/category/html">HTML</a></li>
+			<li><a href="{{app.request.basepath}}/category/css">CSS</a></li>
+		</ul>
+		<span class="menuCat">Menus</span>
+		<ul>
+			<li><a href="{{app.request.basepath}}/add">Add a snippet</a></li>
+			<li><a href="{{app.request.basepath}}/about">About</a></li>
+			<li><a href="mailto:thomas.lemee@hetic.net">Contact</a></li>
+		</ul>
+	</div>
+</div>
+<header>
+	<a href="#" class="hamburger"></a>
+	<div class="container">
+		<h1><a href="{{app.request.basepath}}" class="boldTitle">Snippets</a>Box</h1>
+	</div>
+</header>
+
+<section class="mainSection">
+	<div class="container">

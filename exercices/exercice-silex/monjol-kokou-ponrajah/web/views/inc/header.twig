@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{app.request.basePATH}}/views/src/css/bootstrap-darkly.min.css">
+    <link rel="stylesheet" href="{{app.request.basePATH}}/views/src/css/style.css">
+</head>
+<body>
+
+<!-- NavBar -->
+<nav class="navbar navbar-default">
+	<!-- Home -->
+	<div class="navbar-header">
+		<a class="navbar-brand" href="{{url('home')}}">SNIPPETS</a>
+	</div>
+	<!-- Pages -->
+	<div class="navbar-collapse collapse navbar-responsive-collapse">
+		<ul class="nav navbar-nav">
+			<li class="category"><a href="{{url('category', {category: 'php'})}}">Category</a></li>
+			<li class="addsnippet"><a href="{{url('addsnippet')}}">Add Snippet</a></li>
+			<li class="about"><a href="{{url('about')}}">About</a></li>	
+			<li class="contact"><a href="{{url('contact')}}">Contact</a></li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,16 @@
+<section>
+    {% for page in pages %}
+      {% if page.current %}
+        <ul class="pagination">
+          <li class="active"><a href="{{url('page',{page:page.number})}}">{{page.number}}</a></li>
+  		  </ul>
+      {% else %}
+        <ul class="pagination">
+  			 <li class=""><a href="{{url('page',{page:page.number})}}">{{page.number}}</a></li>
+  		  </ul>
+      {% endif %}
+    {% endfor %}
+</section>
+
+
+

@@ -36,7 +36,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     protected $normalizeKeys = true;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function __construct($name, NodeParentInterface $parent = null)
     {
@@ -97,7 +97,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     /**
      * Adds children with a default value when none are defined.
      *
-     * @param int|string|array|null     $children The number of children|The child name|The children names to be added
+     * @param integer|string|array|null $children The number of children|The child name|The children names to be added
      *
      * This method is applicable to prototype nodes only.
      *
@@ -177,7 +177,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
      * This method is applicable to prototype nodes only.
      *
      * @param string  $name          The name of the key
-     * @param bool    $removeKeyItem Whether or not the key item should be removed.
+     * @param Boolean $removeKeyItem Whether or not the key item should be removed.
      *
      * @return ArrayNodeDefinition
      */
@@ -192,7 +192,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     /**
      * Sets whether the node can be unset.
      *
-     * @param bool    $allow
+     * @param Boolean $allow
      *
      * @return ArrayNodeDefinition
      */
@@ -295,13 +295,13 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     /**
      * Sets key normalization.
      *
-     * @param bool    $bool Whether to enable key normalization
+     * @param Boolean $bool Whether to enable key normalization
      *
      * @return ArrayNodeDefinition
      */
     public function normalizeKeys($bool)
     {
-        $this->normalizeKeys = (bool) $bool;
+        $this->normalizeKeys = (Boolean) $bool;
 
         return $this;
     }
@@ -343,7 +343,7 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function createNode()
     {

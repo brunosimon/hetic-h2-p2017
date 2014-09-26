@@ -53,7 +53,7 @@ abstract class FileLoader extends Loader
      *
      * @param mixed   $resource       A Resource
      * @param string  $type           The resource type
-     * @param bool    $ignoreErrors   Whether to ignore import errors or not
+     * @param Boolean $ignoreErrors   Whether to ignore import errors or not
      * @param string  $sourceResource The original resource importing the new resource
      *
      * @return mixed
@@ -67,11 +67,7 @@ abstract class FileLoader extends Loader
             $loader = $this->resolve($resource, $type);
 
             if ($loader instanceof FileLoader && null !== $this->currentDir) {
-                // we fallback to the current locator to keep BC
-                // as some some loaders do not call the parent __construct()
-                // @deprecated should be removed in 3.0
-                $locator = $loader->getLocator() ?: $this->locator;
-                $resource = $locator->locate($resource, $this->currentDir, false);
+                $resource = $this->locator->locate($resource, $this->currentDir, false);
             }
 
             $resources = is_array($resource) ? $resource : array($resource);

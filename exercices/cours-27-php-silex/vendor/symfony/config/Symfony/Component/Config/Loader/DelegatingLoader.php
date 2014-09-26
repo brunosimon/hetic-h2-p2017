@@ -57,6 +57,6 @@ class DelegatingLoader extends Loader
      */
     public function supports($resource, $type = null)
     {
-        return false !== $this->resolver->resolve($resource, $type);
+        return false === $this->resolver->resolve($resource, $type) ? false : true;
     }
 }

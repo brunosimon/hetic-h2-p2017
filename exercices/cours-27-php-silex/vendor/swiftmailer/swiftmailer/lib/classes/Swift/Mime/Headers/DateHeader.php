@@ -61,7 +61,7 @@ class Swift_Mime_Headers_DateHeader extends Swift_Mime_Headers_AbstractHeader
      *
      * This method takes a UNIX timestamp.
      *
-     * @param int     $model
+     * @param integer $model
      */
     public function setFieldBodyModel($model)
     {
@@ -93,7 +93,7 @@ class Swift_Mime_Headers_DateHeader extends Swift_Mime_Headers_AbstractHeader
     /**
      * Set the UNIX timestamp of the Date in this Header.
      *
-     * @param int     $timestamp
+     * @param integer $timestamp
      */
     public function setTimestamp($timestamp)
     {

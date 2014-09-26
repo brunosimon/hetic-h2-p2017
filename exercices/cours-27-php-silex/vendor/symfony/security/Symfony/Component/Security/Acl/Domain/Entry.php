@@ -34,14 +34,14 @@ class Entry implements AuditableEntryInterface
     /**
      * Constructor
      *
-     * @param int                       $id
+     * @param integer                   $id
      * @param AclInterface              $acl
      * @param SecurityIdentityInterface $sid
      * @param string                    $strategy
-     * @param int                       $mask
-     * @param bool                      $granting
-     * @param bool                      $auditFailure
-     * @param bool                      $auditSuccess
+     * @param integer                   $mask
+     * @param Boolean                   $granting
+     * @param Boolean                   $auditFailure
+     * @param Boolean                   $auditSuccess
      */
     public function __construct($id, AclInterface $acl, SecurityIdentityInterface $sid, $strategy, $mask, $granting, $auditFailure, $auditSuccess)
     {
@@ -56,7 +56,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAcl()
     {
@@ -64,7 +64,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMask()
     {
@@ -72,7 +72,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getId()
     {
@@ -80,7 +80,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSecurityIdentity()
     {
@@ -88,7 +88,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStrategy()
     {
@@ -96,7 +96,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isAuditFailure()
     {
@@ -104,7 +104,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isAuditSuccess()
     {
@@ -112,7 +112,7 @@ class Entry implements AuditableEntryInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isGranting()
     {
@@ -125,7 +125,7 @@ class Entry implements AuditableEntryInterface
      * Do never call this method directly. Use the respective methods on the
      * AclInterface instead.
      *
-     * @param bool    $boolean
+     * @param Boolean $boolean
      */
     public function setAuditFailure($boolean)
     {
@@ -138,7 +138,7 @@ class Entry implements AuditableEntryInterface
      * Do never call this method directly. Use the respective methods on the
      * AclInterface instead.
      *
-     * @param bool    $boolean
+     * @param Boolean $boolean
      */
     public function setAuditSuccess($boolean)
     {
@@ -151,7 +151,7 @@ class Entry implements AuditableEntryInterface
      * Do never call this method directly. Use the respective methods on the
      * AclInterface instead.
      *
-     * @param int     $mask
+     * @param integer $mask
      */
     public function setMask($mask)
     {

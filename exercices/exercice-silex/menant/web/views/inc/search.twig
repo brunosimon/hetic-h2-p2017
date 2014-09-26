@@ -1,0 +1,9 @@
+<section class="{% if app.request.attributes.get('_route') == 'home' %}search-area{% elseif app.request.attributes.get('_route') == 'page' or app.request.attributes.get('_route') == 'search' %}search-page{% endif %}">
+	<form class="clear" onSubmit="if(this['q'].value == '') return false;" method="GET" action="search">
+		<input class="trss" id="srch" type="search" name="q" placeholder="What is your snippet's name ?" onKeypress="if (event.keyCode == 32) event.returnValue = false; if (event.which == 32) return false;">
+		<input class="trs" type="submit" value="Search">
+	</form>
+</section>
+{% if q is defined %}
+	<h4 class="search-result">Results for "{{q}}"</h4>
+{% endif %}

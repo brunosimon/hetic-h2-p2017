@@ -1,0 +1,17 @@
+{% for categorie in categories %}	
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge">5</span>
+    <a href="{{url('category', {category:categorie.slug})}}"><h3>{{categorie.title}}</h3></a>
+  </li>
+</ul>
+	
+	
+		
+	
+			
+{% endfor %}	
+
+
+

@@ -21,7 +21,7 @@ namespace Symfony\Component\Validator\Mapping\Loader;
 class XmlFilesLoader extends FilesLoader
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getFileLoaderInstance($file)
     {

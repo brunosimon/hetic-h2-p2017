@@ -68,10 +68,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      */
     public function decode($data, $format, array $context = array())
     {
-        if ('' === trim($data)) {
-            throw new UnexpectedValueException('Invalid XML data, it can not be empty.');
-        }
-
         $internalErrors = libxml_use_internal_errors(true);
         $disableEntities = libxml_disable_entity_loader(true);
         libxml_clear_errors();
@@ -83,8 +79,6 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
         libxml_disable_entity_loader($disableEntities);
 
         if ($error = libxml_get_last_error()) {
-            libxml_clear_errors();
-
             throw new UnexpectedValueException($error->message);
         }
 
@@ -155,7 +149,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param \DOMNode $node
      * @param string   $val
      *
-     * @return bool
+     * @return Boolean
      */
     final protected function appendXMLString(\DOMNode $node, $val)
     {
@@ -174,7 +168,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param \DOMNode $node
      * @param string   $val
      *
-     * @return bool
+     * @return Boolean
      */
     final protected function appendText(\DOMNode $node, $val)
     {
@@ -188,7 +182,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param \DOMNode $node
      * @param string   $val
      *
-     * @return bool
+     * @return Boolean
      */
     final protected function appendCData(\DOMNode $node, $val)
     {
@@ -202,7 +196,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param \DOMNode             $node
      * @param \DOMDocumentFragment $fragment
      *
-     * @return bool
+     * @return Boolean
      */
     final protected function appendDocumentFragment(\DOMNode $node, $fragment)
     {
@@ -220,7 +214,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      *
      * @param string $name
      *
-     * @return bool
+     * @return Boolean
      */
     final protected function isElementNameValid($name)
     {
@@ -287,7 +281,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param array|object $data
      * @param string|null  $xmlRootNodeName
      *
-     * @return bool
+     * @return Boolean
      *
      * @throws UnexpectedValueException
      */
@@ -356,7 +350,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param string       $nodeName
      * @param string       $key
      *
-     * @return bool
+     * @return Boolean
      */
     private function appendNode(\DOMNode $parentNode, $data, $nodeName, $key = null)
     {
@@ -378,7 +372,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      *
      * @param string $val
      *
-     * @return bool
+     * @return Boolean
      */
     private function needsCdataWrapping($val)
     {
@@ -391,7 +385,7 @@ class XmlEncoder extends SerializerAwareEncoder implements EncoderInterface, Dec
      * @param \DOMNode $node
      * @param mixed    $val
      *
-     * @return bool
+     * @return Boolean
      */
     private function selectNodeType(\DOMNode $node, $val)
     {

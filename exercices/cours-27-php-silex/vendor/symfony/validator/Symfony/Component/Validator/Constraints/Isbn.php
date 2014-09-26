@@ -16,7 +16,6 @@ use Symfony\Component\Validator\Exception\MissingOptionsException;
 
 /**
  * @Annotation
- * @Target({"PROPERTY", "METHOD", "ANNOTATION"})
  *
  * @author The Whole Life To Learn <thewholelifetolearn@gmail.com>
  */

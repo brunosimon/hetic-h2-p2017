@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class AllValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {
@@ -35,12 +35,11 @@ class AllValidator extends ConstraintValidator
             throw new UnexpectedTypeException($value, 'array or Traversable');
         }
 
-        $context = $this->context;
-        $group = $context->getGroup();
+        $group = $this->context->getGroup();
 
         foreach ($value as $key => $element) {
             foreach ($constraint->constraints as $constr) {
-                $context->validateValue($element, $constr, '['.$key.']', $group);
+                $this->context->validateValue($element, $constr, '['.$key.']', $group);
             }
         }
     }

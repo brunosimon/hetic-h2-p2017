@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{title}}</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,700,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{app.request.basepath}}/src/css/reset.css">
+		<link rel="stylesheet" href="{{app.request.basepath}}/src/css/style.css">
+	</head>
+	<body>
+		<div id="content">
+			<h1>
+				<a href="{{url('home')}}">
+					<img alt="Mario Kart - Tous les circuits" src="{{app.request.basepath}}/src/img/logo_medium.png"/>
+				</a>
+			</h1>
+			<nav class="nav_up">
+				<a href="{{url('consoles')}}">Les circuits par console</a> - <a href="{{url('page',{page:'1'})}}">Tous les circuits</a>
+			</nav>

@@ -28,7 +28,7 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessType($class, $property)
     {
@@ -40,7 +40,7 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessRequired($class, $property)
     {
@@ -54,7 +54,7 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessMaxLength($class, $property)
     {
@@ -66,7 +66,7 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function guessPattern($class, $property)
     {
@@ -159,6 +159,8 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
             case 'Symfony\Component\Validator\Constraints\False':
                 return new TypeGuess('checkbox', array(), Guess::MEDIUM_CONFIDENCE);
         }
+
+        return null;
     }
 
     /**
@@ -176,6 +178,8 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
             case 'Symfony\Component\Validator\Constraints\True':
                 return new ValueGuess(true, Guess::HIGH_CONFIDENCE);
         }
+
+        return null;
     }
 
     /**
@@ -206,6 +210,8 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
                 }
                 break;
         }
+
+        return null;
     }
 
     /**
@@ -244,6 +250,8 @@ class ValidatorTypeGuesser implements FormTypeGuesserInterface
                 }
                 break;
         }
+
+        return null;
     }
 
     /**

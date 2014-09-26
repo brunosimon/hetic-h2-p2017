@@ -1,0 +1,36 @@
+{{include('inc/header.twig')}}
+
+<form action="{{url('contact_post')}}" method="post">
+	<input type="hidden" name="action" value="add">
+	<fieldset>
+		<legend>Formulaire de contact</legend>
+		<div>
+			<label class="col-lg-1 control-label" for="prenom">Prénom</label><br>
+			<div class="col-lg-2">
+			<input required class="form-control" type="text" name="prenom" id="prenom" placeholder="Prénom" value="">
+			</div><br><br>
+					
+			<label class="col-lg-1 control-label" for="nom">Nom</label><br>
+			<div class="col-lg-2">
+			<input required class="form-control" type="text" name="nom" id="nom" placeholder="Nom" value="">
+			</div><br><br>
+					
+			<label class="col-lg-1 control-label" for="email">Email</label><br>
+			<div class="col-lg-2">
+			<input required class="form-control" type="text" name="email" id="email" placeholder="Mon email" value="">
+			</div><br><br>
+
+			<label class="col-lg-1 control-label" for="content">Champs texte</label><br>
+			<div class="col-lg-10">
+        	<textarea class="form-control" name="content" id="content" rows="5"></textarea>
+        	<span class="help-block">De quoi souhaitez-vous nous faire part ?</span>
+        	</div><br><br><br><br><br><br><br>
+		</div>
+
+		<div>
+			</br><input class="btn btn-primary" type="submit" name="Register">
+		</div>
+	</fieldset>
+</form>
+
+{{include('inc/footer.twig')}}

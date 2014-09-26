@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if foo is defined %}{{title}}{% else %}Parole d'héticien{% endif %}</title>
+    <link rel="stylesheet" href="{{app.request.basePath}}/src/css/bootstrap.min.css">
+</head>
+<body>
+    <h1><a href="{{url('home')}}">Parole d'héticien</a></h1>
+    <ul>
+        <li><a href="{{url('home')}}">Home</a></li>
+        <li><a href="{{url('about')}}">About</a></li>
+        <li>
+            Add
+            <ul>
+                <li><a href="{{url('add-quote')}}">Quote</a></li>
+                <li><a href="{{url('add-student')}}">Student</a></li>
+                <li><a href="{{url('add-promotion')}}">Promotion</a></li>
+            </ul>
+        </li>
+        <li>
+            Promotions
+            <ul>
+                {% for promotion in promotions %}
+                    <li><a href="{{url('promotion',{slug:promotion.slug})}}">{{promotion.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>

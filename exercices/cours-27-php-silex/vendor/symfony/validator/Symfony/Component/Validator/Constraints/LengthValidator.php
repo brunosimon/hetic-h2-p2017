@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class LengthValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {

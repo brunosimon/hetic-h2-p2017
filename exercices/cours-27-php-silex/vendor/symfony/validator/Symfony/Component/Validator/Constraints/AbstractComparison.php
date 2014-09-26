@@ -25,7 +25,7 @@ abstract class AbstractComparison extends Constraint
     public $value;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function __construct($options = null)
     {
@@ -40,7 +40,7 @@ abstract class AbstractComparison extends Constraint
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDefaultOption()
     {

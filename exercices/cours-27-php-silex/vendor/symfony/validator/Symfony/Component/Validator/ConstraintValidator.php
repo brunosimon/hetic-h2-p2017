@@ -26,7 +26,7 @@ abstract class ConstraintValidator implements ConstraintValidatorInterface
     protected $context;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function initialize(ExecutionContextInterface $context)
     {

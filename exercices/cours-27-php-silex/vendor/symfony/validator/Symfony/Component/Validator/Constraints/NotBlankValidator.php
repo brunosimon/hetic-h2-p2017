@@ -22,7 +22,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 class NotBlankValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {

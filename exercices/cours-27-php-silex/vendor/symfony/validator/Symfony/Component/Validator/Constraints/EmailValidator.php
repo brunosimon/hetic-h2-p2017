@@ -23,7 +23,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 class EmailValidator extends ConstraintValidator
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function validate($value, Constraint $constraint)
     {
@@ -59,7 +59,7 @@ class EmailValidator extends ConstraintValidator
      *
      * @param string $host Host
      *
-     * @return bool
+     * @return Boolean
      */
     private function checkMX($host)
     {
@@ -71,7 +71,7 @@ class EmailValidator extends ConstraintValidator
      *
      * @param string $host Host
      *
-     * @return bool
+     * @return Boolean
      */
     private function checkHost($host)
     {

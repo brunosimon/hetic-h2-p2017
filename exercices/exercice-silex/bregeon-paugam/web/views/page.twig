@@ -1,0 +1,14 @@
+{% include 'inc/header.twig' %}
+
+<div>
+    {% for page in pages %}
+        {% if page.current %}
+            <h4>Page {{page.number}}</h4>
+        {% endif %}
+    {% endfor %}
+</div>
+<hr>
+
+{% include 'inc/snippets.twig' %}
+{% include 'inc/pagination.twig' %}
+{% include 'inc/footer.twig' %}

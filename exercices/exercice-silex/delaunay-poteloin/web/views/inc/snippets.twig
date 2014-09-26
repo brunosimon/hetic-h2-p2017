@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <tr>
+  	<th>#</th>
+  	<th>Category</th>
+  	<th>Name</th>
+  </tr>
+
+{% for key, snippet in snippets %}
+<!-- {{snippet.content}}  -->
+
+	<tr>
+		<td>{{key+1}}</td>
+		<td><span class="label {{snippet.category_class}}"><a class="link_category" href="{{url('category',{category:snippet.category_slug})}}">{{snippet.category_title}}</a></span></td>
+		<td><a href="{{url('snippet',{id:snippet.id}, {category:"all"})}}">{{snippet.title}}</a></td>
+	</tr>
+
+{% endfor %}
+
+</table>
